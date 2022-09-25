@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>call apply and bind function in Javascript</h2>
+    <script>
+      let userDetails={
+        name: "Suman Singh",
+        Age: 24,
+        Designation:"Software engineer",
+        printDetails:function(){
+          console.log(this.name +","+this.Age+","+this.Designation);
+        }
+      }
+      let printName=function(city,country){
+        console.log(this.name+","+city+","+country);
+      }
+      userDetails.printDetails();
+      let userDetails2={
+        name: "Shree",
+        Age: 17,
+        Designation:"Software engineer",
+      }
+      userDetails.printDetails.call(userDetails2);
+      //For generic function
+      printName.call(userDetails2,"Banglore","India");
+      printName.apply(userDetails2,["gr. noida","North India"]);
+      let bindMethod=printName.bind(userDetails2,"Banglore","India");
+      bindMethod();
+
+    </script>
+  </body>
+</html>

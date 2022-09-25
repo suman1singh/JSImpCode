@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Set concept in Javascript</h2>
+    <script>
+      // "use strict";
+      //# Set
+      let myArray = [1, 2, 3, 4];
+      let mySet = new Set(myArray);
+      console.log(mySet, mySet.size);
+      mySet.add(5);
+      mySet.add(5);
+      console.log(mySet, mySet.size);
+      mySet.delete(5);
+      console.log(mySet, mySet.size);
+      var obj = { name: "Suman Singh" };
+      mySet.add(obj);
+      console.log(mySet, mySet.size);
+      console.log(mySet.has(3));
+      for (let i of mySet) {
+        console.log(i);
+      }
+      mySet.forEach((ele) => {
+        console.log(ele);
+      });
+
+      //## WeakSet
+      // let ws = new WeakSet();
+      // console.log(ws);
+      // var ob1 = { name: "suman" };
+      // var ob2 = {};
+      // ws.add(ob1);
+      // ws.add(ob2);
+      // console.log(ws.has(ob1));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>promise in Javascript</h2>
+    <script>
+      const datas = [
+        { name: "Suman", profession: "Software engineer" },
+        { name: "Shree", profession: "Software engineer" },
+      ];
+
+      function getDatas() {
+        setTimeout(() => {
+          let output = "";
+          datas.forEach((data, index) => {
+            output += `<li>${data.name + " " + index}</li>`;
+          });
+          document.body.innerHTML = output;
+        }, 1000);
+      }
+
+      function createdata(newdata) {
+        return new Promise((resolve1, reject1) => {
+          setTimeout(() => {
+            datas.push(newdata);
+            let error = false;
+            if (!error) {
+              resolve1();
+            } else {
+              reject1("kuch kharab hai...");
+            }
+          }, 1000);
+        });
+      }
+
+      createdata({ name: "Vivek", profession: "Programmer" }).then(getDatas);
+    </script>
+  </body>
+</html>

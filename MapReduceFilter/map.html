@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>map reduce filter concept in Javascript</h2>
+    <script>
+      //Higher order function
+      //forEach
+      //filter
+      //map
+      //sort
+      //reduce
+      const companies = [
+        { name: "Google", category: "Product Based", start: 1981, end: 2005 },
+        {
+          name: "MicroSoft",
+          category: "Product Based",
+          start: 1988,
+          end: 2006,
+        },
+        { name: "TCS", category: "Service Based", start: 1982, end: 2007 },
+        { name: "Infosys", category: "Service Based", start: 1975, end: 2008 },
+        { name: "Mindtree", category: "Service Based", start: 1986, end: 2009 },
+        { name: "IBM", category: "Service Based", start: 1983, end: 2010 },
+      ];
+
+      const ages = [33, 53, 56, 56, 52, 2, 5, 6, 5, 85, 36, 56];
+
+      // ## forloop ##
+
+      //   for(let i=0; i<=companies.length;i++){
+      //     console.log(companies[i].name);
+      //   }
+
+      // ## forEach ##
+
+      //   companies.forEach(function(company, index){
+      //     console.log(company.name + " "+ index)
+      //   });
+
+      //forEach Another way
+
+      //   companies.forEach((com, index) => {
+      //     console.log(com.name + " " + index);
+      //   });
+
+      //## filter ##
+
+      // Normal way
+
+      //   for(let i=0;i<ages.length;i++){
+      //     if(ages[i] >= 20){
+      //         console.log(ages[i])
+      //     }
+      //   }
+
+      // Filter way
+      //   const age = ages.filter(function (umr) {
+      //     if (umr >= 40) {
+      //       return true;
+      //     }
+      //   });
+      //   console.log(age);
+      //   const age = ages.filter((umr) => umr >= 50);
+      //   console.log(age);
+
+      // const serCom = companies.filter(function (company) {
+      //   if (company.category === "Service Based") {
+      //     return true;
+      //   }
+      // });
+      // console.log(serCom);
+
+      // const sb=companies.filter(com => com.category === "Product Based")
+      // console.log(sb);
+
+      // ## map function ##
+      // companies.map(function(com, ind) {
+      //   console.log(ind, com.name)
+      // })
+
+      // Another way
+      // dummy = companies.map(function(com, ind) {
+      //   return `${com.category + com.name}`
+      // })
+      // console.log(dummy);
+
+      // ## sort
+      // const sorted=companies.sort(function(c1,c2){
+      //   if(c1.start < c2.start){
+      //     return 1;
+      //   }else {
+      //     return -1;
+      //   }
+      // })
+      // console.log(sorted);
+
+      // ## sort with arrow function
+      // const sorted = companies.sort((c1, c2) => (c1.start < c2.start ? 1 : -1));
+      // console.log(sorted);
+
+      // ## sort for array
+      // const sortedAges = ages.sort((c1, c2) => (c1 < c2 ? 1 : -1));
+      // console.log(sortedAges);
+
+      // #reduce function
+      // Normal way
+      // let total=0;
+      // for(let i=0; i < ages.length; i++){
+      //   total += ages[i];
+      // }
+      // console.log(total);
+
+      // sum with reduce function
+
+      const sumage = ages.reduce(function (total, age) {
+        return total + age;
+      }, 0);
+      console.log(sumage);
+
+      // reduce with arrow function
+      const sumage1 = ages.reduce((total, age) => total + age, 0);
+      console.log(sumage1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Event Bubbling concept in Javascript</h2>
+    <div>
+      <button>Like me</button>
+      <a href="home.html">Home</a>
+    </div>
+    <script>
+      // Event bubbling & Capturing
+      //Stop Propagation, Immediadate Propagation & Prevent Default
+
+      // # Event Bubbling
+      //   var div1 = document.querySelector("div");
+      //   var button1 = document.querySelector("button");
+      //   div1.addEventListener("click", () => {
+      //     console.log("div1");
+      //   });
+      //   button1.addEventListener("click", () => {
+      //     console.log("button1");
+      //   });
+
+      // # Event Capturing
+      //   var div2 = document.querySelector("div");
+      //   var button2 = document.querySelector("button");
+      //   div2.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("div2");
+      //     },
+      //     true
+      //   );
+      //   button2.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("button2");
+      //     },
+      //     true
+      //   );
+      // # Stop propagation
+      //   var div3 = document.querySelector("div");
+      //   var button3 = document.querySelector("button");
+      //   button3.addEventListener("click", (ev) => {
+      //     ev.stopPropagation();
+      //     console.log("button3");
+      //   });
+      //   div3.addEventListener("click", () => {
+      //     console.log("div3");
+      //   });
+
+      // # Immediate Propagation
+    //   var div3 = document.querySelector("div");
+    //   var button3 = document.querySelector("button");
+    //   div3.addEventListener("click",()=>{
+    //         console.log("div3");
+    //   })
+    //   button3.addEventListener("click", () => {
+    //     console.log("button3");
+    //   });
+    //   button3.addEventListener("click", (eve) => {
+    //     eve.stopImmediatePropagation();
+    //     console.log("button4");
+    //   });
+
+    // ## Prevent default
+    var a1=document.querySelector("a");
+    a1.addEventListener("click",(event)=>{
+        event.preventDefault();
+        console.log("a");
+    })
+      
+    </script>
+  </body>
+</html>

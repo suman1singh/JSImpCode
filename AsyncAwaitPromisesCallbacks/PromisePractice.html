@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>promise in Javascript</h2>
+    <script>
+      let myPromise = new Promise(function (myResolve, myReject) {
+        // Producing code
+        let x = 0;
+        if (x == 0) {
+          myResolve("ok");
+        } else {
+          myReject("Error");
+        }
+      });
+      //Consuming code
+      myPromise.then(
+        function (value1) {
+          console.log(value1);
+        },
+        function (error1) {
+          console.log(error1);
+        }
+      );
+    </script>
+  </body>
+</html>

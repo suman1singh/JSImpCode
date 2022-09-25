@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JS 100 questions</h2>
+    <!-- <script>
+        // Q.1
+      let a=[];
+      let b=[];
+      console.log(a==b); //It compares memory location
+      console.log(a===b); //It compares memory location
+    </script> -->
+    <!-- <script>
+        //Q.2
+      let a = []; //empty array
+      let b = a; // a and b both have same memory location
+      console.log(a == b);
+      console.log(a === b);
+    </script> -->
+    <!-- <script>
+        //Q.3
+      let a = ['20'];
+      let b = [20];
+      console.log(a[0] == b[0]);
+      console.log(a[0] === b[0]);
+    </script> -->
+    <!-- <script>
+      //Q.4
+      let z = [1, 2, 3, 4];
+      let a = { name: "Suman" };
+      console.log(...z);
+    </script> -->
+    <!-- <script>
+      //Q.5
+      console.log(typeof NaN); // NaN is a number type data
+    </script> -->
+    <!-- <script>
+      //Q.6
+      let data = 10 - -10;
+      console.log(data);
+    </script> -->
+    <!-- <script>
+      //Q.7
+      const set = new Set([2, 5, 8, 2, 6, 5]);
+      console.log(set);
+    </script> -->
+    <!-- <script>
+      //Q.8
+      let data = { name: "Suman" };
+      console.log(delete data.name);
+      console.log(data);
+    </script> -->
+    <!-- <script>
+      //Q.9
+      const data = { name: "Suman" };
+      console.log(delete data);
+      console.log(data);
+    </script> -->
+    <!-- <script>
+      //Q.10
+      const data = ["Suman", "Shree", "Swastik"];
+      const [y] = data;
+      console.log(y);
+      const [x,z] = data;
+      console.log(x,z);
+    </script> -->
+    <!-- <script>
+      //Q.11
+      const data = ["Suman", "Shree", "Swastik"];
+      const [,y] = data;
+      console.log(y);
+    </script> -->
+    <!-- <script>
+        //Q.12 print state from object without . operator
+      const data = { name: "Suman", age: 24, skills: "JS" };
+      const {name,age}=data;
+      console.log(name);
+      console.log(age);
+    </script> -->
+    <!-- <script>
+      //Q.13
+      let data1 = { name: "Suman", age: 24, skills: "JS" };
+      let data2 = { city: "Blr", area: "whitefield", company: "TCS" };
+      data2 = { ...data1, ...data2 };
+      console.log(data2);
+    </script> -->
+    <!-- <script>
+        //Q.14
+        let data1={name:"Suman",age:24,skills:'js'};
+        let data2 = { city: "Blr", area: "whitefield", company: "TCS" };
+        data2={data1,...data2};
+        console.log(data2);
+    </script> -->
+    <!-- <script>
+      //Q.15
+      let data1 = { name: "Suman", age: 24, skills: "js" };
+      let data2 = { city: "Blr", skills: "ReactJS", company: "TCS" };
+      data2 = { ...data1, ...data2 };
+      console.log(data2);
+    </script> -->
+    <!-- <script>
+      //Q.16
+      const name = "Suman";
+      console.log(name());
+    </script> -->
+    <!-- <script>
+      //Q.17
+      const result = false || {} || null;
+      console.log(result);
+    </script> -->
+    <!-- <script>
+      //Q.18
+      const result = null || false || null;
+      const result1 = null || false || ''; // assign last value if no one is true before last
+      const result2 = [] || 0 || true;
+      console.log(result);
+      console.log(result1);
+      console.log(result2);
+    </script> -->
+    <!-- <script>
+      //Q.19
+      console.log(Promise.resolve(5));
+    </script> -->
+    <!-- <script>
+      //Q.20
+      JSON.parse(); // This will converts json data to js data
+      //what will do this method
+      //A. parses JSON to a js value -- correct
+      //B. parses a js object to JSON
+      //C. parses any js value to JSON
+      //D> Parses JSON to a js object only
+    </script> -->
+    <!-- <script>
+      //Q.21
+      let name = "Suman";
+      function getName() {
+        console.log(name);
+        let name = "Singh"; //Hoisting concept will not work for let and const
+      }
+      getName();
+    </script> -->
+    <!-- <script>
+      //Q.22
+      let name = "Suman";
+      function getName() { // block scope means it will accessible inside block and block inside that block as well.
+        console.log(name);
+      }
+      getName();
+    </script> -->
+    <!-- <script>
+      //Q.24
+      console.log(`${(x => x)('I love')} to program`);
+    </script> -->
+    <!-- <script>
+      //Q.25
+      function sumValues(x, y, z) {
+        return x + y + z;
+      }
+      sumValues(1, 2, 3);
+      console.log(sumValues(...[1, 2, 3]));
+      // which option is correct for output 6
+      //A: sumValues([...1,2,3])
+      //B: sumValues([...[1,2,3]])
+      //C: sumValues(...[1,2,3])
+      //D: sumValues([1,2,3])
+    </script> -->
+    <!-- <script>
+      //Q.26
+      const name='code step by step';
+      console.log(!typeof name === 'object');
+      console.log(!typeof name === 'string');
+      console.log(typeof name === 'object');
+      console.log(typeof name === 'string');
+    </script> -->
+    <!-- <script>
+      //Q.27
+      const name = "Subscribe";
+      const age = 21;
+      console.log(isNaN(name));
+      console.log(isNaN(age));
+    </script> -->
+    <!-- <script>
+      //Q.28
+      let person = { name: "Suman" };
+      //what can modify person object
+      Object.seal(person); // Now we can't add more properties to object if Seal applied
+      person.age=24;
+      person.name="Singh" // But we can modify existing properties of object if Seal use over that object.
+      console.log(person);
+    </script> -->
+    <!-- <script>
+      //Q.29
+      let data=[2,9,0,10];
+      // remove 1st element
+      data.shift(); // remove 1st element
+      console.log(data);
+      data.pop();
+      console.log(data);
+    </script> -->
+    <script>
+      //Q.30
+      let data={
+        name:"Suman"
+      }
+      delete data.name;
+      console.log(data);
+    </script>
+  </body>
+</html>

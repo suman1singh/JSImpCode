@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Currying in javascript</p>
+    <script>
+      // Currying function in javascript
+
+      // ## Normal function
+    //   function Addition(a, b, c) {
+    //     return a + b + c;
+    //   }
+    //   let res = Addition(2, 3, 4);
+    //   console.log(res);
+
+      // ## Currying function
+      function Addition(a) {
+        return function (b) {
+          return function (c) {
+            return a + b + c;
+          };
+        };
+      }
+      // Normal way for printing
+    //   let res1 = Addition(2);
+    //   let data=res1(4);
+    //   let data1=data(8);
+    //   console.log(data1);
+
+    //Currying way for printing
+    let resu=Addition(2)(4)(7);
+    console.log(resu);
+    </script>
+  </body>
+</html>

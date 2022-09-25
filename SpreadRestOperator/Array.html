@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Spread and Rest Operator concept in Javascript</h2>
+    <script>
+      // Rest Operator
+      function addNumbers(a, b, c, ...other) {
+        // Other is array
+        console.log(arguments); //ES5
+        console.log(other);
+        return a + b + c;
+      }
+      const res = addNumbers(5, 5, 2, 9, 8, 2, 7, 5, 36, 12);
+      console.log(res);
+
+      // #Spread
+      // Without Spread
+    //   var names = ["suman1", "suman2", "suman3","Ram"];
+
+    //   function getNames(name1, name2, name3,name4) {
+    //     console.log(name1, name2, name3,name4);
+    //   }
+    //   getNames(names[0], names[1], names[2],names[3]);
+    // //   With Spread
+    //   getNames(...names);
+    //   getNames(names);
+    </script>
+  </body>
+</html>

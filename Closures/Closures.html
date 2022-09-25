@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Closures concept in Javascript</h2>
+    <script>
+      // var sum=function(a){
+      //   console.log("Hello closures "+a);
+      //   var c=4;
+      //   return function(b) {
+      //       return a+b+c;
+      //   }
+      // }
+      // var store=sum(2);
+      // console.log(store(5));
+
+      //Different way
+      console.log("Different way");
+      var sum1=function(a,b,c){
+        return {
+            getSumTwo:function(){
+                return a+b;
+            },
+            getSumThree:function(){
+                return a+b+c;
+            }
+        }
+      }
+      var store1=sum1(3,4,5); //calling
+      console.log(store1.getSumTwo())
+      console.log(store1.getSumThree())
+
+      // var store2=sum1(7,8,9);
+      // console.log(store2.getSumTwo())
+      // console.log(store2.getSumThree())
+    </script>
+  </body>
+</html>

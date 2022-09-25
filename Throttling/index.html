@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Debouncing concept in Javascript</h2>
+    <input type="text" id="search" onchange="betterFunction()" />
+    <button id="myid" onclick="newFun()">Hello</button>
+    <script>
+      const myThrottling = (fcn, delay) => {
+        return function (...args) {
+          document.getElementById("myid").disabled = true;
+          setTimeout(() => {
+            fcn();
+          }, delay);
+        };
+      };
+      const newFun = myThrottling(() => {
+        document.getElementById("myid").disabled = false;
+        console.log("User Clicked");
+      }, 2000);
+    </script>
+  </body>
+</html>

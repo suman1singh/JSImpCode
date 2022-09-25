@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Map concept in Javascript</h2>
+    <script>
+      // #Map
+
+      let myMap = new Map([
+        ["a1", "Suman"],
+        ["a2", "suman2"],
+        ["a3", "suman3"],
+      ]);
+      console.log(myMap);
+      myMap.set("a2", "Suman5");
+      console.log(myMap);
+      myMap.delete("a2");
+      console.log(myMap);
+      console.log(myMap.get("a1"));
+      for (let [key, value] of myMap) {
+        console.log(`keys ${key}, values ${value}`);
+      }
+      myMap.forEach((key, value) => {
+        console.log(value, key);
+      });
+
+      //# WeakMap
+      let wm = new WeakMap();
+      console.log(wm);
+      var ob3 = { name: "suman" };
+      var ob4 = {};
+      wm.set(ob3, "private");
+      wm.set(ob4, "private data");
+      //   wm.set("123","private data");
+      console.log(wm.has(ob4));
+    </script>
+  </body>
+</html>

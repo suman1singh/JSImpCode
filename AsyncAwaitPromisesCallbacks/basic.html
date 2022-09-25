@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Async await promises callbacks in Javascript</h2>
+    <script>
+      const datas = [
+        { name: "Suman", profession: "Software engineer" },
+        { name: "Shree", profession: "Software engineer" },
+      ];
+
+      function getDatas() {
+        setTimeout(() => {
+          let output = "";
+          datas.forEach((data, index) => {
+            output += `<li>${data.name + " " + index}</li>`;
+          });
+          document.body.innerHTML = output;
+        }, 2000);
+      }
+
+      function createdata(newdata) {
+        setTimeout(() => {
+          datas.push(newdata);
+        }, 1000);
+      }
+      getDatas();
+      createdata({ name: "Vivek", profession: "Programmer" });
+    </script>
+  </body>
+</html>

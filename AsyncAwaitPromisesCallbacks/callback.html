@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>callbacks in Javascript</h2>
+    <script>
+      const datas = [
+        { name: "Suman", profession: "Software engineer" },
+        { name: "Shree", profession: "Software engineer" },
+      ];
+
+      function getDatas() {
+        setTimeout(() => {
+          let output = "";
+          datas.forEach((data, index) => {
+            output += `<li>${data.name + " " + index}</li>`;
+          });
+          document.body.innerHTML = output;
+        }, 2000);
+      }
+
+      function createdata(newdata, callback) {
+        setTimeout(() => {
+          datas.push(newdata);
+          callback();
+        }, 3000);
+      }
+
+      createdata({ name: "Vivek", profession: "Programmer" }, getDatas);
+    </script>
+  </body>
+</html>

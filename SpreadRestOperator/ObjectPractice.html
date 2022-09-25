@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Spread and Rest Operator concept with object in Javascript</h2>
+    <script>
+      // Rest object k sath
+      var students = {
+        name: "Suman",
+        age: "24",
+        hobbies: ["acting", "teaching"],
+      };
+      // const age=students.age;
+      // console.log(age);
+      const { age, ...rest } = students; // Destructuring
+      console.log(rest);
+
+      //Spread with object
+      // var newStudents={
+      //   ...students,
+      //   age:"29"
+      // }
+      // console.log(newStudents);
+    </script>
+  </body>
+</html>
