@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Program</h1>
+    <script>
+      function vowelsAndConsonants(s) {
+        let vowels = [];
+        let consonas = [];
+        for (var i = 0; i < s.length; i++) {
+          if (
+            s[i] == "a" ||
+            s[i] == "e" ||
+            s[i] == "i" ||
+            s[i] == "o" ||
+            s[i] == "u"
+          ) {
+            vowels.push(s[i]);
+          } else {
+            consonas.push(s[i]);
+          }
+        }
+
+       console.log('Vowels is:')
+        for (let i of vowels) {
+          console.log(i);
+        }
+        console.log('consonents is:')
+        for (let i of consonas) {
+          console.log(i);
+        }
+      }
+      vowelsAndConsonants('ieaoau')
+    </script>
+  </body>
+</html>

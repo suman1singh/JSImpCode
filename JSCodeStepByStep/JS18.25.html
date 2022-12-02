@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JS High order function question for interview</h2>
+    <script>
+        // function test() {
+        //   return 1 + 2;
+        // }
+        // function hello(x) {
+        //   let data = function () {
+        //     return "HOF";
+        //   };
+        //   return data;
+        // }
+        // hello(test);
+      let data = [5, 4, 9, 3];
+      //   let result = data.map((i) => {
+      //     return i * 10;
+      //   });
+      let x = (i) => {
+        return i * 10;
+      };
+      let result = data.map(x);
+      console.log(result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript imp code from linkedIn</h2>
+    <!-- <script>
+        const set1=new Set();
+        set1.add(42);
+        set1.add(42);
+        set1.add(13);
+        for(const i of set1){
+            console.log(i);
+        }
+    </script> -->
+    <!-- <script>
+        const obj={
+            a:1,
+            b:2,
+            c:3,
+        };
+        const obj2={
+            ...obj,
+            a:0,
+        };
+        console.log(obj2.a,obj2.b);
+    </script> -->
+    <!-- <script>
+        for(var i=1;i<=4;i++){
+            (
+                function(j){
+                    setTimeout(function(){
+                        console.log(j);
+                    },10);
+                }
+            )(i);
+        }
+    </script> -->
+    <!-- <script>
+      print(NaN === NaN);
+    </script> -->
+    <!-- <script>
+        let x=4;
+        let y=++x;
+        console.log(y);
+    </script> -->
+    <!-- <input type="button"/>
+    <button type="button"></button> -->
+    <!-- <script>
+        const a={b:'1',c:'2',b:'3',c:'4'};
+        const aa=[a.b,a.c];
+        console.log(a,"",aa);
+    </script> -->
+    <!-- <script>
+        function reverse(name){
+            let rev="";
+            for(let i=name.length-2;i>=0;i--){
+                rev +=name[i];
+            }
+            console.log(rev);
+        }
+        reverse("JavaScript");
+    </script> -->
+    <!-- <script>
+        let array=[1,3,2,7,9,11,5,8,4];
+        array[100]=19;
+        console.log(array.length);
+        console.log(array[99]);
+    </script> -->
+    <!-- <script>
+        console.log(typeof null);
+        console.log(1?2:3);
+    </script> -->
+    <!-- <script>
+        const numbers=[1,2,3];
+        numbers[10]=11;
+        console.log(numbers);
+    </script> -->
+    <!-- <script>
+        const set=new Set();
+        set.add(5);
+        set.add('Hello');
+        set.add({name:'Javascript'});
+        for(let item of set){
+            console.log(item+6);
+        }
+    </script> -->
+    <!-- <script>
+        var a=5;
+        const x=(a)=>
+        console.log(a);
+        console.log(a);
+        const y=function(b){console.log(b)};
+        x(1);
+        y(3);
+    </script> -->
+    <!-- <script>
+        let x="A";
+        let y=5;
+        let z="";
+        result=x-y+z;
+        console.log(result,!result);
+        console.log(!NaN);
+    </script> -->
+    <!-- <script>
+        'use strict'
+        const obj={
+            name:{}
+        };
+        Object.freeze(obj);
+        obj.name.firstName='Test';
+        console.log(obj.name.firstName);
+    </script> -->
+    <!-- <script>
+        function my_func(a){
+            var temp=2;
+            function self(b){
+                alert(a+b+(++temp));
+            }
+            self(9);
+        }
+        my_func(2);
+    </script> -->
+    <!-- <script>
+        function checkPerson(data){
+            if(data=== {name:"jayesh"}){
+                console.log("one");
+            } else if (data =={name:"jayesh"}){
+                console.log("Two");
+            } else {
+                console.log("Three");
+            }
+        }
+        checkPerson({name:"jayesh"}); -->
+        <!-- <script>
+            console.log(typeof Array);
+        </script> -->
+        <!-- <script>
+            const arr=new Array(25);
+            const arr2=new Array("jgv");
+            console.log(arr.length, arr2.length);
+        </script> -->
+        <!-- <script>
+            for(var i=0;i<10;i++){
+
+            }
+            console.log(i);
+        </script> -->
+        <!-- <script>
+            const userObj={
+                'id':1,
+                'name':'Vidhya',
+                'designation':"frontend developer",
+                'address':"ABC Streat, DummyCity"
+            };
+            delete userObj.address;
+            console.log(userObj);
+        </script> -->
+        <!-- <script>
+            let userAge=20;
+            let anotherUserAge=userAge;
+            userAge=25;
+            console.log(anotherUserAge);
+            console.log(userAge);
+        </script> -->
+        <!-- <script>
+            var name="jayesh";
+            let age="24";
+            const player="virat";
+            {
+                var name="suman";
+                let age="25";
+                const player="dev";
+            }
+            console.log(name);
+            console.log(age);
+            console.log(player);
+        </script> -->
+        <!-- <script>
+            function sum(a,b){
+                console.log(a+b);
+            }
+            sum(1,'2');
+            console.log(1 + '2');
+        </script> -->
+        <!-- <script>
+            function sum(a,b,c){
+                return a+b+c;
+            }
+            sum(6,7,6);
+        </script> -->
+        <!-- <script>
+            var rate=10;
+            function getRate(){
+                if(rate == undefined){
+                    var rate =6;
+                    return rate;
+                } else {
+                    return 10;
+                }
+            }
+            console.log("Rate is", getRate());
+        </script> -->
+        <!-- <script>
+            let a=3;
+            let b=new Number(3);
+            let c=3;
+            console.log(a==b);
+            console.log(a===c);
+            console.log(b===c);
+        </script> -->
+        <!-- <script>
+            console.log("start");
+            const first=setTimeout(()=>{
+                console.log("first");
+                clearTimeout(second);
+            },1000);
+
+            const second=setTimeout(()=>{
+                console.log("second");
+                clearTimeout(first);
+            },2000);
+            console.log("end");
+        </script> -->
+        <!-- <script>
+            function checkAge(data){
+                if(data === {age : 18}){
+                    console.log('you are an adult');
+                } else if (data == { age : 18}){
+                    console.log('ypu are still an adult');
+                } else {
+                    console.log('Hmm');
+                }
+            }
+            checkAge({age : 18});
+        </script> -->
+        <!-- <script>
+            console.log('1');
+            setTimeout(function two(){
+                console.log('2');
+            },0);
+            console.log('3');
+        </script> -->
+    </script>
+  </body>
+</html>
