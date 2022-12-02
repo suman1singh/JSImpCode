@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JS important question for interview</h2>
+    <script>
+      // for (let i = 0; i < 3; i++) {
+      //   setTimeout(function () {
+      //     console.log(i);
+      //   }, 1000);
+      // }
+      // with var
+      for (var i = 0; i < 3; i++) {
+        setTimeout(function () {
+          console.log(i);
+        }, 1000);
+      }
+      for (var i = 0; i < 3; i++) {
+        setTimeout(
+          (function () {
+            console.log(i);
+          })(),
+          1000
+        );
+      }
+      // for (var i = 0; i < 3; i++) {
+      //   console.log(i);
+      // }
+    </script>
+  </body>
+</html>
