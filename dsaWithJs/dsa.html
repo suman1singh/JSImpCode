@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>DSA code</h1>
+  </head>
+  <body>
+    <!-- <script>
+      //Video2: Array traversing and accessing
+      let data = [4, 5, 8, 6, 7, 83, 56, 76];
+      for (let i = 0; i < data.length; i++) {
+        document.write(`Array ${i}: ${data[i]} <br>`);
+      }
+
+      let x = 3;
+      document.write(data[x], `<br>`);
+
+      function getElement() {
+        let el = document.getElementById("element").value;
+        if (el < data.length && typeof parseInt(el) === "number") {
+          alert(data[el]);
+        } else {
+          alert("please enter valid input");
+        }
+      }
+    </script>
+    <input type="text" id="element" />
+    <button onclick="getElement()">Get element</button> -->
+
+    <!-- <script>
+      //Video3: Insert element in array
+      let data = [60, 30, 40, 50, 80];
+      let newE1 = 85;
+      let position = 2;
+      document.write(data, `<br>`);
+      for (let i = data.length - 1; i >= 0; i--) {
+        if (i >= position) {
+          data[i + 1] = data[i];
+          if (i === position) {
+            data[i] = newE1;
+          }
+        }
+      }
+      document.write(data);
+
+      // By using method
+      let newData = [2, 8, 78, 36, 86, 3, 30];
+      console.log(newData);
+      newData.splice(3, 0, 59);
+      console.log(newData);
+    </script> -->
+    <!-- <script>
+      // Video4: Delete element in array
+      var data = [30, 20, 45, 76, 20, 80];
+      console.log(data)
+      function deleteE() {
+        var position = document.getElementById("delete").value;
+        position= parseInt(position);
+        for (let i = position; i <= data.length - 1; i++) {
+          data[i] = data[i + 1];
+        }
+        data.length = data.length - 1;
+        console.log(data);
+      }
+    </script>
+    <input type="text" placeholder="enter position" id="delete" />
+    <button onclick="deleteE()">Delete element</button> -->
+    <!-- <script>
+      // Video5: Search element in array
+      var myArr = [20, 25, 8, 6, 9, 7, 31, 52];
+      console.log(myArr);
+      function searchE() {
+        let item = document.getElementById("search").value;
+        let index = undefined;
+        for (i = 0; i <= myArr.length - 1; i++) {
+          if (myArr[i] === parseInt(item)) {
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+      }
+      // console.log(index);
+      // console.log(myArr.indexOf(item));
+      // myArr.splice(2,1);
+      // console.log(myArr);
+    </script>
+    <input type="text" id="search" />
+    <button onclick="searchE()">Search element</button> -->
+    <!-- <script>
+      //Video6: Merge two array
+      let data1 = [5, 8, 7, 6, 10, 20];
+      let data2 = [3, 6, 9, 8, 7, 72, 36];
+      let data3 = [];
+      for (i = 0; i < data1.length; i++) {
+        data3[i] = data1[i];
+      }
+      for (i = 0; i < data2.length; i++) {
+        data3[data1.length + i] = data2[i];
+      }
+      console.log(data3);
+    </script> -->
+    <!-- <script>
+      //Video7: Merge two array with while loop
+      let data1 = [3, 7, 12, 34, 56, 90];
+      let data2 = [4, 9, 25, 45, 50, 56, 63, 69, 89];
+      let data3 = [];
+      let d1 = 0;
+      let d2 = 0;
+      let d3 = 0;
+      while (d1 < data1.length && d2 < data2.length) {
+        if (data1[d1] < data2[d2]) {
+          data3[d3] = data1[d1];
+          d1++;
+        } else {
+          data3[d3] = data2[d2];
+          d2++;
+        }
+        d3++;
+      }
+      if (data1.length < data2.length) {
+        while (d2 < data2.length) {
+          data3[d3] = data2[d2];
+          d2++;
+          d3++;
+        }
+      } else {
+        while (d1 < data1.length) {
+          data3[d3] = data1[d1];
+          d1++;
+          d3++;
+        }
+      }
+      console.log(data3);
+    </script> -->
+    <!-- <script>
+      //Video8: Algorithm complexity
+    </script> -->
+    <!-- <script>
+      //Video9: Asymptotic analysis and notation
+    </script> -->
+    <!-- <script>
+      //Video 10: Array sorting
+      let data=[60,5,30,7,89,36,78,23,20];
+      console.log(data);
+      for(i=0;i<data.length;i++){
+        for(j=0;j<data.length;j++){
+          if(data[j]>data[j+1]){
+            let temp=data[j];
+            data[j]=data[j+1];
+            data[j+1]=temp;
+          }
+        }
+      }
+      console.log(data);
+      console.log(data.reverse());
+    </script> -->
+    <script>
+      //Video 11: Recursion data structure
+    </script>
+  </body>
+</html>

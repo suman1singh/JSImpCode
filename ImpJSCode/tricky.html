@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Js important code from trick.js instagram</h1>
+  </head>
+  <body>
+    <!-- <script>
+      var a = 1;
+      function foo() {
+        var a = 2;
+        console.log(a);
+      }
+      foo();
+      console.log(a);
+      // Explanation: There are two types of scopes: global scope and local scope. Variables declared within a JavaScript function become local, and variables declared outside of the function become global.
+    </script> -->
+    <!-- <script>
+      console.log(a);
+      console.log(b);
+      var a = 2;
+      let b = 2;
+      //When the code executes, the compiler looks for variables declaration, and if the variable were declared, it would hoist it to the top. Notice that the variables declared with let or const are not hoisted. That's why the variable b is not hoisted in this situation.
+      // So when we run the code above, we will get undefined for a and an error of b is not defined for the variable b. If you get the answer correct, that means you understand hoisting.
+    </script> -->
+    <!-- <script>
+      function foo() {
+        let a = (b = 0);
+        a++;
+        console.log(a);
+        console.log(b);
+        return a;
+      }
+      foo();
+      console.log(typeof a);
+      console.log(typeof b);
+      //Explanation: Let's look at the line 2: let a=b=0. This statement declares a local variable a. However, it does declare a global variable b.
+      // No variable b is declared neither in the foo() scope or global scope. So JavaScript interprets be expression as window.b=0. In other words, b is a global variable created accidentally.
+      // typeof a is "undefined". The variable a exists within foo() scope and not available in the outside scope.
+      // Because b is a global variable with the value 0, the typeof b evaluates to "number".
+    </script> -->
+    <!-- <script>
+      var output = (function (x) {
+        delete x;
+        return x;
+      })(0);
+      console.log(output);
+      //Explanation: Above code will output 0 as output. delete operator is used to delete a property from an object. Here x is not an object it's local variable. delete operator doesn't affect local variable.
+    </script> -->
+    <!-- <script>
+      function changeStuff(a, b, c) {
+        a = a * 10;
+        b.item = "changed";
+        c = { item: "changed" };
+      }
+      var num = 10;
+      var obj1 = { item: "unchanged" };
+      var obj2 = { item: "unchanged" };
+      changeStuff(num, obj1, obj2);
+      console.log(num);
+      console.log(obj1.item);
+      console.log(obj2.item);
+      //It's always pass by value, but for objects the value of the variable is a reference. Because of this, when you pass an object and change its members, those changes persist outside of the function. This makes it look like pass by reference. But if you actually change the value of the object variable you will see that the change does not persist, proving it's really pass by value.
+    </script> -->
+    <!-- <script>
+      console.log(2 + "2"); //22
+      console.log(2 * "2"); //4
+      console.log("2" + "2"); //22
+      console.log(2 - "2"); // 0
+      console.log("2" - "2"); // 0
+      console.log("A" - "A"); //NaN
+      console.log("1" + 1); //11
+      console.log("A" - 1); //NaN
+      console.log(2 + "-2" + "2"); //2-22
+      console.log("hello" - "world" + 78); //NaN
+      console.log("hello" + "78"); //hello78
+      console.log(NaN + 78); //NaN
+      console.log(NaN * 5); //NaN
+      console.log(NaN % 0); //NaN
+      //Javascript + operator behaves as,
+      // number operator when both operands are number concat operator if any one or both of the operands are string.
+      // Javascript operator always behaves as number operator. if any one or both of the operands are string, Javascript attempts to convert it to a number, if not able to convert then return NaN.
+    </script> -->
+    <!-- <script>
+      var a;
+      a=0;
+      a++;
+      alert(a);
+    </script> -->
+    <!-- <script>
+      console.log(10 < 20 < 30);
+      console.log(30 > 20 > 10);
+      //The output is true and false. Here is the explanation,
+      // In Javascript relational operators are evaluated from left to right, false equals 0, and true equals 1 for number comparisons.
+      // So comparison evaluation is something like this,
+      // 10 < 20 < 30 -> true <30 -> 1< 38 -> true
+      // 30 > 20 > 10 -> true > 10 -> 1> 10 -> false
+    </script> -->
+    <!-- <script>
+      const elements = [1, 2, 3, 4, 5];
+      elements.forEach((element) => {
+        console.log(element);
+        if (element == 2) {
+          return;
+        }
+      });
+      //Have you guessed it will print 1 and 2 ? Let's look at the output, Yes, its confusing in Javascript. The reason is that we are passing a callback function in forEach loop which will be executed for each element no matter if we returns.
+      // If you use break or continue instead of return, you get either one of the error since these are not applicable for a callback function:
+      // Uncaught SyntaxError: illegal break statement
+      // Uncaught SyntaxError: illegal continue statement
+    </script> -->
+    <!-- <script>
+      for (var i = 0; i < 3; i++) {
+        setTimeout(function () {
+          console.log(i);
+        }, i * 1000);
+      }
+      //Actually It will print 3, 3, 3 after every 1 second. This is because of Javascript Closure. Here is the explanation,
+      // A JavaScript closure is when an inner function has access to its outer function's scope. In the following line of code: setTimeout(function() { console.log(1); }, 1*1000);
+      // variable i is used in an inner function whereas it is actually declared in outer for loop. Inner function will be able to access the value of 1 through closure.
+    </script> -->
+    <!-- <script>
+      for (let i = 0; i < 3; i++) {
+        setTimeout(function () {
+          console.log(i);
+        }, i * 1000);
+      }
+      //let is block scoped as opposed to var which is function scoped. Since for loop is also a block, value of i in each iteration is block scoped within that iteration and each closure has its own copy of i variable.
+    </script> -->
+    <!-- <script>
+      setTimeout(() => console.log(1), 2000);
+      console.log(2);
+      setTimeout(() => console.log(3), 0);
+      console.log(4);
+      //First the 2 is printed with the console.log, then even with a time delay of 0 ms, the 4 is printed before the 3 because JS executes setTimeout with the Web API, and so the entire function is executed first. Lastly, after a delay of 2000s, the 1 is printed.
+    </script> -->
+    <!-- <script>
+      var a=Math.max();
+      var b=Math.min();
+      console.log(a);
+      console.log(b);
+      //The Math.max() method returns -Infinity by default and the Math.min() method returns Infinity value by default when passed without any parameters.
+    </script> -->
+    <!-- <script>
+      var a = [1, 2, 3, 4, 5];
+      console.log(a.slice(2, 4));
+      //The slice() function in Javascript slices an array within the given start and end indexes and then returns the values lying in those ranges. The Indexing done is 0 based indexing.
+    </script> -->
+    <script>
+      const set = new Set();
+      set.add(5);
+      set.add("Hello");
+      set.add({ name: "Javascript" });
+      for (let item of set) {
+        console.log(item + 6);
+      }
+    </script>
+    <!-- <script>
+      const example = ({ a, b, c }) => {
+        console.log(a, b, c);
+      };
+      example(0, 1, 2);
+    </script> -->
+    <!-- <script>
+      // 14th Dec
+      let arr = [1, 2];
+      function test(array) {
+        array.push(3);
+      }
+      test(arr);
+      console.log(arr);
+    </script> -->
+    <!-- <script>
+      const carDetails = {
+        name: "Verna",
+        getName() {
+          return this.name;
+        },
+      };
+      var name = "Swift";
+      var getCarName = carDetails.getName;
+      console.log(getCarName());
+      console.log(carDetails.getName());
+    </script> -->
+    <!-- <script>
+      a();
+      function a() {
+        console.log("a");
+      }
+      b();
+      var b = function () {
+        console.log("b");
+      };
+      // console.log(b());
+    </script> -->
+    <!-- <script>
+      var variable = 10;
+      (() => {
+        console.log(variable);
+        variable = 20;
+        console.log(variable);
+      })();
+    </script> -->
+    <!-- <script>
+      (function () {
+        var a = (b = 3);
+      })();
+      console.log(b);
+      console.log(a);
+    </script> -->
+    <!-- <script>
+      var variable = 10;
+      (() => {
+        console.log(variable);
+        variable = 20;
+        console.log(variable);
+      })();
+      var variable = 30;
+      console.log(variable);
+    </script> -->
+    <!-- <script>
+      var a = [1, 2, 3];
+      a[10] = 99;
+      console.log(a[6]);
+    </script> -->
+    <!-- <script>
+      let profile = {
+        name: "Alex",
+      };
+      Object.seal(profile);
+      profile.age = 30;
+      profile.name = "John";
+      console.log(profile);
+    </script> -->
+    <!-- <script>
+      const confusing={
+        a:'one',
+        b:'two',
+        a:'three'
+      };
+      console.log(confusing);
+    </script> -->
+    <!-- <script>
+      let a = 0;
+      console.log(a++);
+      console.log(++a);
+      console.log(a);
+    </script> -->
+    <!-- <script>
+      let x = [1, 2, 3] + [4, 5, 6]; // array will converts into string
+      console.log(x);
+    </script> -->
+    <!-- <script>
+      <div onclick="console.log('div')">
+        <p onclick="console.log('paragraph')">click here</p>
+      </div>;
+    </script> -->
+    <!-- <script>
+      //15Th Dec
+      (function(){
+        if(true){
+          var first=10;
+          let second=20;
+        }
+        console.log(first);
+        console.log(second);
+      })();
+    </script> -->
+    <!-- <script>
+      funcD();
+      funcE();
+      function funcD(){
+        console.log('D');
+      }
+      let funcE=function(){
+        console.log('E');
+      };
+    </script> -->
+    <!-- <script>
+      function sayHi(){
+        console.log(name);
+        console.log(age);
+        var name='Vaibhav';
+        let age=30;
+      }
+      sayHi();
+    </script> -->
+    <!-- <script>
+      const shape = {
+        radius: 10,
+        diameter() {
+          return this.radius * 2;
+        },
+        perimeter: () => 2 * Math.PI * this.radius,
+      };
+      console.log(shape.diameter());
+      console.log(shape.perimeter());
+    </script> -->
+    <!-- <script>
+      let c = { greeting: "Hey!" };
+      let d;
+      d = c;
+      c.greeting = "Hello";
+      console.log(d.greeting);
+    </script> -->
+    <!-- <script>
+      let a = 3;
+      let b = new Number(3);
+      let c = 3;
+      console.log(a == b);
+      console.log(a === b);
+      console.log(b === c);
+    </script> -->
+    <!-- <script>
+      let greeting;
+      greetign={};
+      console.log(greetign);
+    </script> -->
+    <!-- <script>
+      function bark(){
+        console.log('Woof!');
+      }
+      bark.animal = 'dog';
+    </script> -->
+    <!-- <script>
+            function checkAge(data) {
+              if (data === { age: 18 }) {
+                console.log("You are an adult");
+              } else if (data == { age: 18 }) {
+                console.log("You are still an adult");
+              } else {
+                console.log("Hmm.. You dont have an age");
+              }
+            }
+            checkAge({ age: 18 });
+            //When testing equality, primitives are compared by their _value_, while objects are compared by their _reference_. JavaScript checks if the objects have a reference to the same location in memory.
+    </script> -->
+    <!-- <script>
+      function getAge(...args) {
+        console.log(typeof args);
+      }
+      getAge(21);
+      //The rest parameter (`...args`) lets us "collect" all remaining arguments into an array. An array is an object, so `typeof args` returns `"object"`
+    </script> -->
+    <!-- <script>
+      const sum = eval('10*10+5');
+      //`eval` evaluates codes that's passed as a string. If it's an expression, like in this case, it evaluates the expression.
+      //The expression is `10 * 10 + 5`. This returns the number `105`.
+    </script> -->
+    <!-- <script>
+      function sum(a,b){
+        return a+b;
+      }
+      console.log(sum(1,'2'));
+    </script> -->
+    <!-- <script>
+      //16th Dec
+      var num = 8;
+      var num = 10;
+      console.log(num);
+      //With the `var` keyword, you can declare multiple variables with the same name. The variable will then hold the latest value. You cannot do this with `let` or `const` since they're block-scoped.
+    </script> -->
+    <!-- <script>
+      function getAge() {
+        "use strict";
+        age = 21;
+        console.log(age);
+      }
+      getAge();
+      //With `"use strict"`, you can make sure that you don't accidentally declare global variables. We never declared the variable `age`, and since we use `"use strict"`,
+      //it will throw a reference error. If we didn't use `"use strict"`, it would have worked, since the property `age` would have gotten added to the global object.
+    </script> -->
+    <!-- <script>
+      const obj = { 1: "a", 2: "b", 3: "c" };
+      const set = new Set([1, 2, 3, 4, 5]);
+      console.log(obj.hasOwnProperty("1"));
+      console.log(obj.hasOwnProperty(1));
+      console.log(set.has("1"));
+      console.log(set.has(1));
+      //All object keys (excluding Symbols) are strings under the hood, even if you don't type it yourself as a string. This is why `obj.hasOwnProperty('1')` also returns true. It doesn't work that way for a set.
+      //There is no `'1'` in our set: `set.has('1')` returns `false`. It has the numeric type `1`, `set.has(1)` returns `true`
+    </script> -->
+    <!-- <script>
+      for(let i =1; i<5; i++){
+        if (i===3) continue;
+        console.log(i);
+      }
+      //The `continue` statement skips an iteration if a certain condition returns `true`.
+    </script> -->
+    <!-- <script>
+      function sayHi() {
+        return (() => 0)();
+      }
+      console.log(typeof sayHi());
+      //The `sayHi` function returns the returned value of the immediately invoked function expression (IIFE). This function returned `0`, which is type `"number"`.
+      //FYI: there are only 7 built-in types: `null`, `undefined`, `boolean`, `number`, `string`, `object`, and `symbol`. `"function"` is not a type, since functions are objects, it's of type `"object"`.
+    </script> -->
+    <!-- <script>
+      console.log([...'Suman']);
+      //A string is an iterable. The spread operator maps every character of an iterable to one element.
+    </script> -->
+    <!-- <script>
+      let person = { name: "Suman" };
+      const members = [person];
+      person = null;
+      console.log(members);
+      console.log(person);
+      //First, we declare a variable `person` with the value of an object that has a `name` property.
+      //Then, we declare a variable called `members`. We set the first element of that array equal to the value of the `person` variable. Objects interact by _reference_ when setting them equal to each other. When you assign a reference from one variable to another, you make a _copy_ of that reference. (note that they don't have the _same_ reference!)
+      //Then, we set the variable `person` equal to `null`.
+    </script> -->
+    <!-- <script>
+      const person = {
+        name: "Suman",
+        age: "21",
+      };
+      for (const item in person) {
+        console.log(item);
+      }
+      //With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
+    </script> -->
+    <!-- <script>
+      function Car(){
+        this.make = 'Lamborghini';
+        return {make: 'Maserarati'};
+      }
+      const myCar=new Car();
+      console.log(myCar.make);
+      //With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
+    </script> -->
+    <!-- <script>
+      function getInfo(member, year) {
+        member.name = "Lydia";
+        year = "1998";
+      }
+      const person = { name: "Sarah" };
+      const birthyear = "1997";
+      getInfo(person, birthyear);
+      console.log(person, birthyear);
+      //Arguments are passed by value, unless their value is an object, then they're passed by reference. birthYear is passed by value, since it's a string, not an object. When we pass arguments by value, a copy of that value is created (see question 46). The variable birthYear has a reference to the value "1997". The argument year also has a reference to the value "1997", but it's not the same value as birthYear has a reference to. When we update the value of year by setting year equal to "1998", we are only updating the value of year. birthYear is still equal to "1997". The value of person is an object. The argument member has a (copied) reference to the same object. When we modify a property of the object member has a reference to, the value of person will also be modified, since they both have a reference to the same object. person's name property is now equal to the value "Lydia"
+    </script> -->
+    <!-- <script>
+      var data=[1, 2, 3].map((num) => {
+        if (typeof num === "number") return;
+        return num * 2;
+      });
+      console.log(data);
+      //When mapping over the array, the value of `num` is equal to the element it’s currently looping over. In this case, the elements are numbers, so the condition of the if statement `typeof num === "number"` returns `true`. The map function creates a new array and inserts the values returned from the function. However, we don’t return a value. When we don’t return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`.
+    </script> -->
+    <!-- <script>
+      (() => {
+        let x = (y = 10);
+      })();
+      console.log(typeof x);
+      console.log(typeof y);
+      //let x = (y = 10); is actually shorthand for: javascript y = 10; let x = y; When we set y equal to 10, we actually add a property y to the global object (window in browser, global in Node). In a browser, window.y is now equal to 10. Then, we declare a variable x with the value of y, which is 10. Variables declared with the let keyword are block scoped, they are only defined within the block they're declared in; the immediately invoked function expression (IIFE) in this case. When we use the typeof operator, the operand x is not defined: we are trying to access x outside of the block it's declared in. This means that x is not defined. Values who haven't been assigned a value or declared are of type "undefined". console.log(typeof x) returns "undefined". However, we created a global variable y when setting y equal to 10. This value is accessible anywhere in our code. y is defined, and holds a value of type "number". console.log(typeof y) returns "number"
+    </script> -->
+    <!-- <script>
+      const set = new Set([1, 1, 2, 3, 4]);
+      console.log(set);
+      //The Set object is a collection of unique values: a value can only occur once in a set. We passed the iterable [1, 1, 2, 3, 4] with a duplicate value 1. Since we cannot have two of the same values in a set, one of them is removed. This results in {1, 2, 3, 4}.
+    </script> -->
+    <!-- <script>
+      const name = "Lydia";
+      age = 21;
+      console.log(delete name);
+      console.log(delete age);
+      console.log(name);
+      console.log(age);
+      //The delete operator returns a boolean value: true on a successful deletion, else it'll return false. However, variables declared with the var, const or let keyword cannot be deleted using the delete operator. The name variable was declared with a const keyword, so its deletion is not successful: false is returned. When we set age equal to 21, we actually added a property called age to the global object. You can successfully delete properties from objects this way, also the global object, so delete age returns true.
+    </script> -->
+    <!-- <script>
+      const numbers = [1,2,3,4,5];
+      const [y]=numbers;
+      console.log(y);
+      //We can unpack values from arrays or properties from objects through destructuring. For example: javascript [a, b] = [1, 2];The value of a is now 1, and the value of b is now 2. What we actually did in the question, is: javascript [y] = [1, 2, 3, 4, 5];This means that the value of y is equal to the first value in the array, which is the number 1. When we log y, 1 is returned.
+    </script> -->
+    <!-- <script>
+      const user = { name: "Lydia", age: 21 };
+      const admin = { admin: true, ...user };
+      console.log(admin);
+      //It's possible to combine objects using the spread operator .... It lets you create copies of the key/value pairs of one object, and add them to another object. In this case, we create copies of the user object, and add them to the admin object. The admin object now contains the copied key/value pairs, which results in { admin: true, name: "Lydia", age: 21 }.
+    </script> -->
+    <!-- <script>
+      let num = 10;
+      const increaseNumber = () => num++;
+      const increasePassedNumber = (number) => number++;
+      const num1 = increaseNumber();
+      const num2 = increasePassedNumber(num1);
+      console.log(num1);
+      console.log(num2);
+      //The unary operator ++ first returns the value of the operand, then increments the value of the operand. The value of num1 is 10, since the increaseNumber function first returns the value of num, which is 10, and only increments the value of num afterwards. num2 is 10, since we passed num1 to the increasePassedNumber. number is equal to 10(the value of num1. Again, the unary operator ++ first returns the value of the operand, then increments the value of the operand. The value of number is 10, so num2 is equal to 10.
+    </script> -->
+    <!-- <script>
+      //index.js
+      console.log("running index.js");
+      import { sum } from "./sum.js";
+      console.log(sum(1, 2));
+
+      //sum.js
+      console.log("running sum.js");
+      export const sum = (a, b) => a + b;
+
+      // output: running sum.js, running index.js, 3
+      //With the import keyword, all imported modules are pre-parsed. This means that the imported modules get run first, the code in the file which imports the module gets executed after. This is a difference between require() in CommonJS and import! With require(), you can load dependencies on demand while the code is being run. If we would have used require instead of import, running index.js, running sum.js, 3 would have been logged to the console.
+    </script> -->
+    <!-- <script>
+      const value = { number: 10 };
+      const multiply = (x = { ...value }) => {
+        console.log((x.number *= 2));
+      };
+      multiply();
+      multiply();
+      multiply(value);
+      multiply(value);
+      // In ES6, we can initialize parameters with a default value. The value of the parameter will be the default value, if no other value has been passed to the function, or if the value of the parameter is "undefined". In this case, we spread the properties of the value object into a new object, so x has the default value of { number: 10 }. The default argument is evaluated at call time! Every time we call the function, a new object is created. We invoke the multiply function the first two times without passing a value: x has the default value of { number: 10 }. We then log the multiplied value of that number, which is 20. The third time we invoke multiply, we do pass an argument: the object called value. The *= operator is actually shorthand for x.number = x.number * 2: we modify the value of x.number, and log the multiplied value 20. The fourth time, we pass the value object again. x.number was previously modified to 20, so x.number *= 2 logs 40.
+    </script> -->
+    <!-- <script>
+      console.log(Number(2) === Number(2));
+      console.log(Boolean(false) === Boolean (false));
+      console.log(Symbol('foo') === Symbol('foo'));
+      //Every Symbol is entirely unique. The purpose of the argument passed to the Symbol is to give the Symbol a description. The value of the Symbol is not dependent on the passed argument. As we test equality, we are creating two entirely new symbols: the first Symbol('foo'), and the second Symbol('foo'). These two values are unique and not equal to each other, Symbol('foo') === Symbol('foo') returns false.
+    </script> -->
+    <!-- <script>
+      const name ='Lydia Hallie';
+      console.log(name.padStart(13));
+      console.log(name.padStart(2));
+      //With the padStart method, we can add padding to the beginning of a string. The value passed to this method is the total length of the string together with the padding. The string "Lydia Hallie" has a length of 12. name.padStart(13) inserts 1 space at the start of the string, because 12 + 1 is 13. If the argument passed to the padStart method is smaller than the length of the array, no padding will be added.
+    </script> -->
+    <!-- <script>
+      console.log(String.raw`Hello\nworld`);
+      //String.raw returns a string where the escapes (\n, \v, \t etc.) are ignored! Backslashes can be an issue since you could end up with something like: const path = `C:\Documents\Projects\table.html` Which would result in: "C:DocumentsProjects able.html" With String.raw, it would simply ignore the escape and print: C:\Documents\Projects\table.html In this case, the string is Hello\nworld, which gets logged.
+    </script> -->
+    <!-- <script>
+      function addToList(item, list){
+        return list.push(item);
+      }
+      const result = addToList('apple',['banana']);
+      console.log(result);
+      //The .push() method returns the length of the new array! Previously, the array contained one element (the string "banana") and had a length of 1. After adding the string "apple" to the array, the array contains two elements, and has a length of 2. This gets returned from the addToList function. The push method modifies the original array. If you wanted to return the array from the function rather than the length of the array, you should have returned list after pushing item to it.
+    </script> -->
+  </body>
+</html>
