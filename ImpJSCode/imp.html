@@ -181,5 +181,85 @@
         }
       });
     </script> -->
+    <!-- <script>
+      const user = {
+        name: "Raj",
+        location: {
+          city: "NY",
+          state: "NY",
+        },
+      };
+      const copy = { ...user };
+      copy.location.city = "Albany";
+      copy.name = "suman";
+      console.log("original: ", user.location);
+      console.log("copy:", copy.location);
+      console.log("original: ", user.name);
+      console.log("copy:", copy.name);
+    </script> -->
+    <!-- <script>
+      var number = 10;
+      var display = function () {
+        console.log(number);
+        var number = 20;
+      };
+      display();
+    </script> -->
+    <!-- <script>
+      const number = 1;
+      const result = (function () {
+        delete number;
+        return number;
+      })();
+      console.log(result);
+    </script> -->
+    <!-- <script>
+      const number = 1;
+      const result = (function (number) {
+        delete number;
+        return number;
+      })(10);
+      console.log(result);
+    </script> -->
+    <!-- <script>
+      function display() {
+        var a = (b = 10);
+      }
+      display();
+      console.log("b", typeof b === "undefined");
+      console.log("a", typeof a === "undefined");
+    </script> -->
+    <!-- <script>
+      "use strict";
+      function display() {
+        var a = (b = 10);
+      }
+      display();
+      console.log("b", typeof b === "undefined");
+      console.log("a", typeof a === "undefined");
+    </script> -->
+    <!-- <script>
+      // JS code to print 1st repeating element in an array
+      var rep=[];
+      function repeatChar() {
+        var str='sumann';
+        for (var i = 0; i <= str.length; i++) {
+          for (var j = i + 1; j <= str.length; j++) {
+            if (str[j] == str[i]) {
+              rep.push(str[i]);
+            }
+          }
+        }
+      }
+      repeatChar();
+      console.log(rep[0]);
+    </script> -->
+    <script>
+      let myArray = [2, 5, 6, 6, 8, 6, 7, 20, 20, 3];
+      let duplicateArr = myArray.filter((ele, index) => {
+        return myArray.indexOf(ele) !== index;
+      });
+      console.log(duplicateArr);
+    </script>
   </body>
 </html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Promises from code step by step</h1>
+  </head>
+  <body>
+    <!-- <script>
+      let data = 1;
+      console.log(data);
+      data = 2;
+      setTimeout(() => {
+        console.log("timer",data);
+      },2000);
+      data=3;
+      console.log("last",data);
+    </script> -->
+    <!-- <script>
+      let data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject({name:"Suman",age:25});
+        },2000);
+      });
+      console.log(data);
+      data.then((i) => {
+        console.log(i);
+      }).catch((e)=>{
+        console.log("Catch block",e);
+      });
+      console.log("Hello")
+    </script> -->
+    <!-- <script>
+      // API calling in promise
+      let data = fetch("https://jsonplaceholder.typicode.com/users");
+      console.log(data);
+      data
+        .then((i) => {
+          return i.json();
+        })
+        .then((j) => {
+          console.log(j);
+        });
+    </script> -->
+    <!-- <script>
+      //Promise chaining
+      let data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(10);
+        }, 2000);
+      });
+      data
+        .then((item) => {
+          console.log("1st", item);
+          return item * 10;
+        })
+        .then((item) => {
+          console.log("2nd", item);
+          return item * 10;
+        })
+        .then((item) => {
+          console.log("3rd", item);
+        })
+        .catch((err) => {
+          console.log("catch block", err);
+        });
+    </script> -->
+    <!-- <script>
+      //Promise with finally() method
+      let data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(10);
+        }, 2000);
+      });
+      data.finally((item) => {
+        console.log("finally block", item);
+      });
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch block", err);
+        });
+    </script> -->
+    <!-- <script>
+      //Error handling with promises
+      let data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // reject(new Error("data issue"));
+          // throw new Error("data issue");
+          resolve("done")
+        }, 2000);
+      });
+      data
+        .then((item) => {
+          throw new Error("data issue");
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch block", err);
+        });
+    </script> -->
+    <!-- <script>
+      // Promises.all
+      let data=Promise.all([
+        new Promise((resolve,reject)=>{
+          setTimeout(()=>{
+            resolve("2 sec")
+          },2000)
+        }),
+        new Promise((resolve,reject)=>{
+          setTimeout(()=>{
+            reject("1 sec")
+          },1000)
+        }),
+        new Promise((resolve,reject)=>{
+          setTimeout(()=>{
+            resolve("3 sec")
+          },3000)
+        }),
+      ])
+      data.then((item)=>{
+        console.log("then block",item);
+      }).catch((err)=>{
+        console.log("catch error",err);
+      })
+    </script> -->
+    <!-- <script>
+      // Promises.allSettled
+      let data = Promise.allSettled([
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("2 sec");
+          }, 2000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // resolve("1 sec")
+            reject("1 sec");
+          }, 1000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("3 sec");
+          }, 3000);
+        }),
+      ]);
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch error", err);
+        });
+    </script> -->
+    <!-- <script>
+      // Promises.race
+      let data = Promise.race([
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("2 sec");
+          }, 2000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // resolve("1 sec")
+            reject("1 sec");
+          }, 1000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("3 sec");
+          }, 3000);
+        }),
+      ]);
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch error", err);
+        });
+    </script> -->
+    <script>
+      let data=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          resolve("2 sec")
+          reject("reject")
+        },2000)
+      })
+      data.then((item)=>{
+        console.log("then block",item);
+      }).catch((err)=>{
+        console.log("catch block",err);
+      })
+    </script>
+  </body>
+</html>
