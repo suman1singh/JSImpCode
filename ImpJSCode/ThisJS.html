@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- <script>
+      //Alone, this refers to the global object
+      var x = this;
+      alert(x);
+    </script> -->
+    <!-- <script>
+      //In a method, this refers to the owner object
+      var x = {
+        firstName: "Suman",
+        lastName: "Singh",
+        fullName: function () {
+          console.log(this);
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      document.write(x.fullName());
+    </script> -->
+    <!-- In an event, this refers to the element that received the event. -->
+    <!-- <button onclick="this.style.background='pink'">Click me to hide</button> -->
+    <!-- <script>
+      function remove(ele) {
+        ele.style.display = "none";
+      }
+    </script>
+    <button onclick="remove(this)">Click</button> -->
+    <!-- <script>
+        console.log(this);
+    </script> -->
+    <!-- <script>
+        //For all regular function calls, this points to window object
+      function thisCall() {
+        console.log(this);
+      }
+      thisCall();
+    </script> -->
+  </body>
+</html>

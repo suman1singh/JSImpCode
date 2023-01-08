@@ -145,7 +145,7 @@
       console.log(a.slice(2, 4));
       //The slice() function in Javascript slices an array within the given start and end indexes and then returns the values lying in those ranges. The Indexing done is 0 based indexing.
     </script> -->
-    <script>
+    <!-- <script>
       const set = new Set();
       set.add(5);
       set.add("Hello");
@@ -153,12 +153,16 @@
       for (let item of set) {
         console.log(item + 6);
       }
-    </script>
+      console.log({ name1: "Javascripta" } + 6);
+      //First 2 numbers are added as integers, followed by string concatenation. Finally, since both are not of string type, JS stringifies both the object and the number and concatenates them.
+      //When an object is stringified it is read as [object Object] and then concatenated.
+    </script> -->
     <!-- <script>
       const example = ({ a, b, c }) => {
         console.log(a, b, c);
       };
       example(0, 1, 2);
+      //Since we are passing individual numbers rather than a single object to the function, Javascript will initialize the object parameters with their default value of undefined.
     </script> -->
     <!-- <script>
       // 14th Dec
@@ -168,6 +172,7 @@
       }
       test(arr);
       console.log(arr);
+      //Array, which itself is derived from System. Object. This means that all arrays are always reference types which are allocated on the managed heap, and your app's variable contains a reference to the array and not the array itself.
     </script> -->
     <!-- <script>
       const carDetails = {
@@ -180,6 +185,9 @@
       var getCarName = carDetails.getName;
       console.log(getCarName());
       console.log(carDetails.getName());
+      // The question's subject is "Context"(this).
+      // In Javascript, this is the object that is called to the function.
+      // When we do var carDetails.getName; we store the function in the global scope, So this will be Window, and because we set In the global scope (window). the output will be "Swift" (same as window.name). This is Javascript's default behavior. If you want to change this behavior, you can use: bind, apply, call, and arrow functions.
     </script> -->
     <!-- <script>
       a();
@@ -191,6 +199,9 @@
         console.log("b");
       };
       // console.log(b());
+      //This is a very weried part of JavaScript - functions are hoisted as well. In hoisting var is also hoisted, but it doesn't matter what will be after the operator.
+      // In the hoisting stage, var value will always be undefined. So when we do b(), it's the same as undefined().
+      // and output of undefined() is TypeError.
     </script> -->
     <!-- <script>
       var variable = 10;
@@ -199,6 +210,7 @@
         variable = 20;
         console.log(variable);
       })();
+      //The answer to this one pretty simple, 10 and 20 this is because of "closures" as the first console log gets its value from the variable described outside its scope.
     </script> -->
     <!-- <script>
       (function () {
@@ -206,6 +218,10 @@
       })();
       console.log(b);
       console.log(a);
+      //Since, both "a" and "b" are defined inside an IIFE, they shouldn't be available outside. But in fact var a=b=3;is shorthand for
+      // var a=b;
+      // b=3;
+      // so, it means that "b" becomes global and it will result in 3, but "a" will give reference error
     </script> -->
     <!-- <script>
       var variable = 10;
@@ -216,11 +232,14 @@
       })();
       var variable = 30;
       console.log(variable);
+      //because of something called hoisting. javascript leaves the variable assignment (variable = 20 ) as is and takes the variable declaration (var variable; ) to the top of the "function scope". hence the variable is never initialized before the first console log.
     </script> -->
     <!-- <script>
       var a = [1, 2, 3];
       a[10] = 99;
       console.log(a[6]);
+      //When we give the statement a[10] =99; the JavaScript engine will make array slots 3 through 9 be "empty slots."
+      // So, a[6] will give undefined.
     </script> -->
     <!-- <script>
       let profile = {
@@ -230,6 +249,8 @@
       profile.age = 30;
       profile.name = "John";
       console.log(profile);
+      //The Object.seal() method seals an object. Sealing an object prevents extensions and makes existing properties non-configurable. A sealed object has a fixed set of properties: new properties cannot be added, existing properties cannot be removed,
+      //their enumerability and configurability cannot be changed, and its prototype cannot be re-assigned. Values of existing properties can still be changed as long as they are writable. seal() returns the same object that was passed in.
     </script> -->
     <!-- <script>
       const confusing={
@@ -238,21 +259,30 @@
         a:'three'
       };
       console.log(confusing);
+      //If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
     </script> -->
     <!-- <script>
       let a = 0;
       console.log(a++);
       console.log(++a);
       console.log(a);
+      //The postfix unary operator(a++)
+      // First it returns 0 and after that increment a by 1 means now a=1.
+      // The prefix unary operator(++a)
+      // First increment by 1 and then return means now a=2
     </script> -->
     <!-- <script>
       let x = [1, 2, 3] + [4, 5, 6]; // array will converts into string
       console.log(x);
+      //It will be so, because the plus(+) operator works only on Numbers and Strings. So, in above question it will try to convert the arrays first.
+      //Since, they cannot be converted into Number, so they will be converted into a Strings like "1,2,3" + "4,5,6". And this string concatenation will produce "1,2,34,5,6"
     </script> -->
     <!-- <script>
       <div onclick="console.log('div')">
         <p onclick="console.log('paragraph')">click here</p>
       </div>;
+      //If we click p, we see two logs: paragraph and div. During event propagation, there are 3 phases: capturing, target, and bubbling.
+      //By default, event handlers are executed in the bubbling phase (unless you set useCapture to true). It goes from the deepest nested element outwards
     </script> -->
     <!-- <script>
       //15Th Dec
@@ -264,6 +294,7 @@
         console.log(first);
         console.log(second);
       })();
+      //The variable var was since the beginning of JS but the variables let and const were introduced recently in E56. var is function scoped, whereas let and const are block scoped. In our code, It is having an IIFE and inside it there is an if stement. The if statement creates a scope for let variable but var does have black scope so, it can be accessed outside it also.
     </script> -->
     <!-- <script>
       funcD();
@@ -274,15 +305,20 @@
       let funcE=function(){
         console.log('E');
       };
+      //Function declaration is defining functions as in most languages, but function expression is assigning an anonymous function to an variable. We can call a function declaration even before defining it but same is not true for function expression and it will give reference error.
     </script> -->
     <!-- <script>
-      function sayHi(){
+      function sayHi() {
         console.log(name);
         console.log(age);
-        var name='Vaibhav';
-        let age=30;
+        var name = "Vaibhav";
+        let age = 30;
       }
       sayHi();
+      //Within the function, we first declare the "name" variable with the "var" keyword.
+      // This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of "undefined", until we actually get to the line where we define the variable.
+      // We haven't defined the variable yet on the line where we try to log the 'name' variable,
+      // so it still holds the value of "undefined". Variables with the 'let' keyword (and const") are hoisted, but unlike "var", don't get initialized.
     </script> -->
     <!-- <script>
       const shape = {
@@ -294,6 +330,9 @@
       };
       console.log(shape.diameter());
       console.log(shape.perimeter());
+      //Note that the value of "diameter" is a regular function, whereas the value of perimeter is an arrow function. With arrow functions, the "this keyword refers to its current surrounding scope, unlike regular functions!
+      // This means that when we call perimeter, it doesn't refer to the shape object, but to its surrounding scope (window for example). There is no value 'radius' on that object,
+      // which returns "NaN".
     </script> -->
     <!-- <script>
       let c = { greeting: "Hey!" };
@@ -301,6 +340,7 @@
       d = c;
       c.greeting = "Hello";
       console.log(d.greeting);
+      //In JavaScript, all objects interact by reference when setting them equal to each other. First, variable 'c' holds a value to an object. Later, we assign 'd' with the same reference that 'c' has to the object. When you change one object, you change all of them.
     </script> -->
     <!-- <script>
       let a = 3;
@@ -309,17 +349,20 @@
       console.log(a == b);
       console.log(a === b);
       console.log(b === c);
+      //'new Number()' is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object. When we use the '==' operaror, it only checks whether It has the same value. They both have the value of 3, so it returns true. However, when we use the '===' operator, both value and type should be the same. 'new Number()' is not a number, it's an "object". Both return false."
     </script> -->
     <!-- <script>
       let greeting;
       greetign={};
       console.log(greetign);
+      //It logs the object, because we just created an empty object on the global object! When we mistyped 'greeting" as "greetign", the JS interpreter actually saw this as "global.greetign ()" (or "window.greetign () in a browser). In order to avoid this, we can use "use strict". This makes sure that you have declared a variable before setting it equal to anything.
     </script> -->
     <!-- <script>
       function bark(){
         console.log('Woof!');
       }
       bark.animal = 'dog';
+      //This is possible in JavaScript, because functions are objects! (Everything besides primitive types are objects) A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with properties. This property is invocable.
     </script> -->
     <!-- <script>
             function checkAge(data) {
@@ -537,6 +580,29 @@
       const result = addToList('apple',['banana']);
       console.log(result);
       //The .push() method returns the length of the new array! Previously, the array contained one element (the string "banana") and had a length of 1. After adding the string "apple" to the array, the array contains two elements, and has a length of 2. This gets returned from the addToList function. The push method modifies the original array. If you wanted to return the array from the function rather than the length of the array, you should have returned list after pushing item to it.
+    </script> -->
+    <!-- <script>
+      var y = 1;
+      if (function f() {}) {
+        y += typeof f;
+      }
+      console.log(y);
+    </script> -->
+    <!-- <script>
+      var p = 1;
+      if (1) {
+        function fun() {}
+        p += typeof fun;
+      }
+      console.log(p);
+    </script> -->
+    <!-- <script>
+      var Employee = {
+        company: "xyz",
+      };
+      var emp1 = Object.create(Employee);
+      delete emp1.company;
+      console.log(emp1.company);
     </script> -->
   </body>
 </html>
