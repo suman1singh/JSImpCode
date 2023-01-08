@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- <script>
+      try {
+        let x = 10;
+        console.log(x);
+      } catch (err) {
+        console.log(err);
+      }
+    </script> -->
+    <!-- <script>
+      try {
+        let x = 10;
+        callFun();
+        console.log(x);
+      } catch (err) {
+        console.log("Catch called" + err);
+      }
+    </script> -->
+    <script>
+      try {
+        let x = 110;
+        if (x == 10) throw "Not valid";
+        console.log(x);
+      } catch (err) {
+        console.log("Catch called " + err);
+      } finally {
+        console.log("I am called");
+      }
+    </script>
+  </body>
+</html>

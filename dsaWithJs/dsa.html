@@ -154,8 +154,485 @@
       console.log(data);
       console.log(data.reverse());
     </script> -->
+    <!-- Video 11: Recursion data structure -->
+    <!-- <script>
+      function recFunc(x){
+        console.log(x);
+        if(x<10){
+          recFunc(x+1);
+        }
+      }
+      let data=0;
+      recFunc(data);
+    </script> -->
+    <!-- <script>
+      // finding factorial using recursion
+      function factorial(x) {
+        if (x == 0) {
+          return 1;
+        } else {
+          return x * factorial(x - 1);
+        }
+      }
+      const num = prompt("Enter a positive number: ");
+
+      if (num >= 0) {
+        const result = factorial(num);
+        console.log(`The factorial of ${num} is ${result}`);
+      } else {
+        console.log("Enter a positive number.");
+      }
+    </script> -->
+    <!-- <script>
+      //Video 12: Indirect recursion
+      let money = 100;
+      let totalApple = 0;
+      function buyApple(x) {
+        if (x > 0) {
+          console.log(`I have ${x} remaining and bought ${totalApple} apples`);
+          buyMore(x);
+        } else {
+          console.log("I don't have more money", totalApple);
+        }
+      }
+      function buyMore(x) {
+        totalApple++;
+        buyApple(x - 10);
+        // console.log("buy more", x);
+      }
+      buyApple(money);
+    </script> -->
+    <!-- <script>
+      function test(x) {
+        if (x > 0) {
+          test(x - 1);
+        }
+        console.log(x);
+      }
+      let data = 5;
+      test(data);
+    </script> -->
+    <!-- Video 13: Head and Tail recursion -->
+    <!-- <script>
+      function colors(){
+        let data=20;
+        console.log(data);
+        if(true){
+          console.log(data*20);
+        }else{
+          console.log(data/20);
+        }
+      }
+      function days(){
+        colors();
+      }
+      function fruits(){
+        days();
+      }
+      function topFunction(){
+        fruits();
+      }
+      topFunction();
+    </script> -->
+    <!-- <script>
+      function test(x) {
+        console.log(x);
+        if (x > 0) {
+          test(x - 1);
+        }
+        // console.log(x);
+      }
+      let data = 5;
+      test(data);
+    </script> -->
+    <!-- <script>
+      //Video 14: Array reversing with string
+      let arr = [2, 3, 4, 8, 9, 6];
+      function revArr(arr, start, end) {
+        // console.log(arr);
+        if (start < end) {
+          let temp = arr[start];
+          arr[start] = arr[end];
+          arr[end] = temp;
+          revArr(arr, start + 1, end - 1);
+        }
+      }
+      revArr(arr, 0, arr.length - 1);
+      console.log(arr);
+    </script> -->
+    <!-- <script>
+      //Video15: Push and pop using stack
+      let arr = [];
+      let size = arr.length;
+      let max = 5;
+      function pushEl(ele) {
+        if (size >= max) {
+          alert("Stack is full and you can't add " + ele);
+        } else {
+          arr[size] = ele;
+          size++;
+        }
+      }
+      function popEl(ele){
+         if(size>0){
+          size--;
+          arr.length=size;
+         }else{
+          alert("stack is already empty")
+         }
+      }
+      pushEl(20);
+      pushEl(201);
+      pushEl(30);
+      pushEl(40);
+      pushEl(501);
+      // pushEl(502);
+      // pushEl(503);
+      // pushEl(504);
+      popEl();
+      popEl();
+      popEl();
+      popEl();
+      popEl();
+      popEl();
+      console.log(arr);
+    </script> -->
+    <!-- <script>
+      //Video:16 Stack with input and Buttons
+      let arr = [];
+      let size = arr.length;
+      let max = 5;
+      function pushEl() {
+        let ele = document.getElementById("newEl").value;
+        if (size >= max) {
+          alert("Stack is full and you can't add " + ele);
+        } else {
+          arr[size] = ele;
+          size++;
+          console.log("element added")
+        }
+        document.getElementById("newEl").value="";
+      }
+      function popEl() {
+        if (size > 0) {
+          size--;
+          arr.length = size;
+        } else {
+          alert("stack is already empty");
+        }
+      }
+      function display() {
+        for (let i = 0; i <= size - 1; i++) {
+          console.log("stack element index",i,"and value is: ",arr[i]);
+        }
+      }
+    </script>
+    <input type="text" placeholder="Enter stack element" id="newEl" />
+    <button onclick="pushEl()">Add element</button><br />
+    <button onclick="popEl()">Remove element</button><br />
+    <button onclick="display()">Display all element of stack</button> -->
+    <!-- <script>
+      //Video:17 Reverse string with stack
+      let data = [];
+      let currentSize = data.length;
+      function push(newVal) {
+        data[currentSize] = newVal;
+        currentSize += 1;
+      }
+      function pop() {
+        lastRemovedItem = data[currentSize - 1];
+        currentSize -= 1;
+        data.length = currentSize;
+        return lastRemovedItem;
+      }
+      function reverseStr(item) {
+        for (let i = 0; i < item.length; i++) {
+          push(item[i]);
+        }
+        for (let i = 0; i < item.length; i++) {
+          item[i] = pop();
+        }
+      }
+      let str = "anil";
+      str = str.split("");
+      reverseStr(str);
+      console.warn(str.join(""));
+    </script> -->
+    <!-- <script>
+      //Video:18 stack with class
+      class Stack {
+        item = [];
+        currentSize;
+        maxSize;
+        constructor(size) {
+          this.maxSize = size;
+          this.currentSize = this.item.length;
+        }
+        push(newVal) {
+          if (this.currentSize >= this.maxSize) {
+            alert("Stack is full");
+          } else {
+            this.item[this.currentSize] = newVal;
+            this.currentSize++;
+          }
+        }
+        pop() {
+          if (this.currentSize > 0) {
+            this.currentSize--;
+            this.item.length = this.currentSize;
+          } else {
+            alert("Stack is already empty");
+          }
+        }
+        display() {
+          console.log(this.item);
+        }
+      }
+      st1 = new Stack(5);
+      // st1.push(20);
+      // st1.display();
+    </script> -->
+    <!-- <script>
+      //Video:19 Queue with js
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+      function enqueue(newVal) {
+        if (currentSize >= maxSize) {
+          alert("Queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+      }
+      function dequeue() {
+        if (currentSize > 0) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          currentSize--;
+          queue.length = currentSize;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+      function display() {
+        console.log(queue);
+      }
+      // enqueue(10);
+      // display();
+      enqueue(20);
+      enqueue(21);
+      enqueue(22);
+      enqueue(23);
+    </script> -->
+    <!-- <script>
+      //Video:20 More operations & Input in queue
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+      function enqueue() {
+        let newVal = document.getElementById("qu1").value;
+        if (currentSize >= maxSize) {
+          alert("Queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+      }
+      function dequeue() {
+        if (!isEmpty()) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          currentSize--;
+          queue.length = currentSize;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+      function display() {
+        console.log(queue);
+      }
+      function front() {
+        if (!isEmpty()) {
+          console.log(queue[0]);
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+      function rear() {
+        if (!isEmpty()) {
+          console.log(queue[currentSize - 1]);
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // enqueue(20);
+      // enqueue(21);
+      // enqueue(22);
+    </script>
+    <input placeholder="enter element" id="qu1" />
+    <button onclick="enqueue()">Add element</button><br/><br/>
+    <button onclick="dequeue()">Remove element</button><br/><br/>
+    <button onclick="display()">Show element</button><br/><br/>
+    <button onclick="front()">Get front</button><br/><br/>
+    <button onclick="rear()">Get rear</button> -->
+    <!-- <script>
+      //Video:21 Circular queue in js
+      class Queue {
+        constructor(size) {
+          this.max = size;
+          this.items = new Array(size);
+          this.currentSize = 0;
+          this.rear = -1;
+          this.front = -1;
+        }
+        enqueue(val) {
+          if (this.currentSize != this.max) {
+            if (this.rear === this.max - 1) {
+              this.rear = 0;
+            } else {
+              this.rear++;
+            }
+            this.items[this.rear] = val;
+            this.currentSize++;
+            if (this.front == -1) {
+              this.front = this.rear;
+            }
+          }
+        }
+        dequeue() {
+          if (this.currentSize != 0) {
+            this.items[this.front] = null;
+            if (this.front == this.max - 1) {
+              this.front = 0;
+            } else {
+              this.front++;
+            }
+            this.currentSize--;
+          } else {
+            this.front = -1;
+            this.rear = -1;
+            alert("Queue is Empty");
+          }
+        }
+      }
+      let queue = new Queue(5);
+    </script> -->
+    <!-- <script>
+      //Video:22 Linear Search algo in DSA
+      function searchEl() {
+        let data = [5, 8, 6, 7, 6, 72, 26, 48];
+        let find = document.getElementById("el").value;
+        let pos;
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] == find) {
+            pos = i;
+            break;
+          }
+        }
+        console.log(pos);
+        if (!pos) {
+          alert("element not found");
+        } else {
+          alert("Element position is" + pos);
+        }
+      }
+    </script>
+    <input type="number" id="el" placeholder="Enter element" />
+    <button onClick="searchEl()">search element</button> -->
+    <!-- <script>
+      //Video:23 Binary search with iterative approach
+      let data = [5, 9, 13, 17];
+      let find = 9;
+      let start = 0;
+      let end = data.length - 1;
+      let position = undefined;
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        // console.log(data[mid]);
+        if (data[mid] === find) {
+          position = mid;
+          break;
+        } else if (data[mid] < find) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+      }
+      console.log(position);
+    </script> -->
+    <!-- <script>
+      //Video:24 Binary search with Recursive approach
+      let data = [10, 15, 18, 34, 67, 85, 100];
+      let start = 0;
+      let end = data.length - 1;
+      let find = 34;
+      let position = undefined;
+      function recursiveBinary(data, start, end) {
+        mid = Math.floor((start + end) / 2);
+        if (data[mid] === find) {
+          position = mid;
+          return true;
+        } else if (data[mid] < find) {
+          recursiveBinary(data, mid + 1, end);
+        } else {
+          recursiveBinary(data, start, mid - 1);
+        }
+      }
+      recursiveBinary(data, start, end);
+      console.log(position);
+    </script> -->
+    <!-- <script>
+      //Video:25 Selection sort with javascript
+      let items = [20, 12, 53, 3,0,85,759,75369];
+      function selectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] < data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+      selectionSort(items);
+      console.log(items);
+    </script> -->
+    <!-- <script>
+      //Video:26 Selection sort with javascript (descending)
+      let items = [20, 12, 53, 3, 0, 85, 759, 75369];
+      function selectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] > data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+      selectionSort(items);
+      console.log(items);
+    </script> -->
     <script>
-      //Video 11: Recursion data structure
+       //Video:27 Insertion sort
     </script>
   </body>
 </html>

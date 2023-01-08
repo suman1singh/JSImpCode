@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- <script>
+      // How to make array empty
+      var arr = [1, 2, 3, 6, 5, 4];
+      arr.length = 0;
+      console.log(arr);
+    </script> -->
+    <!-- <script>
+      // Another way
+      var arr = [1, 2, 3, 6, 5, 4];
+      arr.splice(0, arr.length);
+      console.log(arr);
+    </script> -->
+    <!-- <script>
+      //Video1: Print duplicate element in an array
+      let arr = [2, 0.5, 5, 4, 8, 6, 3, 2, 5, 6];
+      let dupArr = arr.filter((ele, index) => arr.indexOf(ele) !== index);
+      console.log(dupArr);
+    </script> -->
+    <!-- <script>
+      //Video2: Finding max and min value in an array
+      const arr = [5, 6, 8, 61, 75];
+      let max = arr.reduce((pre, cur) => {
+        return pre > cur ? pre : cur;
+      });
+      let min = arr.reduce((pre, cur) => {
+        return pre < cur ? pre : cur;
+      });
+      console.log("max:", max, "min:", min);
+    </script> -->
+    <!-- <script>
+      //Video4: find largest value and remove largest value
+      const myArr = [5, 6, 7, 8, 6, 12];
+      let largest = Math.max(...myArr);
+      let index = myArr.indexOf(largest);
+      console.log("largest Value:",largest,"and their index:",index);
+      myArr.splice(index, 1);
+      let Secondlargest = Math.max(...myArr);
+      console.log("second largest value:",Secondlargest);
+    </script> -->
+    <!-- <script>
+      //Video5: filter() and find() method
+      const allEmp = [
+        { name: "Suman1", age: 24 },
+        { name: "Suman2", age: 25 },
+        { name: "Suman3", age: 26 },
+        { name: "Suman4", age: 27 },
+        { name: "Suman5", age: 28 },
+        { name: "Suman6", age: 29 },
+      ];
+      const filteredItem = allEmp.filter((item) => {
+        return item.age > 25;
+      });
+      console.log(filteredItem);
+      const findedItem = allEmp.find((item) => {
+        return item.age > 25;
+      });
+      console.log(findedItem);
+    </script> -->
+    <!-- <script>
+      //Video6:Missing elements in a given array
+      const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
+      const missArray = [];
+      const missingValue = (arr) => {
+        const min = Math.min(...arr);
+        const max = Math.max(...arr);
+        for (let i = min; i <= max; i++) {
+          if (arr.indexOf(i) < 0) {
+            missArray.push(i);
+          }
+        }
+        return missArray;
+      };
+      console.log("Missing elements are:", missingValue(arrNum));
+    </script> -->
+    <!-- <script>
+      arr = [5, 4, 7];
+      console.log(arr.indexOf(96));
+    </script> -->
+    <!-- <script>
+      //Video7: Finding even and odd number in an array
+      const number = [4, 58, 63, 7, 8, 67, 16, 43];
+      const even = number.filter((item) => {
+        return item % 2 === 0;
+      });
+      const odd = number.filter((item) => {
+        return item % 2 !== 0;
+      });
+      console.log("odd no:", odd);
+      console.log("even no:", even);
+    </script> -->
+    <!-- <script>
+      //Video7: sum of elements of an array
+      const arrNum = [5, 6, 8, 9, 72];
+      function sum(arr) {
+        return arr.reduce((pre, cur) => {
+          return pre + cur;
+        });
+      }
+      console.log(sum(arrNum));
+    </script> -->
+    <!-- <script>
+      //Video8: how to find factorial of a number
+      const num = prompt("Enter number:");
+      var fact = 1;
+      if (num < 0) {
+        console.log(`factorial of ${num} is not possible`);
+      } else {
+        for (let i = 1; i <= num; i++) {
+          fact = fact * i;
+        }
+        console.log(`factorial of ${num} is ${fact}`);
+      }
+    </script> -->
+    <!-- <script>
+      //Video9: how to find prime number in javascript
+      const number = parseInt(prompt("Enter a positive number: "));
+      let isPrime = true;
+      if (number === 1) {
+        console.log("1 is neither prime nor composite number.");
+      } else if (number > 1) {
+        for (let i = 2; i < number; i++) {
+          if (number % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          console.log(`${number} is a prime number`);
+        } else {
+          console.log(`${number} is a not prime number`);
+        }
+      }
+      else {
+        console.log("The number is not a prime number.");
+      }
+    </script> -->
+    <!-- <script>
+      //Video10: how to reverse a string in js
+      var str = "suman";
+      console.log(str.split("").reverse().join(""));
+    </script> -->
+    <!-- <script>
+      //Video11: how to check palindrome number or string
+      const palindrome = (val) => {
+        var rev = val.split("").reverse().join("");
+        if (rev === val) {
+          console.log(`${val} is palindrome`);
+        } else {
+          console.log(`${val} is not palindrome`);
+        }
+      };
+      var value = prompt("Enter value");
+      palindrome(value);
+    </script> -->
+    <!-- <script>
+      //Video12: How to swap two variable without using third variable in js
+      let a = 7;
+      let b = 8;
+      console.log(`value of a:${a} and value of b:${b}`);
+      //with using 3rd variable
+      // let temp=a;
+      // a=b;
+      // b=temp;
+      // console.log(`value of a: ${a} and value of b: ${b}`);
+      //Without using 3rd variable that is using destructuring
+      [a, b] = [b, a];
+      console.log(`value of a:${a} and value of b:${b}`);
+    </script> -->
+    <!-- <script>
+      //Video13: How to merge two arrays and sort them in javascript
+      const arr1 = ["1", "8", "9"];
+      const arr2 = ["45", "7", "19"];
+      // const arr1 = [1, 8, 9];
+      // const arr2 = [45, 7, 19];
+      //using concat mathod
+      const mergedArr = arr1.concat(arr2);
+      const sortedArr = mergedArr.sort((a, b) => {
+        return a - b;
+      });
+      console.log(sortedArr);
+
+      // using spread operator
+      const res = [...arr1, ...arr2];
+      const sortedArr1 = res.sort((a, b) => {
+        return a - b;
+      });
+      console.log(sortedArr1);
+    </script> -->
+    <!-- <script>
+      //Video14: How to find factors of a given integer in js
+      const num = prompt("Please enter no:");
+      console.log(`factors of ${num}:`);
+      for (let i = 1; i <= num; i++) {
+        if (num % i == 0) {
+          console.log(i);
+        }
+      }
+    </script> -->
+    <!-- <script>
+      //Video15: How to make calculator in js
+      const operator = prompt("Please select operation among +, -, *, /");
+      const num1 = parseFloat(prompt("Enter 1st number:"));
+      const num2 = parseFloat(prompt("Enter 2nd number"));
+      if (operator == "+") {
+        res = num1 + num2;
+      } else if (operator == "-") {
+        res = num1 - num2;
+      } else if (operator == "*") {
+        res = num1 * num2;
+      } else {
+        res = num1 / num2;
+      }
+      console.log(`${num1} ${operator} ${num2} = ${res}`);
+    </script> -->
+    <!-- <script>
+      //Video16: How to Compare two array is equal or not
+      var arr1 = [96, 2, 8, 5, 6, 7];
+      var arr2 = [8, 6, 7, 2, 5, 96];
+      const isSame =
+        arr1.length == arr2.length &&
+        arr1.every((arr1El) => {
+          if (arr2.indexOf(arr1El) != -1) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+      console.log(isSame);
+    </script> -->
+    <!-- <script>
+      //Video17: How to find intersection of two arrays/sets in js
+      var arr1 = [2, 9, 6, 8, 4, 4, 4];
+      var arr2 = [4, 8, 6, 9, 12];
+      let intersectionArr = arr1.filter((i) => {
+        return arr2.includes(i);
+      });
+      console.log(...new Set(intersectionArr));
+    </script> -->
+    <script>
+      //Video18: How to find union of two arrays/Set in js
+    </script>
+  </body>
+</html>

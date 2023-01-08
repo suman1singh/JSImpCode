@@ -9,6 +9,20 @@
       console.log(2 * "2");
       console.log("2" - "2");
       console.log("A" - "A");
+      console.log((1 + "1") * ("1" + 1));
+    </script> -->
+    <!-- <script>
+      const array = [2, 3, 0, "", false, 4];
+      const newArray = array.filter(Boolean);
+      console.log(newArray);
+    </script> -->
+    <!-- <script>
+      (function (a) {
+        return (function () {
+          console.log(a);
+          a = 6;
+        })();
+      })(21);
     </script> -->
     <!-- <script>
       delete console.log(1);
@@ -82,10 +96,10 @@
       obj.printName();
     </script> -->
     <!-- <script>
-      // var x = Math.random();
-      // console.log(x);
-      // var y = Math.floor(Math.random());
-      // console.log(y);
+      var x = Math.random();
+      console.log(x);
+      var y = Math.floor(Math.random());
+      console.log(y);
       var x = Math.floor(Math.random());
       if (x > 0.5) {
         var x = 1;
@@ -152,7 +166,7 @@
     </script> -->
     <!-- <script>
      const characters=['A',['B','C',['D','E']]];
-     console.log(characters.flat(3));
+     console.log(characters.flat(Infinity));
     </script> -->
     <!-- <script>
       setTimeout(() => console.log(1), 2000);
@@ -170,16 +184,17 @@
     <!-- <script>
       var x = true && 0;
       console.log(x);
-      console.log(Math.round(2.5));
+      console.log(Math.round(2.50));
     </script> -->
     <!-- <script>
       const elements = [1, 2, 3, 4, 5];
-      elements.forEach((element) => {
+      let x = elements.forEach((element) => {
         console.log(element);
         if (element == 2) {
           return;
         }
       });
+      console.log(x);
     </script> -->
     <!-- <script>
       const user = {
@@ -204,6 +219,11 @@
         var number = 20;
       };
       display();
+      function show() {
+        console.log(number);
+        var number = 20;
+      };
+      show();
     </script> -->
     <!-- <script>
       const number = 1;
@@ -240,9 +260,9 @@
     </script> -->
     <!-- <script>
       // JS code to print 1st repeating element in an array
-      var rep=[];
+      var rep = [];
       function repeatChar() {
-        var str='sumann';
+        var str = "sumann";
         for (var i = 0; i <= str.length; i++) {
           for (var j = i + 1; j <= str.length; j++) {
             if (str[j] == str[i]) {
@@ -254,12 +274,184 @@
       repeatChar();
       console.log(rep[0]);
     </script> -->
-    <script>
+    <!-- <script>
       let myArray = [2, 5, 6, 6, 8, 6, 7, 20, 20, 3];
       let duplicateArr = myArray.filter((ele, index) => {
         return myArray.indexOf(ele) !== index;
       });
       console.log(duplicateArr);
-    </script>
+    </script> -->
+    <!-- <script>
+      var myArray = [
+        { field: "id", operator: "eq", value: "ida" },
+        { field: "cStatus", operator: "eq", value: "cStatus " },
+        { field: "money", operator: "eq", value: "money" },
+      ];
+      var newArray = myArray.filter(function (obj) {
+        return obj.field !== "money";
+      });
+      console.log(newArray);
+    </script> -->
+    <!-- <script>
+      var myArray = [
+        { field: "id", operator: "eq", value: "ida" },
+        { field: "cStatus", operator: "eq", value: "cStatus " },
+        { field: "money", operator: "eq", value: "money" },
+      ];
+      for (var i = myArray.length - 1; i >= 0; i--) {
+        if (myArray[i].field == "money") {
+          myArray.splice(i, 1);
+        }
+      }
+      console.log(myArray);
+    </script> -->
+    <!-- <script>
+      var A = [
+        { id: 1, name: "Sahil1" },
+        { id: 2, name: "Sahil2" },
+        { id: 3, name: "Sahil3" },
+        { id: 31, name: "Sahil4" },
+      ];
+      var B = [
+        { id: 1, city: "Blr1" },
+        { id: 22, city: "Blr1" },
+        { id: 31, city: "Blr1" },
+      ];
+      for (var i = 0; i <= A.length - 1; i++) {
+        for (var j = 0; j <= B.length - 1; j++) {
+          if (A[i].id === B[j].id) {
+            A.splice(i, 1);
+          }
+        }
+      }
+      console.log(A);
+    </script> -->
+    <!-- <script>
+      //Right rotate array
+      var arr = [1, 2, 3, 4, 5];
+      var n = 2;
+      for (let i = 0; i < n; i++) {
+        let lastItem = arr.pop();
+        arr.unshift(lastItem);
+      }
+      console.log("result", arr);
+    </script> -->
+
+    <!-- <script>
+      //left rotate array
+      var arr = [1, 2, 3, 4, 5];
+      var n = 1;
+      for (let i = 0; i < n; i++) {
+        let firstItem = arr[i];
+        arr.splice(i, 1);
+        arr.push(firstItem);
+        console.log("result", arr);
+      }
+    </script> -->
+    <!-- <script>
+      let str1="xcvgfh"
+      let str2="vcxfhg"
+      let array1=str1.split('').sort().join('');
+      let array2=str2.split('').sort().join('');
+      if(array1 === array2){
+        console.log("Both are same");
+      }else{
+        console.log("Both are not same");
+      }
+    </script> -->
+    <!-- <script>
+      const arr = ["one", "two", "one", "one", "two", "three"];
+      const count = {};
+      arr.forEach((element) => {
+        count[element] = (count[element] || 0) + 1;
+      });
+      console.log(count);
+    </script> -->
+    <!-- <script>
+      const isPowerOfTwo = (num) => {
+        if (num === 1) {
+          return true;
+        }
+        if (num % 2 !== 0) {
+          return false;
+        }
+        return isPowerOfTwo(num / 2);
+      };
+      console.log(isPowerOfTwo(3));
+      console.log(isPowerOfTwo(8));
+      console.log(isPowerOfTwo(15));
+      console.log(isPowerOfTwo(16));
+    </script> -->
+    <!-- <script>
+      function repeatL(str) {
+        var count = {};
+        var arr = str.split("");
+        str = "";
+        for (var i = 0; i < arr.length; i++) {
+          if (count[arr[i]]) {
+            count[arr[i]] = count[arr[i]] + 1;
+          } else {
+            count[arr[i]] = 1;
+          }
+        }
+        for (var key in count) {
+          str += key + count[key];
+        }
+        return str;
+      }
+      console.log(repeatL("summman"));
+    </script> -->
+    <!-- <script>
+      var input = "aabbcde";
+      var result = input
+        .split("")
+        .reduce(function (r, e) {
+          var i = r.indexOf(e);
+          i != -1 ? r[i - 1]++ : r.push(1, e);
+          return r;
+        }, [])
+        .join("");
+
+      console.log(result);
+    </script> -->
+    <!-- <script>
+      //Swapping key and value in an object
+      var data = { A: 1, B: 2, C: 3, D: 4 };
+      var newData = {};
+      Object.keys(data).forEach(function (key) {
+        newData[data[key]] = key;
+      });
+      console.log(newData);
+    </script> -->
+    <!-- <script>
+      // finding vowels and consonants
+      function vowelsAndConsonants(s) {
+        let vowels = [];
+        let consonas = [];
+        for (var i = 0; i < s.length; i++) {
+          if (
+            s[i] == "a" ||
+            s[i] == "e" ||
+            s[i] == "i" ||
+            s[i] == "o" ||
+            s[i] == "u"
+          ) {
+            vowels.push(s[i]);
+          } else {
+            consonas.push(s[i]);
+          }
+        }
+
+        console.log("Vowels is:");
+        for (let i of vowels) {
+          console.log(i);
+        }
+        console.log("consonents is:");
+        for (let i of consonas) {
+          console.log(i);
+        }
+      }
+      vowelsAndConsonants("ieaoau");
+    </script> -->
   </body>
 </html>

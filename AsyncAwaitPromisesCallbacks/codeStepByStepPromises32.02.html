@@ -17,16 +17,18 @@
     <!-- <script>
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
-          reject({name:"Suman",age:25});
-        },2000);
+          reject({ name: "Suman", age: 25 });
+        }, 2000);
       });
       console.log(data);
-      data.then((i) => {
-        console.log(i);
-      }).catch((e)=>{
-        console.log("Catch block",e);
-      });
-      console.log("Hello")
+      data
+        .then((i) => {
+          console.log(i);
+        })
+        .catch((e) => {
+          console.log("Catch block", e);
+        });
+      console.log("Hello");
     </script> -->
     <!-- <script>
       // API calling in promise
@@ -87,7 +89,7 @@
         setTimeout(() => {
           // reject(new Error("data issue"));
           // throw new Error("data issue");
-          resolve("done")
+          resolve("done");
         }, 2000);
       });
       data
@@ -101,28 +103,31 @@
     </script> -->
     <!-- <script>
       // Promises.all
-      let data=Promise.all([
-        new Promise((resolve,reject)=>{
-          setTimeout(()=>{
-            resolve("2 sec")
-          },2000)
+      let data = Promise.all([
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("2 sec");
+          }, 2000);
         }),
-        new Promise((resolve,reject)=>{
-          setTimeout(()=>{
-            reject("1 sec")
-          },1000)
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // reject("1 sec");
+            resolve('Suman')
+          }, 1000);
         }),
-        new Promise((resolve,reject)=>{
-          setTimeout(()=>{
-            resolve("3 sec")
-          },3000)
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("3 sec");
+          }, 3000);
         }),
-      ])
-      data.then((item)=>{
-        console.log("then block",item);
-      }).catch((err)=>{
-        console.log("catch error",err);
-      })
+      ]);
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch error", err);
+        });
     </script> -->
     <!-- <script>
       // Promises.allSettled
@@ -162,8 +167,8 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // resolve("1 sec")
-            reject("1 sec");
+            resolve("1 sec");
+            // reject("1 sec");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
@@ -180,18 +185,20 @@
           console.log("catch error", err);
         });
     </script> -->
-    <script>
-      let data=new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-          resolve("2 sec")
-          reject("reject")
-        },2000)
-      })
-      data.then((item)=>{
-        console.log("then block",item);
-      }).catch((err)=>{
-        console.log("catch block",err);
-      })
-    </script>
+    <!-- <script>
+      let data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject("reject");
+          resolve("2 sec");
+        }, 2000);
+      });
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch block", err);
+        });
+    </script> -->
   </body>
 </html>
