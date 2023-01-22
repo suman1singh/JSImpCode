@@ -275,13 +275,18 @@
       console.log(rep[0]);
     </script> -->
     <!-- <script>
+      //Printing duplicate elements
       let myArray = [2, 5, 6, 6, 8, 6, 7, 20, 20, 3];
       let duplicateArr = myArray.filter((ele, index) => {
         return myArray.indexOf(ele) !== index;
+        // if (myArray.indexOf(ele) !== index) {
+        //   return ele;
+        // }
       });
       console.log(duplicateArr);
     </script> -->
     <!-- <script>
+      //Print if object property match
       var myArray = [
         { field: "id", operator: "eq", value: "ida" },
         { field: "cStatus", operator: "eq", value: "cStatus " },
@@ -293,6 +298,7 @@
       console.log(newArray);
     </script> -->
     <!-- <script>
+      // Delete a specific element of array of object
       var myArray = [
         { field: "id", operator: "eq", value: "ida" },
         { field: "cStatus", operator: "eq", value: "cStatus " },
@@ -306,6 +312,7 @@
       console.log(myArray);
     </script> -->
     <!-- <script>
+      //Removing element of array after comparing from another
       var A = [
         { id: 1, name: "Sahil1" },
         { id: 2, name: "Sahil2" },
@@ -329,33 +336,36 @@
     <!-- <script>
       //Right rotate array
       var arr = [1, 2, 3, 4, 5];
-      var n = 2;
+      var n = 3;
+      console.log(arr);
       for (let i = 0; i < n; i++) {
         let lastItem = arr.pop();
         arr.unshift(lastItem);
       }
       console.log("result", arr);
     </script> -->
-
     <!-- <script>
       //left rotate array
       var arr = [1, 2, 3, 4, 5];
-      var n = 1;
+      var n = 3;
+      console.log(arr);
       for (let i = 0; i < n; i++) {
-        let firstItem = arr[i];
-        arr.splice(i, 1);
+        let firstItem = arr.shift();
         arr.push(firstItem);
-        console.log("result", arr);
       }
+      console.log("result", arr);
     </script> -->
     <!-- <script>
-      let str1="xcvgfh"
-      let str2="vcxfhg"
-      let array1=str1.split('').sort().join('');
-      let array2=str2.split('').sort().join('');
-      if(array1 === array2){
+      // Checking two string are same or not
+      let str1 = "xcvgfh";
+      let str2 = "vcxfhg";
+      let array1 = str1.split("").sort().join("");
+      let array2 = str2.split("").sort().join("");
+      console.log(array1);
+      console.log(array2);
+      if (array1 === array2) {
         console.log("Both are same");
-      }else{
+      } else {
         console.log("Both are not same");
       }
     </script> -->
@@ -368,6 +378,7 @@
       console.log(count);
     </script> -->
     <!-- <script>
+      // Checking number is power of two or not
       const isPowerOfTwo = (num) => {
         if (num === 1) {
           return true;
@@ -400,19 +411,6 @@
         return str;
       }
       console.log(repeatL("summman"));
-    </script> -->
-    <!-- <script>
-      var input = "aabbcde";
-      var result = input
-        .split("")
-        .reduce(function (r, e) {
-          var i = r.indexOf(e);
-          i != -1 ? r[i - 1]++ : r.push(1, e);
-          return r;
-        }, [])
-        .join("");
-
-      console.log(result);
     </script> -->
     <!-- <script>
       //Swapping key and value in an object
@@ -452,6 +450,36 @@
         }
       }
       vowelsAndConsonants("ieaoau");
+    </script> -->
+    <!-- <script>
+      //print 1 to 100 withoput loop
+      function printNum(n) {
+        if (n <= 100) {
+          console.log(n);
+          printNum(n + 1);
+        }
+      }
+      let n = 1;
+      printNum(n);
+    </script> -->
+    <!-- <script>
+      // sum of array elements
+      let arr = [1, 2, 3, 4, 5, 6, 7];
+      let sum = arr.reduce((ini, cur) => {
+        return cur + ini;
+      });
+      console.log(sum);
+    </script> -->
+    <!-- <script>
+      //print 2,4,8,16,...
+      function printNum(n) {
+        if (n <= 1000) {
+          console.log(n);
+          printNum(n*2);
+        }
+      }
+      let n = 2;
+      printNum(n);
     </script> -->
   </body>
 </html>
