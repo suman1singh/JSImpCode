@@ -592,7 +592,7 @@
       console.log(position);
     </script> -->
     <!-- <script>
-      //Video:25 Selection sort with javascript
+      //Video:25 Selection sort with javascript(ascending)
       let items = [20, 12, 53, 3,0,85,759,75369];
       function selectionSort(data) {
         let minId;
@@ -631,8 +631,335 @@
       selectionSort(items);
       console.log(items);
     </script> -->
+    <!-- <script>
+      //Video:27 Insertion sort
+      let arr = [12, 11, 13, 5, 6];
+      function insertionSort(data) {
+        let i, current, j;
+        for (i = 1; i < data.length; i++) { 
+          current = data[i];
+          j = i - 1;
+          while (j >= 0 && data[j] > current) {
+            data[j + 1] = data[j];
+            j = j - 1;
+          }
+          data[j + 1] = current;
+        }
+      }
+      insertionSort(arr);
+      console.warn(arr);
+    </script> -->
+    <!-- <script>
+      //Video:28 Problem solving and logic building
+      //Problem: Find even values from array, make double of every element and find array length manually
+      let data = [10, 19, 6, 18, 45, 68, 90, 35, 100];
+      let evenArr = [];
+      let count = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] % 2 == 0) {
+          count++;
+          evenArr.push(data[i] * 2);
+        }
+      }
+      console.log(evenArr);
+      console.log(count);
+    </script> -->
+    <!-- <script>
+      //Video:29 Check strings are anagram or not
+      function areAnagram(str1, str2) {
+        let n1 = str1.length;
+        let n2 = str2.length;
+        if (n1 != n2) {
+          return false;
+        } else {
+          str1.sort();
+          str2.sort();
+          for (let i = 0; i < n1; i++) {
+            if (str1[i] != str2[i]) {
+              return false;
+            }
+          }
+          return true;
+        }
+      }
+      let str1 = ["h", "e", "l","l","o"];
+      let str2 = ["l", "l", "o","e","h"];
+      if (areAnagram(str1, str2))
+        document.write("The two strings are" + " anagram of each other<br>");
+      else
+        document.write(
+          "The two strings are not" + " anagram of each other<br>"
+        );
+    </script> -->
+    <!-- <script>
+      //Video:30 Check strings are palindrome or not
+      function palindrome(data) {
+        let start = 0;
+        let end = data.length - 1;
+        let result = true;
+        while (end > start) {
+          if (data[start] != data[end]) {
+            result = false;
+          }
+          start++;
+          end--;
+        }
+        return result;
+      }
+      let str = "level";
+      console.warn(palindrome(str));
+    </script> -->
+    <!-- <script>
+      //Video31: Maximum occuring character in string
+      let str = "hello peter ooo";
+      let strObj = {};
+      let maxKey = "";
+      for (let i = 0; i < str.length; i++) {
+        // console.warn(str[i])
+        let key = str[i];
+        if (!strObj[key]) {
+          strObj[key] = 0;
+        }
+        strObj[key]++;
+        if (maxKey == "" || strObj[key] > strObj[maxKey]) {
+          maxKey = key;
+        }
+      }
+      console.warn(maxKey);
+      console.warn(strObj);
+    </script> -->
+    <!-- <script>
+      //Video32: Hash table(Object) in DS
+      let data = {
+        name: "Suman",
+        age: 25,
+        mail: "abc@test.com",
+        getName: function () {
+          return this.name;
+        },
+      };
+      data.contact = 852963;
+      // delete data.name;
+      data.name = "Singh";
+      // console.log(data);
+      // for (x in data) {
+      //   console.log(data[x]);
+      // }
+      console.log(Object.keys(data));
+      console.log(Object.values(data));
+      console.log(Object.entries(data));
+    </script> -->
+    <!-- <script>
+      //Video33: Map Data structure
+      let data = new Map([
+        ["name", "Suman"],
+        [true, "bool key"],
+        [100, "hundred"],
+      ]);
+      data.set("color", "green");
+      // console.log(data.size);
+      // console.log(data.has('Suman'));
+      // console.log(data.has(name));
+      // console.log(data.has('name'));
+      // console.log(data.get(100));
+      // data.clear();
+      // console.log(data);
+      // for (x of data) {
+      //   // console.log(x);
+      //   console.log(x[1]);
+      // }
+      data.forEach((val, key) => {
+        console.log(val, key);
+      });
+      data.delete("color");
+      console.log(data);
+    </script> -->
+    <!-- <script>
+      //Video34: Set data structure
+      let data = new Set(["suman", "singh", "suman"]);
+      data.add({ email: "test@gmail.com" });
+      // console.log(data);
+      // console.log(data.has("suman"));
+      // data.delete("singh");
+      // console.log(data);
+      // for(x of data){
+      //   console.log(x);
+      // }
+      // data.forEach((e)=>{
+      //   console.log(e)
+      // })
+      // console.log(data.values());
+      // console.log(data.keys());
+      // console.log(data.entries());
+    </script> -->
+    <!-- <script>
+      //Video35: Linked list in js
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
+        }
+        appendNode(nodeData) {
+          let newNode = {
+            value: nodeData,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size++;
+        }
+      }
+      let list = new List(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+      console.log(list);
+    </script> -->
+    <!-- <script>
+      //Video36: Traversing Linked List
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
+        }
+        appendNode(nodeData) {
+          let newNode = {
+            value: nodeData,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size++;
+        }
+        traversing() {
+          let counter = 0;
+          let currentNode = this.head;
+          while (counter < this.size) {
+            console.log(currentNode);
+            currentNode = currentNode.next;
+            counter++;
+          }
+        }
+      }
+      let list = new List(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+      list.traversing();
+      // console.log(list);
+    </script> -->
+    <!-- <script>
+      //Video37: Remove node from linked list
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
+        }
+        appendNode(nodeData) {
+          let newNode = {
+            value: nodeData,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size++;
+        }
+        traversing() {
+          let counter = 0;
+          let currentNode = this.head;
+          while (counter < this.size) {
+            console.log(currentNode);
+            currentNode = currentNode.next;
+            counter++;
+          }
+        }
+        deleteNode(index) {
+          let counter = 1;
+          let lead = this.head;
+          if (index === 1) {
+            this.head = this.head.next;
+          } else {
+            while (counter < index - 1) {
+              lead = lead.next;
+              counter++;
+            }
+            let nextNode = lead.next.next;
+            lead.next = nextNode;
+            console.log(lead);
+          }
+        }
+      }
+      let list = new List(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+      list.traversing();
+      list.deleteNode(4);
+      console.log(list);
+    </script> -->
+    <!-- <script>
+      //Video38: Insert node at any position in linked list
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
+        }
+        appendNode(nodeData) {
+          let newNode = {
+            value: nodeData,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size++;
+        }
+        insertNode(index, value) {
+          let counter = 1;
+          let currentNode = this.head;
+          while (counter > index) {
+            counter++;
+            currentNode = currentNode.next;
+          }
+          let nextNode = currentNode.next;
+          currentNode.next = {
+            value: value,
+            next: nextNode,
+          };
+        }
+      }
+      let list = new List(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+      list.insertNode(2, 4000);
+      console.log(list);
+    </script> -->
     <script>
-       //Video:27 Insertion sort
+      //video:39: Search node in Linked list
     </script>
   </body>
 </html>

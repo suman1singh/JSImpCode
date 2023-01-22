@@ -59,7 +59,7 @@
       });
       console.log(findedItem);
     </script> -->
-    <!-- <script>
+    <script>
       //Video6:Missing elements in a given array
       const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
       const missArray = [];
@@ -74,7 +74,7 @@
         return missArray;
       };
       console.log("Missing elements are:", missingValue(arrNum));
-    </script> -->
+    </script>
     <!-- <script>
       arr = [5, 4, 7];
       console.log(arr.indexOf(96));
@@ -239,8 +239,145 @@
       });
       console.log(...new Set(intersectionArr));
     </script> -->
-    <script>
+    <!-- <script>
       //Video18: How to find union of two arrays/Set in js
-    </script>
+      var arr1 = [1, 2, 6, 8, 96, 23, 23, 23];
+      var arr2 = [5, 8, 3, 7, 15, 466, 32, 20, 5, 5, 32];
+      var unionArr = [...arr1, ...arr2];
+      console.log(...new Set(unionArr));
+    </script> -->
+    <!-- <script>
+      //Video18: Fahrenheit to celcius and vice-versa
+      //Fah to cel
+      // var fah=prompt("Enter value in Fahrenheit");
+      // var cel=5/9*(fah-32);
+      // console.log(`Value in celcius: ${cel}`);
+      //cel to fah
+      var cel=prompt("Enter value in Celcius");
+      var fah=cel*1.8+32;
+      console.log(`Value in Fahrenheit: ${fah}`);
+    </script> -->
+    <!-- <script>
+      //Video23: convert 1st letter of a string to uppercase
+      var inputString = prompt("Enter string to capitalize");
+      const firstCap = (str) => {
+        var newStr = str.split(" ");
+        console.log(newStr);
+        var newArr = newStr.map((i) => {
+          return i.charAt(0).toUpperCase() + i.slice(1);
+        });
+        return newArr.join(" ");
+      };
+      console.log(firstCap(inputString));
+    </script> -->
+    <!-- <script>
+      //Video:24 Program to find fibonacci sequence in js
+      var a = 0;
+      var b = 1;
+      for (let i = 0; i <= 15; i++) {
+        var temp = a + b;
+        a = b;
+        b = temp;
+        console.log(temp);
+      }
+    </script> -->
+    <!-- <script>
+      //Video:25 Program to printing start and number patterns right triangle, pyramid and diamond shape in js
+      //Pattern1:
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= i; j++) {
+      //     document.write("*"+"&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
+
+      //Patterns2:
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= 6 - i; j++) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write("*" + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
+
+      //Pattern3
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= 6 - i; j++) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write(i + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
+      // for (let i = 6; i >= 1; i--) {
+      //   for (let j = 6 - i; j >= 1; j--) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write(i + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
+    </script> -->
+    <!-- <script>
+      //Video:26 Program to check the number of occurence of a character in a string in js
+      var str = prompt("Pease enter string");
+      var letter = prompt("Please enter letter");
+      var count = 0;
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] == letter) {
+          count++;
+        }
+      }
+      console.log(`in ${str} occurence of ${letter}=${count}`);
+    </script> -->
+    <!-- <script>
+      //Video27: Program to print the table of any user defined number using function in js
+      const table = (num) => {
+        for (let i = 1; i <= 10; i++) {
+          var res = i * num;
+          console.log(`${num}x${i}=${res}}`);
+        }
+      };
+      table(5);
+    </script> -->
+    <!-- <script>
+      //Video27: Program to check nuber is armstrong or not
+      var number = prompt("Please enter number");
+      var temp = number;
+      var lengthOfNumber = number.toString().length;
+      var sum = 0;
+      while (temp > 0) {
+        var digit = temp % 10;
+        // console.log(digit);
+        sum += digit ** lengthOfNumber;
+        // console.log("Sum"+sum);
+        temp = parseInt(temp / 10);
+        // console.log(temp);
+        // console.log("-----------");
+      }
+      if (sum == number) {
+        console.log(`${number} is an armstrong number`);
+      } else {
+        console.log(`${number} is not an armstrong number`);
+      }
+    </script> -->
+    <!-- <script>
+      //Video28: What will be the output
+      //Q.1
+      let count = 0;
+      function printCount() {
+        console.log(`count2`, count);
+        if (count == 0) {
+          let count = 3;
+          console.log(`count1`, count);
+        }
+        console.log(`count2`, count);
+      }
+      printCount();
+    </script> -->
   </body>
 </html>
