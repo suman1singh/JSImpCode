@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        width: 360px;
+      }
+      .box {
+        padding: 4rem;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="box red">Item1</div>
+      <div class="box yellow">Item2</div>
+      <div class="box green">Item2</div>
+    </div>
+  </body>
+</html>
