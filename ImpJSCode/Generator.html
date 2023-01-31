@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Generator function in js</h1>
+  </head>
+  <body>
+    <!-- <script>
+      //simple generator
+      function* simpleGenerator() {
+        console.log("function called");
+        let x = 100;
+        yield "first step";
+        yield x;
+        let y = "other";
+        yield y;
+        console.log("function called");
+      }
+      let sG = simpleGenerator();
+      console.log(sG.next().value);
+      console.log(sG.next());
+      console.log(sG.next());
+      console.log(sG.next());
+    </script> -->
+    <h1>New dynamic Id:<span id="newId"></span></h1>
+    <button onclick="getNewId()">Generate new ID</button>
+    <script>
+      function* simpleGenerator() {
+        let i = 100;
+        while (true) {
+          i++;
+          yield i;
+        }
+      }
+      let sG = simpleGenerator();
+      //   console.log(sG.next());
+      function getNewId() {
+        // console.log(sG.next());
+        document.getElementById("newId").innerText = sG.next().value;
+      }
+    </script>
+  </body>
+</html>
