@@ -59,7 +59,7 @@
       });
       console.log(findedItem);
     </script> -->
-    <script>
+    <!-- <script>
       //Video6:Missing elements in a given array
       const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
       const missArray = [];
@@ -74,7 +74,7 @@
         return missArray;
       };
       console.log("Missing elements are:", missingValue(arrNum));
-    </script>
+    </script> -->
     <!-- <script>
       arr = [5, 4, 7];
       console.log(arr.indexOf(96));
@@ -94,12 +94,10 @@
     <!-- <script>
       //Video7: sum of elements of an array
       const arrNum = [5, 6, 8, 9, 72];
-      function sum(arr) {
-        return arr.reduce((pre, cur) => {
-          return pre + cur;
-        });
-      }
-      console.log(sum(arrNum));
+      let sum = arrNum.reduce((ini, cur) => {
+        return cur + ini;
+      });
+      console.log(sum);
     </script> -->
     <!-- <script>
       //Video8: how to find factorial of a number
@@ -375,5 +373,24 @@
         console.log(`${number} is not an armstrong number`);
       }
     </script> -->
+    <!-- <script>
+      //Q. All elements of array is unique or not
+      let arr=[5,8,78,6,7];
+      let isUnique=true;
+      function checkUnique(arr){
+        for(let i=0;i<arr.length;i++){
+          for(let j=i+1;j<arr.length;j++){
+            if(arr[i] == arr[j]){
+              isUnique=false;
+            }
+          }
+        }
+        return isUnique
+      }
+      console.log(checkUnique(arr));
+    </script> -->
+    <script>
+      
+    </script>
   </body>
 </html>

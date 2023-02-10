@@ -958,8 +958,58 @@
       list.insertNode(2, 4000);
       console.log(list);
     </script> -->
-    <script>
+    <!-- <script>
       //video:39: Search node in Linked list
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
+        }
+        appendNode(nodeData) {
+          let newNode = {
+            value: nodeData,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size++;
+        }
+        searchNode(data) {
+          let result = undefined;
+          let lead = this.head;
+          let loop = true;
+          while (loop) {
+            lead = lead.next;
+            // console.log(lead);
+            loop = !!lead;
+            if (loop && lead.value === data) {
+              loop = false;
+              result = lead;
+            }
+          }
+          console.log(result);
+        }
+      }
+      let list = new List(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+      // list.traversing();
+      // list.deleteNode(1);
+      list.searchNode(500);
+      // console.log(list);
+    </script> -->
+    <!-- <script>
+      //Video40: Tree Data Structure
+    </script> -->
+    <script>
+      //Video41: Binary search tree
     </script>
   </body>
 </html>
