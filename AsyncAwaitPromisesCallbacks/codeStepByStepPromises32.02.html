@@ -92,9 +92,9 @@
       //Error handling with promises
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
-          reject(new Error("data issue"));
+          // reject(new Error("data issue"));
           // throw new Error("data issue");
-          // resolve("done");
+          resolve("done");
         }, 2000);
       });
       data
@@ -172,7 +172,7 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            resolve("1 sec");
+            reject("1 sec");
             // reject("1 sec");
           }, 1000);
         }),

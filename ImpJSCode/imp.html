@@ -12,6 +12,15 @@
       console.log((1 + "1") * ("1" + 1));
     </script> -->
     <!-- <script>
+      function f() {
+        setTimeout(() => {
+          console.log(i);
+        }, 1000);
+        var i = 1;
+      }
+      f();
+    </script> -->
+    <!-- <script>
       const array = [2, 3, 0, "", false, 4];
       const newArray = array.filter(Boolean);
       console.log(newArray);
@@ -131,6 +140,7 @@
         }
       };
       const person = new Person("Suman", "Singh");
+      console.log(person.firstName);
       console.log(Person.name);
     </script> -->
     <!-- <script>
@@ -375,6 +385,18 @@
         count[element] = (count[element] || 0) + 1;
       });
       console.log(count);
+
+      //Another way
+      const arr1 = ["one", "two", "one", "one", "two", "three"];
+      let count1 = {};
+      arr1.forEach((e) => {
+        if (count1[e]) {
+          count1[e] = count1[e] + 1;
+        } else {
+          count1[e] = 1;
+        }
+      });
+      console.log(count1);
     </script> -->
     <!-- <script>
       // Checking number is power of two or not
@@ -411,7 +433,7 @@
       }
       console.log(repeatL("summman"));
     </script> -->
-    <script>
+    <!-- <script>
       //Swapping key and value in an object
       var data = { A: 1, B: 2, C: 3, D: 4 };
       var newData = {};
@@ -419,7 +441,7 @@
         newData[data[key]] = key;
       });
       console.log(newData);
-    </script>
+    </script> -->
     <!-- <script>
       // finding vowels and consonants
       function vowelsAndConsonants(s) {
