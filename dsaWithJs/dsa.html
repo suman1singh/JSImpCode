@@ -1008,8 +1008,753 @@
     <!-- <script>
       //Video40: Tree Data Structure
     </script> -->
-    <script>
+    <!-- <script>
       //Video41: Binary search tree
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+      }
+      let bst = new BSTree();
+      console.log(bst.isTreeEmpty());
+    </script> -->
+    <!-- <script>
+      //Video42: Insert node in BST
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      console.log(bst);
+    </script> -->
+    <!-- <script>
+      //Video43: Search node in BST
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      console.log(bst.search(bst.root, 5));
+      console.log(bst.search(bst.root, 50));
+      // console.log(bst.root);
+    </script> -->
+    <!-- <script>
+      //Video44: Depth first search in tree
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
+        preOrder(root) {
+          if (root) {
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+          }
+        }
+        inOrder(root) {
+          if (root) {
+            this.inOrder(root.left);
+            console.log(root.value);
+            this.inOrder(root.right);
+          }
+        }
+        postOrder(root) {
+          if (root) {
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+          }
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      // bst.preOrder(bst.root);
+      // bst.inOrder(bst.root);
+      bst.postOrder(bst.root);
+      console.log(bst.root);
+    </script> -->
+    <!-- <script>
+      //Video45: Breadth first search in tree
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
+        preOrder(root) {
+          if (root) {
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+          }
+        }
+        inOrder(root) {
+          if (root) {
+            this.inOrder(root.left);
+            console.log(root.value);
+            this.inOrder(root.right);
+          }
+        }
+        postOrder(root) {
+          if (root) {
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+          }
+        }
+        bfsTraversing(root) {
+          let queue = [];
+          queue.push(this.root);
+          while (queue.length) {
+            let current = queue.shift();
+            if (current.left) {
+              queue.push(current.left);
+            }
+            if (current.right) {
+              queue.push(current.right);
+            }
+            console.log(current.value);
+          }
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(11);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      // bst.preOrder(bst.root);
+      // bst.inOrder(bst.root);
+      // bst.postOrder(bst.root);
+      // bst.bfsTraversing(bst.root);
+      // console.log(bst.root);
+    </script> -->
+    <!-- <script>
+      //Video46: Min and Max in BST
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
+        preOrder(root) {
+          if (root) {
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+          }
+        }
+        inOrder(root) {
+          if (root) {
+            this.inOrder(root.left);
+            console.log(root.value);
+            this.inOrder(root.right);
+          }
+        }
+        postOrder(root) {
+          if (root) {
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+          }
+        }
+        bfsTraversing(root) {
+          let queue = [];
+          queue.push(this.root);
+          while (queue.length) {
+            let current = queue.shift();
+            if (current.left) {
+              queue.push(current.left);
+            }
+            if (current.right) {
+              queue.push(current.right);
+            }
+            console.log(current.value);
+          }
+        }
+        minValue(root) {
+          if (!root.left) {
+            return root.value;
+          } else {
+            return this.minValue(root.left);
+          }
+        }
+        maxValue(root) {
+          if (!root.right) {
+            return root.value;
+          } else {
+            return this.maxValue(root.right);
+          }
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(11);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      // bst.preOrder(bst.root);
+      // bst.inOrder(bst.root);
+      // bst.postOrder(bst.root);
+      // bst.bfsTraversing(bst.root);
+      // console.log(bst.root);
+      console.log(bst.minValue(bst.root));
+      console.log(bst.maxValue(bst.root));
+    </script> -->
+    <!-- <script>
+      //Video47: Delete node in BST
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+        isTreeEmpty() {
+          return this.root === null;
+        }
+        makeTree(val) {
+          let newNode = new Node(val);
+          if (this.root === null) {
+            this.root = newNode;
+          } else {
+            this.insertNode(this.root, newNode);
+          }
+        }
+        insertNode(root, newNode) {
+          if (root.value > newNode.value) {
+            if (root.left === null) {
+              root.left = newNode;
+            } else {
+              this.insertNode(root.left, newNode);
+            }
+          } else {
+            if (root.right === null) {
+              root.right = newNode;
+            } else {
+              this.insertNode(root.right, newNode);
+            }
+          }
+        }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
+        preOrder(root) {
+          if (root) {
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
+          }
+        }
+        inOrder(root) {
+          if (root) {
+            this.inOrder(root.left);
+            console.log(root.value);
+            this.inOrder(root.right);
+          }
+        }
+        postOrder(root) {
+          if (root) {
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+          }
+        }
+        bfsTraversing(root) {
+          let queue = [];
+          queue.push(this.root);
+          while (queue.length) {
+            let current = queue.shift();
+            if (current.left) {
+              queue.push(current.left);
+            }
+            if (current.right) {
+              queue.push(current.right);
+            }
+            console.log(current.value);
+          }
+        }
+        minValue(root) {
+          if (!root.left) {
+            return root.value;
+          } else {
+            return this.minValue(root.left);
+          }
+        }
+        maxValue(root) {
+          if (!root.right) {
+            return root.value;
+          } else {
+            return this.maxValue(root.right);
+          }
+        }
+        removeData(value) {
+          this.root = this.deleteNode(this.root, value);
+        }
+        deleteNode(root, value) {
+          if (root === null) {
+            return null;
+          }
+          if (value < root.value) {
+            root.left = this.deleteNode(root.left, value);
+          } else if (value > root.value) {
+            root.right = this.deleteNode(root.right, value);
+          } else {
+            if (!root.left && !root.right) {
+              return null;
+            } else if (!root.left) {
+              return root.right;
+            } else if (!root.right) {
+              return root.left;
+            }
+            root.value = this.minValue(root.right);
+            root.right = this.deleteNode(root.right, root.value);
+          }
+          return root;
+        }
+      }
+      let bst = new BSTree();
+      bst.makeTree(20);
+      bst.makeTree(10);
+      bst.makeTree(5);
+      bst.makeTree(11);
+      bst.makeTree(30);
+      bst.makeTree(40);
+      bst.makeTree(23);
+      // bst.preOrder(bst.root);
+      // bst.inOrder(bst.root);
+      // bst.postOrder(bst.root);
+      bst.bfsTraversing(bst.root);
+      // console.log(bst.root);
+      // console.log(bst.minValue(bst.root));
+      // console.log(bst.maxValue(bst.root));
+      bst.removeData(5);
+      console.log("Removed item");
+      bst.bfsTraversing(bst.root);
+      console.log(bst.root);
+    </script> -->
+    <!-- <script>
+      //Video:50: Graph adjacency matrix
+      let data = [
+        [0, 1, 1, 0],
+        [1, 0, 1, 1],
+        [1, 1, 0, 0],
+        [0, 1, 0, 0],
+      ];
+      console.log(data);
+      console.log(data[2][1]);
+      console.log(data[2][2]);
+    </script> -->
+    <!-- <script>
+      //Video:51: Graph adjacency list
+      let adjList = {
+        a: ["b", "c"],
+        b: ["a", "c", "d"],
+        c: ["a", "b"],
+        d: ["b"],
+      };
+      console.log(adjList);
+      console.log(adjList.a[0]);
+      console.log(adjList.b[1]);
+    </script> -->
+    <!-- <script>
+      //Video:52: Make graph and add vertex
+      class Graph {
+        constructor() {
+          this.data = {};
+        }
+        addVertex(vertex) {
+          if (!this.data[vertex]) {
+            this.data[vertex] = [];
+          }
+        }
+      }
+      const graph1 = new Graph();
+      graph1.addVertex("A");
+      graph1.addVertex("B");
+      graph1.addVertex("C");
+      graph1.addVertex("D");
+      console.log(graph1.data);
+    </script> -->
+    <!-- <script>
+      //Video:53: Connect vertex with edge
+      class Graph {
+        constructor() {
+          this.data = {};
+        }
+        addVertex(vertex) {
+          if (!this.data[vertex]) {
+            this.data[vertex] = [];
+          }
+        }
+        addEdge(v1, v2) {
+          if (!this.data[v1]) {
+            this.addVertex(v1);
+          }
+          if (!this.data[v2]) {
+            this.addVertex(v2);
+          }
+          this.data[v1].push(v2);
+          this.data[v2].push(v1);
+        }
+      }
+      const graph1 = new Graph();
+      graph1.addVertex("A");
+      graph1.addVertex("B");
+      graph1.addVertex("C");
+      graph1.addVertex("D");
+      graph1.addEdge("A", "B");
+      graph1.addEdge("A", "C");
+      graph1.addEdge("B", "C");
+      graph1.addEdge("B", "D");
+      console.log(graph1.data);
+    </script> -->
+    <!-- <script>
+      //Video:54: Remove Edge in Graph
+      class Graph {
+        constructor() {
+          this.data = {};
+        }
+        addVertex(vertex) {
+          if (!this.data[vertex]) {
+            this.data[vertex] = [];
+          }
+        }
+        addEdge(v1, v2) {
+          if (!this.data[v1]) {
+            this.addVertex(v1);
+          }
+          if (!this.data[v2]) {
+            this.addVertex(v2);
+          }
+          this.data[v1].push(v2);
+          this.data[v2].push(v1);
+        }
+        removeEdge(v1, v2) {
+          this.data[v1] = this.data[v1].filter((item) => {
+            return item != v2;
+          });
+          this.data[v2] = this.data[v2].filter((item) => {
+            return item != v1;
+          });
+        }
+      }
+      const graph1 = new Graph();
+      graph1.addVertex("A");
+      graph1.addVertex("B");
+      graph1.addVertex("C");
+      graph1.addVertex("D");
+      graph1.addEdge("A", "B");
+      graph1.addEdge("A", "C");
+      graph1.addEdge("B", "C");
+      graph1.addEdge("B", "D");
+      graph1.removeEdge("A", "B");
+      graph1.removeEdge("B", "D");
+      console.log(graph1.data);
+    </script> -->
+    <script>
+      //Video:55: Remove Vertex in Graph
+      class Graph {
+        constructor() {
+          this.data = {};
+        }
+        addVertex(vertex) {
+          if (!this.data[vertex]) {
+            this.data[vertex] = [];
+          }
+        }
+        addEdge(v1, v2) {
+          if (!this.data[v1]) {
+            this.addVertex(v1);
+          }
+          if (!this.data[v2]) {
+            this.addVertex(v2);
+          }
+          this.data[v1].push(v2);
+          this.data[v2].push(v1);
+        }
+        removeEdge(v1, v2) {
+          this.data[v1] = this.data[v1].filter((item) => {
+            return item != v2;
+          });
+          this.data[v2] = this.data[v2].filter((item) => {
+            return item != v1;
+          });
+        }
+        removeVertex(vertex) {
+          if (!this.data[vertex]) {
+            return;
+          }
+          for (let item of this.data[vertex]) {
+            this.removeEdge(vertex, item);
+          }
+          delete this.data[vertex];
+        }
+      }
+      const graph1 = new Graph();
+      graph1.addVertex("A");
+      graph1.addVertex("B");
+      graph1.addVertex("C");
+      graph1.addVertex("D");
+      graph1.addEdge("A", "B");
+      graph1.addEdge("A", "C");
+      graph1.addEdge("B", "C");
+      graph1.addEdge("B", "D");
+      graph1.removeEdge("A", "B");
+      graph1.removeEdge("B", "D");
+      graph1.removeVertex("A");
+      graph1.removeVertex("D");
+      console.log(graph1.data);
     </script>
   </body>
 </html>
