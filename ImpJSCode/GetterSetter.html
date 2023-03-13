@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Getters and Setters concept in js</h1>
+  </head>
+  <body>
+    <script>
+      var person = {
+        name: "Suman",
+        age: 25,
+        // getName:function(){
+        //     return this.name.toUpperCase();
+        // }
+        get getName() {
+          return this.name.toUpperCase();
+        },
+        set setName(n) {
+          this.name = n.toUpperCase();
+        },
+      };
+      //   console.log(person.getName());
+      //   console.log(person.getName);
+      //   person.name="Singh";
+      //   console.log(person.getName)
+      person.setName = "Shree";
+      console.log(person.getName);
+    </script>
+  </body>
+</html>

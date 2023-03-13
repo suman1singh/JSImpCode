@@ -40,7 +40,7 @@
       let Secondlargest = Math.max(...myArr);
       console.log("second largest value:",Secondlargest);
     </script> -->
-    <script>
+    <!-- <script>
       //Video5: filter() and find() method
       const allEmp = [
         { name: "Suman1", age: 24 },
@@ -58,7 +58,7 @@
         return item.age > 25;
       });
       console.log(findedItem);
-    </script>
+    </script> -->
     <!-- <script>
       //Video6:Missing elements in a given array
       const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
@@ -133,6 +133,18 @@
       } else {
         console.log("The number is not a prime number.");
       }
+
+      //Simple code
+      // function isPrime(n) {
+      //   for (let i = 2; i < n; i++) {
+      //     if (n % i == 0) {
+      //       return false;
+      //     } else {
+      //       return true;
+      //     }
+      //   }
+      // }
+      // console.log(isPrime(87));
     </script> -->
     <!-- <script>
       //Video10: how to reverse a string in js
@@ -372,6 +384,23 @@
       } else {
         console.log(`${number} is not an armstrong number`);
       }
+      //simple way
+      function armStrong(num) {
+        var temp = num;
+        var sum = 0;
+        var noOfDigit = num.toString().length;
+        while (temp > 0) {
+          var digit = temp % 10;
+          sum += digit ** noOfDigit;
+          temp = parseInt(temp / 10);
+        }
+        if (sum == num) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(armStrong(16342));
     </script> -->
     <!-- <script>
       //Q. All elements of array is unique or not
@@ -389,8 +418,66 @@
       }
       console.log(checkUnique(arr));
     </script> -->
-    <script>
-      
-    </script>
+    <!-- <script>
+      //find the total price using item and price with JS
+      let items = [
+        {
+          item: 2,
+          price: 100,
+        },
+        {
+          item: 3,
+          price: 200,
+        },
+        {
+          item: 5,
+          price: 100,
+        },
+      ];
+      // const total = items.reduce((i, j) => i + j.item * j.price, 0);
+      // console.log(total);
+      //By for loop
+      sum = 0;
+      for (let i = 0; i < items.length; i++) {
+        sum += items[i].item * items[i].price;
+      }
+      console.log(sum);
+    </script> -->
+    <!-- <script>
+      //Q. separate numbers and string from mixed array
+      let mixed = "sum57a5n5fvhf";
+      let mixedArr = mixed.split("");
+      let string = [];
+      let number = [];
+      console.log(mixedArr);
+      mixedArr.forEach((e) => {
+        if (isNaN(e) && typeof e === "string") {
+          string.push(e);
+        } else {
+          number.push(e);
+        }
+      });
+      console.log("String", string.join(''));
+      console.log("Number", number.join(''));
+    </script> -->
+    <!-- <script>
+      //Count number of each fruits
+      const fruits = [
+        { Apple: 4, Orange: 7, Grape: 3 },
+        { Guava: 6, Lemon: 4, Banana: 8 },
+        { Orange: 5, pineapple: 7, Apple: 7 },
+      ];
+      let count = {};
+      fruits.forEach((ele) => {
+        for (each in ele) {
+          if (count[each]) {
+            count[each] = count[each] + ele[each];
+          } else {
+            count[each] = ele[each];
+          }
+        }
+      });
+      console.log(count);
+    </script> -->
   </body>
 </html>

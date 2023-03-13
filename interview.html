@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .Container{
-        display: flex;
-        background-color: aqua;
-      }
-      .Item{
-        background-color: blue;
-        margin: 10px;
-        padding: 10px;
-        font-size: 5px;
-      }
-    </style>
-  </head>
   <body>
-    <div class="Container">
-      <div class="Item">Item1</div>
-      <div class="Item">Item1</div>
-      <div class="Item">Item1</div>
+    <h1>Practice here</h1>
+    <div>
+      <button>click me</button>
     </div>
+    <!-- <script>
+      document.querySelector('h1').innerHTML="Suman Singh"
+      document.querySelector('button').innerHTML="Click here"
+      // let div1 = document.querySelector("div").innerHTML="suman"
+      // let button1 = document.querySelector("button");
+      // div1.addEventListener("click", () => {
+      //   console.log("div2");
+      // });
+      // div1.addEventListener("click", (e) => {
+      //   e.stopImmediatePropagation();
+      //   console.log("div1");
+      // });
+      // button1.addEventListener("click", () => {
+      //   console.log("button1");
+      // });
+      // button1.addEventListener("click", () => {
+      //   console.log("button2");
+      // });
+    </script> -->
+    <script>
+      function armStrong(num) {
+        var temp = num;
+        var sum = 0;
+        var noOfDigit = num.toString().length;
+        while (temp > 0) {
+          var digit = temp % 10;
+          sum += digit ** noOfDigit;
+          temp = parseInt(temp / 10);
+        }
+        if (sum == num) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(armStrong(16342));
+    </script>
   </body>
 </html>

@@ -75,6 +75,7 @@
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(10);
+          // reject(20);
         }, 2000);
       });
       data.finally((item) => {
@@ -163,6 +164,36 @@
         });
     </script> -->
     <!-- <script>
+      // Promises.any
+      let data = Promise.any([
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("2 sec");
+            // reject('2 sec')
+          }, 2000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // resolve("1 sec")
+            reject("1 sec");
+          }, 1000);
+        }),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("3 sec");
+            // reject("3 sec");
+          }, 3000);
+        }),
+      ]);
+      data
+        .then((item) => {
+          console.log("then block", item);
+        })
+        .catch((err) => {
+          console.log("catch error", err);
+        });
+    </script> -->
+    <!-- <script>
       // Promises.race
       let data = Promise.race([
         new Promise((resolve, reject) => {
@@ -173,7 +204,7 @@
         new Promise((resolve, reject) => {
           setTimeout(() => {
             reject("1 sec");
-            // reject("1 sec");
+            // resolve("1 sec");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
