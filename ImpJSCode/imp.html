@@ -260,6 +260,8 @@
     </script> -->
     <!-- <script>
       "use strict";
+      console.log(sum);
+      var sum = 20;
       function display() {
         var a = (b = 10);
       }
@@ -268,7 +270,7 @@
       console.log("a", typeof a === "undefined");
     </script> -->
     <!-- <script>
-      // JS code to print 1st repeating element in an array
+      // Q. JS code to print 1st repeating element in an array
       var rep = [];
       function repeatChar() {
         var str = "sumann";
@@ -493,6 +495,56 @@
       }
       let n = 2;
       printNum(n);
+    </script> -->
+    <!-- <script>
+      //Convert array into object
+      const arr = ["a", "b", "c"];
+      function toObject(arr) {
+        var obj = {};
+        for (let i = 0; i < arr.length; i++) {
+          obj[i] = arr[i];
+        }
+        return obj;
+      }
+      console.log(toObject(arr));
+    </script> -->
+    <script>
+      //Convert object into array
+      // var obj = {
+      //   0: "a",
+      //   1: "b",
+      //   2: "c",
+      // };
+      // console.log(obj);
+      // var arrValue = [];
+      // var arrKey = [];
+      // Object.values(obj).forEach((ele) => {
+      //   arrValue.push(ele);
+      // });
+      // console.log(arrValue);
+      // Object.keys(obj).forEach((ele) => {
+      //   arrKey.push(ele);
+      // });
+      // console.log(arrKey);
+      // Array of key and value
+      // var obj1 = {
+      //   1: 5,
+      //   2: 7,
+      //   3: 0,
+      //   4: 36,
+      // };
+      // var res = Object.keys(obj1).map((i) => [Number(i), obj1[i]]);
+      // console.log(res);
+      // var res1=Object.entries(obj1)
+      // console.log(res1)
+    </script>
+    <!-- <script>
+      console.log("9" > "11");
+      console.log("9" > 11);
+      console.log("true" > 11);
+      console.log("9" > true);
+      console.log("" > -1);
+      console.log("suman" > 11);
     </script> -->
   </body>
 </html>

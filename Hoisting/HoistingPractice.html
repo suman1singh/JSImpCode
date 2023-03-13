@@ -3,10 +3,118 @@
   <body>
     <h2>Hoisting in Javascript</h2>
     <script>
-      // program to display value
-      a = 5;
-      console.log(a);
-      var a; // 5
+      //Variable hoisting
+      // case 1. using var
+      // x = 5;
+      // console.log(x);
+      // x = 50;
+      // var x;
+
+      // case 2. using let
+      // x = 5;
+      // console.log(x);
+      // console.log(y);
+      // console.log(z);
+      // let x=5;
+      // let y=5;
+      // let z;
+
+      // case 3. using const
+      // console.log(x);
+      // const x = 5;
+
+      // var a = 4;
+      // function greet() {
+      //   b = "hello";
+      //   console.log(b);
+      //   var b;
+      // }
+      // greet(); // hello
+      // // console.log(b);
+
+      //function hoisting
+
+      //case 1.
+      // greet();
+      // function greet() {
+      //   console.log("Hi, there.");
+      // }
+
+      // case 2.
+      // greet();
+      // let greet = function () {
+      //   console.log("Hi, there.");
+      // };
+
+      //case 3.
+      // greet();
+      // var greet = function () {
+      //   console.log("Hi, there.");
+      // };
+
+      // case 4.
+      // myFun();
+      // var myFun = () => {
+      //   console.log("Suman Singh");
+      // };
+
+      //Case 5.
+      // myFun();
+      // let myFun = () => {
+      //   console.log("Suman Singh");
+      // };
+
+      // case 6.
+      // myFun();
+      // const myFun = () => {
+      //   console.log("Suman Singh");
+      // };
+
+      //Class hoisting
+      //case 1.
+      // var foo = new Foo(1, 2); //this works
+      // function Foo(x, y) {
+      //   this.x = x;
+      //   this.y = y;
+      // }
+      // case 2.
+      // var foo = new Foo(1, 2); //ReferenceError
+      // class Foo {
+      //   constructor(x, y) {
+      //     this.x = x;
+      //     this.y = y;
+      //   }
+      // }
+
+      //case 3.
+      // var foo =new Rectangle(5, 6);
+      // const Rectangle = class {
+      //   constructor(height, width) {
+      //     this.height = height;
+      //     this.width = width;
+      //   }
+      // };
+      // var foo =new Rectangle(5, 6);
+
+      //case 4.
+      // var foo =new Rectangle(5, 6);
+      // let Rectangle = class {
+      //   constructor(height, width) {
+      //     this.height = height;
+      //     this.width = width;
+      //   }
+      // };
+      // var foo =new Rectangle(5, 6);
+
+      //case 5.
+      // var foo =new Rectangle(5, 6);
+      // const Rectangle = class {
+      //   constructor(height, width) {
+      //     this.height = height;
+      //     this.width = width;
+      //   }
+      // };
+      // var foo =new Rectangle(5, 6);
     </script>
   </body>
 </html>
