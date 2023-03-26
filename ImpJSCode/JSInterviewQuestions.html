@@ -101,50 +101,59 @@
     </script> -->
     <!-- <script>
       //Video8: how to find factorial of a number
-      const num = prompt("Enter number:");
-      var fact = 1;
-      if (num < 0) {
-        console.log(`factorial of ${num} is not possible`);
-      } else {
-        for (let i = 1; i <= num; i++) {
-          fact = fact * i;
-        }
-        console.log(`factorial of ${num} is ${fact}`);
-      }
+      // const num = prompt("Enter number:");
+      // var fact = 1;
+      // if (num < 0) {
+      //   console.log(`factorial of ${num} is not possible`);
+      // } else {
+      //   for (let i = 1; i <= num; i++) {
+      //     fact = fact * i;
+      //   }
+      //   console.log(`factorial of ${num} is ${fact}`);
+      // }
+      //Simple way
+      // function factoNum(n) {
+      //   let fact = 1;
+      //   for (let i = 2; i <= n; i++) {
+      //     fact = fact * i;
+      //   }
+      //   return fact;
+      // }
+      // console.log(factoNum(5));
     </script> -->
     <!-- <script>
       //Video9: how to find prime number in javascript
-      const number = parseInt(prompt("Enter a positive number: "));
-      let isPrime = true;
-      if (number === 1) {
-        console.log("1 is neither prime nor composite number.");
-      } else if (number > 1) {
-        for (let i = 2; i < number; i++) {
-          if (number % i == 0) {
-            isPrime = false;
-            break;
-          }
-        }
-        if (isPrime) {
-          console.log(`${number} is a prime number`);
-        } else {
-          console.log(`${number} is a not prime number`);
-        }
-      } else {
-        console.log("The number is not a prime number.");
-      }
-
-      //Simple code
-      // function isPrime(n) {
-      //   for (let i = 2; i < n; i++) {
-      //     if (n % i == 0) {
-      //       return false;
-      //     } else {
-      //       return true;
+      // const number = parseInt(prompt("Enter a positive number: "));
+      // let isPrime = true;
+      // if (number === 1) {
+      //   console.log("1 is neither prime nor composite number.");
+      // } else if (number > 1) {
+      //   for (let i = 2; i < number; i++) {
+      //     if (number % i == 0) {
+      //       isPrime = false;
+      //       break;
       //     }
       //   }
+      //   if (isPrime) {
+      //     console.log(`${number} is a prime number`);
+      //   } else {
+      //     console.log(`${number} is a not prime number`);
+      //   }
+      // } else {
+      //   console.log("The number is not a prime number.");
       // }
-      // console.log(isPrime(87));
+
+      //Simple code
+      function isPrime(n) {
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }
+      console.log(isPrime(87));
     </script> -->
     <!-- <script>
       //Video10: how to reverse a string in js
@@ -168,15 +177,15 @@
       //Video12: How to swap two variable without using third variable in js
       let a = 7;
       let b = 8;
-      console.log(`value of a:${a} and value of b:${b}`);
+      // console.log(`value of a:${a} and value of b:${b}`);
       //with using 3rd variable
-      // let temp=a;
-      // a=b;
-      // b=temp;
-      // console.log(`value of a: ${a} and value of b: ${b}`);
+      let temp=a;
+      a=b;
+      b=temp;
+      console.log(`value of a: ${a} and value of b: ${b}`);
       //Without using 3rd variable that is using destructuring
-      [a, b] = [b, a];
-      console.log(`value of a:${a} and value of b:${b}`);
+      // [a, b] = [b, a];
+      // console.log(`value of a:${a} and value of b:${b}`);
     </script> -->
     <!-- <script>
       //Video13: How to merge two arrays and sort them in javascript
@@ -200,13 +209,24 @@
     </script> -->
     <!-- <script>
       //Video14: How to find factors of a given integer in js
-      const num = prompt("Please enter no:");
-      console.log(`factors of ${num}:`);
-      for (let i = 1; i <= num; i++) {
-        if (num % i == 0) {
-          console.log(i);
+      // const num = prompt("Please enter no:");
+      // console.log(`factors of ${num}:`);
+      // for (let i = 1; i <= num; i++) {
+      //   if (num % i == 0) {
+      //     console.log(i);
+      //   }
+      // }
+      //Simple way
+      function findFactor(n) {
+        let factor = [];
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) {
+            factor.push(i);
+          }
         }
+        return factor;
       }
+      console.log(findFactor(40));
     </script> -->
     <!-- <script>
       //Video15: How to make calculator in js
@@ -290,6 +310,16 @@
         return myArr.join(" ");
       };
       console.log(capFun("suman singh"));
+
+      //Simple code
+      function firstCharCaps(str) {
+        var newStr = [];
+        str.split(" ").forEach((e) => {
+          newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
+        });
+        return newStr.join(" ");
+      }
+      console.log(firstCharCaps("suman singh"));
     </script> -->
     <!-- <script>
       //Video:21 Program to find fibonacci sequence in js
@@ -353,6 +383,17 @@
         }
       }
       console.log(`in ${str} occurence of ${letter}=${count}`);
+      //Simple code
+      function noOfChar(str, char) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] == char) {
+            count++;
+          }
+        }
+        return count;
+      }
+      console.log(noOfChar("suummannns", "n"));
     </script> -->
     <!-- <script>
       //Video24: Program to print the table of any user defined number using function in js
@@ -366,24 +407,24 @@
     </script> -->
     <!-- <script>
       //Video25: Program to check nuber is armstrong or not
-      var number = prompt("Please enter number");
-      var temp = number;
-      var lengthOfNumber = number.toString().length;
-      var sum = 0;
-      while (temp > 0) {
-        var digit = temp % 10;
-        // console.log(digit);
-        sum += digit ** lengthOfNumber;
-        // console.log("Sum"+sum);
-        temp = parseInt(temp / 10);
-        // console.log(temp);
-        // console.log("-----------");
-      }
-      if (sum == number) {
-        console.log(`${number} is an armstrong number`);
-      } else {
-        console.log(`${number} is not an armstrong number`);
-      }
+      // var number = prompt("Please enter number");
+      // var temp = number;
+      // var lengthOfNumber = number.toString().length;
+      // var sum = 0;
+      // while (temp > 0) {
+      //   var digit = temp % 10;
+      //   // console.log(digit);
+      //   sum += digit ** lengthOfNumber;
+      //   // console.log("Sum"+sum);
+      //   temp = parseInt(temp / 10);
+      //   // console.log(temp);
+      //   // console.log("-----------");
+      // }
+      // if (sum == number) {
+      //   console.log(`${number} is an armstrong number`);
+      // } else {
+      //   console.log(`${number} is not an armstrong number`);
+      // }
       //simple way
       function armStrong(num) {
         var temp = num;
@@ -404,19 +445,33 @@
     </script> -->
     <!-- <script>
       //Q. All elements of array is unique or not
-      let arr=[5,8,78,6,7];
-      let isUnique=true;
-      function checkUnique(arr){
-        for(let i=0;i<arr.length;i++){
-          for(let j=i+1;j<arr.length;j++){
-            if(arr[i] == arr[j]){
-              isUnique=false;
+      let arr = [5, 8, 78, 6, 7];
+      let isUnique = true;
+      function checkUnique(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+              isUnique = false;
             }
           }
         }
-        return isUnique
+        return isUnique;
       }
       console.log(checkUnique(arr));
+      //simple code
+      function isUnique(str) {
+        let arr = str.split("");
+        let isIt = true;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+              isIt = false;
+            }
+          }
+        }
+        return isIt;
+      }
+      console.log(isUnique("sumaa"));
     </script> -->
     <!-- <script>
       //find the total price using item and price with JS
@@ -434,14 +489,14 @@
           price: 100,
         },
       ];
-      // const total = items.reduce((i, j) => i + j.item * j.price, 0);
-      // console.log(total);
+      const total = items.reduce((i, j) => i + j.item * j.price, 0);
+      console.log(total);
       //By for loop
-      sum = 0;
-      for (let i = 0; i < items.length; i++) {
-        sum += items[i].item * items[i].price;
-      }
-      console.log(sum);
+      // sum = 0;
+      // for (let i = 0; i < items.length; i++) {
+      //   sum += items[i].item * items[i].price;
+      // }
+      // console.log(sum);
     </script> -->
     <!-- <script>
       //Q. separate numbers and string from mixed array

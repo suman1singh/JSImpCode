@@ -8,9 +8,9 @@
       var person = {
         name: "Suman",
         age: 25,
-        // getName:function(){
-        //     return this.name.toUpperCase();
-        // }
+        // getName: function () {
+        //   return this.name.toUpperCase();
+        // },
         get getName() {
           return this.name.toUpperCase();
         },
@@ -18,10 +18,11 @@
           this.name = n.toUpperCase();
         },
       };
-      //   console.log(person.getName());
-      //   console.log(person.getName);
-      //   person.name="Singh";
-      //   console.log(person.getName)
+      console.log(person.getName);
+      console.log(person.age)
+      console.log(person.getName);
+      person.name = "Singh";
+      console.log(person.getName);
       person.setName = "Shree";
       console.log(person.getName);
     </script>

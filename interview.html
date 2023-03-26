@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Practice here</h1>
+    <h1>Practice here:<span id="newId">New ID:</span></h1>
     <div>
       <button>click me</button>
     </div>
@@ -24,7 +24,7 @@
       //   console.log("button2");
       // });
     </script> -->
-    <script>
+    <!-- <script>
       function armStrong(num) {
         var temp = num;
         var sum = 0;
@@ -41,6 +41,21 @@
         }
       }
       console.log(armStrong(16342));
-    </script>
+    </script> -->
+    <!-- <script>
+      let div1 = document.querySelector("div");
+      let button1 = document.querySelector("button");
+      div1.addEventListener("click", (e) => {
+        e.stopPropagation()
+        console.log("div1");
+      },true);
+      div1.addEventListener("click", (e) => {
+        // e.stopPropagation()
+        console.log("div2");
+      },true);
+      button1.addEventListener("click", () => {
+        console.log("button1");
+      },true);
+    </script> -->
   </body>
 </html>
