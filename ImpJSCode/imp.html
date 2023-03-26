@@ -105,6 +105,15 @@
       obj.printName();
     </script> -->
     <!-- <script>
+      let obj = {
+        name: "SumanSingh",
+        printName: function(){
+          console.log(this.name);
+        },
+      };
+      obj.printName();
+    </script> -->
+    <!-- <script>
       var x = Math.random();
       console.log(x);
       var y = Math.floor(Math.random());
@@ -129,6 +138,28 @@
       const person = {
         name: "SS",
         method: displayName.bind(this),
+      };
+      person.method();
+    </script> -->
+    <!-- <script>
+      var name = "Suman";
+      function displayName() {
+        console.log(this.name);
+      }
+      const person = {
+        name: "SS",
+        method: displayName()
+      };
+      person.method();
+    </script> -->
+    <!-- <script>
+      var name = "Suman";
+      function displayName() {
+        console.log(this.name);
+      }
+      const person = {
+        name: "SS",
+        method: displayName,
       };
       person.method();
     </script> -->
@@ -402,21 +433,37 @@
     </script> -->
     <!-- <script>
       // Checking number is power of two or not
-      const isPowerOfTwo = (num) => {
-        if (num === 1) {
-          return true;
-        }
-        if (num % 2 !== 0) {
-          return false;
-        }
-        return isPowerOfTwo(num / 2);
-      };
-      console.log(isPowerOfTwo(3));
-      console.log(isPowerOfTwo(8));
-      console.log(isPowerOfTwo(15));
-      console.log(isPowerOfTwo(16));
+      // const isPowerOfTwo = (num) => {
+      //   if (num === 1) {
+      //     return true;
+      //   }
+      //   if (num % 2 !== 0) {
+      //     return false;
+      //   }
+      //   return isPowerOfTwo(num / 2);
+      // };
+      // console.log(isPowerOfTwo(3));
+      // console.log(isPowerOfTwo(8));
+      // console.log(isPowerOfTwo(15));
+      // console.log(isPowerOfTwo(16));
+      //Simple way
+      //   function isPowerOfTwo(n) {
+      //     if (n == 1) {
+      //       return true;
+      //     } else if (n % 2 != 0) {
+      //       return false;
+      //     } else {
+      //       return isPowerOfTwo(n / 2);
+      //     }
+      //   }
+      //   console.log(isPowerOfTwo(2));
+      //   console.log(isPowerOfTwo(4));
+      //   console.log(isPowerOfTwo(7));
+      //   console.log(isPowerOfTwo(32));
+      //
     </script> -->
     <!-- <script>
+      //Convert string into object of character and no of digit
       function repeatL(str) {
         var count = {};
         var arr = str.split("");
@@ -474,6 +521,48 @@
       }
       vowelsAndConsonants("ieaoau");
     </script> -->
+    <script>
+      //Find vowels
+      // function vowCons(str) {
+      //   let vow = str.split("").filter((e) => {
+      //     if (
+      //       e == "a" ||
+      //       e == "A" ||
+      //       e == "e" ||
+      //       e == "E" ||
+      //       e == "i" ||
+      //       e == "I" ||
+      //       e == "o" ||
+      //       e == "O" ||
+      //       e == "u" ||
+      //       e == "U"
+      //     ) {
+      //       return e;
+      //     }
+      //   });
+      //   return vow;
+      // }
+      // console.log(vowCons("sumanA"));
+      // Simple code
+      // function vowLetter(str) {
+      //   let vow = str.split("").filter((e) => {
+      //     return (
+      //       e == "a" ||
+      //       e == "A" ||
+      //       e == "e" ||
+      //       e == "E" ||
+      //       e == "i" ||
+      //       e == "I" ||
+      //       e == "o" ||
+      //       e == "O" ||
+      //       e == "u" ||
+      //       e == "U"
+      //     );
+      //   });
+      //   return vow;
+      // }
+      // console.log(vowCons("sumanAIi"));
+    </script>
     <!-- <script>
       //print 1 to 100 withoput loop
       function printNum(n) {
@@ -508,7 +597,7 @@
       }
       console.log(toObject(arr));
     </script> -->
-    <script>
+    <!-- <script>
       //Convert object into array
       // var obj = {
       //   0: "a",
@@ -527,17 +616,18 @@
       // });
       // console.log(arrKey);
       // Array of key and value
-      // var obj1 = {
-      //   1: 5,
-      //   2: 7,
-      //   3: 0,
-      //   4: 36,
-      // };
-      // var res = Object.keys(obj1).map((i) => [Number(i), obj1[i]]);
-      // console.log(res);
-      // var res1=Object.entries(obj1)
-      // console.log(res1)
-    </script>
+      //   var obj1 = {
+      //     1: 5,
+      //     2: 7,
+      //     3: 0,
+      //     4: 36,
+      //   };
+      //   var res = Object.keys(obj1).map((i) => [Number(i), obj1[i]]);
+      //   console.log(res);
+      //   var res1 = Object.entries(obj1);
+      //   console.log(res1);
+      //
+    </script> -->
     <!-- <script>
       console.log("9" > "11");
       console.log("9" > 11);
@@ -546,5 +636,30 @@
       console.log("" > -1);
       console.log("suman" > 11);
     </script> -->
+    <script>
+      // function getPrice(item) {
+      //   if (item === "Pizza") {
+      //     return 240;
+      //   } else if (item === "Burger") {
+      //     return 300;
+      //   } else if (item === "Sandwitch") {
+      //     return 500;
+      //   } else {
+      //     return 400;
+      //   }
+      // }
+      // console.log(getPrice("Pizza"));
+
+      // Refactorization to improve code quality
+      // const foodMap = {
+      //   Burger: 300,
+      //   Pizza: 240,
+      //   Sandwitch: 400,
+      // };
+      // function getPrice(item) {
+      //   return foodMap[item];
+      // }
+      // console.log(getPrice("Pizza"));
+    </script>
   </body>
 </html>

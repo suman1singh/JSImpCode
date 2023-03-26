@@ -85,7 +85,7 @@
       promise
         .then(function (data) {
           console.log(data);
-          return job(false);
+          return job(true);
         })
         .catch(function (error) {
           console.log(error);
@@ -93,7 +93,10 @@
         })
         .then(function (data) {
           console.log(data);
-          return job(true);
+          return job(false);
+        })
+        .then((x)=>{
+          console.log(x);
         })
         .catch(function (error) {
           console.log(error);
