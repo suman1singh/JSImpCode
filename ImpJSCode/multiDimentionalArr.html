@@ -24,55 +24,58 @@
         ["Sara", 23],
         ["Peter", 25],
       ];
-
-      // access the first item
+      // // access the first item
       //   console.log(x[0]); // ["Jack", 24]
-      // access the first item of the first inner array
+      // // access the first item of the first inner array
       //   console.log(x[0][0]); // Jack
-      // access the second item of the third inner array
+      // // access the second item of the third inner array
       //   console.log(x[2][0]); // 24
       //Adding Element to the Outer Array
-      //   x.push(["Suman", 26]);
-      //   console.log(x);
+      // x.push(["Suman", 26]);
+      // console.log(x);
       // using index notation
-      //   x[2][2] = "hello";
+      // x[2][1] = "hello";
+      // x[1][2] = "hello";
+      // console.log(x);
       //using push()
-      //   x[1].push("Sunny");
-      //using splice method
-      //   x.splice(1, 0, ["Shree", 19]);
-      //   console.log(x);
+      // x[1].push("Sunny");
+      // console.log(x);
+      // using splice method
+      // x.splice(1, 0, ["Shree", 19]);
+      // console.log(x);
 
       //Remove an Element
-      //   x.pop();
-      //   x.pop();
-      //   console.log(x);
+      // x.pop();
+      // x.pop();
+      // console.log(x);
       // remove the element from the inner array
-      // x[1].pop()
-      // console.log(x)
+      // x[1].pop();
+      // console.log(x);
 
       //using splice method
       // x.splice(1,1);
       // console.log(x)
 
       //Iterating over Multidimensional Array
-      //   x.forEach((ele) => {
-      //     ele.forEach((e) => {
-      //       console.log(e);
-      //     });
+      //using forEach
+      // x.forEach((ele) => {
+      //   ele.forEach((e) => {
+      //     console.log(e);
       //   });
+      // });
 
       //using for...of loop
-      //   for (let i of x) {
-      //     for (let j of i) {
-      //       console.log(j);
-      //     }
+      // for (let i of x) {
+      //   for (let j of i) {
+      //     console.log(j);
       //   }
+      // }
       //using for loop
-      for (let i = 0; i < x.length; i++) {
-        for (let j = 0; j < x[i].length; j++) {
-          console.log(x[i][j]);
-        }
-      }
+      // for (let i = 0; i < x.length; i++) {
+      //   for (let j = 0; j < x[i].length; j++) {
+      //     console.log(x[i][j]);
+      //   }
+      // }
     </script>
   </body>
 </html>
