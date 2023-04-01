@@ -2,6 +2,45 @@
 <html>
   <body>
     <h2>Js interview questions From screenShot</h2>
+    <script>
+      // 4 ways to define a function in js
+      //way1: function declarartion
+      function sum1(a, b) {
+        return a + b;
+      }
+      console.log(sum1(2, 5));
+      //way2: function Expression
+      let sum2 = function (a, b) {
+        return a + b;
+      };
+      console.log(sum2(2, 5));
+      //way3: arrow function
+      let sum3 = (a, b) => {
+        return a + b;
+      };
+      console.log(sum3(2, 5));
+      //way4: IIFE function
+      (function (a, b) {
+        console.log(a + b);
+      })(2, 4);
+    </script>
+    <!-- <script>
+      var x = "sum11";
+      var y = parseInt(x);
+      console.log(y);
+      var x = "11sum";
+      var y = parseInt(x);
+      console.log(y);
+    </script> -->
+    <!-- <script>
+      var obj = {
+        1: 5,
+        2: 3,
+        3: 7,
+      };
+      console.log(Object.entries(obj));
+      Object.entries(obj).map(([i, j]) => console.log(i, ":", j));
+    </script> -->
     <!-- <script>
       console.log(2 + "2");
       console.log("2" + "2");
@@ -521,7 +560,7 @@
       }
       vowelsAndConsonants("ieaoau");
     </script> -->
-    <script>
+    <!-- <script>
       //Find vowels
       // function vowCons(str) {
       //   let vow = str.split("").filter((e) => {
@@ -562,7 +601,7 @@
       //   return vow;
       // }
       // console.log(vowCons("sumanAIi"));
-    </script>
+    </script> -->
     <!-- <script>
       //print 1 to 100 withoput loop
       function printNum(n) {
@@ -636,7 +675,7 @@
       console.log("" > -1);
       console.log("suman" > 11);
     </script> -->
-    <script>
+    <!-- <script>
       // function getPrice(item) {
       //   if (item === "Pizza") {
       //     return 240;
@@ -660,6 +699,17 @@
       //   return foodMap[item];
       // }
       // console.log(getPrice("Pizza"));
-    </script>
+    </script> -->
+    <!-- <script>
+      //Manual method to reverse an string
+      function revString(str) {
+        var rev = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          rev += str[i];
+        }
+        return rev;
+      }
+      console.log(revString("Suman"));
+    </script> -->
   </body>
 </html>

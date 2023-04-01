@@ -35,7 +35,8 @@
         }
     </script> -->
     <!-- <script>
-      print(NaN === NaN);
+    //   print(NaN === NaN);
+      print(false);
     </script> -->
     <!-- <script>
         let x=4;
@@ -67,13 +68,16 @@
     </script> -->
     <!-- <script>
         console.log(typeof null);
+        console.log(0?2:3);
         console.log(1?2:3);
+        console.log(3?2:3);
+        console.log(""?2:3);
     </script> -->
-    <!-- <script>
+    <script>
         const numbers=[1,2,3];
         numbers[10]=11;
         console.log(numbers);
-    </script> -->
+    </script>
     <!-- <script>
         const set=new Set();
         set.add(5);
@@ -130,21 +134,21 @@
             }
         }
         checkPerson({name:"jayesh"}); -->
-        <!-- <script>
+    <!-- <script>
             console.log(typeof Array);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const arr=new Array(25);
             const arr2=new Array("jgv");
             console.log(arr.length, arr2.length);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             for(var i=0;i<10;i++){
 
             }
             console.log(i);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const userObj={
                 'id':1,
                 'name':'Vidhya',
@@ -154,14 +158,14 @@
             delete userObj.address;
             console.log(userObj);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let userAge=20;
             let anotherUserAge=userAge;
             userAge=25;
             console.log(anotherUserAge);
             console.log(userAge);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             var name="jayesh";
             let age="24";
             const player="virat";
@@ -174,20 +178,20 @@
             console.log(age);
             console.log(player);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function sum(a,b){
                 console.log(a+b);
             }
             sum(1,'2');
             console.log(1 + '2');
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function sum(a,b,c){
                 return a+b+c;
             }
             sum(6,7,6);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             var rate=10;
             function getRate(){
                 if(rate == undefined){
@@ -199,7 +203,7 @@
             }
             console.log("Rate is", getRate());
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let a=3;
             let b=new Number(3);
             let c=3;
@@ -207,7 +211,7 @@
             console.log(a===c);
             console.log(b===c);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             console.log("start");
             const first=setTimeout(()=>{
                 console.log("first");
@@ -220,7 +224,7 @@
             },2000);
             console.log("end");
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function checkAge(data){
                 if(data === {age : 18}){
                     console.log('you are an adult');
@@ -232,14 +236,14 @@
             }
             checkAge({age : 18});
         </script> -->
-        <!-- <script>
+    <!-- <script>
             console.log('1');
             setTimeout(function two(){
                 console.log('2');
             },0);
             console.log('3');
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function a(p){
                 return p;
             }
@@ -247,7 +251,7 @@
             console.log(typeof b);
             console.log(b===a);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const p1=new Promise((res, rej)=>{
                 setTimeout(()=>res("one"),1000);
             });
@@ -260,7 +264,7 @@
             .catch((error)=>console.log(error));
 
         </script> -->
-        <!-- <script>
+    <!-- <script>
            func1();
            func2();
            var func1=function(){
@@ -270,30 +274,30 @@
             console.log("func2");
            }
         </script> -->
-        <!-- <script>
+    <!-- <script>
             Boolean(3<7);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             (function(){
                 var a=b=3;
             })();
             console.log(b);
             console.log(a);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             console.log('2' * undefined);
             console.log(undefined * 2);
             console.log(2 * null);
             console.log(null * '2');
         </script> -->
-        <!-- <script>
+    <!-- <script>
             (()=>{
                 let x = (y=10);
             })();
             console.log(typeof x);
             console.log(typeof y);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const carDetails={
                 name: "Verna",
                 getName(){
@@ -305,7 +309,7 @@
             var getCarName=carDetails.getName;
             console.log(getCarName());
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function A(){ 
                 console.log('A');
                 return false;
@@ -324,7 +328,7 @@
             }
             console.log((C() > D()) && (undefined || B() || A()));
         </script> -->
-        <!-- <script>
+    <!-- <script>
             a();
             function a(){
                 console.log("a");
@@ -334,26 +338,26 @@
                 console.log("b");
             }
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let fruit=["Apple","Peach"];
             let moreFruit=[...fruit];
             fruit.push("Orange")
             console.log(moreFruit);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             app=()=>{
                 let a=10;
             }
             console.log(app());
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let a=8;
             let b=6;
             a=b;
             b=a;
             console.log(a + "" + b);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let array1 = ['v','i','v','e','k','g'];
             let array2=array1;
             array2.length=0;
@@ -364,7 +368,7 @@
             y=(x++,x);
             console.log(y);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function makePerson(){
                 return {
                     userName: "jayesh",
@@ -374,7 +378,7 @@
             const person = makePerson();
             console.log(person.ref.userName);
         </script> -->
-        <!-- <script>
+    <!-- <script>
            var a="JavaScript";
            function func(){
             let a=1;
@@ -382,22 +386,22 @@
            console.log(a);
            func();
         </script> -->
-        <!-- <script>
+    <!-- <script>
             console.log(null == undefined);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function add(a,b){
                 console.log(a+b++);
                 console.log(b++);
             }
             add(55,'55');
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let arr=[1,3,5,7];
             arr[7]=7;
             console.log(arr.length);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             // JS array method:
             const message = ["JavaScript ", "is ", "fun."];
             let joinedString = message.reduce(function joinStrings(accumulator, currentValue) {
@@ -406,30 +410,30 @@
             console.log(joinedString);
             // Output: JavaScript is fun.
         </script> -->
-        <!-- <script>
+    <!-- <script>
             function getName(...args){
                 console.log(typeof args);
             }
             getName("Jayesh");
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const num=[1,2,3,2,4,3];
             const res=[...new Set(num)];
             console.log("result:",res)
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const num1=[1,2];
             const num2=[3,4];
             const res=num1.concat(num2);
             console.log(num1);
             console.log(res);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const array1=[5,8,"012",130,44];
             const found=array1.find(ele=>ele>11);
             console.log(found);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             sayHello();
             sayWorld();
             function sayHello(){
@@ -439,14 +443,14 @@
                 console.log("World");
             }
         </script> -->
-        <!-- <script>
+    <!-- <script>
             for(var i=3;i<8;i++){
                 setTimeout(()=>{
                     console.log(i)
                 },0);
             }
         </script> -->
-        <!-- <script>
+    <!-- <script>
             (function(){
                 var x=10;
                 (function(){
@@ -458,23 +462,23 @@
                 })()
             })()
         </script> -->
-        <!-- <script>
+    <!-- <script>
             let x = "10" + 5 + 1 + "x";
             console.log(x)
         </script> -->
-        <!-- <script>
+    <!-- <script>
             console.log(1 == true);
             console.log(2 == true);
             console.log(1 === true);
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const a=[null,2,3];
             const b=[undefined,2,3];
             console.log(JSON.stringify(a))
             console.log(JSON.stringify(b))
             console.log(JSON.stringify(a) === JSON.stringify(b))
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const person={
                 name: "Suman",
                 age:25,
@@ -483,12 +487,119 @@
             city='BLR';
             console.log(person)
         </script> -->
-        <!-- <script>
+    <!-- <script>
             const success="{email} logged-in";
             const user="SS@gmail.com";
             let display=success.replace("{email}",user);
             console.log(display)
         </script> -->
-    </script>
+    <!-- <script>
+        let x = 5;
+        let y = 6;
+        x += x > y ? x : y;
+        console.log(x)
+    </script> -->
+    <!-- <script>
+      const course = {
+        name: "JS",
+        id: 7,
+      };
+      let name = course.name;
+      name = "java";
+      console.log(course);
+    </script> -->
+    <!-- <script>
+        const a={};
+        const b={key:'b'};
+        const c={key:'c'};
+        a[b]=123;
+        a[c]=456;
+        console.log(a);
+        console.log(a[b]);
+    </script> -->
+    <!-- <script>
+      for (var i = 0; i != 0; ) {
+        i = 50;
+      }
+      console.log(i);
+    </script> -->
+    <!-- <script>
+      (function (x) {
+        return (function (y) {
+          console.log(x);
+        })(2);
+      })(1);
+    </script> -->
+    <!-- <script>
+      function outer() {
+        let a = 10;
+        function inner() {
+          let a = "Hello-world";
+          console.log(a);
+        }
+        inner();
+      }
+      outer();
+    </script> -->
+    <!-- <script>
+      const arr = [1, 2, 3, 4, 5, 6];
+      const x = arr.slice(2, 4);
+      console.log("value of x",x);
+      arr.splice(2, 2, 2, 2);
+      console.log("value of arr",arr);
+      const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+      const citrus = fruits.slice(1, 3);
+      console.log("output1", citrus);
+      console.log("output2", fruits.slice(2));
+      console.log("output3", fruits.splice(2,2,2));
+    </script> -->
+    <!-- <script>
+      let arr1 = [5];
+      console.log(+arr1 + 5);
+      console.log(arr1 + 5);
+    </script> -->
+    <!-- <script>
+      console.log(" " == 0);
+      console.log(" " === 0);
+    </script> -->
+    <!-- <script>
+      (function () {
+        var a = (b = 5);
+      })();
+      console.log("b:", b, "and a:", a);
+    </script> -->
+    <!-- <script>
+      console.log(0.1 + 0.2);
+      console.log(0.1 + 0.2 == 0.3);
+    </script> -->
+    <!-- <script>
+      function add(x = 1, y = 2) {
+        return x + y;
+      }
+      console.log(add());
+    </script> -->
+    <!-- <script>
+      const add = (x) => x + y;
+      function addition(num = 2, val = add(num)) {
+        console.log(num, val);
+      }
+      addition(3);
+    </script> -->
+    <!-- <script>
+      var a = true + true + true * 3;
+      console.log(a);
+      console.log(NaN === NaN);
+      console.log(NaN == NaN);
+    </script> -->
+    <!-- <script>
+      var a = 1;
+      function b() {
+        a = 10;
+        return;
+        function a() {}
+      }
+      b();
+      console.log(a);
+    </script> -->
   </body>
 </html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>OOPS with JS</h1>
+    <script>
+      //JS Class
+      //   class Animal {
+      //     constructor(name, age) {
+      //       this.name = name;
+      //       this.age = age;
+      //     }
+      //     getInfo() {
+      //       return `The name of the animal is ${this.name} and age is ${this.age}`;
+      //     }
+      //   }
+      //   const firstAnimal = new Animal("Rex", 2);
+      //   console.log(firstAnimal);
+      //   console.log(firstAnimal.getInfo());
+      //   const secondAnimal = new Animal("Barney", 5);
+      //   console.log(secondAnimal);
+      //   console.log(secondAnimal.getInfo());
+      //Class Inheritance
+      //   console.log("<***********Class Inheritance*************>");
+      //   class Dog extends Animal {
+      //     constructor(name, age, breed) {
+      //       super(name, age);
+      //       this.breed = breed;
+      //     }
+      //     bark() {
+      //       return "woof";
+      //     }
+      //   }
+      //   class Cat extends Animal {
+      //     constructor(name, age, weight) {
+      //       super(name, age);
+      //       this.weight = weight;
+      //     }
+      //   }
+      //   console.log("<*********Dog object**********>");
+      //   const myDog = new Dog("Rexes", 4, "German Shepard");
+      //   console.log(myDog.getInfo());
+      //   console.log(myDog.breed);
+      //   console.log(myDog.bark());
+      //   console.log("<*********Cat object**********>");
+      //   const myCat = new Cat("Whiskers", 5, "5KG");
+      //   console.log(myCat.getInfo());
+      //   console.log(myCat.weight);
+
+      //Encapsulation
+      //   console.log("<**************Encapsulation***************>")
+      //   class Cat extends Animal {
+      //     #weight; //mark as private
+      //     constructor(name, age, weight) {
+      //       super(name, age);
+      //       this.#weight = weight;
+      //     }
+      //     getWeight() {
+      //       //getter
+      //       return this.#weight;
+      //     }
+      //     setWeight(weight) {
+      //       //setter
+      //       return (this.#weight = weight);
+      //     }
+      //   }
+      //   const myCat = new Cat("Whiskers", 5, "5KG");
+      //   console.log(myCat.getWeight());
+      //   myCat.setWeight("6Kg");
+      //   console.log(myCat.getWeight());
+
+      //Polymorphism
+      //   class Animal {
+      //     constructor(name, age) {
+      //       this.name = name;
+      //       this.age = age;
+      //     }
+      //     makeSound() {
+      //       return "Some nice sound made";
+      //     }
+      //   }
+      //   class Dog extends Animal {
+      //     constructor(name, age, breed) {
+      //       super(name, age);
+      //       this.breed = breed;
+      //     }
+      //     makeSound() {
+      //       return "woof";
+      //     }
+      //   }
+      //   class Cat extends Animal {
+      //     constructor(name, age, weight) {
+      //       super(name, age);
+      //       this.weight = weight;
+      //     }
+      //     makeSound() {
+      //       return "Meow";
+      //     }
+      //   }
+      //   const myDog = new Dog("Rex", 2, "German Sh.");
+      //   const myCat = new Cat("Whiskers", 5, "5kg");
+      //   console.log(myDog.makeSound());
+      //   console.log(myCat.makeSound());
+
+      //Abstract class p1
+      //   class Animal {
+      //     constructor(name, age) {
+      //       this.name = name;
+      //       this.age = age;
+      //       if (this.constructor == Animal) {
+      //         throw new Error("Can't create a instance of abstract class");
+      //       }
+      //     }
+      //     makeSound() {
+      //       throw new Error("abstract method doesn't have an implementation");
+      //     }
+      //   }
+      //   //Abstract class p2
+      //   class Dog extends Animal {
+      //     constructor(name, age, breed) {
+      //       super(name, age);
+      //       this.breed = breed;
+      //     }
+      //     makeSound() {
+      //       return "woof";
+      //     }
+      //   }
+      //   class Cat extends Animal {
+      //     constructor(name, age, weight) {
+      //       super(name, age);
+      //       this.weight = weight;
+      //     }
+      //     //   makeSound() {
+      //     //     return "Meow";
+      //     //   }
+      //   }
+      //   // const myAnimal=new Animal('Barney',3); //==>can't instantiate anymore
+      //   const myDog = new Dog("Rex", 2, "German Sh.");
+      //   const myCat = new Cat("Whiskers", 5, "5kg");
+      //   console.log(myCat.makeSound()); //=>this will give us an error since makeSound() method isn't available
+    </script>
+  </body>
+</html>
