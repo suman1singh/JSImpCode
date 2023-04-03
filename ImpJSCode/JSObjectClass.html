@@ -2,21 +2,72 @@
 <html>
   <body>
     <script>
-      var obj = {
-        name: "Suman",
-        age: 25,
-        address: {
-          state: "Bihar",
-          district: "Madhubani",
-        },
-      };
-      obj.newName = "Synny";
-      obj.address.vill = "Tarapatti";
-      obj.age = 27;
-      console.log(obj);
-      console.log(obj.age);
-      console.log(obj.address.district);
-      // console.log(obj[age]);
+      // //Object.assign() method
+      // const target = { a: 1, b: 2 };
+      // const source = { b: 4, c: 5 };
+      // const returnedTarget = Object.assign(target, source);
+      // console.log(target);
+      // console.log(returnedTarget);
+      // // Expected output: Object { a: 1, b: 4, c: 5 }
+      // console.log(returnedTarget === target);
+      // // Expected output: true
+
+      // //Object cloning
+      // const obj = { a: 1 };
+      // const copy = Object.assign({}, obj);
+      // console.log(copy); // { a: 1 }
+
+      // //Merging objects
+      // const o1 = { a: 1 };
+      // const o2 = { b: 2 };
+      // const o3 = { c: 3 };
+      // const obj = Object.assign(o1, o2, o3);
+      // console.log(obj); // { a: 1, b: 2, c: 3 }
+      // console.log(o1); // { a: 1, b: 2, c: 3 }, target object itself is changed.
+      
+      
+      //Case: special
+      const v1 = "abc";
+      const v2 = true;
+      const v3 = 10;
+      const v4 = Symbol("foo");
+      const obj = Object.assign({}, v1, null, v2, undefined, v3, v4);
+      // Primitives will be wrapped, null and undefined will be ignored.
+      // Note, only string wrappers can have own enumerable properties.
+      console.log(obj); // { "0": "a", "1": "b", "2": "c" }
+    </script>
+    <script>
+      // var obj = {
+      //   name: "Suman",
+      //   age: 25,
+      //   address: {
+      //     state: "Bihar",
+      //     district: "Madhubani",
+      //   },
+      // };
+      // console.log(obj.age);
+      // // console.log(obj[age]) //will show error
+      // console.log(obj["age"]);
+      // obj["name"] = "Supriya";
+      // obj["post"]="Khajauli"
+      // console.log(obj);
+      // // Adding and accessing element using . operator in object
+      // obj.newName = "Synny";
+      // obj.address.vill = "Tarapatti";
+      // obj.age = 27;
+      // console.log(obj);
+      // console.log(obj.age);
+      // console.log(obj.address.district);
+      // // console.log(obj[age]);
+
+      // Adding element using Object.assign() method
+      // Object.assign(obj, { newAge: 30 });
+      // console.log(obj);
+
+      //using square bracket
+      // let newObj = {};
+      // newObj[name] = "suman";
+      // console.log(newObj);
     </script>
     <!-- <script>
         // constructor function
