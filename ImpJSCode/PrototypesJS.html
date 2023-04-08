@@ -16,6 +16,7 @@
       String.prototype.bold = function () {
         return "error";
       };
+      //Important to learn
       let users = {
         getName: function () {
           return this.firstName + " " + this.lastName;
@@ -29,20 +30,20 @@
         firstName: "Suman",
         lastName: "Singh",
         birth: 2000,
-        // getAge: users.getAge,
+        getAge: users.getAge,
       };
       let faculty = {
         firstName: "JP",
         lastName: "Sir",
         birth: 1990,
-        // getAge: users.getAge,
+        getAge: users.getAge,
       };
-      //   faculty.__proto__ = users;
+      faculty.__proto__ = users;
       student.__proto__ = users;
-      // console.log(student.getName());
-      // console.log(student.getAge());
-      // console.log(faculty.getName());
-      // console.log(faculty.getAge());
+      console.log(student.getName());
+      console.log(student.getAge());
+      console.log(faculty.getName());
+      console.log(faculty.getAge());
     </script>
   </body>
 </html>

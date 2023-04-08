@@ -5,7 +5,7 @@
       //   Code 1:String reverse without reversing of individual words (Array of elements can be reverse with reverse() method but for string it is won't possible so required to split
       // and then join().
       function removeDuplicates() {
-        var string = "India is my country";
+        var string = "Suman Kumar Singh";
         let result = string
           .split("")
           .reverse()
@@ -54,8 +54,63 @@
       a=a-b
       console.log(a,b)
     </script> -->
+    <!-- <script>
+      //Code5: Find longest word from a string with multiple word
+      function longestWord() {
+        let string = "supriya is a hahahahaha good girl";
+        var arr = string.split(" ");
+        var longest ="";
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].length > longest.length) {
+            longest = arr[i];
+          }
+        }
+        return longest;
+      }
+      console.log(longestWord());
+      //Another method: Here is also how to sort string based on size of each word
+      function findLongestWord() {
+        var str = "Priya is a goog girl and having hardworking skill";
+        var longestWord = str.split(" ").sort((a, b) => {
+          return b.length - a.length;
+        }); //in desc order //from greater to smallest word
+        console.log(longestWord[0]);
+        //for smallest word
+        console.log(longestWord[longestWord.length-1]);
+        console.log(longestWord[0].length);
+      }
+      findLongestWord();
+    </script> -->
+    <!-- <script>
+      //Code 7: To find vowels and its count in a given string
+      function findVowel(str) {
+        var vow = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+        var count = 0;
+        for (let letter of str) {
+          if (vow.includes(letter)) {
+            console.log(letter);
+            count++;
+          }
+        }
+        console.log("No of vowels:",count);
+      }
+      findVowel("suUman");
+    </script> -->
     <script>
-      //code 12 priya
+      //Code 6: To find 1st pair of elements whoes sum is 0
+      function sumPair(str) {
+        for (let i = 0; i < str.length; i++) {
+          for (let j = i + 1; j < str.length; j++) {
+            if (str[i] + str[j] == 0) {
+              return [str[i], str[j]];
+            }
+          }
+        }
+      }
+      console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
+    </script>
+    <script>
+     //priya code 21
     </script>
   </body>
 </html>
