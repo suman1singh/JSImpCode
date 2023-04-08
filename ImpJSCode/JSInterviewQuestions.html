@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <h1>Imp for interview</h1>
   <body>
     <!-- <script>
       // How to make array empty
@@ -39,6 +40,7 @@
       myArr.splice(index, 1);
       let Secondlargest = Math.max(...myArr);
       console.log("second largest value:",Secondlargest);
+      console.log(Math.max())
     </script> -->
     <!-- <script>
       //Video5: filter() and find() method
@@ -61,19 +63,37 @@
     </script> -->
     <!-- <script>
       //Video6:Missing elements in a given array
+      // const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
+      // const missArray = [];
+      // const missingValue = (arr) => {
+      //   const min = Math.min(...arr);
+      //   const max = Math.max(...arr);
+      //   for (let i = min; i <= max; i++) {
+      //     if (arr.indexOf(i) < 0) {
+      //       missArray.push(i);
+      //     }
+      //   }
+      //   return missArray;
+      // };
+      // console.log("Missing elements are:", missingValue(arrNum));
+
+      //Simple way
       const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
-      const missArray = [];
-      const missingValue = (arr) => {
-        const min = Math.min(...arr);
-        const max = Math.max(...arr);
+      function missing(a) {
+        var min = Math.min(...a);
+        var max = Math.max(...a);
+        var miss = [];
         for (let i = min; i <= max; i++) {
-          if (arr.indexOf(i) < 0) {
-            missArray.push(i);
+          // if(a.indexOf(i) < 0){
+          //   miss.push(i);
+          // }
+          if (!a.includes(i)) {
+            miss.push(i);
           }
         }
-        return missArray;
-      };
-      console.log("Missing elements are:", missingValue(arrNum));
+        return miss;
+      }
+      console.log(missing(arrNum));
     </script> -->
     <!-- <script>
       arr = [5, 4, 7];
@@ -258,6 +278,23 @@
           }
         });
       console.log(isSame);
+
+      //Another way
+      var arr1 = [96, 2, 8, 5, 6, 7];
+      var arr2 = [8, 6, 7, 2, 5, 96];
+      function areSame(a, b) {
+        var same =
+          a.length == b.length &&
+          a.every((e) => {
+            if (b.includes(e)) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+        return same;
+      }
+      console.log(areSame(arr1, arr2));
     </script> -->
     <!-- <script>
       //Video17: How to find intersection of two arrays/sets in js
@@ -287,39 +324,64 @@
       console.log(`Value in Fahrenheit: ${fah}`);
     </script> -->
     <!-- <script>
-      //Video20: convert 1st letter of a string to uppercase
-      var inputString = prompt("Enter string to capitalize");
-      const firstCap = (str) => {
-        var newStr = str.split(" ");
-        console.log(newStr);
-        var newArr = newStr.map((i) => {
-          return i.charAt(0).toUpperCase() + i.slice(1);
-        });
-        return newArr.join(" ");
-      };
-      console.log(firstCap(inputString));
-
-      // using for loop
-      var capFun = (str) => {
-        var arrStr = str.split(" ");
-        console.log(arrStr);
-        let myArr = [];
-        for (let i = 0; i < arrStr.length; i++) {
-          myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
-        }
-        return myArr.join(" ");
-      };
-      console.log(capFun("suman singh"));
-
-      //Simple code
-      function firstCharCaps(str) {
-        var newStr = [];
-        str.split(" ").forEach((e) => {
-          newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
-        });
-        return newStr.join(" ");
+      //reverse each word in string without changing the position of word.
+      var name1 = "suman kumar singh";
+      //using for loop
+      var temp = name1.split(" ");
+      var newA = [];
+      for (let i = 0; i < temp.length; i++) {
+        newA.push(temp[i].split("").reverse().join(""));
       }
-      console.log(firstCharCaps("suman singh"));
+      console.log(newA.join(" "));
+      //using forEach() method
+      var newArr = [];
+      name1.split(" ").forEach((e) => {
+        newArr.push(e.split("").reverse().join(""));
+      });
+      console.log(newArr.join(" "));
+    </script> -->
+    <!-- <script>
+      //Video20: convert 1st letter of a string to uppercase
+      // var inputString = prompt("Enter string to capitalize");
+      // const firstCap = (str) => {
+      //   var newStr = str.split(" ");
+      //   console.log(newStr);
+      //   var newArr = newStr.map((i) => {
+      //     return i.charAt(0).toUpperCase() + i.slice(1);
+      //   });
+      //   return newArr.join(" ");
+      // };
+      // console.log(firstCap(inputString));
+
+      // // using for loop
+      // var capFun = (str) => {
+      //   var arrStr = str.split(" ");
+      //   console.log(arrStr);
+      //   let myArr = [];
+      //   for (let i = 0; i < arrStr.length; i++) {
+      //     myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
+      //   }
+      //   return myArr.join(" ");
+      // };
+      // console.log(capFun("suman singh"));
+
+      // //Simple code
+      // function firstCharCaps(str) {
+      //   var newStr = [];
+      //   str.split(" ").forEach((e) => {
+      //     newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
+      //   });
+      //   return newStr.join(" ");
+      // }
+      // console.log(firstCharCaps("suman singh"));
+      //very simple way
+      // function cap(s) {
+      //   var newS = s.split(" ").map((e) => {
+      //     return e.charAt(0).toUpperCase() + e.slice(1);
+      //   });
+      //   return newS.join(" ");
+      // }
+      // console.log(cap("suman kumar singh"));
     </script> -->
     <!-- <script>
       //Video:21 Program to find fibonacci sequence in js
@@ -337,7 +399,7 @@
       //Pattern1:
       for (let i = 1; i <= 6; i++) {
         for (let j = 1; j <= i; j++) {
-          document.write("*" + "&nbsp;&nbsp");
+          document.write("*" + "  ");
         }
         document.write("<br>");
       }
@@ -489,14 +551,14 @@
           price: 100,
         },
       ];
-      const total = items.reduce((i, j) => i + j.item * j.price, 0);
-      console.log(total);
+      // const total = items.reduce((i, j) => i + j.item * j.price, 0);
+      // console.log(total);
       //By for loop
-      // sum = 0;
-      // for (let i = 0; i < items.length; i++) {
-      //   sum += items[i].item * items[i].price;
-      // }
-      // console.log(sum);
+      sum = 0;
+      for (let i = 0; i < items.length; i++) {
+        sum += items[i].item * items[i].price;
+      }
+      console.log(sum);
     </script> -->
     <!-- <script>
       //Q. separate numbers and string from mixed array

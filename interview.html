@@ -5,57 +5,25 @@
     <div>
       <button>click me</button>
     </div>
-    <!-- <script>
-      document.querySelector('h1').innerHTML="Suman Singh"
-      document.querySelector('button').innerHTML="Click here"
-      // let div1 = document.querySelector("div").innerHTML="suman"
-      // let button1 = document.querySelector("button");
-      // div1.addEventListener("click", () => {
-      //   console.log("div2");
-      // });
-      // div1.addEventListener("click", (e) => {
-      //   e.stopImmediatePropagation();
-      //   console.log("div1");
-      // });
-      // button1.addEventListener("click", () => {
-      //   console.log("button1");
-      // });
-      // button1.addEventListener("click", () => {
-      //   console.log("button2");
-      // });
-    </script> -->
-    <!-- <script>
-      function armStrong(num) {
-        var temp = num;
-        var sum = 0;
-        var noOfDigit = num.toString().length;
-        while (temp > 0) {
-          var digit = temp % 10;
-          sum += digit ** noOfDigit;
-          temp = parseInt(temp / 10);
-        }
-        if (sum == num) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      console.log(armStrong(16342));
-    </script> -->
-    <!-- <script>
-      let div1 = document.querySelector("div");
-      let button1 = document.querySelector("button");
-      div1.addEventListener("click", (e) => {
-        e.stopPropagation()
-        console.log("div1");
-      },true);
-      div1.addEventListener("click", (e) => {
-        // e.stopPropagation()
-        console.log("div2");
-      },true);
-      button1.addEventListener("click", () => {
-        console.log("button1");
-      },true);
-    </script> -->
+    <script>
+      let users = {
+        getName: function () {
+          return this.firstName + "" + this.lastName;
+        },
+        getAge: function () {
+          let age = new Date().getFullYear() - this.birth;
+          return age;
+        },
+      };
+      let student = {
+        firstName: "Suman",
+        lastName: "Singh",
+        birth: 25,
+        getAge: users.getAge,
+      };
+      student.__proto__=users
+      console.log(student.getName())
+      // console.log(student.getAge())
+    </script>
   </body>
 </html>

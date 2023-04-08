@@ -2,28 +2,28 @@
 <html>
   <body>
     <h2>Js interview questions From screenShot</h2>
-    <script>
-      // // 4 ways to define a function in js
-      // //way1: function declarartion
-      // function sum1(a, b) {
-      //   return a + b;
-      // }
-      // console.log(sum1(2, 5));
-      // //way2: function Expression
-      // let sum2 = function (a, b) {
-      //   return a + b;
-      // };
-      // console.log(sum2(2, 5));
-      // //way3: arrow function
-      // let sum3 = (a, b) => {
-      //   return a + b;
-      // };
-      // console.log(sum3(2, 5));
-      // //way4: IIFE function
-      // (function (a, b) {
-      //   console.log(a + b);
-      // })(2, 4);
-    </script>
+    <!-- <script>
+      // 4 ways to define a function in js
+      //way1: function declarartion
+      function sum1(a, b) {
+        return a + b;
+      }
+      console.log(sum1(2, 5));
+      //way2: function Expression
+      let sum2 = function (a, b) {
+        return a + b;
+      };
+      console.log(sum2(2, 5));
+      //way3: arrow function
+      let sum3 = (a, b) => {
+        return a + b;
+      };
+      console.log(sum3(2, 5));
+      //way4: IIFE function
+      (function (a, b) {
+        console.log(a + b);
+      })(2, 4);
+    </script> -->
     <!-- <script>
       var x = "sum11";
       var y = parseInt(x);
@@ -69,6 +69,12 @@
         return (function () {
           console.log(a);
           a = 6;
+        })();
+      })(21);
+      (function (a) {
+        return (function () {
+          a = 6;
+          console.log(a);
         })();
       })(21);
     </script> -->
@@ -142,15 +148,16 @@
         },
       };
       obj.printName();
-    </script> -->
-    <!-- <script>
-      let obj = {
-        name: "SumanSingh",
+    </script>
+    <script>
+      // var name="Shree"
+      let obj1 = {
+        name1: "SumanSingh",
         printName: function(){
-          console.log(this.name);
+          console.log(this.name1);
         },
       };
-      obj.printName();
+      obj1.printName();
     </script> -->
     <!-- <script>
       var x = Math.random();
@@ -234,7 +241,8 @@
         console.log(msg);
         return msg;
       })("Hello");
-      output("Hi");
+      // output("Hi");
+      // output
     </script> -->
     <!-- <script>
       var output = (function (x) {
@@ -325,6 +333,7 @@
         var a = (b = 10);
       }
       display();
+      console.log("b", typeof b === "number");
       console.log("b", typeof b === "undefined");
       console.log("a", typeof a === "undefined");
     </script> -->
@@ -341,19 +350,13 @@
     </script> -->
     <!-- <script>
       // Q. JS code to print 1st repeating element in an array
-      var rep = [];
-      function repeatChar() {
-        var str = "sumann";
-        for (var i = 0; i <= str.length; i++) {
-          for (var j = i + 1; j <= str.length; j++) {
-            if (str[j] == str[i]) {
-              rep.push(str[i]);
-            }
-          }
-        }
+      function firstRepChar(s) {
+        var repArr = s.split("").filter((e, ind) => {
+          return s.indexOf(e) !== ind;
+        });
+        return repArr[0];
       }
-      repeatChar();
-      console.log(rep[0]);
+      console.log(firstRepChar("suummnnn"));
     </script> -->
     <!-- <script>
       //Printing duplicate elements
@@ -457,7 +460,6 @@
         count[element] = (count[element] || 0) + 1;
       });
       console.log(count);
-
       //Another way
       const arr1 = ["one", "two", "one", "one", "two", "three"];
       let count1 = {};
@@ -470,21 +472,21 @@
       });
       console.log(count1);
     </script> -->
-    <script>
+    <!-- <script>
       // Checking number is power of two or not
-      const isPowerOfTwo = (num) => {
-        if (num === 1) {
-          return true;
-        }
-        if (num % 2 !== 0) {
-          return false;
-        }
-        return isPowerOfTwo(num / 2);
-      };
-      console.log(isPowerOfTwo(3));
-      console.log(isPowerOfTwo(8));
-      console.log(isPowerOfTwo(15));
-      console.log(isPowerOfTwo(16));
+      // const isPowerOfTwo = (num) => {
+      //   if (num === 1) {
+      //     return true;
+      //   }
+      //   if (num % 2 !== 0) {
+      //     return false;
+      //   }
+      //   return isPowerOfTwo(num / 2);
+      // };
+      // console.log(isPowerOfTwo(3));
+      // console.log(isPowerOfTwo(8));
+      // console.log(isPowerOfTwo(15));
+      // console.log(isPowerOfTwo(16));
       // Simple way
       // function isPowerOfTwo(n) {
       //   if (n == 1) {
@@ -499,7 +501,7 @@
       // console.log(isPowerOfTwo(4));
       // console.log(isPowerOfTwo(7));
       // console.log(isPowerOfTwo(32));
-    </script>
+    </script> -->
     <!-- <script>
       //Convert string into object of character and no of digit
       function repeatL(str) {
