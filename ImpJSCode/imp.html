@@ -141,6 +141,7 @@
       console.log(person1.age);
     </script> -->
     <!-- <script>
+      var name = "Shree";
       let obj = {
         name: "SumanSingh",
         printName: () => {
@@ -148,12 +149,12 @@
         },
       };
       obj.printName();
-    </script>
-    <script>
-      // var name="Shree"
+    </script> -->
+    <!-- <script>
+      var name1="Shree"
       let obj1 = {
         name1: "SumanSingh",
-        printName: function(){
+        printName: function () {
           console.log(this.name1);
         },
       };
@@ -242,7 +243,7 @@
         return msg;
       })("Hello");
       // output("Hi");
-      // output
+      output;
     </script> -->
     <!-- <script>
       var output = (function (x) {
@@ -282,6 +283,13 @@
         }
       });
       console.log(x);
+      let y = elements.map((element) => {
+        console.log(element);
+        if (element == 2) {
+          return;
+        }
+      });
+      console.log(y);
     </script> -->
     <!-- <script>
       const user = {
@@ -338,7 +346,7 @@
       console.log("a", typeof a === "undefined");
     </script> -->
     <!-- <script>
-      "use strict";
+      // "use strict";
       console.log(sum);
       var sum = 20;
       function display() {
@@ -474,33 +482,33 @@
     </script> -->
     <!-- <script>
       // Checking number is power of two or not
-      // const isPowerOfTwo = (num) => {
-      //   if (num === 1) {
-      //     return true;
-      //   }
-      //   if (num % 2 !== 0) {
-      //     return false;
-      //   }
-      //   return isPowerOfTwo(num / 2);
-      // };
-      // console.log(isPowerOfTwo(3));
-      // console.log(isPowerOfTwo(8));
-      // console.log(isPowerOfTwo(15));
-      // console.log(isPowerOfTwo(16));
+      const isPowerOfTwo = (num) => {
+        if (num === 1) {
+          return true;
+        }
+        if (num % 2 !== 0) {
+          return false;
+        }
+        return isPowerOfTwo(num / 2);
+      };
+      console.log(isPowerOfTwo(3));
+      console.log(isPowerOfTwo(8));
+      console.log(isPowerOfTwo(15));
+      console.log(isPowerOfTwo(16));
       // Simple way
-      // function isPowerOfTwo(n) {
-      //   if (n == 1) {
-      //     return true;
-      //   } else if (n % 2 != 0) {
-      //     return false;
-      //   } else {
-      //     return isPowerOfTwo(n / 2);
-      //   }
-      // }
-      // console.log(isPowerOfTwo(2));
-      // console.log(isPowerOfTwo(4));
-      // console.log(isPowerOfTwo(7));
-      // console.log(isPowerOfTwo(32));
+      function isPowerOfTwo(n) {
+        if (n == 1) {
+          return true;
+        } else if (n % 2 != 0) {
+          return false;
+        } else {
+          return isPowerOfTwo(n / 2);
+        }
+      }
+      console.log(isPowerOfTwo(2));
+      console.log(isPowerOfTwo(4));
+      console.log(isPowerOfTwo(7));
+      console.log(isPowerOfTwo(32));
     </script> -->
     <!-- <script>
       //Convert string into object of character and no of digit
@@ -663,16 +671,16 @@
         4: 36,
       };
       var res = Object.keys(obj1).map((i) => [Number(i), obj1[i]]);
-      console.log(res);
+      console.log("value1", res);
       var res1 = Object.entries(obj1);
-      console.log(res1);
+      console.log("value2", res1);
 
       //another way
       var res1 = Object.entries(obj1).map(([i, j]) => {
         console.log(i, ":", j);
         return [Number(i), j];
       });
-      console.log(res1);
+      console.log("value3",res1);
     </script> -->
     <!-- <script>
       console.log("9" > "11");
@@ -697,15 +705,15 @@
       console.log(getPrice("Pizza"));
 
       // Refactorization to improve code quality
-      const foodMap = {
-        Burger: 300,
-        Pizza: 240,
-        Sandwitch: 400,
-      };
-      function getPrice(item) {
-        return foodMap[item];
-      }
-      console.log(getPrice("Pizza"));
+      // const foodMap = {
+      //   Burger: 300,
+      //   Pizza: 240,
+      //   Sandwitch: 400,
+      // };
+      // function getPrice(item) {
+      //   return foodMap[item];
+      // }
+      // console.log(getPrice("Pizza"));
     </script> -->
     <!-- <script>
       //Manual method to reverse an string

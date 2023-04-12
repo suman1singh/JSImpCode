@@ -5,18 +5,19 @@
   </head>
   <body>
     <script>
-      // // console.log(this);
-      // // //this refers to the object that is currently calling the function
-      // // //this in regular function
+      // console.log("value:",this);
+      // //this refers to the object that is currently calling the function
+      // //this in regular function
       // var age = 20;
       // function displayAge() {
-      //   console.log(age);
-      //   console.log(this.age);
-      //   console.log(this);
+      //   var age = 30;
+      //   console.log("value1:",age);
+      //   console.log("value2:",this.age);
+      //   console.log("value3:",this);
       // }
       // displayAge();
       // window.displayAge(); //this refers to the window object
-      // console.log("<--------->");
+      // console.log("case2:<--------->");
       // var person = {
       //   age: 26,
       //   displayAge: displayAge,
@@ -26,12 +27,12 @@
       //   },
       // };
       // person.displayAge(); //this refers to the person object
-      // console.log("<--------->");
+      // console.log("case3:<--------->");
       // // Another scenerio
       // person.nestedPerson.displayAge();
     </script>
     <script>
-      // console.log("this in normal function");
+      // console.log("case1:this in normal function");
       // var age = 40;
       // var person = {
       //   age: 28,
