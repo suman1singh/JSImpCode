@@ -96,7 +96,7 @@
       }
       findVowel("suUman");
     </script> -->
-    <script>
+    <!-- <script>
       //Code 6: To find 1st pair of elements whoes sum is 0
       function sumPair(str) {
         for (let i = 0; i < str.length; i++) {
@@ -108,9 +108,61 @@
         }
       }
       console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
-    </script>
+    </script> -->
+    <!-- <script>
+      //code 7: finding largest number with sum of 2 elements from an array
+      function largestPair(arr) {
+        var sortedArr = arr.sort((i, j) => j - i);
+        console.log(sortedArr);
+        return sortedArr[0] + sortedArr[1];
+      }
+      console.log(largestPair([4, 6, 82, 3, 40, 36]));
+    </script> -->
+    <!-- <script>
+      //code 8: fibbonacci series in smart way
+      function fibboFunc(n) {
+        var arr = [0, 1];
+        for (let i = 0; i < n; i++) {
+          arr.push(arr[i] + arr[i + 1]);
+        }
+        return arr;
+      }
+      console.log(fibboFunc(10));
+    </script> -->
+    <!-- <script>
+      //code 9: To check ending of the string with given character/s using inbuild function
+      function confirmEnding(str, target) {
+        // return str.endsWith(target); //true
+        // return str.substr(-target.length) == target;
+        return str.slice(-target.length) == target;
+      }
+      console.log(confirmEnding("priya", "iya"));
+    </script> -->
+    <!-- <script>
+      //Code10: To find the largest elements from the 2 dimensional array
+      function largestEle(arr) {
+        var max = null;
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr[i].length; j++) {
+            if (max < arr[i][j]) {
+              max = arr[i][j];
+            }
+          }
+        }
+        return max;
+      }
+      console.log(
+        largestEle([
+          [1, 2, 3, 4],
+          [5, 6, 70, 9],
+          [45, 76, 2, 1],
+          [89, 90, 87, 90],
+        ])
+      );
+    </script> -->
     <script>
-     //priya code 21
+      //priya code 41
     </script>
   </body>
 </html>

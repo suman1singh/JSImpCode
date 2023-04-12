@@ -9,9 +9,9 @@
       const value1 = Symbol("hello");
       const value2 = Symbol("hello");
       const value3 = Symbol();
-    //   console.log(value1 === value2); // false
-    //   console.log(value1 == value2);
-    //   console.log(typeof value1);
+        // console.log(value1 === value2); // false
+        // console.log(value1 == value2);
+        // console.log(typeof value1);
       console.log(value1);
       console.log(value3);
       console.log(value1.description);
@@ -21,12 +21,12 @@
       let person = {
         name: "Jack",
         // adding symbol as a key
-        // [id]: 123, // not "id": 123
+        [id]: 123, // not "id": 123
       };
       person[id] = 25;
       console.log(person); // {name: "Jack", Symbol(id): 123}
-      //   console.log(person.id);
-      console.log(person[id]);
+      // console.log(person.id);
+      console.log("value1", person[id]);
       console.log(JSON.stringify(person));
     </script> -->
     <!-- <script>
@@ -39,15 +39,18 @@
       };
       // using for...in
       for (let key in person) {
-        console.log(key);
+        // console.log(key);
+        console.log(person[key]);
       }
     </script> -->
     <!-- <script>
-        let id=Symbol("Hello");
-        console.log(id);
-        // alert(id);
-        // alert(id.toString());
-        // alert(id.description)
-     </script> -->
+      let id = Symbol("Hello");
+      console.log(id);
+      console.log(id.toString());
+      console.log(id.description);
+      // alert(id);
+      // alert(id.toString());
+      // alert(id.description)
+    </script> -->
   </body>
 </html>

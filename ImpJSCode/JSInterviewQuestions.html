@@ -135,7 +135,7 @@
       // function factoNum(n) {
       //   let fact = 1;
       //   for (let i = 2; i <= n; i++) {
-      //     fact = fact * i;
+      //     fact *= i;
       //   }
       //   return fact;
       // }
@@ -164,16 +164,16 @@
       // }
 
       //Simple code
-      function isPrime(n) {
-        for (let i = 2; i < n; i++) {
-          if (n % i == 0) {
-            return false;
-          } else {
-            return true;
-          }
-        }
-      }
-      console.log(isPrime(87));
+      // function isPrime(n) {
+      //   for (let i = 2; i < n; i++) {
+      //     if (n % i == 0) {
+      //       return false;
+      //     } else {
+      //       return true;
+      //     }
+      //   }
+      // }
+      // console.log(isPrime(87));
     </script> -->
     <!-- <script>
       //Video10: how to reverse a string in js
@@ -339,64 +339,79 @@
         newArr.push(e.split("").reverse().join(""));
       });
       console.log(newArr.join(" "));
+      //using map()
+      var revName=name1.split(" ").map((e)=>{
+        return e.split("").reverse().join("")
+      })
+      console.log(revName.join(" "))
     </script> -->
     <!-- <script>
       //Video20: convert 1st letter of a string to uppercase
-      // var inputString = prompt("Enter string to capitalize");
-      // const firstCap = (str) => {
-      //   var newStr = str.split(" ");
-      //   console.log(newStr);
-      //   var newArr = newStr.map((i) => {
-      //     return i.charAt(0).toUpperCase() + i.slice(1);
-      //   });
-      //   return newArr.join(" ");
-      // };
-      // console.log(firstCap(inputString));
+      var inputString = prompt("Enter string to capitalize");
+      const firstCap = (str) => {
+        var newStr = str.split(" ");
+        console.log(newStr);
+        var newArr = newStr.map((i) => {
+          return i.charAt(0).toUpperCase() + i.slice(1);
+        });
+        return newArr.join(" ");
+      };
+      console.log(firstCap(inputString));
 
-      // // using for loop
-      // var capFun = (str) => {
-      //   var arrStr = str.split(" ");
-      //   console.log(arrStr);
-      //   let myArr = [];
-      //   for (let i = 0; i < arrStr.length; i++) {
-      //     myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
-      //   }
-      //   return myArr.join(" ");
-      // };
-      // console.log(capFun("suman singh"));
+      // using for loop
+      var capFun = (str) => {
+        var arrStr = str.split(" ");
+        console.log(arrStr);
+        let myArr = [];
+        for (let i = 0; i < arrStr.length; i++) {
+          myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
+        }
+        return myArr.join(" ");
+      };
+      console.log(capFun("suman singh"));
 
-      // //Simple code
-      // function firstCharCaps(str) {
-      //   var newStr = [];
-      //   str.split(" ").forEach((e) => {
-      //     newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
-      //   });
-      //   return newStr.join(" ");
-      // }
-      // console.log(firstCharCaps("suman singh"));
+      //Simple code
+      function firstCharCaps(str) {
+        var newStr = [];
+        str.split(" ").forEach((e) => {
+          newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
+        });
+        return newStr.join(" ");
+      }
+      console.log(firstCharCaps("suman singh"));
       //very simple way
-      // function cap(s) {
-      //   var newS = s.split(" ").map((e) => {
-      //     return e.charAt(0).toUpperCase() + e.slice(1);
-      //   });
-      //   return newS.join(" ");
-      // }
-      // console.log(cap("suman kumar singh"));
+      function cap(s) {
+        var newS = s.split(" ").map((e) => {
+          return e.charAt(0).toUpperCase() + e.slice(1);
+        });
+        return newS.join(" ");
+      }
+      console.log(cap("suman kumar singh"));
     </script> -->
     <!-- <script>
       //Video:21 Program to find fibonacci sequence in js
-      var a = 0;
-      var b = 1;
-      for (let i = 0; i <= 15; i++) {
-        var temp = a + b;
-        a = b;
-        b = temp;
-        console.log(temp);
+      // var a = 0;
+      // var b = 1;
+      // for (let i = 0; i <= 15; i++) {
+      //   var temp = a + b;
+      //   a = b;
+      //   b = temp;
+      //   console.log(temp);
+      // }
+      //another way
+      function fib(n) {
+        var arr = [0, 1];
+        for (let i = 0; i < 10; i++) {
+          arr.push(arr[i] + arr[i + 1]);
+          console.log(arr[i]);
+        }
+        // return arr;
       }
+      fib();
     </script> -->
     <!-- <script>
       //Video:22 Program to printing number patterns right triangle, pyramid and diamond shape in js
-      //Pattern1:
+      //Pattern1: done
       for (let i = 1; i <= 6; i++) {
         for (let j = 1; j <= i; j++) {
           document.write("*" + "  ");
@@ -488,22 +503,22 @@
       //   console.log(`${number} is not an armstrong number`);
       // }
       //simple way
-      function armStrong(num) {
-        var temp = num;
-        var sum = 0;
-        var noOfDigit = num.toString().length;
-        while (temp > 0) {
-          var digit = temp % 10;
-          sum += digit ** noOfDigit;
-          temp = parseInt(temp / 10);
-        }
-        if (sum == num) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      console.log(armStrong(16342));
+      // function armStrong(num) {
+      //   var temp = num;
+      //   var sum = 0;
+      //   var noOfDigit = num.toString().length;
+      //   while (temp > 0) {
+      //     var digit = temp % 10;
+      //     sum += digit ** noOfDigit;
+      //     temp = parseInt(temp / 10);
+      //   }
+      //   if (sum == num) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+      // console.log(armStrong(407));
     </script> -->
     <!-- <script>
       //Q. All elements of array is unique or not
@@ -551,8 +566,8 @@
           price: 100,
         },
       ];
-      // const total = items.reduce((i, j) => i + j.item * j.price, 0);
-      // console.log(total);
+      const total = items.reduce((i, j) => i + j.item * j.price, 0);
+      console.log(total);
       //By for loop
       sum = 0;
       for (let i = 0; i < items.length; i++) {
