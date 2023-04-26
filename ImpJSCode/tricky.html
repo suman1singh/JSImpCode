@@ -95,7 +95,7 @@
       // 10 < 20 < 30 -> true <30 -> 1< 38 -> true
       // 30 > 20 > 10 -> true > 10 -> 1> 10 -> false
     </script> -->
-    <script>
+    <!-- <script>
       const elements = [1, 2, 3, 4, 5];
       elements.forEach((element) => {
         console.log(element);
@@ -107,7 +107,7 @@
       // If you use break or continue instead of return, you get either one of the error since these are not applicable for a callback function:
       // Uncaught SyntaxError: illegal break statement
       // Uncaught SyntaxError: illegal continue statement
-    </script>
+    </script> -->
     <!-- <script>
       for (var i = 0; i < 3; i++) {
         setTimeout(function () {
@@ -165,7 +165,6 @@
       //Since we are passing individual numbers rather than a single object to the function, Javascript will initialize the object parameters with their default value of undefined.
     </script> -->
     <!-- <script>
-      // 14th Dec
       let arr = [1, 2];
       function test(array) {
         array.push(3);
@@ -194,11 +193,12 @@
       function a() {
         console.log("a");
       }
-      b();
+      // b();
       var b = function () {
         console.log("b");
       };
-      // console.log(b());
+      console.log(b());
+      console.log(b);
       //This is a very weried part of JavaScript - functions are hoisted as well. In hoisting var is also hoisted, but it doesn't matter what will be after the operator.
       // In the hoisting stage, var value will always be undefined. So when we do b(), it's the same as undefined().
       // and output of undefined() is TypeError.
@@ -253,10 +253,10 @@
       //their enumerability and configurability cannot be changed, and its prototype cannot be re-assigned. Values of existing properties can still be changed as long as they are writable. seal() returns the same object that was passed in.
     </script> -->
     <!-- <script>
-      const confusing={
-        a:'one',
-        b:'two',
-        a:'three'
+      const confusing = {
+        a: "one",
+        b: "two",
+        a: "three",
       };
       console.log(confusing);
       //If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
@@ -280,7 +280,7 @@
     <!-- <script>
       <div onclick="console.log('div')">
         <p onclick="console.log('paragraph')">click here</p>
-      </div>;
+      </div>
       //If we click p, we see two logs: paragraph and div. During event propagation, there are 3 phases: capturing, target, and bubbling.
       //By default, event handlers are executed in the bubbling phase (unless you set useCapture to true). It goes from the deepest nested element outwards
     </script> -->
@@ -321,27 +321,32 @@
       // so it still holds the value of "undefined". Variables with the 'let' keyword (and const") are hoisted, but unlike "var", don't get initialized.
     </script> -->
     <!-- <script>
+      // var radius = 20;
       const shape = {
         radius: 10,
         diameter() {
           return this.radius * 2;
         },
+        diameter1: () => {
+          return this.radius * 3;
+        },
         perimeter: () => 2 * Math.PI * this.radius,
       };
       console.log(shape.diameter());
+      console.log(shape.diameter1());
       console.log(shape.perimeter());
       //Note that the value of "diameter" is a regular function, whereas the value of perimeter is an arrow function. With arrow functions, the "this keyword refers to its current surrounding scope, unlike regular functions!
       // This means that when we call perimeter, it doesn't refer to the shape object, but to its surrounding scope (window for example). There is no value 'radius' on that object,
       // which returns "NaN".
     </script> -->
-    <!-- <script>
+    <script>
       let c = { greeting: "Hey!" };
       let d;
       d = c;
       c.greeting = "Hello";
       console.log(d.greeting);
       //In JavaScript, all objects interact by reference when setting them equal to each other. First, variable 'c' holds a value to an object. Later, we assign 'd' with the same reference that 'c' has to the object. When you change one object, you change all of them.
-    </script> -->
+    </script>
     <!-- <script>
       let a = 3;
       let b = new Number(3);

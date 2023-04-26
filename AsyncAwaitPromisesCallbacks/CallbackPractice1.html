@@ -16,11 +16,11 @@
 
       // // passing function as an argument
       // greet("Peter", callMe);
-      function outerFunction(name,callback){
-        console.log("Hello",name);
-          callback();
+      function outerFunction(name, callback) {
+        console.log("Hello", name);
+        callback();
       }
-      function callMe(){
+      function callMe() {
         console.log("Callback function called");
       }
       outerFunction("Suman", callMe);
