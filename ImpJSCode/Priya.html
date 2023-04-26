@@ -4,7 +4,7 @@
     <!-- <script>
       //   Code 1:String reverse without reversing of individual words (Array of elements can be reverse with reverse() method but for string it is won't possible so required to split
       // and then join().
-      function removeDuplicates() {
+      function reverseSentence() {
         var string = "Suman Kumar Singh";
         let result = string
           .split("")
@@ -15,7 +15,7 @@
           .join(" ");
         return result;
       }
-      console.log(removeDuplicates());
+      console.log(reverseSentence());
       // output = "aidnI si ym yrtnuoc"
     </script> -->
     <!-- <script>
@@ -111,10 +111,22 @@
     </script> -->
     <!-- <script>
       //code 7: finding largest number with sum of 2 elements from an array
+      // function largestPair(arr) {
+      //   var sortedArr = arr.sort((i, j) => j - i);
+      //   console.log(sortedArr);
+      //   return sortedArr[0] + sortedArr[1];
+      // }
+      //another way
       function largestPair(arr) {
-        var sortedArr = arr.sort((i, j) => j - i);
-        console.log(sortedArr);
-        return sortedArr[0] + sortedArr[1];
+        let max = 0;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] > max) {
+              max = arr[i] + arr[j];
+            }
+          }
+        }
+        return max
       }
       console.log(largestPair([4, 6, 82, 3, 40, 36]));
     </script> -->
@@ -141,7 +153,7 @@
     <!-- <script>
       //Code10: To find the largest elements from the 2 dimensional array
       function largestEle(arr) {
-        var max = null;
+        var max = 0;
 
         for (let i = 0; i < arr.length; i++) {
           for (let j = 0; j < arr[i].length; j++) {
@@ -161,8 +173,103 @@
         ])
       );
     </script> -->
+    <!-- <script>
+      //code11:Print string n times using inbuilt function
+      function repeatString(str, n) {
+        if (n < 1) return "";
+        return str.repeat(n);
+      }
+      console.log(repeatString("Suman", 3));
+    </script> -->
+    <!-- <script>
+      //Code 12: Print string n times in custom way
+      function repString(str, n) {
+        if (n < 0) return "";
+        let final = "";
+        for (let i = 0; i < n; i++) {
+          final += str;
+        }
+        return final;
+      }
+      console.log(repString("Suman", 2));
+    </script> -->
+    <!-- <script>
+      //Code 13: Converting one dimensional array into n dimensional array using splice
+      function oneTo_n_D_Array(arr, n) {
+        let newArr = [];
+        while (arr.length > 0) {
+          newArr.push(arr.splice(0, n));
+        }
+        return newArr;
+      }
+      console.log(oneTo_n_D_Array([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
+    </script> -->
+    <!-- <script>
+      //Code 14: To find only truthy values
+      function removeFalseValue(arr) {
+        var truth = [];
+        for (let item of arr) {
+          if (item) {
+            truth.push(item);
+          }
+        }
+        return truth;
+        ////Another logic
+        // return arr.filter((e) => e);
+      }
+      console.log(
+        removeFalseValue([
+          "priya",
+          0,
+          "",
+          false,
+          null,
+          undefined,
+          "ate",
+          NaN,
+          9,
+        ])
+      ); //["priya","ate",9]
+      console.log(Boolean(NaN));
+    </script> -->
+    <!-- <script>
+      //Code 15: Checking all letters of second words should present in first word, in the same order using include function
+      function characterPresent(arr) {
+        let first = arr[0].toLowerCase();
+        let second = arr[1].toLowerCase();
+        for (let x of second) {
+          // if (!first.includes(x)) {
+          //   return false;
+          // }
+          //using indexOf method
+          if (first.indexOf(x) == -1) {
+            return false;
+          }
+        }
+        return true;
+      }
+      console.log(characterPresent(["hello", "hel"]));
+    </script> -->
+    <!-- <script>
+      //Code 16: Unique values only from 2 arrays
+      function diffArrayElement(arr1, arr2) {
+        var result = [];
+        for (var i = 0; i < arr1.length; i++) {
+          if (arr2.indexOf(arr1[i]) === -1) {
+            result.push(arr1[i]);
+          }
+        }
+        for (var j = 0; j < arr2.length; j++) {
+          if (arr1.indexOf(arr2[j]) === -1) {
+            result.push(arr2[j]);
+          }
+        }
+        return result;
+      }
+      console.log(diffArrayElement([1, 2, 3, 4], [2, 3, 4, 5])); //[1,5]
+    </script> -->
     <script>
-      //priya code 41
+      //Priya code 54
     </script>
   </body>
 </html>

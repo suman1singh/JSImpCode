@@ -20,7 +20,7 @@
           reject({ name: "Suman", age: 25 });
         }, 2000);
       });
-      console.log(data);
+      console.log("output1",data);
       data
         .then((i) => {
           console.log(i);
@@ -93,9 +93,9 @@
       //Error handling with promises
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
-          // reject(new Error("data issue"));
+          reject(new Error("data issue"));
           // throw new Error("data issue");
-          resolve("done");
+          // resolve("done");
         }, 2000);
       });
       data
@@ -117,8 +117,8 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            reject("1 sec");
-            // resolve("Suman");
+            // reject("1 sec");
+            resolve("Suman");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
@@ -168,14 +168,14 @@
       let data = Promise.any([
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // resolve("2 sec");
-            reject('2 sec')
+            resolve("2 sec");
+            // reject('2 sec')
           }, 2000);
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // resolve("1 sec")
-            reject("1 sec");
+            resolve("1 sec")
+            // reject("1 sec");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
@@ -203,8 +203,8 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            reject("1 sec");
-            // resolve("1 sec");
+            // reject("1 sec");
+            resolve("1 sec");
           }, 1000);
         }),
         new Promise((resolve, reject) => {

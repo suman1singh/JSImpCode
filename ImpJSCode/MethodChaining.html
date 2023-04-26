@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Function/method chaining in js by code step by step youyube channel</h1>
+    <link href="https://www.youtube.com/watch?v=ezw1L4PGTSk" />
+  </head>
+  <body>
+    <!-- <script>
+      function Calculate() {
+        let data = 0;
+        this.add = function (val) {
+          data = data + val;
+          return this;
+        };
+        this.sub = function (val) {
+          data = data - val;
+          return this;
+        };
+        this.multi = function (val) {
+          data = data * val;
+          return this;
+        };
+        this.devide = function (val) {
+          data = data / val;
+          return this;
+        };
+        this.print = function () {
+          return data;
+        };
+      }
+      let call = new Calculate();
+      //Regular way to call multiple method
+      //   call.add(10);
+      //   call.sub(5);
+      //   call.multi(10);
+      //   call.devide(5);
+      //   console.log(call.print());
+
+      // Method chaining
+      console.log(call.add(20).sub(10).multi(10).devide(2).print());
+      console.log(call.add(20).sub(10).devide(2).print());
+      // console.log(call);
+    </script> -->
+    <script>
+      class Calculate {
+        data = 0;
+        add(val) {
+          this.data = this.data + val;
+          return this;
+        }
+        sub(val) {
+          this.data = this.data - val;
+          return this;
+        }
+        devide(val) {
+          this.data = this.data / val;
+          return this;
+        }
+        multi(val) {
+          this.data = this.data * val;
+          return this;
+        }
+        print() {
+          return this.data;
+        }
+      }
+      let call = new Calculate();
+      console.log(call.add(20).sub(10).multi(10).devide(2).print());
+      console.log(call.add(20).sub(10).devide(2).print());
+    </script>
+  </body>
+</html>
