@@ -82,7 +82,7 @@
       findLongestWord();
     </script> -->
     <!-- <script>
-      //Code 7: To find vowels and its count in a given string
+      //Code 6: To find vowels and its count in a given string
       function findVowel(str) {
         var vow = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
         var count = 0;
@@ -97,7 +97,7 @@
       findVowel("suUman");
     </script> -->
     <!-- <script>
-      //Code 6: To find 1st pair of elements whoes sum is 0
+      //Code 7: To find 1st pair of elements whoes sum is 0
       function sumPair(str) {
         for (let i = 0; i < str.length; i++) {
           for (let j = i + 1; j < str.length; j++) {
@@ -110,7 +110,7 @@
       console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
     </script> -->
     <!-- <script>
-      //code 7: finding largest number with sum of 2 elements from an array
+      //code 8: finding largest number with sum of 2 elements from an array
       // function largestPair(arr) {
       //   var sortedArr = arr.sort((i, j) => j - i);
       //   console.log(sortedArr);
@@ -131,7 +131,7 @@
       console.log(largestPair([4, 6, 82, 3, 40, 36]));
     </script> -->
     <!-- <script>
-      //code 8: fibbonacci series in smart way
+      //code 9: fibbonacci series in smart way
       function fibboFunc(n) {
         var arr = [0, 1];
         for (let i = 0; i < n; i++) {
@@ -142,7 +142,7 @@
       console.log(fibboFunc(10));
     </script> -->
     <!-- <script>
-      //code 9: To check ending of the string with given character/s using inbuild function
+      //code 10: To check ending of the string with given character/s using inbuild function
       function confirmEnding(str, target) {
         // return str.endsWith(target); //true
         // return str.substr(-target.length) == target;
@@ -151,7 +151,7 @@
       console.log(confirmEnding("priya", "iya"));
     </script> -->
     <!-- <script>
-      //Code10: To find the largest elements from the 2 dimensional array
+      //Code11: To find the largest elements from the 2 dimensional array
       function largestEle(arr) {
         var max = 0;
 
@@ -174,7 +174,7 @@
       );
     </script> -->
     <!-- <script>
-      //code11:Print string n times using inbuilt function
+      //code12:Print string n times using inbuilt function
       function repeatString(str, n) {
         if (n < 1) return "";
         return str.repeat(n);
@@ -182,7 +182,7 @@
       console.log(repeatString("Suman", 3));
     </script> -->
     <!-- <script>
-      //Code 12: Print string n times in custom way
+      //Code 13: Print string n times in custom way
       function repString(str, n) {
         if (n < 0) return "";
         let final = "";
@@ -194,7 +194,7 @@
       console.log(repString("Suman", 2));
     </script> -->
     <!-- <script>
-      //Code 13: Converting one dimensional array into n dimensional array using splice
+      //Code 14: Converting one dimensional array into n dimensional array using splice
       function oneTo_n_D_Array(arr, n) {
         let newArr = [];
         while (arr.length > 0) {
@@ -205,7 +205,7 @@
       console.log(oneTo_n_D_Array([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
     </script> -->
     <!-- <script>
-      //Code 14: To find only truthy values
+      //Code 15: To find only truthy values
       function removeFalseValue(arr) {
         var truth = [];
         for (let item of arr) {
@@ -233,7 +233,7 @@
       console.log(Boolean(NaN));
     </script> -->
     <!-- <script>
-      //Code 15: Checking all letters of second words should present in first word, in the same order using include function
+      //Code 16: Checking all letters of second words should present in first word, in the same order using include function
       function characterPresent(arr) {
         let first = arr[0].toLowerCase();
         let second = arr[1].toLowerCase();
@@ -251,7 +251,7 @@
       console.log(characterPresent(["hello", "hel"]));
     </script> -->
     <!-- <script>
-      //Code 16: Unique values only from 2 arrays
+      //Code 17: Unique values only from 2 arrays
       function diffArrayElement(arr1, arr2) {
         var result = [];
         for (var i = 0; i < arr1.length; i++) {
@@ -268,8 +268,117 @@
       }
       console.log(diffArrayElement([1, 2, 3, 4], [2, 3, 4, 5])); //[1,5]
     </script> -->
+    <!-- <script>
+      //Code 17:another method: Unique values only from 2 arrays
+      function diffArrayElement(arr1, arr2) {
+        const combine = arr1.concat(arr2);
+        return combine.filter((e) => {
+          if (arr1.indexOf(e) === -1 || arr2.indexOf(e) === -1) {
+            return e;
+          }
+        });
+      }
+      console.log(diffArrayElement([1, 2, 3, 4], [2, 3, 4, 5])); //[1,5]
+    </script> -->
+    <!-- <script>
+      //code 18: Remove or Delete elements from an array using various ways
+      //way1:Removing Elements from End of a JavaScript Array
+      var ar = [1, 2, 3, 4, 5, 6];
+      ar.length -= 1;
+      console.log(ar);
+      //Way 2: Removing Elements from Beginning of a JavaScript Array
+      var ar = ["zero", "one", "two", "three"];
+      ar.shift();
+      console.log(ar);
+      //Way 3: Using Splice to Remove Array Elements in JavaScript
+      var list = ["bar", "baz", "foo", "qux"];
+      list.splice(1, 2);
+      console.log(list);
+      var arr = [5, 6, 7, 3, 9];
+      console.log(arr.splice(1, 2));
+      //Way 7: Explicitly Remove Array Elements Using the Delete Operator
+      var ar = [1, 2, 3, 4, 5, 6];
+      delete ar[2];
+      console.log(ar)
+    </script> -->
+    <!-- <script>
+      //Code 19: Find SUM, PRODUCT AND AVERAGE of the numbers //accumulation means collection
+      let arr = [1, 2, 3, 4, 5];
+      let sum1 = arr.reduce((accum, curr) => {
+        return accum + curr;
+      });
+      console.log("sum1", sum1); //15
+      //OR
+      let sum2 = arr.reduce((accum, curr) => {
+        return accum + curr;
+      }, 5); // can set initial value as 5 also
+      console.log("sum2", sum2); //20
+      let product = arr.reduce((accum, curr) => {
+        return accum * curr;
+      });
+      console.log("product", product); //120
+      let average = arr.reduce((accum, curr, index, array) => {
+        let total = accum + curr;
+        if (index === array.length - 1) {
+          return total / array.length;
+        }
+        return total;
+      });
+      console.log("average", average); //3
+    </script> -->
+    <!-- <script>
+      //Code 20: Convert 2D/3D array into 1D using reduce function and inbuilt function i.e flat
+      const arr = [
+        ["a", "b"],
+        ["c", "d"],
+        ["e", "f"],
+      ];
+      const flatArr = arr.reduce((accu, curr) => {
+        return accu.concat(curr);
+      });
+      console.log(flatArr);
+      console.log("by flat method", arr.flat(1));
+      //OR
+      const arr2 = [
+        ["a", "b"],
+        ["c", "d"],
+        ["e", ["f", "g"]],
+      ];
+      console.log(arr2.flat(2)); //["a", "b", "c", "d", "e", "f"] //bydefault 1 hota h as a argument
+      //OR
+      const arr3 = [
+        ["a", "b"],
+        ["c", "d"],
+        ["e", ["f", ["g", "h"]]],
+      ];
+      console.log(arr3.flat(3)); //["a", "b", "c", "d", "e", "f", "g", "h"]
+    </script> -->
+    <!-- <script>
+      //code 21: Reverse of a nuber
+      function reverseNumber(input) {
+        var result = 0;
+        while (input != 0) {
+          //123 //12 //1
+          result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
+          result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
+          input = Math.floor(input / 10); //12 //1
+          // console.log("in", input)
+        }
+        return result;
+      }
+      console.log(reverseNumber(123)); //321
+    </script> -->
+    <!-- <script>
+      //code 22:To find the closest number in an array
+      const needle = 5;
+      const numbers = [1, 10, 7, 2, 4, 9];
+      numbers.sort((a, b) => {
+        return Math.abs(needle - a) - Math.abs(needle - b);
+      });
+      console.log(numbers[0]);
+    </script> -->
     <script>
-      //Priya code 54
+      //priya 66
     </script>
   </body>
 </html>
