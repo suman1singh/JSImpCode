@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Shadow dom in js</h1>
+    <style>
+      .error {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="error">There is some error</p>
+    <cust-tag data="this is shadow dom text"></cust-tag>
+    <script>
+      //created shadow dom
+      customElements.define(
+        "cust-tag",
+        class extends HTMLElement {
+          connectedCallback() {
+            const temp = this.attachShadow({ mode: "open" });
+            temp.innerHTML = `<p class="error"> hello
+                    ${this.getAttribute("data")}</p>`;
+          }
+        }
+      );
+    </script>
+  </body>
+</html>

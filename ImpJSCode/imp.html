@@ -147,6 +147,9 @@
         printName: () => {
           console.log(this.name);
         },
+        // printName: function () {
+        //   console.log(this.name);
+        // },
       };
       obj.printName();
     </script> -->
@@ -346,7 +349,7 @@
       console.log("a", typeof a === "undefined");
     </script> -->
     <!-- <script>
-      // "use strict";
+      "use strict";
       console.log(sum);
       var sum = 20;
       function display() {
@@ -557,7 +560,6 @@
             consonas.push(s[i]);
           }
         }
-
         console.log("Vowels is:");
         for (let i of vowels) {
           console.log(i);
@@ -652,17 +654,17 @@
         1: "b",
         2: "c",
       };
-      console.log(obj);
+      console.log("value1", obj);
       var arrValue = [];
       var arrKey = [];
       Object.values(obj).forEach((ele) => {
         arrValue.push(ele);
       });
-      console.log(arrValue);
+      console.log("value2", arrValue);
       Object.keys(obj).forEach((ele) => {
         arrKey.push(ele);
       });
-      console.log(arrKey);
+      console.log("value3", arrKey);
       // Array of key and value
       var obj1 = {
         1: 5,
@@ -671,24 +673,24 @@
         4: 36,
       };
       var res = Object.keys(obj1).map((i) => [Number(i), obj1[i]]);
-      console.log("value1", res);
+      console.log("value4", res);
       var res1 = Object.entries(obj1);
-      console.log("value2", res1);
+      console.log("value5", res1);
 
       //another way
       var res1 = Object.entries(obj1).map(([i, j]) => {
         console.log(i, ":", j);
         return [Number(i), j];
       });
-      console.log("value3",res1);
+      console.log("value6", res1);
     </script> -->
     <!-- <script>
-      console.log("9" > "11");
-      console.log("9" > 11);
-      console.log("true" > 11);
-      console.log("9" > true);
-      console.log("" > -1);
-      console.log("suman" > 11);
+      console.log("value1","9" > "11");
+      console.log("value2","9" > 11);
+      console.log("value3","true" > 11);
+      console.log("value4","9" > true);
+      console.log("value5","" > -1);
+      console.log("value6","suman" > 11);
     </script> -->
     <!-- <script>
       function getPrice(item) {
@@ -705,15 +707,15 @@
       console.log(getPrice("Pizza"));
 
       // Refactorization to improve code quality
-      // const foodMap = {
-      //   Burger: 300,
-      //   Pizza: 240,
-      //   Sandwitch: 400,
-      // };
-      // function getPrice(item) {
-      //   return foodMap[item];
-      // }
-      // console.log(getPrice("Pizza"));
+      const foodMap = {
+        Burger: 300,
+        Pizza: 240,
+        Sandwitch: 400,
+      };
+      function getPrice1(item) {
+        return foodMap[item];
+      }
+      console.log(getPrice1("Pizza"));
     </script> -->
     <!-- <script>
       //Manual method to reverse an string
