@@ -4,20 +4,19 @@
     <h2>Map concept in Javascript</h2>
     <script>
       // #Map
-
       let myMap = new Map([
         ["a1", "Suman"],
         ["a2", "suman2"],
         ["a3", "suman3"],
       ]);
-      console.log(myMap);
+      console.log("value1:", myMap);
       myMap.set("a2", "Suman5");
-      console.log(myMap);
+      console.log("value2:", myMap);
       myMap.delete("a2");
-      console.log(myMap);
-      console.log(myMap.get("a1"));
+      console.log("value3:", myMap);
+      console.log("value4:", myMap.get("a1"));
       for (let [key, value] of myMap) {
-        console.log(`keys ${key}, values ${value}`);
+        console.log(`keys: ${key}, values: ${value}`);
       }
       myMap.forEach((key, value) => {
         console.log(value, key);
@@ -25,7 +24,7 @@
 
       //# WeakMap
       let wm = new WeakMap();
-      console.log(wm);
+      console.log("wm1:",wm);
       var ob3 = { name: "suman" };
       var ob4 = {};
       wm.set(ob3, "private");

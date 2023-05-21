@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>vertically and horizontally center element</h1>
+    <style>
+      .box {
+        height: 500px;
+        width: 500px;
+        background-color: aqua;
+      }
+      #vertically-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); /* or try 50% */
+      }
+      /* #horizontally-center{
+        max-width: 100px;
+        margin: auto;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="box"><h1 id="vertically-center">Suman Singh</h1></div>
+    <br />
+    <!-- <div class="box"><h1 id="horizontally-center">Suman Singh</h1></div> -->
+  </body>
+</html>

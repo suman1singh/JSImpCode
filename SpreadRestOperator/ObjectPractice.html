@@ -9,17 +9,17 @@
         age: "24",
         hobbies: ["acting", "teaching"],
       };
-      // const age=students.age;
-      // console.log(age);
+      const age1 = students.age;
+      console.log("value1:", age1);
       const { age, ...rest } = students; // Destructuring
-      console.log(rest);
+      console.log("value2:", rest);
 
       //Spread with object
-      // var newStudents={
-      //   ...students,
-      //   age:"29"
-      // }
-      // console.log(newStudents);
+      var newStudents={
+        ...students,
+        age:"29"
+      }
+      console.log("value3:", newStudents);
     </script>
   </body>
 </html>

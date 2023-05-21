@@ -3,6 +3,52 @@
   <body>
     <h2>Js interview questions From screenShot</h2>
     <!-- <script>
+      //default parameter
+      //case1
+      // function multiply(a, b = 1) {
+      //   return a * b;
+      // }
+      // console.log(multiply(5, 2));
+      // console.log(multiply(5));
+
+      //case2
+      // function multiply(a, b) {
+      //   return a * b;
+      // }
+      // console.log(multiply(5, 2)); // 10
+      // console.log(multiply(5)); // NaN !
+
+      //case3
+      // function multiply(a, b = 1) {
+      //   return a * b;
+      // }
+      // console.log(multiply(5, 2)); // 10
+      // console.log(multiply(5)); // 5
+      // console.log(multiply(5, undefined)); // 5
+
+      //case4
+      // function f(x = 1, y) {
+      //   return [x, y];
+      // }
+      // console.log(f()); // [1, undefined]
+      // console.log(f(2)); // [2, undefined]
+
+      //case5
+      // function append(value, array = []) {
+      //   array.push(value);
+      //   return array;
+      // }
+      // console.log(append(1)); // [1]
+      // console.log(append(2)); // [2], not [1, 2]
+
+      //case6
+      // function greet(name, greeting, message = `${greeting} ${name}`) {
+      //   return [name, greeting, message];
+      // }
+      // console.log(greet("David", "Hi")); // ["David", "Hi", "Hi David"]
+      // console.log(greet("David", "Hi", "Happy Birthday!")); // ["David", "Hi", "Happy Birthday!"]
+    </script> -->
+    <!-- <script>
       // 4 ways to define a function in js
       //way1: function declarartion
       function sum1(a, b) {
@@ -727,6 +773,67 @@
         return rev;
       }
       console.log(revString("Suman"));
+    </script> -->
+    <!-- <script>
+      // Sort half array in ascending and half in descending order
+      function sortHalf(arr) {
+        const asc = [];
+        const desc = [];
+        for (let i = 0; i < parseInt(arr.length / 2); i++) {
+          asc.push(arr[i]);
+        }
+        for (let i = parseInt(arr.length / 2); i < arr.length; i++) {
+          desc.push(arr[i]);
+        }
+        console.log(
+          "ascending array:",
+          asc.sort((a, b) => a - b)
+        );
+        console.log(
+          "descending array:",
+          desc.sort((a, b) => b - a)
+        );
+      }
+      var arr = [
+        1, 17, 8, 9, 10, 3, 4, 5, 6, 15, 16, 17, 18, 11, 12, 13, 14, 20, 19,
+      ];
+      console.log(sortHalf(arr));
+    </script> -->
+    <!-- <script>
+      // program to print prime numbers between the two numbers
+      function allPrime(l, h) {
+        let prime = [];
+        for (let i = l; i <= h; i++) {
+          let flag = 0;
+          for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+              flag = 1;
+              break;
+            }
+          }
+          if (i > 1 && flag == 0) {
+            prime.push(i);
+          }
+        }
+        return prime.join(" ");
+      }
+      console.log(allPrime(1, 30));
+      //another way
+      function allPrime(l, h) {
+        let prime = [];
+        for (let x = l; x <= h; x++) {
+          for (let y = 2; y < x; y++) {
+            if (x % y == 0) {
+              break;
+            } else {
+              prime.push(x);
+              break;
+            }
+          }
+        }
+        return prime.join(" ");
+      }
+      console.log(allPrime(1, 30));
     </script> -->
   </body>
 </html>

@@ -49,10 +49,10 @@
       //Code4: Swapping number without 3rd variable and without destructuring
       let a = 10;
       let b = 20;
-      a=a+b;
-      b=a-b;
-      a=a-b
-      console.log(a,b)
+      a = a + b;
+      b = a - b;
+      a = a - b;
+      console.log(a, b);
     </script> -->
     <!-- <script>
       //Code5: Find longest word from a string with multiple word
@@ -248,7 +248,7 @@
         }
         return true;
       }
-      console.log(characterPresent(["hello", "hel"]));
+      console.log(characterPresent(["hello", "hle"]));
     </script> -->
     <!-- <script>
       //Code 17: Unique values only from 2 arrays
@@ -269,7 +269,7 @@
       console.log(diffArrayElement([1, 2, 3, 4], [2, 3, 4, 5])); //[1,5]
     </script> -->
     <!-- <script>
-      //Code 17:another method: Unique values only from 2 arrays
+      //Code 18:another method: Unique values only from 2 arrays
       function diffArrayElement(arr1, arr2) {
         const combine = arr1.concat(arr2);
         return combine.filter((e) => {
@@ -281,28 +281,28 @@
       console.log(diffArrayElement([1, 2, 3, 4], [2, 3, 4, 5])); //[1,5]
     </script> -->
     <!-- <script>
-      //code 18: Remove or Delete elements from an array using various ways
+      //code 19: Remove or Delete elements from an array using various ways
       //way1:Removing Elements from End of a JavaScript Array
       var ar = [1, 2, 3, 4, 5, 6];
       ar.length -= 1;
-      console.log(ar);
+      console.log("value1", ar);
       //Way 2: Removing Elements from Beginning of a JavaScript Array
       var ar = ["zero", "one", "two", "three"];
       ar.shift();
-      console.log(ar);
+      console.log("value2", ar);
       //Way 3: Using Splice to Remove Array Elements in JavaScript
       var list = ["bar", "baz", "foo", "qux"];
       list.splice(1, 2);
-      console.log(list);
+      console.log("value3", list);
       var arr = [5, 6, 7, 3, 9];
-      console.log(arr.splice(1, 2));
+      console.log("value4", arr.splice(1, 2));
       //Way 7: Explicitly Remove Array Elements Using the Delete Operator
       var ar = [1, 2, 3, 4, 5, 6];
       delete ar[2];
-      console.log(ar)
+      console.log("value5", ar);
     </script> -->
     <!-- <script>
-      //Code 19: Find SUM, PRODUCT AND AVERAGE of the numbers //accumulation means collection
+      //Code 20: Find SUM, PRODUCT AND AVERAGE of the numbers //accumulation means collection
       let arr = [1, 2, 3, 4, 5];
       let sum1 = arr.reduce((accum, curr) => {
         return accum + curr;
@@ -327,7 +327,7 @@
       console.log("average", average); //3
     </script> -->
     <!-- <script>
-      //Code 20: Convert 2D/3D array into 1D using reduce function and inbuilt function i.e flat
+      //Code 21: Convert 2D/3D array into 1D using reduce function and inbuilt function i.e flat
       const arr = [
         ["a", "b"],
         ["c", "d"],
@@ -336,7 +336,7 @@
       const flatArr = arr.reduce((accu, curr) => {
         return accu.concat(curr);
       });
-      console.log(flatArr);
+      console.log("value1:", flatArr);
       console.log("by flat method", arr.flat(1));
       //OR
       const arr2 = [
@@ -344,7 +344,7 @@
         ["c", "d"],
         ["e", ["f", "g"]],
       ];
-      console.log(arr2.flat(2)); //["a", "b", "c", "d", "e", "f"] //bydefault 1 hota h as a argument
+      console.log("value3:", arr2.flat(2)); //["a", "b", "c", "d", "e", "f"] //bydefault 1 hota h as a argument
       //OR
       const arr3 = [
         ["a", "b"],
@@ -354,22 +354,26 @@
       console.log(arr3.flat(3)); //["a", "b", "c", "d", "e", "f", "g", "h"]
     </script> -->
     <!-- <script>
-      //code 21: Reverse of a nuber
-      function reverseNumber(input) {
-        var result = 0;
-        while (input != 0) {
-          //123 //12 //1
-          result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
-          result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
-          input = Math.floor(input / 10); //12 //1
-          // console.log("in", input)
-        }
-        return result;
+      //code 22: Reverse of a nuber: (need multiple practice)
+      // function reverseNumber(input) {
+      //   var result = 0;
+      //   while (input != 0) {
+      //     //123 //12 //1
+      //     result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
+      //     result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
+      //     input = Math.floor(input / 10); //12 //1
+      //     // console.log("in", input)
+      //   }
+      //   return result;
+      // }
+      //another method
+      function reverseNumber(n) {
+        return n.toString().split("").reverse().join("");
       }
       console.log(reverseNumber(123)); //321
     </script> -->
     <!-- <script>
-      //code 22:To find the closest number in an array
+      //code 23:To find the closest number in an array
       const needle = 5;
       const numbers = [1, 10, 7, 2, 4, 9];
       numbers.sort((a, b) => {
@@ -377,8 +381,102 @@
       });
       console.log(numbers[0]);
     </script> -->
+    <!-- <script>
+      //code 24: To find the second largest number
+      function secondLargestNum(arr) {
+        return arr.sort((a, b) => b - a)[1];
+      }
+      console.log(secondLargestNum(["1", "2", "3", "4", "9"]));
+    </script> -->
+    <!-- <script>
+      //code 25: To check whether particular word/number present in sentence or not using custom function
+      function checkValueExist(arr1, val) {
+        var arr = arr1.split(" ");
+        var status = "Not exist";
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] == val) {
+            status = "exist";
+            break;
+          }
+        }
+        return status;
+      }
+      // console.log(checkValueExist(["priya", "riya", "supriya"], "priya"));
+      console.log(checkValueExist("Suman Kumar Singh", "Singh"));
+    </script> -->
+    <!-- <script>
+      //code 26: To check wheather property exist or not in object
+      let student = {
+        name: "priya",
+        age: 20,
+      };
+      console.log("name" in student);
+      //OR;
+      console.log(student.hasOwnProperty("name"));
+    </script> -->
+    <!-- <script>
+      //code 27: To find the square root
+      var num = [4, 9, 16, 25, 36];
+      var result = num.map((e) => Math.sqrt(e));
+      console.log(result); //[2,3,4,5,6]
+    </script> -->
+    <!-- <script>
+      //code 28: To find the length of the array in custom way
+      function findLength(arr) {
+        let len = 0;
+        while (arr[len] !== undefined) {
+          len++;
+        }
+        return len;
+      }
+      console.log(findLength([50, 60, 70, 80, 90]));
+    </script> -->
+    <!-- <script>
+      //code 29: Make alternate character to upper case
+      function altCap(str) {
+        let alt = str.split("").map((e, ind) => {
+          if (ind % 2) {
+            return e.toUpperCase();
+          } else {
+            return e.toLowerCase();
+          }
+        });
+        return alt.join("");
+      }
+      console.log(altCap("Suman"));
+
+      //another way
+      function altCap(str) {
+        let alt = str.toLowerCase().split("");
+        for (let i = 0; i < alt.length; i = i + 2) {
+          alt[i] = alt[i].toUpperCase();
+        }
+        return alt.join("");
+      }
+      console.log(altCap("Suman"));
+    </script> -->
+    <!-- <script>
+      //code 30:  To find the negative values in an array or 2D Array
+      function countNegative(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] < 0) {
+              count++;
+            }
+          }
+        }
+        return count;
+      }
+      console.log(
+        countNegative([
+          [1, -1, -6, -8],
+          [-23, 5, 8, 9, -67],
+        ])
+      );
+    </script> -->
     <script>
-      //priya 66
+      //code 80: Find first repeating character with its index from an array
     </script>
   </body>
 </html>

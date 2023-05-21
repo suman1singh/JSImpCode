@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Media query</title>
-        <style>
-            div{
-                width: 300px;
-                height: 300px;
-                background-color: pink;
-                border: 5px solid red;
-            }
-            @media (min-width:150px) and (max-width:700px) {
-                div{
-                    background-color: aqua;
-                }
-            }
-            @media (orientation:portrait){
-                div{
-                    background-color:green;
-                    /* background:red */
-                }
-            }
-            @media (orientation:landscape){
-                div{
-                    background-color: greenyellow;
-                }
-            }
-            @media print {
-                div{
-                    width: 600px;
-                    height: 950px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-
-        </div>
-    </body>
+  <head>
+    <title>Media query</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        border: 5px solid red;
+      }
+      @media (min-width: 150px) and (max-width: 700px) {
+        div {
+          background-color: aqua;
+        }
+      }
+      @media (orientation: portrait) {
+        div {
+          background-color: green;
+          /* background:red */
+        }
+      }
+      @media (orientation: landscape) {
+        div {
+          background-color: greenyellow;
+        }
+      }
+      @media print {
+        div {
+          width: 600px;
+          height: 950px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
 </html>

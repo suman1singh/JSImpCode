@@ -27,41 +27,41 @@
 
       // ## forloop ##
 
-      //   for(let i=0; i<=companies.length;i++){
-      //     console.log(companies[i].name);
-      //   }
+      // for(let i=0; i<=companies.length;i++){
+      //   console.log(companies[i].name);
+      // }
 
       // ## forEach ##
 
-      //   companies.forEach(function(company, index){
-      //     console.log(company.name + " "+ index)
-      //   });
+      // companies.forEach(function(company, index){
+      //   console.log(company.name + " "+ index)
+      // });
 
       //forEach Another way
 
-      //   companies.forEach((com, index) => {
-      //     console.log(com.name + " " + index);
-      //   });
+      // companies.forEach((com, index) => {
+      //   console.log(com.name + " " + index);
+      // });
 
       //## filter ##
 
       // Normal way
 
-      //   for(let i=0;i<ages.length;i++){
-      //     if(ages[i] >= 20){
-      //         console.log(ages[i])
-      //     }
+      // for(let i=0;i<ages.length;i++){
+      //   if(ages[i] >= 20){
+      //       console.log(ages[i])
       //   }
+      // }
 
       // Filter way
-      //   const age = ages.filter(function (umr) {
-      //     if (umr >= 40) {
-      //       return true;
-      //     }
-      //   });
-      //   console.log(age);
-      //   const age = ages.filter((umr) => umr >= 50);
-      //   console.log(age);
+      // const age1 = ages.filter(function (umr) {
+      //   if (umr >= 40) {
+      //     return true;
+      //   }
+      // });
+      // console.log(age1);
+      // const age2 = ages.filter((umr) => umr >= 50);
+      // console.log(age2);
 
       // const serCom = companies.filter(function (company) {
       //   if (company.category === "Service Based") {
@@ -74,9 +74,9 @@
       // console.log(sb);
 
       // ## map function ##
-      // companies.map(function(com, ind) {
-      //   console.log(ind, com.name)
-      // })
+      // companies.map(function (com, ind) {
+      //   console.log(ind, com.name);
+      // });
 
       // Another way
       // dummy = companies.map(function(com, ind) {
@@ -85,13 +85,9 @@
       // console.log(dummy);
 
       // ## sort
-      // const sorted=companies.sort(function(c1,c2){
-      //   if(c1.start < c2.start){
-      //     return 1;
-      //   }else {
-      //     return -1;
-      //   }
-      // })
+      // const sorted = companies.sort(function (c1, c2) {
+      //   c1.start - c2.start;
+      // });
       // console.log(sorted);
 
       // ## sort with arrow function
@@ -103,7 +99,7 @@
       // console.log(sortedAges);
 
       // #reduce function
-      // Normal way
+      //Normal way
       // let total=0;
       // for(let i=0; i < ages.length; i++){
       //   total += ages[i];
@@ -112,14 +108,14 @@
 
       // sum with reduce function
 
-      const sumage = ages.reduce(function (total, age) {
-        return total + age;
-      }, 0);
-      console.log(sumage);
+      // const sumage = ages.reduce(function (total, age) {
+      //   return total + age;
+      // }, 0);
+      // console.log(sumage);
 
-      // reduce with arrow function
-      const sumage1 = ages.reduce((total, age) => total + age, 0);
-      console.log(sumage1);
+      // //reduce with arrow function
+      // const sumage1 = ages.reduce((total, age) => total + age, 0);
+      // console.log(sumage1);
     </script>
   </body>
 </html>

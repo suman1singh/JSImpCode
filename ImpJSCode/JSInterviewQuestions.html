@@ -15,13 +15,29 @@
       console.log(arr);
     </script> -->
     <!-- <script>
-      //Video1: Print duplicate element in an array
+      //Q1: shift all zeroes at last in array with changing order
+      function shiftZero(arr) {
+        var head = [];
+        var tail = [];
+        arr.forEach((e) => {
+          if (e == 0) {
+            tail.push(e);
+          } else {
+            head.push(e);
+          }
+        });
+        return [...head, ...tail];
+      }
+      console.log(shiftZero([4, 0, 5, 0, 6, 8, 0, 7, 3, 662, 0, 10, 0]));
+    </script> -->
+    <!-- <script>
+      //Q2: Print duplicate element in an array
       let arr = [2, 0.5, 5, 4, 8, 6, 3, 2, 5, 6];
       let dupArr = arr.filter((ele, index) => arr.indexOf(ele) !== index);
       console.log(dupArr);
     </script> -->
     <!-- <script>
-      //Video2: Finding max and min value in an array
+      //Q3: Finding max and min value in an array
       const arr = [5, 6, 8, 61, 75];
       let max = arr.reduce((pre, cur) => {
         return pre > cur ? pre : cur;
@@ -34,7 +50,7 @@
       console.log("min by Math method:", Math.min(...arr));
     </script> -->
     <!-- <script>
-      //Video4: find largest value and remove largest value
+      //Q4: find largest value and remove largest value
       const myArr = [5, 6, 7, 8, 6, 12];
       let largest = Math.max(...myArr);
       let index = myArr.indexOf(largest);
@@ -45,7 +61,7 @@
       console.log(Math.max());
     </script> -->
     <!-- <script>
-      //Video5: filter() and find() method
+      //Q5: filter() and find() method
       const allEmp = [
         { name: "Suman1", age: 24 },
         { name: "Suman2", age: 25 },
@@ -64,7 +80,7 @@
       console.log(findedItem);
     </script> -->
     <!-- <script>
-      //Video6:Missing elements in a given array
+      //Q6:Missing elements in a given array
       // const arrNum = [1, 2, 3, 4, 5, 6, 9, 10];
       // const missArray = [];
       // const missingValue = (arr) => {
@@ -101,7 +117,7 @@
       arr = [5, 4, 7];
       console.log(arr.indexOf(96));
     </script> -->
-    <script>
+    <!-- <script>
       //Video7: Finding even and odd number in an array
       const number = [4, 58, 63, 7, 8, 67, 16, 43];
       const even = number.filter((item) => {
@@ -112,9 +128,9 @@
       });
       console.log("odd no:", odd);
       console.log("even no:", even);
-    </script>
+    </script> -->
     <!-- <script>
-      //Video7: sum of elements of an array
+      //Video8: sum of elements of an array
       const arrNum = [5, 6, 8, 9, 72];
       let sum = arrNum.reduce((ini, cur) => {
         return cur + ini;
@@ -122,7 +138,7 @@
       console.log(sum);
     </script> -->
     <!-- <script>
-      //Video8: how to find factorial of a number
+      //Video9: how to find factorial of a number
       // const num = prompt("Enter number:");
       // var fact = 1;
       // if (num < 0) {
@@ -134,17 +150,17 @@
       //   console.log(`factorial of ${num} is ${fact}`);
       // }
       //Simple way
-      // function factoNum(n) {
-      //   let fact = 1;
-      //   for (let i = 2; i <= n; i++) {
-      //     fact *= i;
-      //   }
-      //   return fact;
-      // }
-      // console.log(factoNum(5));
+      function factoNum(n) {
+        let fact = 1;
+        for (let i = 2; i <= n; i++) {
+          fact *= i;
+        }
+        return fact;
+      }
+      console.log(factoNum(5));
     </script> -->
     <!-- <script>
-      //Video9: how to find prime number in javascript
+      //Video10: how to find prime number in javascript
       // const number = parseInt(prompt("Enter a positive number: "));
       // let isPrime = true;
       // if (number === 1) {
@@ -166,24 +182,30 @@
       // }
 
       //Simple code
-      // function isPrime(n) {
-      //   for (let i = 2; i < n; i++) {
-      //     if (n % i == 0) {
-      //       return false;
-      //     } else {
-      //       return true;
-      //     }
-      //   }
-      // }
-      // console.log(isPrime(87));
+      function isPrime(n) {
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }
+      console.log(isPrime(87));
     </script> -->
     <!-- <script>
-      //Video10: how to reverse a string in js
+      //Video11: how to reverse a string in js
       var str = "suman";
       console.log(str.split("").reverse().join(""));
+      //manual method
+      var rev = [];
+      for (let i = str.length - 1; i >= 0; i--) {
+        rev.push(str[i]);
+      }
+      console.log(rev.join(""));
     </script> -->
     <!-- <script>
-      //Video11: how to check palindrome number or string
+      //Video12: how to check palindrome number or string
       const palindrome = (val) => {
         var rev = val.split("").reverse().join("");
         if (rev === val) {
@@ -196,7 +218,7 @@
       palindrome(value);
     </script> -->
     <!-- <script>
-      //Video12: How to swap two variable without using third variable in js
+      //Video13: How to swap two variable without using third variable in js
       let a = 7;
       let b = 8;
       // console.log(`value of a:${a} and value of b:${b}`);
@@ -210,7 +232,7 @@
       // console.log(`value of a:${a} and value of b:${b}`);
     </script> -->
     <!-- <script>
-      //Video13: How to merge two arrays and sort them in javascript
+      //Video14: How to merge two arrays and sort them in javascript
       const arr1 = ["1", "8", "9"];
       const arr2 = ["45", "7", "19"];
       // const arr1 = [1, 8, 9];
@@ -220,17 +242,16 @@
       const sortedArr = mergedArr.sort((a, b) => {
         return a - b;
       });
-      console.log(sortedArr);
-
+      console.log("sortedArr:",sortedArr);
       // using spread operator
       const res = [...arr1, ...arr2];
       const sortedArr1 = res.sort((a, b) => {
         return a - b;
       });
-      console.log(sortedArr1);
+      console.log("sortedArr1:",sortedArr1);
     </script> -->
     <!-- <script>
-      //Video14: How to find factors of a given integer in js
+      //Video15: How to find factors of a given integer in js
       // const num = prompt("Please enter no:");
       // console.log(`factors of ${num}:`);
       // for (let i = 1; i <= num; i++) {
@@ -246,12 +267,12 @@
             factor.push(i);
           }
         }
-        return factor;
+        return factor.join(" ");
       }
       console.log(findFactor(40));
     </script> -->
     <!-- <script>
-      //Video15: How to make calculator in js
+      //Video16: How to make calculator in js
       const operator = prompt("Please select operation among +, -, *, /");
       const num1 = parseFloat(prompt("Enter 1st number:"));
       const num2 = parseFloat(prompt("Enter 2nd number"));
@@ -267,7 +288,7 @@
       console.log(`${num1} ${operator} ${num2} = ${res}`);
     </script> -->
     <!-- <script>
-      //Video16: How to Compare two array is equal or not
+      //Video17: How to Compare two array is equal or not
       var arr1 = [96, 2, 8, 5, 6, 7];
       var arr2 = [8, 6, 7, 2, 5, 96];
       const isSame =
@@ -299,23 +320,23 @@
       console.log(areSame(arr1, arr2));
     </script> -->
     <!-- <script>
-      //Video17: How to find intersection of two arrays/sets in js
-      var arr1 = [2, 9, 6, 8, 4, 4, 4];
-      var arr2 = [4, 8, 6, 9, 12];
+      //Video18: How to find intersection of two arrays/sets in js
+      var arr2 = [2, 9, 6, 8, 4, 4, 4];
+      var arr1 = [4, 8, 6, 9, 12];
       let intersectionArr = arr1.filter((i) => {
         return arr2.includes(i);
       });
       console.log(...new Set(intersectionArr));
     </script> -->
     <!-- <script>
-      //Video18: How to find union of two arrays/Set in js
+      //Video19: How to find union of two arrays/Set in js
       var arr1 = [1, 2, 6, 8, 96, 23, 23, 23];
       var arr2 = [5, 8, 3, 7, 15, 466, 32, 20, 5, 5, 32];
       var unionArr = [...arr1, ...arr2];
       console.log(...new Set(unionArr));
     </script> -->
     <!-- <script>
-      // Video19: Fahrenheit to celcius and vice-versa
+      // Video20: Fahrenheit to celcius and vice-versa
       // Fah to cel
       var fah = prompt("Enter value in Fahrenheit");
       var cel = (5 / 9) * (fah - 32);
@@ -326,7 +347,7 @@
       console.log(`Value in Fahrenheit: ${fah}`);
     </script> -->
     <!-- <script>
-      //reverse each word in string without changing the position of word.
+      //Q21. reverse each word in string without changing the position of word.
       var name1 = "suman kumar singh";
       //using for loop
       var temp = name1.split(" ");
@@ -342,45 +363,45 @@
       });
       console.log(newArr.join(" "));
       //using map()
-      var revName=name1.split(" ").map((e)=>{
-        return e.split("").reverse().join("")
-      })
-      console.log(revName.join(" "))
+      var revName = name1.split(" ").map((e) => {
+        return e.split("").reverse().join("");
+      });
+      console.log(revName.join(" "));
     </script> -->
     <!-- <script>
-      //Video20: convert 1st letter of a string to uppercase
-      var inputString = prompt("Enter string to capitalize");
-      const firstCap = (str) => {
-        var newStr = str.split(" ");
-        console.log(newStr);
-        var newArr = newStr.map((i) => {
-          return i.charAt(0).toUpperCase() + i.slice(1);
-        });
-        return newArr.join(" ");
-      };
-      console.log(firstCap(inputString));
+      //Q22.: convert 1st letter of a string to uppercase
+      // var inputString = prompt("Enter string to capitalize");
+      // const firstCap = (str) => {
+      //   var newStr = str.split(" ");
+      //   console.log(newStr);
+      //   var newArr = newStr.map((i) => {
+      //     return i.charAt(0).toUpperCase() + i.slice(1);
+      //   });
+      //   return newArr.join(" ");
+      // };
+      // console.log(firstCap(inputString));
 
-      // using for loop
-      var capFun = (str) => {
-        var arrStr = str.split(" ");
-        console.log(arrStr);
-        let myArr = [];
-        for (let i = 0; i < arrStr.length; i++) {
-          myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
-        }
-        return myArr.join(" ");
-      };
-      console.log(capFun("suman singh"));
+      // // using for loop
+      // var capFun = (str) => {
+      //   var arrStr = str.split(" ");
+      //   console.log(arrStr);
+      //   let myArr = [];
+      //   for (let i = 0; i < arrStr.length; i++) {
+      //     myArr.push(arrStr[i].charAt(0).toUpperCase() + arrStr[i].slice(1));
+      //   }
+      //   return myArr.join(" ");
+      // };
+      // console.log(capFun("suman singh"));
 
-      //Simple code
-      function firstCharCaps(str) {
-        var newStr = [];
-        str.split(" ").forEach((e) => {
-          newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
-        });
-        return newStr.join(" ");
-      }
-      console.log(firstCharCaps("suman singh"));
+      // //Simple code
+      // function firstCharCaps(str) {
+      //   var newStr = [];
+      //   str.split(" ").forEach((e) => {
+      //     newStr.push(e.charAt(0).toUpperCase() + e.slice(1));
+      //   });
+      //   return newStr.join(" ");
+      // }
+      // console.log(firstCharCaps("suman singh"));
       //very simple way
       function cap(s) {
         var newS = s.split(" ").map((e) => {
@@ -391,15 +412,15 @@
       console.log(cap("suman kumar singh"));
     </script> -->
     <!-- <script>
-      //Video:21 Program to find fibonacci sequence in js
-      // var a = 0;
-      // var b = 1;
-      // for (let i = 0; i <= 15; i++) {
-      //   var temp = a + b;
-      //   a = b;
-      //   b = temp;
-      //   console.log(temp);
-      // }
+      //Q23. Program to find fibonacci sequence in js
+      var a = 0;
+      var b = 1;
+      for (let i = 0; i <= 15; i++) {
+        var temp = a + b;
+        a = b;
+        b = temp;
+        console.log(temp);
+      }
       //another way
       function fib(n) {
         var arr = [0, 1];
@@ -411,16 +432,15 @@
       }
       fib();
     </script> -->
-    <!-- <script>
-      //Video:22 Program to printing number patterns right triangle, pyramid and diamond shape in js
-      //Pattern1: done
+    <script>
+      //Q24. Program to printing number patterns right triangle, pyramid and diamond shape in js
+      //Pattern1: Right angle triangle: practiced
       for (let i = 1; i <= 6; i++) {
         for (let j = 1; j <= i; j++) {
           document.write("*" + "  ");
         }
         document.write("<br>");
       }
-
       //Patterns2:
       for (let i = 1; i <= 6; i++) {
         for (let j = 1; j <= 6 - i; j++) {
@@ -450,18 +470,54 @@
         }
         document.write("<br>");
       }
-    </script> -->
-    <!-- <script>
-      //Video:23 Program to check the number of occurence of a character in a string in js
-      var str = prompt("Pease enter string");
-      var letter = prompt("Please enter letter");
-      var count = 0;
-      for (let i = 0; i < str.length; i++) {
-        if (str[i] == letter) {
-          count++;
+      //pattern4
+      for (var i = 1; i <= 5; i++) {
+        //use to create new row
+        for (var j = i; j <= 5; j++) {
+          //use to add in existing row
+          document.write("*");
         }
+        document.write("<br/>");
       }
-      console.log(`in ${str} occurence of ${letter}=${count}`);
+      //pattern5
+      for (var i = 1; i <= 5; i++) {
+        //use to create new row
+        for (var j = 1; j <= 5; j++) {
+          //use to add in existing row
+          document.write("*");
+        }
+        document.write("<br/>");
+      }
+      //pattern6
+      for (var i = 1; i <= 5; i++) {
+        //use to create new row
+        for (var j = i; j <= 5; j++) {
+          //use to add in existing row
+          document.write(i);
+        }
+        document.write("<br/>");
+      }
+      //pattern7
+      for (var i = 1; i <= 5; i++) {
+        //use to create new row
+        for (var j = i; j <= 5; j++) {
+          //use to add in existing row
+          document.write(j);
+        }
+        document.write("<br/>");
+      }
+    </script>
+    <!-- <script>
+      //Q25. Program to check the number of occurence of a character in a string in js
+      // var str = prompt("Pease enter string");
+      // var letter = prompt("Please enter letter");
+      // var count = 0;
+      // for (let i = 0; i < str.length; i++) {
+      //   if (str[i] == letter) {
+      //     count++;
+      //   }
+      // }
+      // console.log(`in ${str} occurence of ${letter}=${count}`);
       //Simple code
       function noOfChar(str, char) {
         let count = 0;
@@ -475,7 +531,7 @@
       console.log(noOfChar("suummannns", "n"));
     </script> -->
     <!-- <script>
-      //Video24: Program to print the table of any user defined number using function in js
+      //Q26: Program to print the table of any user defined number using function in js
       const table = (num) => {
         for (let i = 1; i <= 10; i++) {
           var res = i * num;
@@ -485,7 +541,7 @@
       table(5);
     </script> -->
     <!-- <script>
-      //Video25: Program to check nuber is armstrong or not
+      //Q27: Program to check nuber is armstrong or not
       // var number = prompt("Please enter number");
       // var temp = number;
       // var lengthOfNumber = number.toString().length;
@@ -505,25 +561,25 @@
       //   console.log(`${number} is not an armstrong number`);
       // }
       //simple way
-      // function armStrong(num) {
-      //   var temp = num;
-      //   var sum = 0;
-      //   var noOfDigit = num.toString().length;
-      //   while (temp > 0) {
-      //     var digit = temp % 10;
-      //     sum += digit ** noOfDigit;
-      //     temp = parseInt(temp / 10);
-      //   }
-      //   if (sum == num) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // }
-      // console.log(armStrong(407));
+      function armStrong(num) {
+        var temp = num;
+        var sum = 0;
+        var noOfDigit = num.toString().length;
+        while (temp > 0) {
+          var digit = temp % 10;
+          sum += digit ** noOfDigit;
+          temp = parseInt(temp / 10);
+        }
+        if (sum == num) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(armStrong(407));
     </script> -->
     <!-- <script>
-      //Q. All elements of array is unique or not
+      //Q28. All elements of array is unique or not
       let arr = [5, 8, 78, 6, 7];
       let isUnique = true;
       function checkUnique(arr) {
@@ -553,7 +609,7 @@
       console.log(isUnique("sumaa"));
     </script> -->
     <!-- <script>
-      //find the total price using item and price with JS
+      //Q29.find the total price using item and price with JS
       let items = [
         {
           item: 2,
@@ -578,7 +634,7 @@
       console.log(sum);
     </script> -->
     <!-- <script>
-      //Q. separate numbers and string from mixed array
+      //Q30. separate numbers and string from mixed array
       let mixed = "sum57a5n5fvhf";
       let mixedArr = mixed.split("");
       let string = [];
@@ -591,11 +647,11 @@
           number.push(e);
         }
       });
-      console.log("String", string.join(''));
-      console.log("Number", number.join(''));
+      console.log("String", string.join(""));
+      console.log("Number", number.join(""));
     </script> -->
     <!-- <script>
-      //Count number of each fruits
+      //Q31.Count number of each fruits
       const fruits = [
         { Apple: 4, Orange: 7, Grape: 3 },
         { Guava: 6, Lemon: 4, Banana: 8 },
@@ -612,6 +668,22 @@
         }
       });
       console.log(count);
+    </script> -->
+    <!-- <script>
+      //print string with reverse alternatice
+      function patt(str) {
+        for (var i = 1; i <= 10; i++) {
+          for (var j = 1; j <= 10; j++) {
+            if (j % 2 == 0) {
+              document.write(str.split("").reverse().join(""));
+            } else {
+              document.write(str);
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      patt("abc");
     </script> -->
   </body>
 </html>
