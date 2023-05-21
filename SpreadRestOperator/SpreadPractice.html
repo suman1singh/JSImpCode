@@ -6,15 +6,15 @@
       // Spread with array
       const arr1 = ["one", "two"];
       const arr2 = [...arr1, "three", "four", "five"];
-      console.log(arr2);
+      console.log("value1:", arr2);
       // Spread with Object
       const obj1 = { x: 1, y: 2 };
       const obj2 = { z: 3 };
       const obj3 = { ...obj1, ...obj2 };
-      console.log(obj3);
+      console.log("value2:", obj3);
       //Rest example
       let func = function (...args) {
-        console.log(args);
+        console.log("value3:", args);
       };
       func(3); // [3]
       func(4, 5, 6); // [4, 5, 6]

@@ -66,7 +66,7 @@
     <!-- <script>
       //Q.11
       const data = ["Suman", "Shree", "Swastik"];
-      const [,y] = data;
+      const [,,y] = data;
       console.log(y);
     </script> -->
     <!-- <script>
@@ -88,7 +88,7 @@
         let data1={name:"Suman",age:24,skills:'js'};
         let data2 = { city: "Blr", area: "whitefield", company: "TCS" };
         data2={data1,...data2};
-        console.log(data2);
+        console.log("data:",data2);
     </script> -->
     <!-- <script>
       //Q.15
@@ -106,6 +106,7 @@
       //Q.17
       const result = false || {} || null;
       console.log(result);
+      console.log(Boolean(false || {} || null));
     </script> -->
     <!-- <script>
       //Q.18
@@ -166,10 +167,15 @@
     <!-- <script>
       //Q.26
       const name='code step by step';
-      // console.log(!typeof name === 'object');
-      // console.log(!typeof name === 'string');
-      // console.log(typeof name === 'object');
+      console.log(!typeof name === 'object');
+      console.log(!typeof name === 'string');
+      console.log(typeof name === 'object');
       console.log(typeof name === 'string');
+      console.log("value1",Boolean("suman"))
+      console.log("value2",Boolean(525))
+      console.log("value3",Boolean(""))
+      console.log("value4",!"suman")
+      console.log("value5",!525)
     </script> -->
     <!-- <script>
       //Q.27
@@ -244,11 +250,12 @@
       //Q.36
       let c=3**3;
       console.log(c);
+      console.log(Math.pow(3,3))
     </script> -->
     <!-- <script>
       //Q.37
       let a = 2;
-      // console.log(a); 
+      console.log(a); 
       setTimeout(() => {
         console.log(a);
       }, 0);
@@ -303,6 +310,7 @@
     <!-- <script>
       //Q.46
       console.log([[[[]]]]);
+      console.log(Boolean([[[[]]]]));
     </script> -->
     <!-- <script>
       //Q.47
@@ -348,6 +356,7 @@
       };
       console.log(bird[data]);
       console.log(bird["size"]);
+      // console.log(bird[size]);
       console.log(bird.size);
       console.log(bird.data);
     </script> -->
@@ -377,6 +386,8 @@
       let b = new Number(3);
       console.log(a == b);
       console.log(a === b);
+      console.log(typeof a);
+      console.log(typeof b);
     </script> -->
     <!-- <script>
       //Q.57
@@ -390,6 +401,7 @@
       //Q.58
       let name;
       nmae={}; //Typo!
+      // console.log(window.name);
       console.log(name);
     </script> -->
     <!-- <script>
@@ -434,7 +446,7 @@
     </script> -->
     <!-- <script>
       //Q.64
-      const sum = eval("10*10+5");  //eval change string in expression
+      const sum = eval("10*10+5");  //eval change string into expression
       console.log(sum);
     </script> -->
     <!-- <script>
@@ -470,8 +482,6 @@
       foo();
       baz();
     </script> -->
-
-    <!-- Q.69 -->
     <!-- <div onclick="console.log('1st div')">
       <div onclick="console.log('2nd div')">
         <button onclick="console.log('3rd div')">click</button>
@@ -495,6 +505,7 @@
       function sayHi() {
         return (() => 0)();
       }
+      console.log(sayHi());
       console.log(typeof sayHi());
     </script> -->
     <!-- <script>
@@ -502,6 +513,7 @@
        function sayHi() {
         return () => 0;
       }
+      console.log(sayHi());
       console.log(typeof sayHi()());
       console.log(typeof sayHi());
     </script> -->
@@ -534,8 +546,8 @@
       console.log(!null);
       console.log(!!null);
       console.log(!!"");
-      console.log(!!1); -->
-    </script>
+      console.log(!!1);
+    </script> -->
     <!-- <script>
       //Q.77
       console.log(setInterval(() => console.log("Hi"), 1000));
@@ -563,6 +575,7 @@
       let person = { name: "peter" };
       const members = [person];
       person = null;
+      // person.name = "suman";
       console.log(members);
     </script> -->
     <!-- <script>
@@ -574,11 +587,14 @@
       for (const item in person) {
         console.log(item);
       }
+      for (const item in person) {
+        console.log(person[item]);
+      }
     </script> -->
     <!-- <script>
       //82
-      let data=3+4+'5';
-      console.log(data,typeof data);
+      let data = 3 + 4 + "5";
+      console.log(data, typeof data);
     </script> -->
     <!-- <script>
       //Q.83
@@ -641,7 +657,6 @@
       (() => {
         let x = 10;
       })();
-
       (() => {
         let x = 10;
       })();
