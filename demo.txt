@@ -1,0 +1,61 @@
+//Dassault Interview 1st round
+
+const x = {name:"ABC"};
+x = {address: "India"};
+x.name = "DEF";
+const y = 23;
+y = 44;
+
+//2nd q
+let str1 = "({} [] ({}))";
+ 
+let str2 = "}}";
+let str3="{}"
+  
+function isValid(data){
+    let dataArr=data.split(""); 
+    let count=0
+    for(let i=0;i<dataArr.length;i++){
+        if(dataArr[i] == "(" || dataArr[i] == ")" || dataArr[i] == "{" || dataArr[i] == "}" || dataArr[i] == "[" || dataArr[i] == "]"){
+            count++
+        }
+    }
+    if(count == 2){
+        return false
+    }else{
+        return true
+    }
+}
+isValid(str1) ==> true
+isValid(str2) ==> false
+
+
+//Q3
+
+let obj1={
+    name:"Suman",
+    age:26;
+    getData:function(){
+        console.log(`name is ${this.name} and age is ${this.age}`)
+    }
+}
+let obj2={
+    name:"Sunny",
+    age:30,
+}
+obj1.getData.call(obj2);
+
+let myFun=function(data1,data2){
+    console.log(`name is ${this.name} and age is ${this.age} and parameter1: ${data1}, parameter2: ${data2}`)
+}
+myFun().call(obj1,"India","Bangalore")
+myFun().apply(obj1,["India","Bangalore"])
+let bindMethod=myFun().bind(obj1,"India","Bangalore")
+bindMethod()
+
+function defaultParameter(a,b,c,d=100){
+    d=50
+console.log(`a:${a} b:${b} c:${c} d:${d}`)
+}
+defaultParameter(1,5,6);
+

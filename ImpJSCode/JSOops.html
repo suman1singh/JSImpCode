@@ -4,47 +4,48 @@
     <h1>OOPS with JS</h1>
     <script>
       //JS Class
-      //   class Animal {
-      //     constructor(name, age) {
-      //       this.name = name;
-      //       this.age = age;
-      //     }
-      //     getInfo() {
-      //       return `The name of the animal is ${this.name} and age is ${this.age}`;
-      //     }
-      //   }
-      //   const firstAnimal = new Animal("Rex", 2);
-      //   console.log(firstAnimal);
-      //   console.log(firstAnimal.getInfo());
-      //   const secondAnimal = new Animal("Barney", 5);
-      //   console.log(secondAnimal);
-      //   console.log(secondAnimal.getInfo());
+      class Animal {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        getInfo() {
+          return `The name of the animal is ${this.name} and age is ${this.age}`;
+        }
+      }
+      // const firstAnimal = new Animal("Rex", 2);
+      // console.log("data1:",firstAnimal);
+      // console.log("data2:",firstAnimal.getInfo());
+      // const secondAnimal = new Animal("Barney", 5);
+      // console.log("data3",secondAnimal);
+      // console.log("data4",secondAnimal.getInfo());
+
       //Class Inheritance
-      //   console.log("<***********Class Inheritance*************>");
-      //   class Dog extends Animal {
-      //     constructor(name, age, breed) {
-      //       super(name, age);
-      //       this.breed = breed;
-      //     }
-      //     bark() {
-      //       return "woof";
-      //     }
-      //   }
-      //   class Cat extends Animal {
-      //     constructor(name, age, weight) {
-      //       super(name, age);
-      //       this.weight = weight;
-      //     }
-      //   }
-      //   console.log("<*********Dog object**********>");
-      //   const myDog = new Dog("Rexes", 4, "German Shepard");
-      //   console.log(myDog.getInfo());
-      //   console.log(myDog.breed);
-      //   console.log(myDog.bark());
-      //   console.log("<*********Cat object**********>");
-      //   const myCat = new Cat("Whiskers", 5, "5KG");
-      //   console.log(myCat.getInfo());
-      //   console.log(myCat.weight);
+        console.log("<***********Class Inheritance*************>");
+        class Dog extends Animal {
+          constructor(name, age, breed) {
+            super(name, age);
+            this.breed = breed;
+          }
+          bark() {
+            return "woof";
+          }
+        }
+        class Cat extends Animal {
+          constructor(name, age, weight) {
+            super(name, age);
+            this.weight = weight;
+          }
+        }
+        console.log("<*********Dog object**********>");
+        const myDog = new Dog("Rexes", 4, "German Shepard");
+        console.log(myDog.getInfo());
+        console.log(myDog.breed);
+        console.log(myDog.bark());
+        console.log("<*********Cat object**********>");
+        const myCat = new Cat("Whiskers", 5, "5KG");
+        console.log(myCat.getInfo());
+        console.log(myCat.weight);
 
       //Encapsulation
       //   console.log("<**************Encapsulation***************>")

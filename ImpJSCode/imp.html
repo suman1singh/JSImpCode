@@ -54,20 +54,20 @@
       function sum1(a, b) {
         return a + b;
       }
-      console.log(sum1(2, 5));
+      console.log("way1:", sum1(2, 5));
       //way2: function Expression
       let sum2 = function (a, b) {
         return a + b;
       };
-      console.log(sum2(2, 5));
+      console.log("way2:", sum2(2, 5));
       //way3: arrow function
       let sum3 = (a, b) => {
         return a + b;
       };
-      console.log(sum3(2, 5));
+      console.log("way3:", sum3(2, 5));
       //way4: IIFE function
       (function (a, b) {
-        console.log(a + b);
+        console.log("way4:", a + b);
       })(2, 4);
     </script> -->
     <!-- <script>
@@ -231,11 +231,11 @@
       function displayName() {
         console.log(this.name);
       }
-      const person = {
+      const person1 = {
         name: "SS",
         method: displayName.bind(this),
       };
-      person.method();
+      person1.method();
     </script> -->
     <!-- <script>
       var name = "Suman";
@@ -253,11 +253,11 @@
       function displayName() {
         console.log(this.name);
       }
-      const person = {
+      const person3 = {
         name: "SS",
         method: displayName,
       };
-      person.method();
+      person3.method();
     </script> -->
     <!-- <script>
       let Person = class {
@@ -292,7 +292,8 @@
         return msg;
       })("Hello");
       // output("Hi");
-      output;
+      // output()
+      console.log(output);
     </script> -->
     <!-- <script>
       var output = (function (x) {
@@ -302,8 +303,8 @@
       console.log(output);
     </script> -->
     <!-- <script>
-     const characters=['A',['B','C',['D','E']]];
-     console.log(characters.flat(Infinity));
+      const characters = ["A", ["B", "C", ["D", "E"]]];
+      console.log(characters.flat(Infinity));
     </script> -->
     <!-- <script>
       setTimeout(() => console.log(1), 2000);
@@ -390,11 +391,11 @@
         var a = (b = 10);
       }
       display();
-      console.log("b", typeof b === "number");
-      console.log("b", typeof b === "undefined");
-      console.log("a", typeof a === "undefined");
+      console.log("b", typeof b === "number"); //true
+      console.log("b", typeof b === "undefined"); //false
+      console.log("a", typeof a === "undefined"); //true
     </script> -->
-    <!-- <script>
+    <script>
       "use strict";
       console.log(sum);
       var sum = 20;
@@ -404,7 +405,7 @@
       display();
       console.log("b", typeof b === "undefined");
       console.log("a", typeof a === "undefined");
-    </script> -->
+    </script>
     <!-- <script>
       // Q. JS code to print 1st repeating element in an array
       function firstRepChar(s) {
@@ -413,7 +414,7 @@
         });
         return repArr[0];
       }
-      console.log(firstRepChar("suummnnn"));
+      console.log(firstRepChar("summnnn"));
     </script> -->
     <!-- <script>
       //Printing duplicate elements
@@ -561,23 +562,52 @@
     </script> -->
     <!-- <script>
       //Convert string into object of character and no of digit
+      // function repeatL(str) {
+      //   var count = {};
+      //   var arr = str.split("");
+      //   str = "";
+      //   for (var i = 0; i < arr.length; i++) {
+      //     if (count[arr[i]]) {
+      //       count[arr[i]] = count[arr[i]] + 1;
+      //     } else {
+      //       count[arr[i]] = 1;
+      //     }
+      //   }
+      //   for (var key in count) {
+      //     str += key + count[key];
+      //   }
+      //   return str;
+      // }
+      // console.log(repeatL("summman"));
+
+      //other way
       function repeatL(str) {
         var count = {};
         var arr = str.split("");
         str = "";
-        for (var i = 0; i < arr.length; i++) {
-          if (count[arr[i]]) {
-            count[arr[i]] = count[arr[i]] + 1;
-          } else {
-            count[arr[i]] = 1;
-          }
-        }
+        arr.forEach((e) => {
+          count[e] ? count[e] + 1 : (count[e] = 1);
+        });
         for (var key in count) {
           str += key + count[key];
         }
         return str;
       }
       console.log(repeatL("summman"));
+
+      //another way
+      // function repeatL(s) {
+      //   let obj = {};
+      //   let str = "";
+      //   s.split("").forEach((e) => {
+      //     obj[e] ? obj[e]++ : (obj[e] = 1);
+      //   });
+      //   for (let each in obj) {
+      //     str += each + obj[each];
+      //   }
+      //   return str;
+      // }
+      // console.log(repeatL("summman"));
     </script> -->
     <!-- <script>
       //Swapping key and value in an object
@@ -692,6 +722,16 @@
         return obj;
       }
       console.log(toObject(arr));
+      //other way
+      var obj1 = {};
+      function toObject1(a) {
+        a.forEach((e, ind) => {
+          obj1[ind] = e;
+        });
+        return obj1;
+      }
+      const arr1 = ["a", "b", "c"];
+      console.log(toObject1(arr1));
     </script> -->
     <!-- <script>
       // Convert object into array
@@ -700,7 +740,7 @@
         1: "b",
         2: "c",
       };
-      console.log("value1", obj);
+      console.log("value1:", obj);
       var arrValue = [];
       var arrKey = [];
       Object.values(obj).forEach((ele) => {
@@ -817,23 +857,81 @@
         }
         return prime.join(" ");
       }
-      console.log(allPrime(1, 30));
-      //another way
-      function allPrime(l, h) {
+      console.log(allPrime(1, 300));
+    </script> -->
+    <!-- <script>
+      //find nth prime number:
+      function nthPrime(n) {
         let prime = [];
-        for (let x = l; x <= h; x++) {
-          for (let y = 2; y < x; y++) {
-            if (x % y == 0) {
-              break;
-            } else {
-              prime.push(x);
+        for (let i = 2; i <= Infinity; i++) {
+          let flag = 0;
+          for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+              flag = 1;
               break;
             }
           }
+          if (flag == 0) {
+            prime.push(i);
+          }
+          if (prime.length >= n) {
+            break;
+          }
         }
-        return prime.join(" ");
+        console.log(prime);
+        return prime[n - 1];
       }
-      console.log(allPrime(1, 30));
+      console.log(nthPrime(3));
+    </script> -->
+    <!-- <script>
+      //find maximum occurence characters
+      function maxChar(str) {
+        const charMap = {};
+        let max = 0;
+        let maxChar = "";
+        for (let char of str) {
+          if (charMap[char]) {
+            charMap[char]++;
+          } else {
+            charMap[char] = 1;
+          }
+        }
+        for (let char in charMap) {
+          if (charMap[char] > max) {
+            max = charMap[char];
+            maxChar = char;
+          }
+        }
+        return [maxChar, max];
+      }
+      console.log(maxChar("geeksforgeeks"));
+    </script> -->
+    <!-- <script>
+      // find all distict middle charracters between a char
+      function getAllMiddleChar(str, n) {
+        let startInd = -1;
+        let endInd = -1;
+        let middleChar = [];
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] == n) {
+            startInd = i;
+            break;
+          }
+        }
+        for (let j = str.length - 1; j >= 0; j--) {
+          if (str[j] == n) {
+            endInd = j;
+            break;
+          }
+        }
+        console.log(startInd, endInd);
+        for (let k = startInd; k <= endInd; k++) {
+          middleChar.push(str[k]);
+        }
+        let uniqueMiddleChar = [...new Set(middleChar)];
+        return uniqueMiddleChar.join(" ");
+      }
+      console.log(getAllMiddleChar("geeksforgeeks", "e"));
     </script> -->
   </body>
 </html>

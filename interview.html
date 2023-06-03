@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html>
+  <!-- <head>
+    <style>
+      .container {
+        display: flex;
+        background-color: aqua;
+        justify-content: space-between;
+      }
+      .item {
+        background-color: blue;
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
   <body>
-    <!-- <h1>Practice here:<span id="newId">New ID:</span></h1>
-    <div>
-      <button>click me</button>
-    </div> -->
-   
-  </body>
+    <div class="container">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+    </div>
+  </body> -->
+  <head>
+    <!-- <script>
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6 - i; j++) {
+          document.write("&nbsp;&nbsp");
+        }
+        for (let k = 0; k < i; k++) {
+          document.write(i, "&nbsp;&nbsp");
+        }
+        
+        document.write("</br>");
+      }
+      //     1
+      //    212
+      //   32123
+      //  4321234
+      // 543212345
+    </script> -->
+    <script>
+      function nthPrime(n) {
+        let prime = [];
+        for (let i = 2; i < Infinity; i++) {
+          let flag = 0;
+          for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+              flag = 1;
+              break;
+            }
+          }
+          if (flag == 0) {
+            prime.push(i);
+          }
+          if (prime.length >= n) {
+            break;
+          }
+        }
+        return prime[n-1];
+      }
+      console.log(nthPrime(10));
+      // function nthPrime(n) {
+      //   let prime = [];
+      //   for (let i = 2; i <= Infinity; i++) {
+      //     let flag = 0;
+      //     for (let j = 2; j < i; j++) {
+      //       if (i % j == 0) {
+      //         flag = 1;
+      //         break;
+      //       }
+      //     }
+      //     if (flag == 0) {
+      //       prime.push(i);
+      //     }
+      //     if (prime.length >= n) {
+      //       break;
+      //     }
+      //   }
+      //   console.log(prime);
+      //   return prime[n - 1];
+      // }
+      // console.log(nthPrime(3));
+    </script>
+  </head>
 </html>

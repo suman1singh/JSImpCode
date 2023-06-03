@@ -24,33 +24,35 @@
       // const obj = Object.assign(o1, o2, o3);
       // console.log(obj); // { a: 1, b: 2, c: 3 }
       // console.log(o1); // { a: 1, b: 2, c: 3 }, target object itself is changed.
-      
-      
+
       //Case: special
-      const v1 = "abc";
-      const v2 = true;
-      const v3 = 10;
-      const v4 = Symbol("foo");
-      const obj = Object.assign({}, v1, null, v2, undefined, v3, v4);
-      // Primitives will be wrapped, null and undefined will be ignored.
-      // Note, only string wrappers can have own enumerable properties.
-      console.log(obj); // { "0": "a", "1": "b", "2": "c" }
+      // const v1 = "abc";
+      // const v2 = true;
+      // const v3 = 10;
+      // const v4 = Symbol("foo");
+      // const obj = Object.assign({}, v1, null, v2, undefined, v3, v4);
+      // // Primitives will be wrapped, null and undefined will be ignored.
+      // // Note, only string wrappers can have own enumerable properties.
+      // console.log(obj); // { "0": "a", "1": "b", "2": "c" }
     </script>
-    <script>
-      // var obj = {
-      //   name: "Suman",
-      //   age: 25,
-      //   address: {
-      //     state: "Bihar",
-      //     district: "Madhubani",
-      //   },
-      // };
+    <!-- <script>
+      var obj = {
+        name: "Suman",
+        age: 25,
+        address: {
+          state: "Bihar",
+          district: "Madhubani",
+        },
+      };
+      //case1
       // console.log(obj.age);
       // // console.log(obj[age]) //will show error
       // console.log(obj["age"]);
       // obj["name"] = "Supriya";
       // obj["post"]="Khajauli"
-      // console.log(obj);
+      // console.log("NewObj:",obj);
+
+      //case2:
       // // Adding and accessing element using . operator in object
       // obj.newName = "Synny";
       // obj.address.vill = "Tarapatti";
@@ -58,17 +60,20 @@
       // console.log(obj);
       // console.log(obj.age);
       // console.log(obj.address.district);
-      // // console.log(obj[age]);
+      // //console.log(obj[age]); //will show error
 
-      // Adding element using Object.assign() method
+      //case3:
+      // // Adding element using Object.assign() method
       // Object.assign(obj, { newAge: 30 });
       // console.log(obj);
 
+      //case4:
       //using square bracket
       // let newObj = {};
       // newObj[name] = "suman";
+      // newObj["age"] = 26;
       // console.log(newObj);
-    </script>
+    </script> -->
     <!-- <script>
         // constructor function
         function Person () {
@@ -181,10 +186,10 @@
       console.log(person2.gender); // Male
     </script> -->
     <!-- <script>
-      // let a = new Object(); // A new Object object
-      // let b = new String(); // A new String object
-      // let c = new Number(); // A new Number object
-      // let d = new Boolean(); // A new Boolean object
+      let a = new Object(); // A new Object object
+      let b = new String(); // A new String object
+      let c = new Number(); // A new Number object
+      let d = new Boolean(); // A new Boolean object
       const name = new String("John");
       console.log(name); // "John"
       const number = new Number(57);
@@ -212,30 +217,32 @@
       // const person2 = new Personc("Jack");
       // console.log(person1.name); // John
       // console.log(person2.name); // Jack
+
       //Type2
       //constructor function
-      // function Person(name) {
-      //   // assigning  parameter values to the calling object
-      //   this.name = name;
-      //   // defining method
-      //   this.greet = function () {
-      //     return "Hello" + " " + this.name;
-      //   };
-      // }
-      // // class Person {
-      // //   constructor(name) {
-      // //     this.name = name;
-      // //   }
+      // // function Person(name) {
+      // //   // assigning  parameter values to the calling object
+      // //   this.name = name;
       // //   // defining method
-      // //   greet() {
-      // //     console.log(`Hello ${this.name}`);
-      // //   }
+      // //   this.greet = function () {
+      // //     return "Hello" + " " + this.name;
+      // //   };
       // // }
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+      //   // defining method
+      //   greet() {
+      //     console.log(`Hello ${this.name}`);
+      //   }
+      // }
       // let person4 = new Person("John");
       // // accessing property
       // console.log(person4.name); // John
       // // accessing method
       // person4.greet(); // Hello John
+
       //Type3
       // class Person {
       //   constructor(name) {
