@@ -27,5 +27,30 @@
       let bindMethod = printName.bind(userDetails2, "Banglore", "India");
       bindMethod();
     </script>
+    <script>
+      //another example
+      let obj1 = {
+        name: "Suman",
+        age: 26,
+        getData: function () {
+          console.log(`name: ${this.name} and age: ${this.age}`);
+        },
+      };
+      let obj2 = {
+        name: "Shree",
+        age: 17,
+      };
+      obj1.getData();
+      obj1.getData.call(obj2);
+      let myFun = function (data1, data2) {
+        console.log(
+          `name is ${this.name} and country is ${data1} and city is ${data2}`
+        );
+      };
+      myFun.call(obj1, "India", "Bengaluru");
+      myFun.apply(obj2, ["India", "Bengaluru"]);
+      let bindMethod1 = myFun.bind(obj1, "India", "Bengaluru");
+      bindMethod1();
+    </script>
   </body>
 </html>

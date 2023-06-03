@@ -59,7 +59,7 @@
       function longestWord() {
         let string = "supriya is a hahahahaha good girl";
         var arr = string.split(" ");
-        var longest ="";
+        var longest = "";
         for (var i = 0; i < arr.length; i++) {
           if (arr[i].length > longest.length) {
             longest = arr[i];
@@ -76,7 +76,7 @@
         }); //in desc order //from greater to smallest word
         console.log(longestWord[0]);
         //for smallest word
-        console.log(longestWord[longestWord.length-1]);
+        console.log(longestWord[longestWord.length - 1]);
         console.log(longestWord[0].length);
       }
       findLongestWord();
@@ -355,21 +355,21 @@
     </script> -->
     <!-- <script>
       //code 22: Reverse of a nuber: (need multiple practice)
-      // function reverseNumber(input) {
-      //   var result = 0;
-      //   while (input != 0) {
-      //     //123 //12 //1
-      //     result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
-      //     result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
-      //     input = Math.floor(input / 10); //12 //1
-      //     // console.log("in", input)
-      //   }
-      //   return result;
-      // }
-      //another method
-      function reverseNumber(n) {
-        return n.toString().split("").reverse().join("");
+      function reverseNumber(input) {
+        var result = 0;
+        while (input != 0) {
+          //123 //12 //1
+          result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
+          result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
+          input = Math.floor(input / 10); //12 //1
+          // console.log("in", input)
+        }
+        return result;
       }
+      //another method
+      // function reverseNumber(n) {
+      //   return n.toString().split("").reverse().join("");
+      // }
       console.log(reverseNumber(123)); //321
     </script> -->
     <!-- <script>
@@ -419,6 +419,11 @@
       var num = [4, 9, 16, 25, 36];
       var result = num.map((e) => Math.sqrt(e));
       console.log(result); //[2,3,4,5,6]
+      
+      // To find square
+      var num = [4, 9, 16, 25, 36];
+      let square = num.map((e) => Math.pow(e, 2));
+      console.log(square);
     </script> -->
     <!-- <script>
       //code 28: To find the length of the array in custom way
@@ -475,8 +480,57 @@
         ])
       );
     </script> -->
+    <!-- <script>
+      //code 31: Find first repeating character with its index from an array
+      function firstRepeatingIndex(arr) {
+        let count = {};
+        arr.forEach((e) => {
+          if (count[e]) {
+            count[e] = count[e] + 1;
+          } else {
+            count[e] = 1;
+          }
+        });
+        var result = [];
+        for (let x in count) {
+          if (count[x] > 1) {
+            result.push(x);
+          }
+        }
+        return `1st repeating integer is ${Number(
+          result[0]
+        )} at index ${arr.indexOf(Number(result[0]))}`;
+      }
+      console.log(firstRepeatingIndex([1, 0, 0, 2, 3, 4, 4, 5, 7, 7]));
+
+      //other way
+      function firstRepeatingIndex(arr) {
+        let count = {};
+        arr.forEach((e) => {
+          if (count[e]) {
+            count[e] = count[e] + 1;
+          } else {
+            count[e] = 1;
+          }
+        });
+        let res = Object.entries(count).find(([i, j]) => j > 1);
+        return `1st repeating integer is ${res[0]} at index ${arr.indexOf(
+          Number(res[0])
+        )}`;
+      }
+      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 4, 5, 7, 7]));
+
+      //way3
+      function firstRepeatingIndex(arr) {
+        let firstRep = arr.filter((e, ind) => {
+          return arr.indexOf(e) !== ind;
+        });
+        return [firstRep[0], arr.indexOf(firstRep[0])];
+      }
+      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
+    </script> -->
     <script>
-      //code 80: Find first repeating character with its index from an array
+      //code 81: To find all the subsets of the set
     </script>
   </body>
 </html>
