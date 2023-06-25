@@ -3,6 +3,14 @@
   <h1>Imp for interview</h1>
   <body>
     <!-- <script>
+      let arr = [5, 6, 7];
+      let a = arr;
+      a.push(100);
+      arr.push(200);
+      console.log("a", a);
+      console.log("arr", arr);
+    </script> -->
+    <!-- <script>
       // How to make array empty
       var arr = [1, 2, 3, 6, 5, 4];
       arr.length = 0;
@@ -48,6 +56,7 @@
       console.log("max:", max, "min:", min);
       console.log("max by Math method:", Math.max(...arr));
       console.log("min by Math method:", Math.min(...arr));
+      //console.log("min by Math method:", Math.min([...arr])); //output will be NaN
     </script> -->
     <!-- <script>
       //Q4: find largest value and remove largest value
@@ -56,6 +65,7 @@
       let index = myArr.indexOf(largest);
       console.log("largest Value:", largest, "and their index:", index);
       myArr.splice(index, 1);
+      console.log("value1", myArr);
       let Secondlargest = Math.max(...myArr);
       console.log("second largest value:", Secondlargest);
       console.log(Math.max());
@@ -587,22 +597,43 @@
         }
       }
       console.log(armStrong(407));
+
+      //use case
+      // function armStrong(n) {
+      //   let temp = n;
+      //   let digit;
+      //   let noOfDigit = n.toString().length;
+      //   let sum = 0;
+      //   while (temp > 0) {
+      //     digit = temp % 10;
+      //     // sum += digit ** noOfDigit;
+      //     sum += Math.pow(digit, noOfDigit);
+      //     // temp = parseInt(temp / 10);
+      //     temp = Math.floor(temp / 10);
+      //   }
+      //   if (n == sum) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+      // console.log(armStrong(407));
     </script> -->
     <!-- <script>
       //Q28. All elements of array is unique or not
-      let arr = [5, 8, 78, 6, 7];
-      let isUnique = true;
-      function checkUnique(arr) {
-        for (let i = 0; i < arr.length; i++) {
-          for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] == arr[j]) {
-              isUnique = false;
-            }
-          }
-        }
-        return isUnique;
-      }
-      console.log(checkUnique(arr));
+      // let arr = [5, 8, 78, 6, 7];
+      // let isUnique = true;
+      // function checkUnique(arr) {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (arr[i] == arr[j]) {
+      //         isUnique = false;
+      //       }
+      //     }
+      //   }
+      //   return isUnique;
+      // }
+      // console.log(checkUnique(arr));
       //simple code
       function isUnique(str) {
         let arr = str.split("");
@@ -611,6 +642,7 @@
           for (let j = i + 1; j < arr.length; j++) {
             if (arr[i] == arr[j]) {
               isIt = false;
+              break;
             }
           }
         }
@@ -637,11 +669,11 @@
       const total = items.reduce((i, j) => i + j.item * j.price, 0);
       console.log(total);
       //By for loop
-      sum = 0;
-      for (let i = 0; i < items.length; i++) {
-        sum += items[i].item * items[i].price;
-      }
-      console.log(sum);
+      // sum = 0;
+      // for (let i = 0; i < items.length; i++) {
+      //   sum += items[i].item * items[i].price;
+      // }
+      // console.log(sum);
     </script> -->
     <!-- <script>
       //Q30. separate numbers and string from mixed array
