@@ -3,6 +3,13 @@
   <body>
     <h2>Js interview questions From screenShot</h2>
     <!-- <script>
+      let arr = [10, 20, 30];
+      let res = arr.map((e) => {
+        e;
+      });
+      console.log(res);
+    </script> -->
+    <!-- <script>
       //default parameter
       //case1
       // function multiply(a, b = 1) {
@@ -17,6 +24,7 @@
       // }
       // console.log(multiply(5, 2)); // 10
       // console.log(multiply(5)); // NaN !
+      // //console.log(5 * undefined);
 
       //case3
       // function multiply(a, b = 1) {
@@ -77,6 +85,12 @@
       var x = "11sum";
       var y = parseInt(x);
       console.log(y);
+    </script> -->
+    <!-- <script>
+      var x = 5;
+      var y = 2;
+      var z = x * y + y++;
+      console.log(z);
     </script> -->
     <!-- <script>
       var obj = {
@@ -146,7 +160,7 @@
     </script> -->
     <!-- <script>
       function func(a) {
-        var a = 01;
+        var a = 1;
         console.log("JavaScript");
       }
       function func(a, b) {
@@ -190,12 +204,12 @@
       var name = "Shree";
       let obj = {
         name: "SumanSingh",
-        printName: () => {
-          console.log(this.name);
-        },
-        // printName: function () {
+        // printName: () => {
         //   console.log(this.name);
         // },
+        printName: function () {
+          console.log(this.name);
+        },
       };
       obj.printName();
     </script> -->
@@ -244,7 +258,7 @@
       }
       const person = {
         name: "SS",
-        method: displayName()
+        method: displayName(),
       };
       person.method();
     </script> -->
@@ -395,7 +409,7 @@
       console.log("b", typeof b === "undefined"); //false
       console.log("a", typeof a === "undefined"); //true
     </script> -->
-    <script>
+    <!-- <script>
       "use strict";
       console.log(sum);
       var sum = 20;
@@ -405,7 +419,7 @@
       display();
       console.log("b", typeof b === "undefined");
       console.log("a", typeof a === "undefined");
-    </script>
+    </script> -->
     <!-- <script>
       // Q. JS code to print 1st repeating element in an array
       function firstRepChar(s) {
@@ -499,10 +513,10 @@
     </script> -->
     <!-- <script>
       // Checking two string are same or not
-      let str1 = "xcvgfh";
-      let str2 = "vcxfhg";
-      let array1 = str1.split("").sort().join("");
-      let array2 = str2.split("").sort().join("");
+      let str1 = "xCvgfh";
+      let str2 = "vcxFhg";
+      let array1 = str1.toLowerCase().split("").sort().join("");
+      let array2 = str2.toLowerCase().split("").sort().join("");
       console.log(array1);
       console.log(array2);
       if (array1 === array2) {
@@ -694,7 +708,7 @@
       function printNum(n) {
         if (n <= 100) {
           console.log(n);
-          printNum(n + 1);
+          printNum(n + 1); // not n++ ==> will go in infinite loop.
         }
       }
       let n = 1;
@@ -932,6 +946,36 @@
         return uniqueMiddleChar.join(" ");
       }
       console.log(getAllMiddleChar("geeksforgeeks", "e"));
+    </script> -->
+    <!-- <script>
+      //get sum of digit of number using recursion
+      let n = 12345;
+      let nArr = n.toString().split("");
+      let sum = 0;
+      function getSum(x) {
+        if (x + 1 <= nArr.length) {
+          sum += Number(nArr[x]);
+          getSum(x + 1);
+        } else {
+          return sum;
+        }
+      }
+      getSum(0);
+      console.log(sum);
+    </script> -->
+    <!-- <script>
+      //print non repeating elements
+      let arr = [5, 66, 7, 23, 6, 6, 7, 6, 12, 8, 8, 6];
+      let repArr = arr.filter((e, i) => {
+        return arr.indexOf(e) !== i;
+      });
+
+      let uniArr = arr.filter((e) => {
+        if (!repArr.includes(e)) {
+          return e;
+        }
+      });
+      console.log(uniArr);
     </script> -->
   </body>
 </html>

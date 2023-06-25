@@ -68,18 +68,42 @@
         return longest;
       }
       console.log(longestWord());
+
+      //other way
+      // function logWord(s) {
+      //   let long = "";
+      //   s.split(" ").forEach((e) => {
+      //     if (long.length < e.length) {
+      //       long = e;
+      //     }
+      //   });
+      //   return long;
+      // }
+      // let string = "supriya is a hahahahaha good girl";
+      // console.log(logWord(string));
+
       //Another method: Here is also how to sort string based on size of each word
-      function findLongestWord() {
-        var str = "Priya is a goog girl and having hardworking skill";
-        var longestWord = str.split(" ").sort((a, b) => {
-          return b.length - a.length;
-        }); //in desc order //from greater to smallest word
-        console.log(longestWord[0]);
-        //for smallest word
-        console.log(longestWord[longestWord.length - 1]);
-        console.log(longestWord[0].length);
-      }
-      findLongestWord();
+      // function findLongestWord() {
+      //   var str = "Priya is a goog girl and having hardworking skill";
+      //   var longestWord = str.split(" ").sort((a, b) => {
+      //     return b.length - a.length;
+      //   }); //in desc order //from greater to smallest word
+      //   console.log(longestWord[0]);
+      //   //for smallest word
+      //   console.log(longestWord[longestWord.length - 1]);
+      //   console.log(longestWord[0].length);
+      // }
+      // findLongestWord();
+
+      //other way
+      // function logWord(s) {
+      //   let str = s.split(" ");
+      //   return str.sort((a, b) => {
+      //     return a.length - b.length;
+      //   })[str.length - 1];
+      // }
+      // let string = "supriya is a hahahahaha good girl";
+      // console.log(logWord(string));
     </script> -->
     <!-- <script>
       //Code 6: To find vowels and its count in a given string
@@ -126,9 +150,26 @@
             }
           }
         }
-        return max
+        return max;
       }
       console.log(largestPair([4, 6, 82, 3, 40, 36]));
+
+      //other way
+      // function largestPair(arr) {
+      //   let max = 0;
+      //   let a, b;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (max < arr[i] + arr[j]) {
+      //         max = arr[i] + arr[j];
+      //         a = arr[i];
+      //         b = arr[j];
+      //       }
+      //     }
+      //   }
+      //   return [max, a, b];
+      // }
+      // console.log(largestPair([4, 6, 82, 3, 40, 36]));
     </script> -->
     <!-- <script>
       //code 9: fibbonacci series in smart way
@@ -184,7 +225,7 @@
     <!-- <script>
       //Code 13: Print string n times in custom way
       function repString(str, n) {
-        if (n < 0) return "";
+        if (n < 1) return "";
         let final = "";
         for (let i = 0; i < n; i++) {
           final += str;
@@ -325,6 +366,16 @@
         return total;
       });
       console.log("average", average); //3
+
+      //Simple way
+      var sum = 0;
+      let ave = arr.reduce((acc, curr, i) => {
+        if (i == arr.length - 1) {
+          return (acc + curr) / arr.length;
+        }
+        return acc + curr;
+      });
+      console.log(ave);
     </script> -->
     <!-- <script>
       //Code 21: Convert 2D/3D array into 1D using reduce function and inbuilt function i.e flat
@@ -354,22 +405,34 @@
       console.log(arr3.flat(3)); //["a", "b", "c", "d", "e", "f", "g", "h"]
     </script> -->
     <!-- <script>
-      //code 22: Reverse of a nuber: (need multiple practice)
-      function reverseNumber(input) {
-        var result = 0;
-        while (input != 0) {
-          //123 //12 //1
-          result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
-          result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
-          input = Math.floor(input / 10); //12 //1
-          // console.log("in", input)
-        }
-        return result;
-      }
-      //another method
-      // function reverseNumber(n) {
-      //   return n.toString().split("").reverse().join("");
+      //code 22: Reverse of a number manually : (need multiple practice)
+      // function reverseNumber(input) {
+      //   var result = 0;
+      //   while (input != 0) {
+      //     //123 //12 //1
+      //     result = result * 10; //0*10=0 //3*10=30 // 32*10 =320
+      //     result = result + (input % 10); //give reminder // 0+3=3 // 30+2=32 //320+1=321
+      //     input = Math.floor(input / 10); //12 //1
+      //     // console.log("in", input)
+      //   }
+      //   return result;
       // }
+      // //another method
+      // // function reverseNumber(n) {
+      // //   return n.toString().split("").reverse().join("");
+      // // }
+      // console.log(reverseNumber(123)); //321
+
+      //simple way
+      function reverseNumber(arr) {
+        let rev = 0;
+        while (arr > 0) {
+          rev *= 10;
+          rev += arr % 10;
+          arr = parseInt(arr / 10);
+        }
+        return rev;
+      }
       console.log(reverseNumber(123)); //321
     </script> -->
     <!-- <script>
@@ -528,9 +591,102 @@
         return [firstRep[0], arr.indexOf(firstRep[0])];
       }
       console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
+
+      //most efficient way:
+      function firstRepeatingIndex(arr) {
+        return arr.find((e, ind) => {
+          return arr.indexOf(e) !== ind;
+        });
+      }
+      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
     </script> -->
-    <script>
-      //code 81: To find all the subsets of the set
+    <!-- <script>
+      //code 81: To find all the subsets of the set: later has to do
+    </script> -->
+    <!-- <script>
+      //Q33.To find the maximum repetation of the character in a string
+      // function getMaxChar(str) {
+      //   let maxChar = "";
+      //   let max = 0;
+      //   for (let i = 0; i < str.length; i++) {
+      //     let count = 1;
+      //     for (let j = i + 1; j < str.length; j++) {
+      //       if (str[i] == str[j]) {
+      //         count++;
+      //       }
+      //     }
+      //     if (count > max) {
+      //       max = count;
+      //       maxChar = str[i];
+      //     }
+      //   }
+      //   return [maxChar, max];
+      // }
+      // console.log(getMaxChar("summmannnnnnnnn"));
+
+      //other way:
+      function getMaxChar(str) {
+        let obj = {};
+        str.split("").forEach((e) => {
+          obj[e] ? obj[e]++ : (obj[e] = 1);
+        });
+        let maxChar = "";
+        let maxRepeate = 0;
+        for (let char in obj) {
+          if (maxRepeate < obj[char]) {
+            maxRepeate = obj[char];
+            maxChar = char;
+          }
+        }
+        return [maxChar, maxRepeate];
+      }
+      console.log(getMaxChar("sumannnnnnn"));
+    </script> -->
+    <!-- <script>
+      //Q34: Create a new array by adding one to each elements of the existing array
+      function addOne(arr) {
+        let output = [];
+        arr.forEach((e) => {
+          output.push(e + 1);
+        });
+        return output;
+      }
+      const arr = [8, 663, 8, 72, 99, 24, 3, 4];
+      console.log(addOne(arr));
+    </script> -->
+    <!-- <script>
+      //Q35: To find kth smallest or largest element in an array
+      function kthSmallestorLargest(arr, k) {
+        arr.sort((a, b) => a - b);
+        let kthSmallest = arr[k - 1];
+        let kthLargest = arr[arr.length - k];
+        console.log("kthSmallest:", kthSmallest, "and kthLargest:", kthLargest);
+        return [kthLargest, kthSmallest];
+      }
+      console.log(kthSmallestorLargest([2, 1, 4, 3, 6, 5, 7], 3)); //kth is 3rd //3,5
+    </script> -->
+    <!-- <script>
+      //Code 36: sort by frequency of the letters
+      function frequencySort(str) {
+        let map = {};
+        for (const letter of str) {
+          map[letter] ? map[letter]++ : (map[letter] = 1);
+        }
+        console.log(map); //{a: 2,A: 2,b: 3,B: 3,c: 1,C: 1}
+        let res = "";
+        let sorted = Object.keys(map).sort((a, b) => map[a] - map[b]);
+        console.log("sorted", sorted); // ["b", "B", "a", "A", "c", "C"]
+        for (let letter of sorted) {
+          for (let count = 0; count < map[letter]; count++) {
+            res += letter;
+          }
+        }
+        return res;
+      }
+      console.log(frequencySort("cCaaAAbbbBBB")); //"bbbBBBaaAAcC"
     </script>
+    <script>
+      //Code 88: To find the OCCURANCE of the character
+    </script> -->
   </body>
 </html>

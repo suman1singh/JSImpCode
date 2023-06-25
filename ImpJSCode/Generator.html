@@ -16,12 +16,13 @@
         console.log("function called");
       }
       let sG = simpleGenerator();
-      console.log(sG.next().value);
-      console.log(sG.next());
-      console.log(sG.next());
-      console.log(sG.next());
+      console.log("value1", sG.next().value);
+      //console.log("value1", sG.next());
+      console.log("value2", sG.next());
+      console.log("value3", sG.next());
+      console.log("value4", sG.next());
     </script> -->
-    <h1>New dynamic Id:<span id="newId"></span></h1>
+    <!-- <h1>New dynamic Id:<span id="newId"></span></h1>
     <button onclick="getNewId()">Generate new ID</button>
     <script>
       function* simpleGenerator() {
@@ -37,6 +38,6 @@
         // console.log(sG.next());
         document.getElementById("newId").innerText = sG.next().value;
       }
-    </script>
+    </script> -->
   </body>
 </html>

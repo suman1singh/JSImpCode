@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <script>
-      // //Object.assign() method
+    <!-- <script>
+      //case1:
+      // // //Object.assign() method
       // const target = { a: 1, b: 2 };
       // const source = { b: 4, c: 5 };
       // const returnedTarget = Object.assign(target, source);
       // console.log(target);
       // console.log(returnedTarget);
-      // // Expected output: Object { a: 1, b: 4, c: 5 }
+      // // // Expected output: Object { a: 1, b: 4, c: 5 }
       // console.log(returnedTarget === target);
-      // // Expected output: true
+      // // // Expected output: true
 
+      //case2:
       // //Object cloning
       // const obj = { a: 1 };
       // const copy = Object.assign({}, obj);
       // console.log(copy); // { a: 1 }
 
-      // //Merging objects
+      //case3:Merging objects
       // const o1 = { a: 1 };
       // const o2 = { b: 2 };
       // const o3 = { c: 3 };
@@ -25,7 +27,7 @@
       // console.log(obj); // { a: 1, b: 2, c: 3 }
       // console.log(o1); // { a: 1, b: 2, c: 3 }, target object itself is changed.
 
-      //Case: special
+      //Case4: special
       // const v1 = "abc";
       // const v2 = true;
       // const v3 = 10;
@@ -34,7 +36,7 @@
       // // Primitives will be wrapped, null and undefined will be ignored.
       // // Note, only string wrappers can have own enumerable properties.
       // console.log(obj); // { "0": "a", "1": "b", "2": "c" }
-    </script>
+    </script> -->
     <!-- <script>
       var obj = {
         name: "Suman",
@@ -63,7 +65,7 @@
       // //console.log(obj[age]); //will show error
 
       //case3:
-      // // Adding element using Object.assign() method
+      // Adding element using Object.assign() method
       // Object.assign(obj, { newAge: 30 });
       // console.log(obj);
 
@@ -220,14 +222,14 @@
 
       //Type2
       //constructor function
-      // // function Person(name) {
-      // //   // assigning  parameter values to the calling object
-      // //   this.name = name;
-      // //   // defining method
-      // //   this.greet = function () {
-      // //     return "Hello" + " " + this.name;
-      // //   };
-      // // }
+      // function Person(name) {
+      //   // assigning  parameter values to the calling object
+      //   this.name = name;
+      //   // defining method
+      //   this.greet = function () {
+      //     return "Hello" + " " + this.name;
+      //   };
+      // }
       // class Person {
       //   constructor(name) {
       //     this.name = name;
@@ -244,24 +246,42 @@
       // person4.greet(); // Hello John
 
       //Type3
-      // class Person {
-      //   constructor(name) {
-      //     this.name = name;
-      //   }
-      //   // getter
-      //   get personName() {
-      //     return this.name;
-      //   }
-      //   // setter
-      //   set personName(x) {
-      //     this.name = x;
-      //   }
-      // }
-      // let person5 = new Person("Jack");
-      // console.log(person5.name); // Jack
-      // // changing the value of name property
-      // person5.personName = "Sarah";
-      // console.log(person5.name); // Sarah
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+        // getter
+        get personName() {
+          return this.name;
+        }
+        // setter
+        set personName(x) {
+          this.name = x;
+        }
+      }
+      let person5 = new Person("Jack");
+      console.log(person5.name); // Jack
+      // changing the value of name property
+      person5.personName = "Sarah";
+      console.log(person5.name); // Sarah
+    </script> -->
+    <!-- <script>
+      //static method in js class
+      class Car {
+        constructor(name) {
+          this.name = name;
+        }
+        static hello() {
+          return `static method can be called on only class but not on class's object`;
+        }
+        static myMethod(x){
+          return `object passed as parameter in static method: ${x.name}`
+        }
+      }
+      const myCar = new Car("Tata");
+      console.log(Car.hello());
+      console.log(Car.myMethod(myCar));
+      //console.log(myCar.hello()); will show error
     </script> -->
   </body>
 </html>
