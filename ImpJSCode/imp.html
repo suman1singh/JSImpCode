@@ -3,6 +3,21 @@
   <body>
     <h2>Js interview questions From screenShot</h2>
     <!-- <script>
+      //Q Write a function which returns true if given value of number is an integer without using any inbuilt functions
+      const isInt = (n) => {
+        return n % 1 === 0;
+      };
+      console.log(isInt(51))
+      console.log(isInt(51.6))
+    </script> -->
+    <!-- <script>
+      //Q. Create a function which returns a random number in the given range of values both inclusive
+      const randomNum = (start, end) => {
+        return start + Math.round(Math.random() * (end - start));
+      };
+      console.log(randomNum(5,100));
+    </script> -->
+    <!-- <script>
       let arr = [10, 20, 30];
       let res = arr.map((e) => {
         e;
@@ -24,7 +39,7 @@
       // }
       // console.log(multiply(5, 2)); // 10
       // console.log(multiply(5)); // NaN !
-      // //console.log(5 * undefined);
+      // console.log(5 * undefined);
 
       //case3
       // function multiply(a, b = 1) {
@@ -91,6 +106,8 @@
       var y = 2;
       var z = x * y + y++;
       console.log(z);
+      var z = x * y + ++y;
+      console.log(z);
     </script> -->
     <!-- <script>
       var obj = {
@@ -131,6 +148,7 @@
           a = 6;
         })();
       })(21);
+
       (function (a) {
         return (function () {
           a = 6;
@@ -167,6 +185,7 @@
         console.log("JavaScript:", a);
       }
       func(1, 2);
+      func(16);
     </script> -->
     <!-- <script>
       console.log(a);
@@ -209,12 +228,13 @@
         // },
         printName: function () {
           console.log(this.name);
+          console.log(name);
         },
       };
       obj.printName();
     </script> -->
     <!-- <script>
-      var name1="Shree"
+      var name1 = "Shree";
       let obj1 = {
         name1: "SumanSingh",
         printName: function () {
@@ -248,6 +268,7 @@
       const person1 = {
         name: "SS",
         method: displayName.bind(this),
+        //method: displayName
       };
       person1.method();
     </script> -->
@@ -305,8 +326,8 @@
         console.log(msg);
         return msg;
       })("Hello");
-      // output("Hi");
-      // output()
+      //output("Hi");
+      //output()
       console.log(output);
     </script> -->
     <!-- <script>
@@ -337,6 +358,7 @@
       var x = true && 0;
       console.log(x);
       console.log(Math.round(2.50));
+      console.log(Math.floor(2.50));
     </script> -->
     <!-- <script>
       const elements = [1, 2, 3, 4, 5];
@@ -704,6 +726,17 @@
       console.log(vowCons("sumanAIi"));
     </script> -->
     <!-- <script>
+      const vow = (s) => {
+        let v = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+        for (let x of s) {
+          if (v.includes(x)) {
+            console.log(x);
+          }
+        }
+      };
+      console.log(vow("suman"));
+    </script> -->
+    <!-- <script>
       //print 1 to 100 withoput loop
       function printNum(n) {
         if (n <= 100) {
@@ -853,7 +886,7 @@
       ];
       console.log(sortHalf(arr));
     </script> -->
-    <!-- <script>
+    <script>
       // program to print prime numbers between the two numbers
       function allPrime(l, h) {
         let prime = [];
@@ -872,7 +905,7 @@
         return prime.join(" ");
       }
       console.log(allPrime(1, 300));
-    </script> -->
+    </script>
     <!-- <script>
       //find nth prime number:
       function nthPrime(n) {
