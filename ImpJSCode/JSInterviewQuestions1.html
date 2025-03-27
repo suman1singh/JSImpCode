@@ -23,7 +23,8 @@
       console.log(arr);
     </script> -->
     <!-- <script>
-      //Q1: shift all zeroes at last in array without changing order
+      //Q1: shift all zeroes at last in array without 
+      // changing order
       function shiftZero(arr) {
         var head = [];
         var tail = [];
@@ -45,6 +46,14 @@
       console.log(dupArr);
     </script> -->
     <!-- <script>
+      //print only the unique elements while completely removing repeating ones
+      const arr = [2, 0.5, 5, 4, 8, 6, 3, 2, 5, 6];
+      const uniqueElements = arr.filter(
+        (num) => arr.indexOf(num) === arr.lastIndexOf(num)
+      );
+      console.log(uniqueElements); // Output: [0.5, 4, 8, 3]
+    </script> -->
+    <!-- <script>
       //Q3: Finding max and min value in an array
       const arr = [5, 6, 8, 61, 75];
       let max = arr.reduce((pre, cur) => {
@@ -56,7 +65,8 @@
       console.log("max:", max, "min:", min);
       console.log("max by Math method:", Math.max(...arr));
       console.log("min by Math method:", Math.min(...arr));
-      //console.log("min by Math method:", Math.min([...arr])); //output will be NaN
+      //console.log("min by Math method:", Math.min([...arr])); 
+      //output will be NaN
     </script> -->
     <!-- <script>
       //Q4: find largest value and remove largest value
@@ -177,25 +187,25 @@
     </script> -->
     <!-- <script>
       //Video10: how to find prime number in javascript
-      // const number = parseInt(prompt("Enter a positive number: "));
-      // let isPrime = true;
-      // if (number === 1) {
-      //   console.log("1 is neither prime nor composite number.");
-      // } else if (number > 1) {
-      //   for (let i = 2; i < number; i++) {
-      //     if (number % i == 0) {
-      //       isPrime = false;
-      //       break;
-      //     }
-      //   }
-      //   if (isPrime) {
-      //     console.log(`${number} is a prime number`);
-      //   } else {
-      //     console.log(`${number} is a not prime number`);
-      //   }
-      // } else {
-      //   console.log("The number is not a prime number.");
-      // }
+      const number = parseInt(prompt("Enter a positive number: "));
+      let isPrime = true;
+      if (number === 1) {
+        console.log("1 is neither prime nor composite number.");
+      } else if (number > 1) {
+        for (let i = 2; i < number; i++) {
+          if (number % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          console.log(`${number} is a prime number`);
+        } else {
+          console.log(`${number} is a not prime number`);
+        }
+      } else {
+        console.log("The number is not a prime number.");
+      }
 
       //Simple code
       function isPrime(n) {
@@ -239,7 +249,8 @@
       palindrome(value);
     </script> -->
     <!-- <script>
-      //Video13: How to swap two variable without using third variable in js
+      //Video13: How to swap two variable without using 
+      // third variable in js
       let a = 7;
       let b = 8;
       // console.log(`value of a:${a} and value of b:${b}`);
@@ -281,16 +292,16 @@
       //   }
       // }
       //Simple way
-      function findFactor(n) {
-        let factor = [];
-        for (let i = 2; i < n; i++) {
-          if (n % i == 0) {
-            factor.push(i);
-          }
-        }
-        return factor.join(" ");
-      }
-      console.log(findFactor(40));
+      // function findFactor(n) {
+      //   let factor = [];
+      //   for (let i = 2; i < n; i++) {
+      //     if (n % i == 0) {
+      //       factor.push(i);
+      //     }
+      //   }
+      //   return factor.join(" ");
+      // }
+      // console.log(findFactor(40));
     </script> -->
     <!-- <script>
       //Video16: How to make calculator in js
@@ -339,6 +350,13 @@
         return same;
       }
       console.log(areSame(arr1, arr2));
+      //simplest
+      var arr1 = [96, 2, 8, 5, 6, 7];
+      var arr2 = [8, 6, 7, 2, 5, 96];
+      function areSame(a, b) {
+        return a.length === b.length && a.every((e) => b.indexOf(e) !== -1);
+      }
+      console.log(areSame(arr1, arr2));
     </script> -->
     <!-- <script>
       //Video18: How to find intersection of two arrays/sets in js
@@ -368,7 +386,8 @@
       console.log(`Value in Fahrenheit: ${fah}`);
     </script> -->
     <!-- <script>
-      //Q21. reverse each word in string without changing the position of word.
+      //Q21. reverse each word in string without changing the
+      // position of word.
       var name1 = "suman kumar singh";
       //using for loop
       var temp = name1.split(" ");
@@ -395,6 +414,7 @@
           .map((e) => e.split("").reverse().join(""))
           .join(" ")
       );
+      //convert each word's 1st letter as caps
       console.log(
         "suman kumar singh"
           .split(" ")
@@ -437,13 +457,13 @@
       // }
       // console.log(firstCharCaps("suman singh"));
       //very simple way
-      function cap(s) {
-        var newS = s.split(" ").map((e) => {
-          return e.charAt(0).toUpperCase() + e.slice(1);
-        });
-        return newS.join(" ");
-      }
-      console.log(cap("suman kumar singh"));
+      // function cap(s) {
+      //   var newS = s.split(" ").map((e) => {
+      //     return e.charAt(0).toUpperCase() + e.slice(1);
+      //   });
+      //   return newS.join(" ");
+      // }
+      // console.log(cap("suman kumar singh"));
     </script> -->
     <!-- <script>
       //Q23. Program to find fibonacci sequence in js
@@ -467,82 +487,84 @@
       fib();
     </script> -->
     <!-- <script>
-      //Q24. Program to printing number patterns right triangle, pyramid and diamond shape in js
+      //Q24. Program to printing number patterns right triangle, 
+      // pyramid and diamond shape in js
       //Pattern1: Right angle triangle: practiced
-      for (let i = 1; i <= 6; i++) {
-        for (let j = 1; j <= i; j++) {
-          document.write("*" + "  ");
-        }
-        document.write("<br>");
-      }
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= i; j++) {
+      //     document.write("*" + "  ");
+      //   }
+      //   document.write("<br>");
+      // }
       //Patterns2: practiced
-      for (let i = 1; i <= 6; i++) {
-        for (let j = 1; j <= 6 - i; j++) {
-          document.write("&nbsp;&nbsp");
-        }
-        for (let k = 1; k <= i; k++) {
-          document.write("*" + "&nbsp;&nbsp");
-        }
-        document.write("<br>");
-      }
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= 6 - i; j++) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write("*" + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
       //Pattern3
-      for (let i = 1; i <= 6; i++) {
-        for (let j = 1; j <= 6 - i; j++) {
-          document.write("&nbsp;&nbsp");
-        }
-        for (let k = 1; k <= i; k++) {
-          document.write(i + "&nbsp;&nbsp");
-        }
-        document.write("<br>");
-      }
-      for (let i = 6; i >= 1; i--) {
-        for (let j = 6 - i; j >= 1; j--) {
-          document.write("&nbsp;&nbsp");
-        }
-        for (let k = 1; k <= i; k++) {
-          document.write(i + "&nbsp;&nbsp");
-        }
-        document.write("<br>");
-      }
+      // for (let i = 1; i <= 6; i++) {
+      //   for (let j = 1; j <= 6 - i; j++) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write(i + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
+      // for (let i = 6; i >= 1; i--) {
+      //   for (let j = 6 - i; j >= 1; j--) {
+      //     document.write("&nbsp;&nbsp");
+      //   }
+      //   for (let k = 1; k <= i; k++) {
+      //     document.write(i + "&nbsp;&nbsp");
+      //   }
+      //   document.write("<br>");
+      // }
       //pattern4
-      for (var i = 1; i <= 5; i++) {
-        //use to create new row
-        for (var j = i; j <= 5; j++) {
-          //use to add in existing row
-          document.write("*");
-        }
-        document.write("<br/>");
-      }
+      // for (var i = 1; i <= 5; i++) {
+      //   //use to create new row
+      //   for (var j = i; j <= 5; j++) {
+      //     //use to add in existing row
+      //     document.write("*");
+      //   }
+      //   document.write("<br/>");
+      // }
       //pattern5
-      for (var i = 1; i <= 5; i++) {
-        //use to create new row
-        for (var j = 1; j <= 5; j++) {
-          //use to add in existing row
-          document.write("*");
-        }
-        document.write("<br/>");
-      }
+      // for (var i = 1; i <= 5; i++) {
+      //   //use to create new row
+      //   for (var j = 1; j <= 5; j++) {
+      //     //use to add in existing row
+      //     document.write("*");
+      //   }
+      //   document.write("<br/>");
+      // }
       //pattern6
-      for (var i = 1; i <= 5; i++) {
-        //use to create new row
-        for (var j = i; j <= 5; j++) {
-          //use to add in existing row
-          document.write(i);
-        }
-        document.write("<br/>");
-      }
+      // for (var i = 1; i <= 5; i++) {
+      //   //use to create new row
+      //   for (var j = i; j <= 5; j++) {
+      //     //use to add in existing row
+      //     document.write(i);
+      //   }
+      //   document.write("<br/>");
+      // }
       //pattern7
-      for (var i = 1; i <= 5; i++) {
-        //use to create new row
-        for (var j = i; j <= 5; j++) {
-          //use to add in existing row
-          document.write(j);
-        }
-        document.write("<br/>");
-      }
+      // for (var i = 1; i <= 5; i++) {
+      //   //use to create new row
+      //   for (var j = i; j <= 5; j++) {
+      //     //use to add in existing row
+      //     document.write(j);
+      //   }
+      //   document.write("<br/>");
+      // }
     </script> -->
     <!-- <script>
-      //Q25. Program to check the number of occurence of a character in a string in js
+      //Q25. Program to check the number of occurence of a 
+      //character in a string in js
       // var str = prompt("Pease enter string");
       // var letter = prompt("Please enter letter");
       // var count = 0;
@@ -553,19 +575,20 @@
       // }
       // console.log(`in ${str} occurence of ${letter}=${count}`);
       //Simple code
-      function noOfChar(str, char) {
-        let count = 0;
-        for (let i = 0; i < str.length; i++) {
-          if (str[i] == char) {
-            count++;
-          }
-        }
-        return count;
-      }
-      console.log(noOfChar("suummannns", "n"));
+      // function noOfChar(str, char) {
+      //   let count = 0;
+      //   for (let i = 0; i < str.length; i++) {
+      //     if (str[i] == char) {
+      //       count++;
+      //     }
+      //   }
+      //   return count;
+      // }
+      // console.log(noOfChar("suummannns", "n"));
     </script> -->
     <!-- <script>
-      //Q26: Program to print the table of any user defined number using function in js
+      //Q26: Program to print the table of any user defined 
+      //number using function in js
       const table = (num) => {
         for (let i = 1; i <= 10; i++) {
           var res = i * num;
@@ -595,59 +618,59 @@
       //   console.log(`${number} is not an armstrong number`);
       // }
       //simple way
-      function armStrong(num) {
-        var temp = num;
-        var sum = 0;
-        var noOfDigit = num.toString().length;
-        while (temp > 0) {
-          var digit = temp % 10;
-          sum += digit ** noOfDigit;
-          temp = parseInt(temp / 10);
-        }
-        if (sum == num) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      console.log(armStrong(407));
-
-      //use case
-      // function armStrong(n) {
-      //   let temp = n;
-      //   let digit;
-      //   let noOfDigit = n.toString().length;
-      //   let sum = 0;
+      // function armStrong(num) {
+      //   var temp = num;
+      //   var sum = 0;
+      //   var noOfDigit = num.toString().length;
       //   while (temp > 0) {
-      //     digit = temp % 10;
-      //     // sum += digit ** noOfDigit;
-      //     sum += Math.pow(digit, noOfDigit);
-      //     // temp = parseInt(temp / 10);
-      //     temp = Math.floor(temp / 10);
+      //     var digit = temp % 10;
+      //     sum += digit ** noOfDigit;
+      //     temp = parseInt(temp / 10);
       //   }
-      //   if (n == sum) {
+      //   if (sum == num) {
       //     return true;
       //   } else {
       //     return false;
       //   }
       // }
       // console.log(armStrong(407));
+
+      //use case
+      function armStrong(n) {
+        let temp = n;
+        let digit;
+        let noOfDigit = n.toString().length;
+        let sum = 0;
+        while (temp > 0) {
+          digit = temp % 10;
+          // sum += digit ** noOfDigit;
+          sum += Math.pow(digit, noOfDigit);
+          // temp = parseInt(temp / 10);
+          temp = Math.floor(temp / 10);
+        }
+        if (n == sum) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(armStrong(407));
     </script> -->
     <!-- <script>
       //Q28. All elements of array is unique or not
-      // let arr = [5, 8, 78, 6, 7];
-      // let isUnique = true;
-      // function checkUnique(arr) {
-      //   for (let i = 0; i < arr.length; i++) {
-      //     for (let j = i + 1; j < arr.length; j++) {
-      //       if (arr[i] == arr[j]) {
-      //         isUnique = false;
-      //       }
-      //     }
-      //   }
-      //   return isUnique;
-      // }
-      // console.log(checkUnique(arr));
+      let arr = [5, 8, 78, 6, 7];
+      let isUnique = true;
+      function checkUnique(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+              isUnique = false;
+            }
+          }
+        }
+        return isUnique;
+      }
+      console.log(checkUnique(arr));
       //simple code
       function isUnique(str) {
         let arr = str.split("");
@@ -683,11 +706,11 @@
       const total = items.reduce((i, j) => i + j.item * j.price, 0);
       console.log(total);
       //By for loop
-      // sum = 0;
-      // for (let i = 0; i < items.length; i++) {
-      //   sum += items[i].item * items[i].price;
-      // }
-      // console.log(sum);
+      sum = 0;
+      for (let i = 0; i < items.length; i++) {
+        sum += items[i].item * items[i].price;
+      }
+      console.log(sum);
     </script> -->
     <!-- <script>
       //Q30. separate numbers and string from mixed array
@@ -740,6 +763,49 @@
         }
       }
       patt("abc");
+    </script> -->
+    <!-- <script>
+      //filter unique array
+      // const ip = [
+      //   { name: "Suman" },
+      //   { name: "Singh" },
+      //   { name: "Suman" },
+      //   { name: "Shree" },
+      //   { name: "Suman" },
+      //   { name: "Suman" },
+      //   { name: "Shree" },
+      //   { name: "Swastic" },
+      // ];
+
+      // const uniqueArray = ip.reduce((acc, obj) => {
+      //   if (!acc.some((item) => item.name === obj.name)) {
+      //     acc.push(obj);
+      //   }
+      //   return acc;
+      // }, []);
+
+      // console.log(uniqueArray);
+      // another way:
+      // const ip = [
+      //   { name: "Suman" },
+      //   { name: "Singh" },
+      //   { name: "Suman" },
+      //   { name: "Shree" },
+      //   { name: "Suman" },
+      //   { name: "Suman" },
+      //   { name: "Shree" },
+      //   { name: "Swastic" },
+      // ];
+
+      // const seen = new Set();
+      // const uniqueArray = ip.filter((obj) => {
+      //   if (!seen.has(obj.name)) {
+      //     seen.add(obj.name);
+      //     return true;
+      //   }
+      //   return false;
+      // });
+      // console.log(uniqueArray);
     </script> -->
   </body>
 </html>

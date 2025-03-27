@@ -12,7 +12,9 @@
         },
       };
 
-      // //Case1. By using spread operator: only 1st level of objects are different but other levels are reffering modified value for both objects.
+      // //Case1. By using spread operator: only 1st level of objects 
+      // are different but other levels are reffering modified value for 
+      // both objects.
       // let emp1 = { ...employee };
       // emp1.name = "Max";
       // emp1.address.block = "Madhubani";
@@ -22,9 +24,9 @@
       // console.log("employee name:", employee.address.block);
 
       // //Case2. By using Object.assign() method: same as spread operator
-      //let emp1 = {};
-      //Object.assign(emp1, employee);
-      // let emp1 = Object.assign({}, employee);
+      // let emp1 = {};
+      // Object.assign(emp1, employee);
+      // // let emp1 = Object.assign({}, employee);
       // emp1.name = "Max";
       // emp1.address.block = "Madhubani";
       // console.log("emp1 name:", emp1.name);
@@ -32,7 +34,8 @@
       // console.log("emp1 block:", emp1.address.block);
       // console.log("employee name:", employee.address.block);
 
-      // //Case3. By using assignment operator: All levels will modify and both objects refers same updated value
+      // //Case3. By using assignment operator: All levels will modify 
+      // and both objects refers same updated value
       // let emp1 = employee;
       // emp1.name = "Max";
       // emp1.address.block = "Madhubani";
@@ -42,7 +45,8 @@
       // console.log("employee address:", employee.address.block);
     </script> -->
     <!-- <script>
-      //Deep copy: Both objects are completly different and independent for all levels.
+      //Deep copy: Both objects are completly different and independent 
+      // for all levels.
       const employee = {
         name: "Alex",
         designation: "Manager",
@@ -58,6 +62,10 @@
       console.log("employee name:", employee.name);
       console.log("emp1 address", emp1.address.block);
       console.log("employee address:", employee.address.block);
+      //another way:
+      const obj = { a: 1, b: { c: 2 } };
+      const deepCopy = structuredClone(obj);
+      console.log(deepCopy); // { a: 1, b: { c: 2 } }
     </script> -->
   </body>
 </html>
