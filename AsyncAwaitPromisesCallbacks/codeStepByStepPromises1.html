@@ -15,38 +15,38 @@
       console.log("last",data);
     </script> -->
     <!-- <script>
-      let data = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          reject({ name: "Suman", age: 25 });
-        }, 2000);
-      });
-      console.log("output1", data);
-      data
-        .then((i) => {
-          console.log(i);
-        })
-        .catch((e) => {
-          console.log("Catch block", e);
-        });
-      console.log("Hello");
+      // let data = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     reject({ name: "Suman", age: 25 });
+      //   }, 2000);
+      // });
+      // console.log("output1", data);
+      // data
+      //   .then((i) => {
+      //     console.log(i);
+      //   })
+      //   .catch((e) => {
+      //     console.log("Catch block", e);
+      //   });
+      // console.log("Hello");
       //another exa:
-      let myPromise = new Promise((res, rej) => {
-        setTimeout(() => {
-          let x = false;
-          if (x) {
-            res({ name: "Suman", age: 26 });
-          } else {
-            rej({ name: "Shree", age: 16 });
-          }
-        }, 2000);
-      });
-      myPromise
-        .then((e) => {
-          console.log("Promise success", e);
-        })
-        .catch((e) => {
-          console.log("Promise failed", e);
-        });
+      // let myPromise = new Promise((res, rej) => {
+      //   setTimeout(() => {
+      //     let x = false;
+      //     if (x) {
+      //       res({ name: "Suman", age: 26 });
+      //     } else {
+      //       rej({ name: "Shree", age: 16 });
+      //     }
+      //   }, 2000);
+      // });
+      // myPromise
+      //   .then((e) => {
+      //     console.log("Promise success", e);
+      //   })
+      //   .catch((e) => {
+      //     console.log("Promise failed", e);
+      //   });
     </script> -->
     <!-- <script>
       // API calling in promise
@@ -93,7 +93,7 @@
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(10);
-          // reject(20);
+          reject(20);
         }, 2000);
       });
       data.finally((item) => {
@@ -111,13 +111,14 @@
       //Error handling with promises
       let data = new Promise((resolve, reject) => {
         setTimeout(() => {
-          reject(new Error("data issue"));
-          // throw new Error("data issue");
-          // resolve("done");
+          //reject(new Error("data issue"));
+          //throw new Error("data issue");
+          resolve("done");
         }, 2000);
       });
       data
         .then((item) => {
+          console.log("then block", item);
           throw new Error("data issue");
           console.log("then block", item);
         })
@@ -135,8 +136,8 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            reject("1 sec");
-            // resolve("Suman");
+            //reject("1 sec");
+            resolve("Suman");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
@@ -155,11 +156,15 @@
     </script> -->
     <!-- <script>
       // Promises.allSettled
+      //The Promise.allSettled() method never rejects. 
+      //Instead, it always resolves with an array of 
+      //objects describing the outcome of each promise, 
+      //regardless of whether they were fulfilled or rejected.
       let data = Promise.allSettled([
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // reject("1 sec");
-            resolve("2 sec");
+            reject("1 sec");
+            //resolve("2 sec");
           }, 2000);
         }),
         new Promise((resolve, reject) => {
@@ -170,7 +175,7 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // reject("1 sec");
+            reject("1 sec");
             resolve("3 sec");
           }, 3000);
         }),
@@ -194,14 +199,14 @@
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            // resolve("1 sec")
+            //resolve("1 sec")
             reject("1 sec");
           }, 1000);
         }),
         new Promise((resolve, reject) => {
           setTimeout(() => {
-            resolve("3 sec");
-            // reject("3 sec");
+            //resolve("3 sec");
+            reject("3 sec");
           }, 3000);
         }),
       ]);

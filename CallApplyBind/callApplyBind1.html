@@ -2,7 +2,7 @@
 <html>
   <body>
     <h2>call apply and bind function in Javascript</h2>
-    <script>
+    <!-- <script>
       let userDetails = {
         name: "Suman Singh",
         Age: 24,
@@ -19,15 +19,21 @@
       let printName = function (city, country) {
         console.log(this.name + "," + city + "," + country);
       };
-      userDetails.printDetails();
-      userDetails.printDetails.call(userDetails2);
-      //For generic function
-      printName.call(userDetails2, "Banglore", "India");
-      printName.apply(userDetails2, ["gr. noida", "North India"]);
-      let bindMethod = printName.bind(userDetails2, "Banglore", "India");
-      bindMethod();
-    </script>
-    <script>
+      // userDetails.printDetails();
+      // userDetails.printDetails.call(userDetails2);
+      // //For generic function
+      // printName.call(userDetails2, "Banglore", "India");
+      // printName.apply(userDetails2, ["gr. noida", "North India"]);
+      // let bindMethod = printName.bind(userDetails2, "Banglore", "India");
+      // bindMethod();
+      // let anotherBind=userDetails.printDetails.bind(userDetails);
+      // anotherBind()
+      //The .bind() method in JavaScript is used to permanently
+      //bind a function to a specific this context and 
+      //optionally pre-fill arguments.
+      //Sometimes the bind() method has to be used to prevent losing this.
+    </script> -->
+    <!-- <script>
       //another example
       let obj1 = {
         name: "Suman",
@@ -51,6 +57,6 @@
       myFun.apply(obj2, ["India", "Bengaluru"]);
       let bindMethod1 = myFun.bind(obj1, "India", "Bengaluru");
       bindMethod1();
-    </script>
+    </script> -->
   </body>
 </html>

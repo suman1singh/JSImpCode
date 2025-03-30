@@ -127,7 +127,34 @@
       console.log("1",)
     </script> -->
     <script>
-      
+      const datas = [
+        {
+          name: "Suman",
+          profession: "SSE",
+        },
+        {
+          name: "Shree",
+          profession: "Teacher",
+        },
+      ];
+
+      function getData() {
+        setTimeout(() => {
+          let output = "";
+          datas.forEach((ele, i) => {
+            output += `<li>naddddme:${ele.name} and profession:${ele.profession}</li>`;
+          });
+          document.body.innerHTML = output;
+        }, 1000);
+      }
+
+      function createData(newData, callback) {
+        setTimeout(() => {
+          datas.push(newData);
+          callback();
+        }, 1000);
+      }
+      createData({ name: "Swastic", profession: "engineer" }, getData);
     </script>
   </head>
 </html>

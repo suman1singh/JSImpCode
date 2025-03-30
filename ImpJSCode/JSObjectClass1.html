@@ -2,7 +2,7 @@
 <html>
   <body>
     <!-- <script>
-      //case1:
+      // //case1:
       // // //Object.assign() method
       // const target = { a: 1, b: 2 };
       // const source = { b: 4, c: 5 };
@@ -55,17 +55,17 @@
       // console.log("NewObj:",obj);
 
       //case2:
-      // // Adding and accessing element using . operator in object
+      // Adding and accessing element using . operator in object
       // obj.newName = "Synny";
       // obj.address.vill = "Tarapatti";
       // obj.age = 27;
       // console.log(obj);
       // console.log(obj.age);
       // console.log(obj.address.district);
-      // //console.log(obj[age]); //will show error
+      //console.log(obj[age]); //will show error
 
       //case3:
-      // Adding element using Object.assign() method
+      //Adding element using Object.assign() method
       // Object.assign(obj, { newAge: 30 });
       // console.log(obj);
 
@@ -246,24 +246,24 @@
       // person4.greet(); // Hello John
 
       //Type3
-      class Person {
-        constructor(name) {
-          this.name = name;
-        }
-        // getter
-        get personName() {
-          return this.name;
-        }
-        // setter
-        set personName(x) {
-          this.name = x;
-        }
-      }
-      let person5 = new Person("Jack");
-      console.log(person5.name); // Jack
-      // changing the value of name property
-      person5.personName = "Sarah";
-      console.log(person5.name); // Sarah
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+      //   // getter
+      //   get personName() {
+      //     return this.name;
+      //   }
+      //   // setter
+      //   set personName(x) {
+      //     this.name = x;
+      //   }
+      // }
+      // let person5 = new Person("Jack");
+      // console.log(person5.name); // Jack
+      // // changing the value of name property
+      // person5.personName = "Sarah";
+      // console.log(person5.name); // Sarah
     </script> -->
     <!-- <script>
       //static method in js class
@@ -274,8 +274,8 @@
         static hello() {
           return `static method can be called on only class but not on class's object`;
         }
-        static myMethod(x){
-          return `object passed as parameter in static method: ${x.name}`
+        static myMethod(x) {
+          return `object passed as parameter in static method: ${x.name}`;
         }
       }
       const myCar = new Car("Tata");
