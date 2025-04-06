@@ -2,10 +2,10 @@
 <html>
   <body>
     <!-- <script>
-      //   Code 1:String reverse without reversing of individual words
+      //Code1:String reverse without reversing of individual words
       //(Array of elements can be reverse with reverse() method but for
       //string it is won't possible so required to split
-      // and then join().
+      //and then join().
       function reverseSentence() {
         var string = "Suman Kumar Singh";
         let result = string
@@ -48,7 +48,8 @@
       console.log(checkAngram("mary", "Army"));
     </script> -->
     <!-- <script>
-      //Code4: Swapping number without 3rd variable and without destructuring
+      //Code4: Swapping number without 3rd variable and without
+      //destructuring
       let a = 10;
       let b = 20;
       a = a + b;
@@ -58,54 +59,55 @@
     </script> -->
     <!-- <script>
       //Code5: Find longest word from a string with multiple word
-      function longestWord() {
-        let string = "supriya is a hahahahaha good girl";
-        var arr = string.split(" ");
-        var longest = "";
-        for (var i = 0; i < arr.length; i++) {
-          if (arr[i].length > longest.length) {
-            longest = arr[i];
-          }
-        }
-        return longest;
-      }
-      console.log(longestWord());
+      // function longestWord() {
+      //   let string = "supriya is a hahahahaha good girl";
+      //   var arr = string.split(" ");
+      //   var longest = "";
+      //   for (var i = 0; i < arr.length; i++) {
+      //     if (arr[i].length > longest.length) {
+      //       longest = arr[i];
+      //     }
+      //   }
+      //   return longest;
+      // }
+      // console.log(longestWord());
 
       //other way
-      function logWord(s) {
-        let long = "";
-        s.split(" ").forEach((e) => {
-          if (long.length < e.length) {
-            long = e;
-          }
-        });
-        return long;
-      }
-      let string = "supriya is a hahahahaha good girl";
-      console.log(logWord(string));
+      // function logWord(s) {
+      //   let long = "";
+      //   s.split(" ").forEach((e) => {
+      //     if (long.length < e.length) {
+      //       long = e;
+      //     }
+      //   });
+      //   return long;
+      // }
+      // let string = "supriya is a hahahahaha good girl";
+      // console.log(logWord(string));
 
-      //Another method: Here is also how to sort string based on size of each word
-      function findLongestWord() {
-        var str = "Priya is a goog girl and having hardworking skill";
-        var longestWord = str.split(" ").sort((a, b) => {
-          return b.length - a.length;
-        }); //in desc order //from greater to smallest word
-        console.log(longestWord[0]);
-        //for smallest word
-        console.log(longestWord[longestWord.length - 1]);
-        console.log(longestWord[0].length);
-      }
-      findLongestWord();
+      //Another method: Here is also how to sort string based on
+      // size of each word
+      // function findLongestWord() {
+      //   var str = "Priya is a goog girl and having hardworking skill";
+      //   var longestWord = str.split(" ").sort((a, b) => {
+      //     return b.length - a.length;
+      //   }); //in desc order //from greater to smallest word
+      //   console.log(longestWord[0]);
+      //   //for smallest word
+      //   console.log(longestWord[longestWord.length - 1]);
+      //   console.log(longestWord[0].length);
+      // }
+      // findLongestWord();
 
       //other way
-      function logWord(s) {
-        let str = s.split(" ");
-        return str.sort((a, b) => {
-          return a.length - b.length;
-        })[str.length - 1];
-      }
-      let string = "supriya is a hahahahaha good girl";
-      console.log(logWord(string));
+      // function logWord(s) {
+      //   let str = s.split(" ");
+      //   return str.sort((a, b) => {
+      //     return a.length - b.length;
+      //   })[str.length - 1];
+      // }
+      // let string = "supriya is a hahahahaha good girl";
+      // console.log(logWord(string));
     </script> -->
     <!-- <script>
       //Code 6: To find vowels and its count in a given string
@@ -123,42 +125,43 @@
       findVowel("suUman");
     </script> -->
     <!-- <script>
-      //code 7: finding largest number with sum of 2 elements from an array
-      function largestPair(arr) {
-        var sortedArr = arr.sort((i, j) => j - i);
-        console.log(sortedArr);
-        return sortedArr[0] + sortedArr[1];
-      }
+      //code 7: finding largest number with sum of 2 elements
+      // from an array
+      // function largestPair(arr) {
+      //   var sortedArr = arr.sort((i, j) => j - i);
+      //   console.log(sortedArr);
+      //   return sortedArr[0] + sortedArr[1];
+      // }
       //another way
-      function largestPair(arr) {
-        let max = 0;
-        for (let i = 0; i < arr.length; i++) {
-          for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] + arr[j] > max) {
-              max = arr[i] + arr[j];
-            }
-          }
-        }
-        return max;
-      }
-      console.log(largestPair([4, 6, 82, 3, 40, 36]));
+      // function largestPair(arr) {
+      //   let max = 0;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (arr[i] + arr[j] > max) {
+      //         max = arr[i] + arr[j];
+      //       }
+      //     }
+      //   }
+      //   return max;
+      // }
+      // console.log(largestPair([4, 6, 82, 3, 40, 36]));
 
       //other way
-      function largestPair(arr) {
-        let max = 0;
-        let a, b;
-        for (let i = 0; i < arr.length; i++) {
-          for (let j = i + 1; j < arr.length; j++) {
-            if (max < arr[i] + arr[j]) {
-              max = arr[i] + arr[j];
-              a = arr[i];
-              b = arr[j];
-            }
-          }
-        }
-        return [max, a, b];
-      }
-      console.log(largestPair([4, 6, 82, 3, 40, 36]));
+      // function largestPair(arr) {
+      //   let max = 0;
+      //   let a, b;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (max < arr[i] + arr[j]) {
+      //         max = arr[i] + arr[j];
+      //         a = arr[i];
+      //         b = arr[j];
+      //       }
+      //     }
+      //   }
+      //   return [max, a, b];
+      // }
+      // console.log(largestPair([4, 6, 82, 3, 40, 36]));
     </script> -->
     <!-- <script>
       //code 8: fibbonacci series in smart way
@@ -173,7 +176,7 @@
     </script> -->
     <!-- <script>
       //code 9: To check ending of the string with given 
-      // character/s using inbuild function
+      //character/s using inbuild function
       function confirmEnding(str, target) {
         // return str.endsWith(target); //true
         // return str.substr(-target.length) == target;
@@ -185,7 +188,6 @@
       //Code10: To find the largest elements from the 2 dimensional array
       function largestEle(arr) {
         var max = 0;
-
         for (let i = 0; i < arr.length; i++) {
           for (let j = 0; j < arr[i].length; j++) {
             if (max < arr[i][j]) {
@@ -225,8 +227,8 @@
       console.log(repString("Suman", 2));
     </script> -->
     <!-- <script>
-      //Code 13: Converting one dimensional array into n 
-      // dimensional array using splice
+      //Code 13: Converting one dimensional array into n
+      //dimensional array using splice
       function oneTo_n_D_Array(arr, n) {
         let newArr = [];
         while (arr.length > 0) {
@@ -451,7 +453,8 @@
       console.log(secondLargestNum(["1", "2", "3", "4", "9"]));
     </script> -->
     <!-- <script>
-      //code 24: To check whether particular word/number present in sentence or not using custom function
+      //code 24: To check whether particular word/number present 
+      //in sentence or not using custom function
       function checkValueExist(arr1, val) {
         var arr = arr1.split(" ");
         var status = "Not exist";
@@ -501,27 +504,27 @@
     </script> -->
     <!-- <script>
       //code 28: Make alternate character to upper case
-      function altCap(str) {
-        let alt = str.split("").map((e, ind) => {
-          if (ind % 2) {
-            return e.toUpperCase();
-          } else {
-            return e.toLowerCase();
-          }
-        });
-        return alt.join("");
-      }
-      console.log(altCap("Suman"));
+      // function altCap(str) {
+      //   let alt = str.split("").map((e, ind) => {
+      //     if (ind % 2) {
+      //       return e.toUpperCase();
+      //     } else {
+      //       return e.toLowerCase();
+      //     }
+      //   });
+      //   return alt.join("");
+      // }
+      // console.log(altCap("Suman"));
 
       //another way
-      function altCap(str) {
-        let alt = str.toLowerCase().split("");
-        for (let i = 0; i < alt.length; i = i + 2) {
-          alt[i] = alt[i].toUpperCase();
-        }
-        return alt.join("");
-      }
-      console.log(altCap("Suman"));
+      // function altCap(str) {
+      //   let alt = str.toLowerCase().split("");
+      //   for (let i = 0; i < alt.length; i = i + 2) {
+      //     alt[i] = alt[i].toUpperCase();
+      //   }
+      //   return alt.join("");
+      // }
+      // console.log(altCap("Suman"));
     </script> -->
     <!-- <script>
       //code 29: To find the negative values in an array 
@@ -547,61 +550,61 @@
     <!-- <script>
       //code 30: Find first repeating character with its 
       // index from an array
-      function firstRepeatingIndex(arr) {
-        let count = {};
-        arr.forEach((e) => {
-          if (count[e]) {
-            count[e] = count[e] + 1;
-          } else {
-            count[e] = 1;
-          }
-        });
-        var result = [];
-        for (let x in count) {
-          if (count[x] > 1) {
-            result.push(x);
-          }
-        }
-        return `1st repeating integer is ${Number(
-          result[0]
-        )} at index ${arr.indexOf(Number(result[0]))}`;
-      }
-      console.log(firstRepeatingIndex([1, 0, 0, 2, 3, 4, 4, 5, 7, 7]));
+      // function firstRepeatingIndex(arr) {
+      //   let count = {};
+      //   arr.forEach((e) => {
+      //     if (count[e]) {
+      //       count[e] = count[e] + 1;
+      //     } else {
+      //       count[e] = 1;
+      //     }
+      //   });
+      //   var result = [];
+      //   for (let x in count) {
+      //     if (count[x] > 1) {
+      //       result.push(x);
+      //     }
+      //   }
+      //   return `1st repeating integer is ${Number(
+      //     result[0]
+      //   )} at index ${arr.indexOf(Number(result[0]))}`;
+      // }
+      // console.log(firstRepeatingIndex([1, 0, 0, 2, 3, 4, 4, 5, 7, 7]));
 
       //other way
-      function firstRepeatingIndex(arr) {
-        let count = {};
-        arr.forEach((e) => {
-          if (count[e]) {
-            count[e] = count[e] + 1;
-          } else {
-            count[e] = 1;
-          }
-        });
-        //let res=Object.keys(count).find((e)=>count[e]>1)
-        let res = Object.entries(count).find(([i, j]) => j > 1);
-        return `1st repeating integer is ${res[0]} at index ${arr.indexOf(
-          Number(res[0])
-        )}`;
-      }
-      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 4, 5, 7, 7]));
+      // function firstRepeatingIndex(arr) {
+      //   let count = {};
+      //   arr.forEach((e) => {
+      //     if (count[e]) {
+      //       count[e] = count[e] + 1;
+      //     } else {
+      //       count[e] = 1;
+      //     }
+      //   });
+      //   //let res=Object.keys(count).find((e)=>count[e]>1)
+      //   let res = Object.entries(count).find(([i, j]) => j > 1);
+      //   return `1st repeating integer is ${res[0]} at index ${arr.indexOf(
+      //     Number(res[0])
+      //   )}`;
+      // }
+      // console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 4, 5, 7, 7]));
 
       //way3
-      function firstRepeatingIndex(arr) {
-        let firstRep = arr.filter((e, ind) => {
-          return arr.indexOf(e) !== ind;
-        });
-        return [firstRep[0], arr.indexOf(firstRep[0])];
-      }
-      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
+      // function firstRepeatingIndex(arr) {
+      //   let firstRep = arr.filter((e, ind) => {
+      //     return arr.indexOf(e) !== ind;
+      //   });
+      //   return [firstRep[0], arr.indexOf(firstRep[0])];
+      // }
+      // console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
 
       //most efficient way:
-      function firstRepeatingIndex(arr) {
-        return arr.find((e, ind) => {
-          return arr.indexOf(e) !== ind;
-        });
-      }
-      console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
+      // function firstRepeatingIndex(arr) {
+      //   return arr.find((e, ind) => {
+      //     return arr.indexOf(e) !== ind;
+      //   });
+      // }
+      // console.log(firstRepeatingIndex([1, 0, 2, 3, 4, 4, 5, 7, 7]));
     </script> -->
     <!-- <script>
       //code 81: To find all the subsets of the set: later has to do
@@ -609,24 +612,24 @@
     <!-- <script>
       //Q31.To find the maximum repetation of the character 
       // in a string
-      function getMaxChar(str) {
-        let maxChar = "";
-        let max = 0;
-        for (let i = 0; i < str.length; i++) {
-          let count = 1;
-          for (let j = i + 1; j < str.length; j++) {
-            if (str[i] == str[j]) {
-              count++;
-            }
-          }
-          if (count > max) {
-            max = count;
-            maxChar = str[i];
-          }
-        }
-        return [maxChar, max];
-      }
-      console.log(getMaxChar("summmannnnnnnnn"));
+      // function getMaxChar(str) {
+      //   let maxChar = "";
+      //   let max = 0;
+      //   for (let i = 0; i < str.length; i++) {
+      //     let count = 1;
+      //     for (let j = i + 1; j < str.length; j++) {
+      //       if (str[i] == str[j]) {
+      //         count++;
+      //       }
+      //     }
+      //     if (count > max) {
+      //       max = count;
+      //       maxChar = str[i];
+      //     }
+      //   }
+      //   return [maxChar, max];
+      // }
+      // console.log(getMaxChar("summmannnnnnnnn"));
 
       //other way:
       function getMaxChar(str) {

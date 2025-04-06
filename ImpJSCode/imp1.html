@@ -3,7 +3,8 @@
   <body>
     <h2>Js interview questions From screenShot</h2>
     <!-- <script>
-      //Q Write a function which returns true if given value of number is an 
+      //Q Write a function which returns true if given value of 
+      // number is an 
       // integer without using any inbuilt functions
       const isInt = (n) => {
         return n % 1 === 0;
@@ -119,7 +120,7 @@
         2: 3,
         3: 7,
       };
-      const arrObj=Object.entries(obj)
+      const arrObj = Object.entries(obj);
       console.log(arrObj);
       Object.entries(obj).map(([i, j]) => console.log(i, ":", j));
     </script> -->
@@ -229,13 +230,13 @@
       var name = "Shree";
       let obj = {
         name: "SumanSingh",
-        printName: () => {
-          console.log(this.name);
-        },
-        // printName: function () {
+        // printName: () => {
         //   console.log(this.name);
-        //   console.log(name);
         // },
+        printName: function () {
+          console.log(this.name);
+          console.log(name);
+        },
       };
       obj.printName();
     </script> -->
@@ -273,8 +274,8 @@
       }
       const person1 = {
         name: "SS",
-        // method: displayName.bind(this),
-        method: displayName
+        method: displayName.bind(this),
+        //method: displayName
       };
       person1.method();
     </script> -->
@@ -573,7 +574,8 @@
       }
     </script> -->
     <!-- <script>
-      //convert array into object as key should be element and value should be no of that element
+      //convert array into object as key should be element and value 
+      //should be no of that element
       const arr = ["one", "two", "one", "one", "two", "three"];
       const count = {};
       arr.forEach((element) => {
@@ -830,12 +832,12 @@
       console.log("value6", res1);
     </script> -->
     <!-- <script>
-      console.log("value1","9" > "11");
-      console.log("value2","9" > 11);
-      console.log("value3","true" > 11);
-      console.log("value4","9" > true);
-      console.log("value5","" > -1);
-      console.log("value6","suman" > 11);
+      console.log("value1", "9" > "11");
+      console.log("value2", "9" > 11);
+      console.log("value3", "true" > 11);
+      console.log("value4", "9" > true);
+      console.log("value5", "" > -1);
+      console.log("value6", "suman" > 11);
     </script> -->
     <!-- <script>
       function getPrice(item) {
@@ -916,32 +918,32 @@
         }
         return prime.join(" ");
       }
-      console.log(allPrime(1, 300));
+      console.log(allPrime(2, 300));
       //another way: remember this way only
-      const isPrime = (n) => {
-        if (n < 2) return false;
-        for (let i = 2; i < n; i++) {
-          if (n % i === 0) return false;
-        }
-        return true;
-      };
-      console.log(isPrime(83));
-      const allPrime = (l, h) => {
-        let prime = [];
-        for (let i = l; i <= h; i++) {
-          if (isPrime(i)) {
-            prime.push(i);
-          }
-        }
-        return prime;
-      };
-      console.log(allPrime(5, 100));
+      // const isPrime = (n) => {
+      //   if (n < 2) return false;
+      //   for (let i = 2; i < n; i++) {
+      //     if (n % i === 0) return false;
+      //   }
+      //   return true;
+      // };
+      // console.log(isPrime(2));
+      // const allPrime = (l, h) => {
+      //   let prime = [];
+      //   for (let i = l; i <= h; i++) {
+      //     if (isPrime(i)) {
+      //       prime.push(i);
+      //     }
+      //   }
+      //   return prime;
+      // };
+      // console.log(allPrime(5, 100));
     </script> -->
     <!-- <script>
       //find nth prime number:
       function nthPrime(n) {
         let prime = [];
-        for (let i = 2; i <= Infinity; i++) {
+        for (let i = 2; i < Infinity; i++) {
           let flag = 0;
           for (let j = 2; j < i; j++) {
             if (i % j == 0) {
@@ -1013,19 +1015,19 @@
     </script> -->
     <!-- <script>
       //get sum of digit of number using recursion
-      let n = 12345;
-      let nArr = n.toString().split("");
-      let sum = 0;
-      function getSum(x) {
-        if (x + 1 <= nArr.length) {
-          sum += Number(nArr[x]);
-          getSum(x + 1);
-        } else {
-          return sum;
-        }
-      }
-      getSum(0);
-      console.log(sum);
+      // let n = 12345;
+      // let nArr = n.toString().split("");
+      // let sum = 0;
+      // function getSum(x) {
+      //   if (x + 1 <= nArr.length) {
+      //     sum += Number(nArr[x]);
+      //     getSum(x + 1);
+      //   } else {
+      //     return sum;
+      //   }
+      // }
+      // getSum(0);
+      // console.log(sum);
       //another way:
       // let num = 23564;
       // let stringNum = num.toString().split("");
@@ -1042,6 +1044,38 @@
       let repArr = arr.filter((e, i) => arr.indexOf(e) !== i);
       let uniArr = arr.filter((e) => !repArr.includes(e));
       console.log(uniArr);
+      console.log(repArr);
+    </script> -->
+    <!-- <script>
+      //write a function for
+      //input="Hello World";
+      //output="Hello There";
+      //one way
+      let input = "Hello World";
+      let output = "Hello There";
+      // const replaceSubstring = (input, output) => {
+      //   return (newStr = input.split(" ")[0] + " " + output.split(" ")[1]);
+      // };
+      // console.log(replaceSubstring(input, output));
+      //2nd way:
+      // function replaceWorld(input) {
+      //   const words = input.split(" "); // Split the string into words
+      //   for (let i = 0; i < words.length; i++) {
+      //     if (words[i] === "World") {
+      //       words[i] = "There"; // Replace "World" with "There"
+      //     }
+      //   }
+      //   return words.join(" "); // Join the words back into a string
+      // }
+      // // Example usage
+      // console.log(replaceWorld("Hello World")); // Output: "Hello There"
+
+      //3rd way:
+      // function replaceWorld(input) {
+      //   return input.split("World").join("There");
+      // }
+      // // Example usage
+      // console.log(replaceWorld("Hello World")); // Output: "Hello There"
     </script> -->
   </body>
 </html>

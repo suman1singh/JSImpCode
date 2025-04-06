@@ -12,15 +12,25 @@
       }
       foo();
       console.log(a);
-      // Explanation: There are two types of scopes: global scope and local scope. Variables declared within a JavaScript function become local, and variables declared outside of the function become global.
+      // Explanation: There are two types of scopes: global scope
+      //and local scope. Variables declared within a JavaScript
+      // function become local, and variables declared outside of
+      // the function become global.
     </script> -->
     <!-- <script>
       console.log(a);
       console.log(b);
       var a = 2;
       let b = 2;
-      //When the code executes, the compiler looks for variables declaration, and if the variable were declared, it would hoist it to the top. Notice that the variables declared with let or const are not hoisted. That's why the variable b is not hoisted in this situation.
-      // So when we run the code above, we will get undefined for a and an error of b is not defined for the variable b. If you get the answer correct, that means you understand hoisting.
+      //When the code executes, the compiler looks for variables
+      // declaration, and if the variable were declared, it would
+      // hoist it to the top. Notice that the variables declared
+      // with let or const are not hoisted. That's why the
+      // variable b is not hoisted in this situation.
+      // So when we run the code above, we will get undefined
+      // for a and an error of b is not defined for the variable b.
+      // If you get the answer correct, that means you understand
+      // hoisting.
     </script> -->
     <!-- <script>
       function foo() {
@@ -33,10 +43,17 @@
       foo();
       console.log(typeof a);
       console.log(typeof b);
-      //Explanation: Let's look at the line 2: let a=b=0. This statement declares a local variable a. However, it does declare a global variable b.
-      // No variable b is declared neither in the foo() scope or global scope. So JavaScript interprets be expression as window.b=0. In other words, b is a global variable created accidentally.
-      // typeof a is "undefined". The variable a exists within foo() scope and not available in the outside scope.
-      // Because b is a global variable with the value 0, the typeof b evaluates to "number".
+      //Explanation: Let's look at the line 2: let a=b=0. This
+      // statement declares a local variable a. However, it does
+      // declare a global variable b.
+      // No variable b is declared neither in the foo() scope or
+      // global scope. So JavaScript interprets be expression as
+      // window.b=0. In other words, b is a global variable
+      // created accidentally.
+      // typeof a is "undefined". The variable a exists within
+      // foo() scope and not available in the outside scope.
+      // Because b is a global variable with the value 0,
+      // the typeof b evaluates to "number".
     </script> -->
     <!-- <script>
       var output = (function (x) {
@@ -44,7 +61,10 @@
         return x;
       })(0);
       console.log(output);
-      //Explanation: Above code will output 0 as output. delete operator is used to delete a property from an object. Here x is not an object it's local variable. delete operator doesn't affect local variable.
+      //Explanation: Above code will output 0 as output.
+      // delete operator is used to delete a property from an
+      // object. Here x is not an object it's local variable.
+      // delete operator doesn't affect local variable.
     </script> -->
     <!-- <script>
       function changeStuff(a, b, c) {
@@ -59,7 +79,14 @@
       console.log(num);
       console.log(obj1.item);
       console.log(obj2.item);
-      //It's always pass by value, but for objects the value of the variable is a reference. Because of this, when you pass an object and change its members, those changes persist outside of the function. This makes it look like pass by reference. But if you actually change the value of the object variable you will see that the change does not persist, proving it's really pass by value.
+      console.log(obj2);
+      //It's always pass by value, but for objects the value of
+      // the variable is a reference. Because of this, when you
+      // pass an object and change its members, those changes
+      // persist outside of the function. This makes it look
+      // like pass by reference. But if you actually change the
+      // value of the object variable you will see that the change
+      // does not persist, proving it's really pass by value.
     </script> -->
     <!-- <script>
       console.log(2 + "2"); //22
@@ -77,8 +104,12 @@
       console.log(NaN * 5); //NaN
       console.log(NaN % 0); //NaN
       //Javascript + operator behaves as,
-      // number operator when both operands are number, concat operator if any one or both of the operands are string.
-      // Javascript operator always behaves as number operator. if any one or both of the operands are string, Javascript attempts to convert it to a number, if not able to convert then return NaN.
+      // number operator when both operands are number, concat
+      // operator if any one or both of the operands are string.
+      // Javascript operator always behaves as number operator.
+      // if any one or both of the operands are string, Javascript
+      // attempts to convert it to a number, if not able to convert
+      // then return NaN.
     </script> -->
     <!-- <script>
       var a;
@@ -90,7 +121,9 @@
       console.log(10 < 20 < 30);
       console.log(30 > 20 > 10);
       //The output is true and false. Here is the explanation,
-      // In Javascript relational operators are evaluated from left to right, false equals 0, and true equals 1 for number comparisons.
+      // In Javascript relational operators are evaluated from
+      // left to right, false equals 0, and true equals 1 for
+      // number comparisons.
       // So comparison evaluation is something like this,
       // 10 < 20 < 30 -> true <30 -> 1< 38 -> true
       // 30 > 20 > 10 -> true > 10 -> 1> 10 -> false
@@ -103,8 +136,14 @@
           return;
         }
       });
-      //Have you guessed it will print 1 and 2 ? Let's look at the output, Yes, its confusing in Javascript. The reason is that we are passing a callback function in forEach loop which will be executed for each element no matter if we returns.
-      // If you use break or continue instead of return, you get either one of the error since these are not applicable for a callback function:
+      //Have you guessed it will print 1 and 2 ? Let's look at
+      // the output, Yes, its confusing in Javascript. The reason
+      // is that we are passing a callback function in forEach
+      // loop which will be executed for each element no matter
+      // if we returns.
+      // If you use break or continue instead of return, you get
+      // either one of the error since these are not applicable
+      // for a callback function:
       // Uncaught SyntaxError: illegal break statement
       // Uncaught SyntaxError: illegal continue statement
     </script> -->
@@ -114,9 +153,16 @@
           console.log(i);
         }, i * 1000);
       }
-      //Actually It will print 3, 3, 3 after every 1 second. This is because of Javascript Closure. Here is the explanation,
-      // A JavaScript closure is when an inner function has access to its outer function's scope. In the following line of code: setTimeout(function() { console.log(1); }, 1*1000);
-      // variable i is used in an inner function whereas it is actually declared in outer for loop. Inner function will be able to access the value of 1 through closure.
+      //Actually It will print 3, 3, 3 after every 1 second.
+      // This is because of Javascript Closure. Here is the
+      // explanation,
+      // A JavaScript closure is when an inner function has
+      // access to its outer function's scope. In the following
+      // line of code: setTimeout(function() { console.log(1); },
+      // 1*1000);
+      // variable i is used in an inner function whereas it is
+      // actually declared in outer for loop. Inner function will
+      // be able to access the value of 1 through closure.
     </script> -->
     <!-- <script>
       for (let i = 0; i < 3; i++) {
@@ -124,26 +170,38 @@
           console.log(i);
         }, i * 1000);
       }
-      //let is block scoped as opposed to var which is function scoped. Since for loop is also a block, value of i in each iteration is block scoped within that iteration and each closure has its own copy of i variable.
+      //let is block scoped as opposed to var which is function
+      // scoped. Since for loop is also a block, value of i in
+      // each iteration is block scoped within that iteration and
+      // each closure has its own copy of i variable.
     </script> -->
     <!-- <script>
       setTimeout(() => console.log(1), 2000);
       console.log(2);
       setTimeout(() => console.log(3), 0);
       console.log(4);
-      //First the 2 is printed with the console.log, then even with a time delay of 0 ms, the 4 is printed before the 3 because JS executes setTimeout with the Web API, and so the entire function is executed first. Lastly, after a delay of 2000s, the 1 is printed.
+      //First the 2 is printed with the console.log, then even
+      // with a time delay of 0 ms, the 4 is printed before the
+      // 3 because JS executes setTimeout with the Web API, and
+      // so the entire function is executed first. Lastly, after
+      // a delay of 2000s, the 1 is printed.
     </script> -->
     <!-- <script>
-      var a=Math.max();
-      var b=Math.min();
+      var a = Math.max();
+      var b = Math.min();
       console.log(a);
       console.log(b);
-      //The Math.max() method returns -Infinity by default and the Math.min() method returns Infinity value by default when passed without any parameters.
+      //The Math.max() method returns -Infinity by default and
+      // the Math.min() method returns Infinity value by default
+      // when passed without any parameters.
     </script> -->
     <!-- <script>
       var a = [1, 2, 3, 4, 5];
       console.log(a.slice(2, 4));
-      //The slice() function in Javascript slices an array within the given start and end indexes and then returns the values lying in those ranges. The Indexing done is 0 based indexing.
+      //The slice() function in Javascript slices an array
+      // within the given start and end indexes and then returns
+      // the values lying in those ranges. The Indexing done is 0
+      // based indexing.
     </script> -->
     <!-- <script>
       const set = new Set();
@@ -154,15 +212,22 @@
         console.log(item + 6);
       }
       console.log({ name1: "Javascripta" } + 6);
-      //First 2 numbers are added as integers, followed by string concatenation. Finally, since both are not of string type, JS stringifies both the object and the number and concatenates them.
-      //When an object is stringified it is read as [object Object] and then concatenated.
+      //First 2 numbers are added as integers, followed by string
+      // concatenation. Finally, since both are not of string
+      // type, JS stringifies both the object and the number
+      // and concatenates them.
+      // When an object is stringified it is read as
+      // [object Object] and then concatenated.
     </script> -->
     <!-- <script>
       const example = ({ a, b, c }) => {
         console.log(a, b, c);
       };
       example(0, 1, 2);
-      //Since we are passing individual numbers rather than a single object to the function, Javascript will initialize the object parameters with their default value of undefined.
+      //Since we are passing individual numbers rather than a
+      // single object to the function, Javascript will initialize
+      // the object parameters with their default value of
+      // undefined.
     </script> -->
     <!-- <script>
       let arr = [1, 2];
@@ -171,7 +236,11 @@
       }
       test(arr);
       console.log(arr);
-      //Array, which itself is derived from System. Object. This means that all arrays are always reference types which are allocated on the managed heap, and your app's variable contains a reference to the array and not the array itself.
+      //Array, which itself is derived from System. Object.
+      // This means that all arrays are always reference types
+      // which are allocated on the managed heap, and your
+      // app's variable contains a reference to the array and
+      // not the array itself.
     </script> -->
     <!-- <script>
       const carDetails = {
@@ -182,11 +251,19 @@
       };
       var name = "Swift";
       var getCarName = carDetails.getName;
+      var getCarNameBind = carDetails.getName.bind(carDetails);
       console.log(getCarName());
+      console.log(getCarNameBind())
       console.log(carDetails.getName());
       // The question's subject is "Context"(this).
-      // In Javascript, this is the object that is called to the function.
-      // When we do var carDetails.getName; we store the function in the global scope, So this will be Window, and because we set In the global scope (window). the output will be "Swift" (same as window.name). This is Javascript's default behavior. If you want to change this behavior, you can use: bind, apply, call, and arrow functions.
+      // In Javascript, this is the object that is called to
+      // the function.
+      // When we do var carDetails.getName; we store the function
+      // in the global scope, So this will be Window, and because
+      // we set In the global scope (window). the output will be
+      // "Swift" (same as window.name). This is Javascript's
+      // default behavior. If you want to change this behavior,
+      // you can use: bind, apply, call, and arrow functions.
     </script> -->
     <!-- <script>
       a();
@@ -199,8 +276,11 @@
       };
       console.log(b());
       console.log(b);
-      //This is a very weried part of JavaScript - functions are hoisted as well. In hoisting var is also hoisted, but it doesn't matter what will be after the operator.
-      // In the hoisting stage, var value will always be undefined. So when we do b(), it's the same as undefined().
+      //This is a very weried part of JavaScript - functions are
+      // hoisted as well. In hoisting var is also hoisted, but it
+      // doesn't matter what will be after the operator.
+      // In the hoisting stage, var value will always be undefined.
+      // So when we do b(), it's the same as undefined().
       // and output of undefined() is TypeError.
     </script> -->
     <!-- <script>
@@ -210,7 +290,9 @@
         variable = 20;
         console.log(variable);
       })();
-      //The answer to this one pretty simple, 10 and 20 this is because of "closures" as the first console log gets its value from the variable described outside its scope.
+      //The answer to this one pretty simple, 10 and 20 this is
+      // because of "closures" as the first console log gets its
+      // value from the variable described outside its scope.
     </script> -->
     <!-- <script>
       (function () {
@@ -218,10 +300,13 @@
       })();
       console.log(b);
       console.log(a);
-      //Since, both "a" and "b" are defined inside an IIFE, they shouldn't be available outside. But in fact var a=b=3;is shorthand for
+      //Since, both "a" and "b" are defined inside an IIFE,
+      // they shouldn't be available outside. But in fact var
+      // a=b=3;is shorthand for
       // var a=b;
       // b=3;
-      // so, it means that "b" becomes global and it will result in 3, but "a" will give reference error
+      // so, it means that "b" becomes global and it will result
+      // in 3, but "a" will give reference error
     </script> -->
     <!-- <script>
       var variable = 10;
@@ -232,13 +317,18 @@
       })();
       var variable = 30;
       console.log(variable);
-      //because of something called hoisting. javascript leaves the variable assignment (variable = 20 ) as is and takes the variable declaration (var variable; ) to the top of the "function scope". hence the variable is never initialized before the first console log.
+      //because of something called hoisting. javascript leaves
+      // the variable assignment (variable = 20 ) as is and takes
+      // the variable declaration (var variable; ) to the top of
+      // the "function scope". hence the variable is never
+      // initialized before the first console log.
     </script> -->
     <!-- <script>
       var a = [1, 2, 3];
       a[10] = 99;
       console.log(a[6]);
-      //When we give the statement a[10] =99; the JavaScript engine will make array slots 3 through 9 be "empty slots."
+      //When we give the statement a[10] =99; the JavaScript engine
+      //  will make array slots 3 through 9 be "empty slots."
       // So, a[6] will give undefined.
     </script> -->
     <!-- <script>
@@ -249,8 +339,16 @@
       profile.age = 30;
       profile.name = "John";
       console.log(profile);
-      //The Object.seal() method seals an object. Sealing an object prevents extensions and makes existing properties non-configurable. A sealed object has a fixed set of properties: new properties cannot be added, existing properties cannot be removed,
-      //their enumerability and configurability cannot be changed, and its prototype cannot be re-assigned. Values of existing properties can still be changed as long as they are writable. seal() returns the same object that was passed in.
+      //The Object.seal() method seals an object. Sealing an
+      // object prevents extensions and makes existing properties
+      // non-configurable. A sealed object has a fixed set of
+      // properties: new properties cannot be added, existing
+      // properties cannot be removed,
+      //their enumerability and configurability cannot be changed,
+      // and its prototype cannot be re-assigned. Values of
+      // existing properties can still be changed as long as
+      // they are writable. seal() returns the same object that
+      // was passed in.
     </script> -->
     <!-- <script>
       const confusing = {
@@ -259,7 +357,9 @@
         a: "three",
       };
       console.log(confusing);
-      //If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
+      // If you have two keys with the same name, the key will be
+      // replaced. It will still be in its first position,
+      // but with the last specified value.
     </script> -->
     <!-- <script>
       let a = 0;
@@ -267,34 +367,51 @@
       console.log(++a);
       console.log(a);
       //The postfix unary operator(a++)
-      // First it returns 0 and after that increment a by 1 means now a=1.
+      // First it returns 0 and after that increment a by 1 means
+      // now a=1.
       // The prefix unary operator(++a)
       // First increment by 1 and then return means now a=2
     </script> -->
     <!-- <script>
-      let x = [1, 2, 3] + [4, 5, 6]; // array will converts into string
+      let x = [1, 2, 3] + [4, 5, 6];
+      // array will converts into
+      // string
       console.log(x);
-      //It will be so, because the plus(+) operator works only on Numbers and Strings. So, in above question it will try to convert the arrays first.
-      //Since, they cannot be converted into Number, so they will be converted into a Strings like "1,2,3" + "4,5,6". And this string concatenation will produce "1,2,34,5,6"
+      //It will be so, because the plus(+) operator works only
+      // on Numbers and Strings. So, in above question it will
+      // try to convert the arrays first.
+      //Since, they cannot be converted into Number, so they
+      // will be converted into a Strings like "1,2,3" + "4,5,6".
+      // And this string concatenation will produce "1,2,34,5,6"
     </script> -->
     <!-- <script>
       <div onclick="console.log('div')">
         <p onclick="console.log('paragraph')">click here</p>
-      </div>
-      //If we click p, we see two logs: paragraph and div. During event propagation, there are 3 phases: capturing, target, and bubbling.
-      //By default, event handlers are executed in the bubbling phase (unless you set useCapture to true). It goes from the deepest nested element outwards
+      </div>;
+      //If we click p, we see two logs: paragraph and div.
+      // During event propagation, there are 3 phases:
+      // capturing, target, and bubbling.
+      //By default, event handlers are executed in the bubbling
+      // phase (unless you set useCapture to true).
+      // It goes from the deepest nested element outwards
     </script> -->
     <!-- <script>
       //15Th Dec
-      (function(){
-        if(true){
-          var first=10;
-          let second=20;
+      (function () {
+        if (true) {
+          var first = 10;
+          let second = 20;
         }
         console.log(first);
         console.log(second);
       })();
-      //The variable var was since the beginning of JS but the variables let and const were introduced recently in E56. var is function scoped, whereas let and const are block scoped. In our code, It is having an IIFE and inside it there is an if stement. The if statement creates a scope for let variable but var does have black scope so, it can be accessed outside it also.
+      //The variable var was since the beginning of JS but the
+      // variables let and const were introduced recently in E56.
+      // var is function scoped, whereas let and const are block
+      // scoped. In our code, It is having an IIFE and inside it
+      // there is an if stement. The if statement creates a
+      // scope for let variable but var does have black scope so,
+      // it can be accessed outside it also.
     </script> -->
     <!-- <script>
       funcD();
@@ -305,7 +422,12 @@
       let funcE=function(){
         console.log('E');
       };
-      //Function declaration is defining functions as in most languages, but function expression is assigning an anonymous function to an variable. We can call a function declaration even before defining it but same is not true for function expression and it will give reference error.
+      //Function declaration is defining functions as in most 
+      // languages, but function expression is assigning an 
+      //anonymous
+      //function to an variable. We can call a function declaration
+      //even before defining it but same is not true for function 
+      //expression and it will give reference error.
     </script> -->
     <!-- <script>
       function sayHi() {
@@ -315,10 +437,17 @@
         let age = 30;
       }
       sayHi();
-      //Within the function, we first declare the "name" variable with the "var" keyword.
-      // This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of "undefined", until we actually get to the line where we define the variable.
-      // We haven't defined the variable yet on the line where we try to log the 'name' variable,
-      // so it still holds the value of "undefined". Variables with the 'let' keyword (and const") are hoisted, but unlike "var", don't get initialized.
+      // Within the function, we first declare the "name" variable 
+      // with the "var" keyword.
+      // This means that the variable gets hoisted 
+      // (memory space is set up during the creation phase) with 
+      // the default value of "undefined", until we actually get 
+      // to the line where we define the variable.
+      // We haven't defined the variable yet on the line where we 
+      // try to log the 'name' variable,
+      // so it still holds the value of "undefined". Variables 
+      // with the 'let' keyword (and const") are hoisted, but 
+      // unlike "var", don't get initialized.
     </script> -->
     <!-- <script>
       // var radius = 20;
@@ -335,8 +464,14 @@
       console.log(shape.diameter());
       console.log(shape.diameter1());
       console.log(shape.perimeter());
-      //Note that the value of "diameter" is a regular function, whereas the value of perimeter is an arrow function. With arrow functions, the "this keyword refers to its current surrounding scope, unlike regular functions!
-      // This means that when we call perimeter, it doesn't refer to the shape object, but to its surrounding scope (window for example). There is no value 'radius' on that object,
+      //Note that the value of "diameter" is a regular function,
+      // whereas the value of perimeter is an arrow function.
+      // With arrow functions, the "this keyword refers to its
+      // current surrounding scope, unlike regular functions!
+      // This means that when we call perimeter, it doesn't
+      // refer to the shape object, but to its surrounding scope
+      // (window for example). There is no value 'radius' on
+      // that object,
       // which returns "NaN".
     </script> -->
     <!-- <script>
@@ -345,7 +480,11 @@
       d = c;
       c.greeting = "Hello";
       console.log(d.greeting);
-      //In JavaScript, all objects interact by reference when setting them equal to each other. First, variable 'c' holds a value to an object. Later, we assign 'd' with the same reference that 'c' has to the object. When you change one object, you change all of them.
+      //In JavaScript, all objects interact by reference when 
+      // setting them equal to each other. First, variable 'c' 
+      // holds a value to an object. Later, we assign 'd' with 
+      // the same reference that 'c' has to the object. When you 
+      // change one object, you change all of them.
     </script> -->
     <!-- <script>
       let a = 3;
@@ -357,20 +496,38 @@
       console.log("type of a:", typeof a);
       console.log("type of b:", typeof b);
       console.log("type of c:", typeof c);
-      //'new Number()' is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object. When we use the '==' operaror, it only checks whether It has the same value. They both have the value of 3, so it returns true. However, when we use the '===' operator, both value and type should be the same. 'new Number()' is not a number, it's an "object". Both return false."
+      //'new Number()' is a built-in function constructor.
+      //  Although it looks like a number, it's not really a
+      // number: it has a bunch of extra features and is an object.
+      //  When we use the '==' operaror, it only checks whether
+      // It has the same value. They both have the value of 3,
+      // so it returns true. However, when we use the
+      //  '===' operator, both value and type should be the same.
+      // 'new Number()' is not a number, it's an "object".
+      // Both return false."
     </script> -->
     <!-- <script>
       let greeting;
       greetign = {};
       console.log(greetign);
-      //It logs the object, because we just created an empty object on the global object! When we mistyped 'greeting" as "greetign", the JS interpreter actually saw this as "global.greetign ()" (or "window.greetign () in a browser). In order to avoid this, we can use "use strict". This makes sure that you have declared a variable before setting it equal to anything.
+      //It logs the object, because we just created an empty
+      // object on the global object! When we mistyped 'greeting"
+      // as "greetign", the JS interpreter actually saw this as
+      // "global.greetign ()" (or "window.greetign () in a browser).
+      //  In order to avoid this, we can use "use strict".
+      // This makes sure that you have declared a variable
+      // before setting it equal to anything.
     </script> -->
     <!-- <script>
       function bark() {
         console.log("Woof!");
       }
       bark.animal = "dog";
-      //This is possible in JavaScript, because functions are objects! (Everything besides primitive types are objects) A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with properties. This property is invocable.
+      //This is possible in JavaScript, because functions are
+      // objects! (Everything besides primitive types are objects)
+      // A function is a special type of object. The code you
+      // write yourself isn't the actual function. The function
+      // is an object with properties. This property is invocable.
     </script> -->
     <!-- <script>
       function checkAge(data) {
@@ -383,19 +540,28 @@
         }
       }
       checkAge({ age: 18 });
-      //When testing equality, primitives are compared by their _value_, while objects are compared by their _reference_. JavaScript checks if the objects have a reference to the same location in memory.
+      //When testing equality, primitives are compared by their
+      // _value_, while objects are compared by their _reference_.
+      // JavaScript checks if the objects have a reference to the
+      // same location in memory.
     </script> -->
     <!-- <script>
       function getAge(...args) {
         console.log(typeof args);
       }
       getAge(21);
-      //The rest parameter (`...args`) lets us "collect" all remaining arguments into an array. An array is an object, so `typeof args` returns `"object"`
+      //The rest parameter (`...args`) lets us "collect" all
+      // remaining arguments into an array. An array is an
+      // object, so `typeof args` returns `"object"`
     </script> -->
     <!-- <script>
-      const sum = eval('10*10+5');
-      //`eval` evaluates codes that's passed as a string. If it's an expression, like in this case, it evaluates the expression.
-      //The expression is `10 * 10 + 5`. This returns the number `105`.
+      const sum = eval("10*10+5");
+      console.log(sum)
+      //`eval` evaluates codes that's passed as a string.
+      // If it's an expression, like in this case, it evaluates
+      // the expression.
+      // The expression is `10 * 10 + 5`. This returns the number
+      // `105`.
     </script> -->
     <!-- <script>
       function sum(a, b) {
@@ -408,7 +574,10 @@
       var num = 8;
       var num = 10;
       console.log(num);
-      //With the `var` keyword, you can declare multiple variables with the same name. The variable will then hold the latest value. You cannot do this with `let` or `const` since they're block-scoped.
+      //With the `var` keyword, you can declare multiple variables
+      // with the same name. The variable will then hold the latest
+      // value. You cannot do this with `let` or `const` since
+      // they're block-scoped.
     </script> -->
     <!-- <script>
       function getAge() {
@@ -417,8 +586,12 @@
         console.log(age);
       }
       getAge();
-      //With `"use strict"`, you can make sure that you don't accidentally declare global variables. We never declared the variable `age`, and since we use `"use strict"`,
-      //it will throw a reference error. If we didn't use `"use strict"`, it would have worked, since the property `age` would have gotten added to the global object.
+      // With `"use strict"`, you can make sure that you don't
+      // accidentally declare global variables. We never declared
+      // the variable `age`, and since we use `"use strict"`,
+      // it will throw a reference error. If we didn't use `"use
+      // strict"`, it would have worked, since the property `age`
+      // would have gotten added to the global object.
     </script> -->
     <!-- <script>
       const obj = { 1: "a", 2: "b", 3: "c" };
@@ -427,8 +600,13 @@
       console.log("value2", obj.hasOwnProperty(1));
       console.log("value3", set.has("1"));
       console.log("value4", set.has(1));
-      //All object keys (excluding Symbols) are strings under the hood, even if you don't type it yourself as a string. This is why `obj.hasOwnProperty('1')` also returns true. It doesn't work that way for a set.
-      //There is no `'1'` in our set: `set.has('1')` returns `false`. It has the numeric type `1`, `set.has(1)` returns `true`
+      //All object keys (excluding Symbols) are strings under
+      // the hood, even if you don't type it yourself as a string.
+      // This is why `obj.hasOwnProperty('1')` also returns true.
+      // It doesn't work that way for a set.
+      //There is no `'1'` in our set: `set.has('1')` returns
+      // `false`. It has the numeric type `1`, `set.has(1)`
+      // returns `true`
     </script> -->
     <!-- <script>
       console.log("continue keyword");
@@ -441,7 +619,8 @@
         if (j === 3) break;
         console.log(j);
       }
-      //The `continue` statement skips an iteration if a certain condition returns `true`.
+      //The `continue` statement skips an iteration if a certain
+      // condition returns `true`.
     </script> -->
     <!-- <script>
       function sayHi() {
@@ -449,12 +628,18 @@
       }
       console.log(typeof sayHi());
       console.log(typeof sayHi);
-      //The `sayHi` function returns the returned value of the immediately invoked function expression (IIFE). This function returned `0`, which is type `"number"`.
-      //FYI: there are only 7 built-in types: `null`, `undefined`, `boolean`, `number`, `string`, `object`, and `symbol`. `"function"` is not a type, since functions are objects, it's of type `"object"`.
+      // The `sayHi` function returns the returned value of the
+      // immediately invoked function expression (IIFE).
+      // This function returned `0`, which is type `"number"`.
+      // FYI: there are only 7 built-in types: `null`, `undefined`,
+      // `boolean`, `number`, `string`, `object`, and `symbol`.
+      // `"function"` is not a type, since functions are objects,
+      // it's of type `"object"`.
     </script> -->
     <!-- <script>
       console.log([...'Suman']);
-      //A string is an iterable. The spread operator maps every character of an iterable to one element.
+      //A string is an iterable. The spread operator maps every 
+      // character of an iterable to one element.
     </script> -->
     <!-- <script>
       let person = { name: "Suman" };
@@ -462,8 +647,15 @@
       person = null;
       console.log(members);
       console.log(person);
-      //First, we declare a variable `person` with the value of an object that has a `name` property.
-      //Then, we declare a variable called `members`. We set the first element of that array equal to the value of the `person` variable. Objects interact by _reference_ when setting them equal to each other. When you assign a reference from one variable to another, you make a _copy_ of that reference. (note that they don't have the _same_ reference!)
+      //First, we declare a variable `person` with the value of
+      // an object that has a `name` property.
+      //Then, we declare a variable called `members`. We set the
+      // first element of that array equal to the value of the
+      // `person` variable. Objects interact by _reference_ when
+      // setting them equal to each other. When you assign a
+      // reference from one variable to another, you make
+      // a _copy_ of that reference. (note that they don't have
+      // the _same_ reference!)
       //Then, we set the variable `person` equal to `null`.
     </script> -->
     <!-- <script>
@@ -474,7 +666,13 @@
       for (const item in person) {
         console.log(item);
       }
-      //With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
+      //With a `for-in` loop, we can iterate through object keys,
+      // in this case `name` and `age`. Under the hood, object
+      // keys are strings (if they're not a Symbol). On every
+      // loop, we set the value of `item` equal to the current
+      // key it’s iterating over. First, `item` is equal to
+      // `name`, and gets logged. Then, `item` is equal to
+      // `age`, which gets logged.
     </script> -->
     <!-- <script>
       function Car() {
@@ -483,7 +681,10 @@
       }
       const myCar = new Car();
       console.log(myCar.make);
-      //when you return a property, the value of property is equal to the returned value, not the value set in the constructor function. We return the string "Maserati", so myCar.make is equal to "Maserati"
+      //when you return a property, the value of property 
+      // is equal to the returned value, not the value set in 
+      // the constructor function. We return the string 
+      // "Maserati", so myCar.make is equal to "Maserati"
     </script> -->
     <!-- <script>
       function getInfo(member, year) {
@@ -494,15 +695,40 @@
       const birthyear = "1997";
       getInfo(person, birthyear);
       console.log(person, birthyear);
-      //Arguments are passed by value, unless their value is an object, then they're passed by reference. birthYear is passed by value, since it's a string, not an object. When we pass arguments by value, a copy of that value is created (see question 46). The variable birthYear has a reference to the value "1997". The argument year also has a reference to the value "1997", but it's not the same value as birthYear has a reference to. When we update the value of year by setting year equal to "1998", we are only updating the value of year. birthYear is still equal to "1997". The value of person is an object. The argument member has a (copied) reference to the same object. When we modify a property of the object member has a reference to, the value of person will also be modified, since they both have a reference to the same object. person's name property is now equal to the value "Lydia"
+      //Arguments are passed by value, unless their value is an
+      // object, then they're passed by reference. birthYear
+      // is passed by value, since it's a string, not an object.
+      // When we pass arguments by value, a copy of that value
+      // is created (see question 46). The variable birthYear
+      // has a reference to the value "1997". The argument year
+      // also has a reference to the value "1997", but it's not
+      // the same value as birthYear has a reference to.
+      // When we update the value of year by setting year
+      // equal to "1998", we are only updating the value of
+      // year. birthYear is still equal to "1997". The value of
+      // person is an object. The argument member has a (copied)
+      //  reference to the same object. When we modify a property
+      // of the object member has a reference to, the value of
+      // person will also be modified, since they both have a
+      // reference to the same object. person's name property
+      // is now equal to the value "Lydia"
     </script> -->
     <!-- <script>
-      var data=[1, 2, 3].map((num) => {
+      var data = [1, 2, 3].map((num) => {
         if (typeof num === "number") return;
         return num * 2;
       });
       console.log(data);
-      //When mapping over the array, the value of `num` is equal to the element it’s currently looping over. In this case, the elements are numbers, so the condition of the if statement `typeof num === "number"` returns `true`. The map function creates a new array and inserts the values returned from the function. However, we don’t return a value. When we don’t return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`.
+      //When mapping over the array, the value of `num` is equal
+      // to the element it’s currently looping over. In this case,
+      // the elements are numbers, so the condition of the if
+      // statement `typeof num === "number"` returns `true`.
+      // The map function creates a new array and inserts the
+      // values returned from the function. However, we don’t
+      // return a value. When we don’t return a value from the
+      //  function, the function returns `undefined`. For every
+      // element in the array, the function block gets called,
+      // so for each element we return `undefined`.
     </script> -->
     <!-- <script>
       (() => {
@@ -651,10 +877,17 @@
       //other, Symbol('foo') === Symbol('foo') returns false.
     </script> -->
     <!-- <script>
-      const name ='Lydia Hallie';
+      const name = "Lydia Hallie";
       console.log(name.padStart(13));
-      console.log(name.padStart(2));
-      //With the padStart method, we can add padding to the beginning of a string. The value passed to this method is the total length of the string together with the padding. The string "Lydia Hallie" has a length of 12. name.padStart(13) inserts 1 space at the start of the string, because 12 + 1 is 13. If the argument passed to the padStart method is smaller than the length of the array, no padding will be added.
+      console.log(name.padStart(5));
+      //With the padStart method, we can add padding to the
+      // beginning of a string. The value passed to this method
+      // is the total length of the string together with the
+      // padding. The string "Lydia Hallie" has a length of 12.
+      // name.padStart(13) inserts 1 space at the start of the
+      // string, because 12 + 1 is 13. If the argument passed to
+      // the padStart method is smaller than the length of the
+      // array, no padding will be added.
     </script> -->
     <!-- <script>
       console.log(String.raw`Hello\nworld`);

@@ -284,7 +284,7 @@
     </script> -->
     <!-- <script>
       //Video15: How to find factors of a given integer in js
-      // const num = prompt("Please enter no:");
+      //const num = prompt("Please enter no:");
       // console.log(`factors of ${num}:`);
       // for (let i = 1; i <= num; i++) {
       //   if (num % i == 0) {
@@ -292,16 +292,16 @@
       //   }
       // }
       //Simple way
-      // function findFactor(n) {
-      //   let factor = [];
-      //   for (let i = 2; i < n; i++) {
-      //     if (n % i == 0) {
-      //       factor.push(i);
-      //     }
-      //   }
-      //   return factor.join(" ");
-      // }
-      // console.log(findFactor(40));
+      function findFactor(n) {
+        let factor = [];
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) {
+            factor.push(i);
+          }
+        }
+        return factor.join(" ");
+      }
+      console.log(findFactor(40));
     </script> -->
     <!-- <script>
       //Video16: How to make calculator in js
@@ -381,12 +381,13 @@
       var cel = (5 / 9) * (fah - 32);
       console.log(`Value in celcius: ${cel}`);
       // cel to fah
-      var cel = prompt("Enter value in Celcius");
+      var cel = prompt("Enter value in Celcius"); 
       var fah = cel * 1.8 + 32;
       console.log(`Value in Fahrenheit: ${fah}`);
     </script> -->
     <!-- <script>
-      //Q21. reverse each word in string without changing the
+      //Q21. reverse each word in string without 
+      // changing the
       // position of word.
       var name1 = "suman kumar singh";
       //using for loop
@@ -786,26 +787,26 @@
 
       // console.log(uniqueArray);
       // another way:
-      // const ip = [
-      //   { name: "Suman" },
-      //   { name: "Singh" },
-      //   { name: "Suman" },
-      //   { name: "Shree" },
-      //   { name: "Suman" },
-      //   { name: "Suman" },
-      //   { name: "Shree" },
-      //   { name: "Swastic" },
-      // ];
+      const ip = [
+        { name: "Suman" },
+        { name: "Singh" },
+        { name: "Suman" },
+        { name: "Shree" },
+        { name: "Suman" },
+        { name: "Suman" },
+        { name: "Shree" },
+        { name: "Swastic" },
+      ];
 
-      // const seen = new Set();
-      // const uniqueArray = ip.filter((obj) => {
-      //   if (!seen.has(obj.name)) {
-      //     seen.add(obj.name);
-      //     return true;
-      //   }
-      //   return false;
-      // });
-      // console.log(uniqueArray);
+      const seen = new Set();
+      const uniqueArray = ip.filter((obj) => {
+        if (!seen.has(obj.name)) {
+          seen.add(obj.name);
+          return true;
+        }
+        return false;
+      });
+      console.log(uniqueArray);
     </script> -->
   </body>
 </html>

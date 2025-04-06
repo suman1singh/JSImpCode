@@ -171,7 +171,7 @@
       };
       console.log(checkIsSquare(arr1, arr2));
     </script> -->
-    <script>
+    <!-- <script>
       //Q.9: Checking Square in another array
       //With DSA: with one loop
       //Time complexity: o(n): linear
@@ -199,6 +199,126 @@
         return true;
       };
       console.log(checkIsSquare(arr1, arr2));
-    </script>
+    </script> -->
+    <!-- <script>
+      //Q.10 Recursion: When function call itself
+      //otherwise it will get called for infinite time
+      //If a function call itself then there must be an end point
+      //Advance Recursive function | Sorting
+      // Sorting using recursive function
+      //[2,3,1,4] ==> By default case
+      let arr = [2, 3, 1, 4];
+      let sortedArr = [];
+      let i = 0;
+      let j = 1;
+
+      function isSorted(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > arr[i + 1]) {
+            return false;
+          }
+        }
+        return true;
+      }
+      console.log("is sorted?", isSorted(arr));
+
+      function sortArray(arr) {
+        if (isSorted(arr)) {
+          sortedArr = arr;
+          return;
+        } else if (arr[i] < arr[j]) {
+          i++;
+          j++;
+          sortArray(arr);
+        } else {
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+          i = 0;
+          j = 1;
+          sortArray(arr);
+        }
+      }
+      sortArray(arr);
+      console.log(sortedArr);
+      //simple way:
+      console.log("---------------------");
+      //recursive bubble sort algorithm
+      function recursiveBubbleSort(arr, n = arr.length) {
+        if (n === 1) return arr; // Base case: If only one element, return
+
+        for (let i = 0; i < n - 1; i++) {
+          if (arr[i] > arr[i + 1]) {
+            // Swap elements if out of order
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+          }
+        }
+
+        // Recursive call for remaining elements
+        return recursiveBubbleSort(arr, n - 1);
+      }
+
+      // Example usage:
+      const arr1 = [5, 3, 8, 4, 2];
+      console.log(recursiveBubbleSort(arr1)); // Output: [2, 3, 4, 5, 8]
+    </script> -->
   </body>
+  <script>
+    //Q.11:Helper recursive function
+    //[1,2,3,4,5,6,7,8,9,10]
+    //output --> [1,3,5,7,9]
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // const findOdd = (arr) => {
+    //   let res = [];
+    //   function helperRecursive(arr) {
+    //     if (arr.length === 0) {
+    //       return;
+    //     }
+    //     if (arr[0] % 2 !== 0) {
+    //       res.push(arr[0]);
+    //     }
+    //     helperRecursive(arr.slice(1));
+    //   }
+    //   helperRecursive(arr);
+    //   return res;
+    // };
+    // console.log(findOdd(arr));
+  </script>
+  <script>
+    //Q.12: Linear Search Algorithm:
+    // Time complexity --> Linear search
+    // const users = [
+    //   {
+    //     username: "Suman Singh",
+    //     email: "abc@gmail.com",
+    //   },
+    //   {
+    //     username: "Shree Singh",
+    //     email: "shree@gmail.com",
+    //   },
+    //   {
+    //     username: "Swastik Singh",
+    //     email: "swastik@gmail.com",
+    //   },
+    //   {
+    //     username: "Shree Ji",
+    //     email: "jishree@gmail.com",
+    //   },
+    //   {
+    //     username: "Anshika Singh",
+    //     email: "anshika@gmail.com",
+    //   },
+    // ];
+
+    // const isUserExist = (arr, val) => {
+    //   for (let item of arr) {
+    //     if (item.username === val) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // };
+    // console.log(isUserExist(users, "Shree Singh"));
+  </script>
+  <script>
+    
+  </script>
 </html>
