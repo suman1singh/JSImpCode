@@ -260,65 +260,168 @@
       const arr1 = [5, 3, 8, 4, 2];
       console.log(recursiveBubbleSort(arr1)); // Output: [2, 3, 4, 5, 8]
     </script> -->
-  </body>
-  <script>
-    //Q.11:Helper recursive function
-    //[1,2,3,4,5,6,7,8,9,10]
-    //output --> [1,3,5,7,9]
-    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // const findOdd = (arr) => {
-    //   let res = [];
-    //   function helperRecursive(arr) {
-    //     if (arr.length === 0) {
-    //       return;
-    //     }
-    //     if (arr[0] % 2 !== 0) {
-    //       res.push(arr[0]);
-    //     }
-    //     helperRecursive(arr.slice(1));
-    //   }
-    //   helperRecursive(arr);
-    //   return res;
-    // };
-    // console.log(findOdd(arr));
-  </script>
-  <script>
-    //Q.12: Linear Search Algorithm:
-    // Time complexity --> Linear search
-    // const users = [
-    //   {
-    //     username: "Suman Singh",
-    //     email: "abc@gmail.com",
-    //   },
-    //   {
-    //     username: "Shree Singh",
-    //     email: "shree@gmail.com",
-    //   },
-    //   {
-    //     username: "Swastik Singh",
-    //     email: "swastik@gmail.com",
-    //   },
-    //   {
-    //     username: "Shree Ji",
-    //     email: "jishree@gmail.com",
-    //   },
-    //   {
-    //     username: "Anshika Singh",
-    //     email: "anshika@gmail.com",
-    //   },
-    // ];
+    <script>
+      //Q.11:Helper recursive function
+      //[1,2,3,4,5,6,7,8,9,10]
+      //output --> [1,3,5,7,9]
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      // const findOdd = (arr) => {
+      //   let res = [];
+      //   function helperRecursive(arr) {
+      //     if (arr.length === 0) {
+      //       return;
+      //     }
+      //     if (arr[0] % 2 !== 0) {
+      //       res.push(arr[0]);
+      //     }
+      //     helperRecursive(arr.slice(1));
+      //   }
+      //   helperRecursive(arr);
+      //   return res;
+      // };
+      // console.log(findOdd(arr));
+    </script>
+    <script>
+      //Q.12: Linear Search Algorithm:
+      // Time complexity --> Linear search
+      // const users = [
+      //   {
+      //     username: "Suman Singh",
+      //     email: "abc@gmail.com",
+      //   },
+      //   {
+      //     username: "Shree Singh",
+      //     email: "shree@gmail.com",
+      //   },
+      //   {
+      //     username: "Swastik Singh",
+      //     email: "swastik@gmail.com",
+      //   },
+      //   {
+      //     username: "Shree Ji",
+      //     email: "jishree@gmail.com",
+      //   },
+      //   {
+      //     username: "Anshika Singh",
+      //     email: "anshika@gmail.com",
+      //   },
+      // ];
 
-    // const isUserExist = (arr, val) => {
-    //   for (let item of arr) {
-    //     if (item.username === val) {
-    //       return true;
-    //     }
-    //   }
-    //   return false;
-    // };
-    // console.log(isUserExist(users, "Shree Singh"));
-  </script>
-  <script>
-    
-  </script>
+      // const isUserExist = (arr, val) => {
+      //   for (let item of arr) {
+      //     if (item.username === val) {
+      //       return true;
+      //     }
+      //   }
+      //   return false;
+      // };
+      // console.log(isUserExist(users, "Shree Singh"));
+    </script>
+    <script>
+      //Q.13: Sorting algorithms: Bubble sort
+      //implementations
+      //definition: a sorting algorithm where the largest
+      //values bubble up at the top
+      //time complexity: o(n^2)
+      // const bubbleSort = (arr) => {
+      //   for (let i = arr.length - 1; i >= 0; i--) {
+      //     console.log(i)
+      //     for (let j = 0; j < i; j++) {
+      //       if (arr[j] > arr[j + 1]) {
+      //         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // };
+      // let arr = [5, 3, 4, 1, 2, 8, 6, 7];
+      // console.log(bubbleSort(arr));
+    </script>
+    <!-- <script>
+      //Q.14: Bubble sort optimization
+      const bubbleSort = (arr) => {
+        for (let i = arr.length - 1; i >= 0; i--) {
+          console.log(i)
+          let isSwapped;
+          for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              isSwapped = true;
+            }
+          }
+          if (!isSwapped) {
+            break;
+          }
+        }
+        return arr;
+      };
+      let arr = [5, 3, 4, 1, 2, 8, 6, 7];
+      console.log(bubbleSort(arr));
+    </script> -->
+    <!-- <script>
+      //Q.15: selection sort:
+      const selectionSort = (arr) => {
+        for (let i = 0; i < arr.length; i++) {
+          let min = i;
+          for (j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+              min = j;
+            }
+          }
+          if (i !== min) {
+            let temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+          }
+        }
+        return arr
+      };
+      let arr = [5, 3, 4, 1, 2, 8, 6, 7];
+      console.log(selectionSort(arr));
+    </script> -->
+    <!-- <script>
+      //Q.16: Insertion sort:
+      function insertionSort(arr) {
+        for (let i = 1; i < arr.length; i++) {
+          let key = arr[i];
+          let j = i - 1;
+          // Move elements greater than key
+          // to one position ahead
+          while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+          }
+          arr[j + 1] = key;
+        }
+        return arr;
+      }
+  
+      // Example usage:
+      let numbers = [5, 2, 9, 1, 5, 6];
+      let sorted = insertionSort(numbers);
+      console.log(sorted);
+      // Output: [1, 2, 5, 5, 6, 9]
+    </script> -->
+    <!-- <script>
+      //Q.17: Check string is palindrome or not
+      //without predefined method
+      const isPalindrome = (str) => {
+        let smallStr = str.toLowerCase();
+        let left = 0;
+        let right = smallStr.length - 1;
+        while (left < right) {
+          if (smallStr[left] !== smallStr[right]) return false;
+          left++;
+          right--;
+        }
+        return true;
+      };
+      console.log(isPalindrome("level"));
+      console.log(isPalindrome("suman"));
+      console.log(isPalindrome("noon"));
+    </script> -->
+    <script>
+      //Q.18
+    </script>
+  </body>
 </html>

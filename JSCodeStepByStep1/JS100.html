@@ -84,11 +84,11 @@
       console.log(data2);
     </script> -->
     <!-- <script>
-        //Q.14
-        let data1={name:"Suman",age:24,skills:'js'};
-        let data2 = { city: "Blr", area: "whitefield", company: "TCS" };
-        data2={data1,...data2};
-        console.log("data:",data2);
+      //Q.14
+      let data1 = { name: "Suman", age: 24, skills: "js" };
+      let data2 = { city: "Blr", area: "whitefield", company: "TCS" };
+      data2 = { data1, ...data2 };
+      console.log("data:", data2);
     </script> -->
     <!-- <script>
       //Q.15
@@ -111,7 +111,8 @@
     <!-- <script>
       //Q.18
       const result = null || false || null;
-      const result1 = null || false || ''; // assign last value if no one is true before last
+      const result1 = null || false || "";
+      // assign last value if no one is true before last
       const result2 = [] || 0 || true;
       console.log(result);
       console.log(result1);
@@ -135,14 +136,17 @@
       let name = "Suman";
       function getName() {
         console.log(name);
-        let name = "Singh"; //Hoisting concept will not work for let and const
+        let name = "Singh";
+        //Hoisting concept will not work for let and const
       }
       getName();
     </script> -->
     <!-- <script>
       //Q.22
       let name = "Suman";
-      function getName() { // block scope means it will accessible inside block and block inside that block as well.
+      function getName() {
+        // block scope means it will accessible inside block
+        // and block inside that block as well.
         console.log(name);
       }
       getName();
@@ -188,9 +192,12 @@
       //Q.28
       let person = { name: "Suman" };
       //what can modify person object
-      Object.seal(person); // Now we can't add more properties to object if Seal applied
+      Object.seal(person); 
+      // Now we can't add more properties to object if Seal applied
       person.age=24;
-      person.name="Singh" // But we can modify existing properties of object if Seal use over that object.
+      person.name="Singh" 
+      // But we can modify existing properties of object if 
+      // Seal use over that object.
       console.log(person);
     </script> -->
     <!-- <script>
@@ -226,8 +233,10 @@
     </script> -->
     <!-- <script>
       //Q.33
-      let data=["suman","mannu","shree"];
-      delete data[1]; //Whenever any element delete from array it will create empty space at that location.
+      let data = ["suman", "mannu", "shree"];
+      delete data[1];
+      //Whenever any element delete from array it will create empty
+      //space at that location.
       console.log(data);
       console.log(data.length);
     </script> -->
@@ -255,11 +264,13 @@
     <!-- <script>
       //Q.37
       let a = 2;
-      console.log(a); 
+      console.log(a);
       setTimeout(() => {
         console.log(a);
       }, 0);
-      a = 100; // special function like setTimeout, setTimeInterval will execute after executing all code.
+      a = 100;
+      // special function like setTimeout, setTimeInterval will execute
+      // after executing all code.
     </script> -->
     <!-- <script>
       //Q.38
@@ -296,7 +307,7 @@
       //Q.43
       console.log(3*3);
       console.log(3**3);
-      // console.log(3***3);
+      //console.log(3***3);
     </script> -->
     <!-- <script>
       //Q.44
@@ -356,7 +367,7 @@
       };
       console.log(bird[data]);
       console.log(bird["size"]);
-      // console.log(bird[size]);
+      console.log(bird[size]);
       console.log(bird.size);
       console.log(bird.data);
     </script> -->
@@ -371,7 +382,7 @@
     <!-- <script>
       //Q.54
       var x;
-      var x=10;
+      var x = 10;
       console.log(x);
     </script> -->
     <!-- <script>
@@ -400,8 +411,8 @@
     <!-- <script>
       //Q.58
       let name;
-      nmae={}; //Typo!
-      // console.log(window.name);
+      nmae = {}; //Typo!
+      //console.log(window.name);
       console.log(name);
     </script> -->
     <!-- <script>
@@ -523,8 +534,8 @@
     </script> -->
     <!-- <script>
       //Q.74
-      const numbers=[1,2,3];
-      numbers[6]=11;
+      const numbers = [1, 2, 3];
+      numbers[6] = 11;
       console.log(numbers);
       console.log(numbers[3]);
       console.log(numbers[4]);

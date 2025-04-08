@@ -4,7 +4,7 @@
     <h2>Throatling concept in Javascript</h2>
     <input type="text" id="search" />
     <button id="myid" onclick="newFun()">Hello</button>
-    <script>
+    <!-- <script>
       const myThrottling = (fcn, delay) => {
         return function (...args) {
           document.getElementById("myid").disabled = true;
@@ -17,6 +17,22 @@
         document.getElementById("myid").disabled = false;
         console.log("User Clicked");
       }, 2000);
+    </script> -->
+    <script>
+      const getEnabled = () => {
+        document.getElementById("myid").disabled = false;
+      };
+
+      const throuttling = (callback, delay) => {
+        return () => {
+          document.getElementById("myid").disabled = true;
+          setTimeout(() => {
+            callback();
+          }, delay);
+        };
+      };
+
+      const newFun = throuttling(getEnabled, 1500);
     </script>
   </body>
 </html>

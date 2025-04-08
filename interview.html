@@ -126,7 +126,7 @@
       console.log("1",)
       console.log("1",)
     </script> -->
-    <script>
+    <!-- <script>
       const datas = [
         {
           name: "Suman",
@@ -155,6 +155,24 @@
         }, 1000);
       }
       createData({ name: "Swastic", profession: "engineer" }, getData);
+    </script> -->
+    <input type="text" id="search" />
+    <button id="myBtn" onclick="betterFunc()">click</button>
+    <script>
+      const getEnabled = () => {
+       document.getElementById("myBtn").disabled=false;
+      };
+
+      const throuttling = (callback, delay) => {
+        return () => {
+          document.getElementById("myBtn").disabled=true;
+          setTimeout(() => {
+            callback();
+          }, delay);
+        };
+      };
+
+      const betterFunc = throuttling(getEnabled, 1500);
     </script>
   </head>
 </html>
