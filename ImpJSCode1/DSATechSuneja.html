@@ -5,38 +5,38 @@
   </head>
   <body>
     <!-- <script>
-      //Q.1: Checking sum zwro - Problem 1
+      //Q.1: Checking sum zero - Problem 1
       //input -> [-5,-4,-3,-2,0,2,4,6,8]
       //output -> [?, ?] (? + ? =0)
 
       // Without DSA:
       //o(n^2) quadratic time complexity
-      //   function sumPair(str) {
-      //     for (let i = 0; i < str.length; i++) {
-      //       for (let j = i + 1; j < str.length; j++) {
-      //         if (str[i] + str[j] == 0) {
-      //           return [str[i], str[j]];
-      //         }
+      // function sumPair(str) {
+      //   for (let i = 0; i < str.length; i++) {
+      //     for (let j = i + 1; j < str.length; j++) {
+      //       if (str[i] + str[j] == 0) {
+      //         return [str[i], str[j]];
       //       }
-      //     }
-      //   }
-      //   console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
-
-      //With DSA: only for sorted array
-      //o(n) linear time complexity
-      // function sumPair(arr) {
-      //   let left = 0,
-      //     right = arr.length - 1;
-      //   while (left < right) {
-      //     if (arr[left] + arr[right] === 0) return [arr[left], arr[right]];
-      //     if (arr[left] + arr[right] > 0) {
-      //       right--;
-      //     } else {
-      //       left--;
       //     }
       //   }
       // }
       // console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
+
+      //With DSA: only for sorted array
+      //o(n) linear time complexity
+      function sumPair(arr) {
+        let left = 0,
+          right = arr.length - 1;
+        while (left < right) {
+          if (arr[left] + arr[right] === 0) return [arr[left], arr[right]];
+          if (arr[left] + arr[right] > 0) {
+            right--;
+          } else {
+            left++;
+          }
+        }
+      }
+      console.log(sumPair([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]));
     </script> -->
     <!-- <script>
       //2:sort an array without any methood:quick sort
@@ -78,7 +78,7 @@
     </script>
     <!-- <script>
       //Q.4
-      //Count unique numbers
+      //Count unique numbers: How many elements are not repeating
       const countUniqueNumber = (arr) => {
         let count = {};
         for (let ch of arr) {
@@ -97,7 +97,7 @@
           return "invalid";
         }
         let max = 0;
-        let times = arr.length - num + 1;
+        let times = arr.length - num + 1; /*It will calculate no of times loop run*/
         for (let i = 0; i < times; i++) {
           let tempsum = 0;
           for (let j = i; j < i + num; j++) {
@@ -112,7 +112,7 @@
       console.log(largestSum([1, 2, 3, 4, 3, 5, 4, 6, 7, 8], 4));
     </script> -->
     <!-- <script>
-      //Q.6: Divide and Conquer Technique in Binary Search
+      //Q.6: Divide and Conquer Technique in Binary Search: only for sorted array
       function binarySearchIterative(arr, target) {
         let left = 0;
         let right = arr.length - 1;
@@ -130,7 +130,7 @@
       console.log(binarySearchIterative([1, 3, 5, 7, 9, 11], 7)); // Output: 3
     </script> -->
     <!-- <script>
-      //Q7.Selection sort
+      //Q7.Selection sort: not required
       function selectionSort(arr) {
         let max;
         for (let i = 0; i < arr.length; i++) {
@@ -201,7 +201,7 @@
       console.log(checkIsSquare(arr1, arr2));
     </script> -->
     <!-- <script>
-      //Q.10 Recursion: When function call itself
+      //Q.10 Recursion: When function call itself: not required
       //otherwise it will get called for infinite time
       //If a function call itself then there must be an end point
       //Advance Recursive function | Sorting
@@ -323,19 +323,19 @@
       //definition: a sorting algorithm where the largest
       //values bubble up at the top
       //time complexity: o(n^2)
-      // const bubbleSort = (arr) => {
-      //   for (let i = arr.length - 1; i >= 0; i--) {
-      //     console.log(i)
-      //     for (let j = 0; j < i; j++) {
-      //       if (arr[j] > arr[j + 1]) {
-      //         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-      //       }
-      //     }
-      //   }
-      //   return arr;
-      // };
-      // let arr = [5, 3, 4, 1, 2, 8, 6, 7];
-      // console.log(bubbleSort(arr));
+      const bubbleSort = (arr) => {
+        for (let i = arr.length - 1; i >= 0; i--) {
+          console.log(i)
+          for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+          }
+        }
+        return arr;
+      };
+      let arr = [5, 3, 4, 1, 2, 8, 6, 7];
+      console.log(bubbleSort(arr));
     </script>
     <!-- <script>
       //Q.14: Bubble sort optimization
@@ -421,7 +421,48 @@
       console.log(isPalindrome("noon"));
     </script> -->
     <script>
-      //Q.18
+      //Q.18 Longest substring without
+      //repeating characters
+      //sliding window technique
+      // const lengthofLongestSubstring = (s) => {
+      //   if (!s) {
+      //     return 0;
+      //   }
+      //   let end = 0;
+      //   let start = 0;
+      //   let maxLength = 0;
+      //   const uniqueChar = new Set();
+      //   while (end < s.length) {
+      //     if (!uniqueChar.has(s[end])) {
+      //       uniqueChar.add(s[end]);
+      //       end++;
+      //       maxLength = Math.max(maxLength, uniqueChar.size);
+      //     } else {
+      //       uniqueChar.delete(s[start]);
+      //       start++;
+      //     }
+      //   }
+      //   return maxLength;
+      // };
+      // console.log(lengthofLongestSubstring("abcabcbb"));
+
+      //another way
+      // function longestSubstring(s) {
+      //   let longest = "";
+      //   let current = "";
+      //   for (let char of s) {
+      //     let index = current.indexOf(char);
+      //     if (index !== -1) {
+      //       current = current.slice(index + 1);
+      //     }
+      //     current += char;
+      //     if (current.length > longest.length) {
+      //       longest = current;
+      //     }
+      //   }
+      //   return longest;
+      // }
+      // console.log(longestSubstring("abcabcbb"));
     </script>
   </body>
 </html>
