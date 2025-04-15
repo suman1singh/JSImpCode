@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- <script>
+      //Q.1js code to make string that have multiple word with
+      //single or multiple space separated. convert it to single space separated
+      const input = "   This   is   a   string    with  irregular   spacing. ";
+      const cleaned = input.trim().replace(/\s+/g, " ");
+      console.log(cleaned); // "This is a string with irregular spacing."
+    </script> -->
+    <script>
+      //Q.2Given an integer array nums,
+      //return an array answer such that answer[i] is equal to the product of
+      //all the elements of nums except nums[i].
+      var productExceptSelf = function (nums) {
+        let answer = [];
+        for (let i = 0; i < nums.length; i++) {
+          let sum = 1;
+          for (let j = 0; j < nums.length; j++) {
+            if (i == j) {
+              continue;
+            }
+            sum *= nums[j];
+          }
+          answer.push(sum);
+        }
+        return answer;
+      };
+      console.log(productExceptSelf([1, 2, 3, 4]));
+    </script>
+  </body>
+</html>
