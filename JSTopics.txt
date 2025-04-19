@@ -1,0 +1,113 @@
+******************************** Design Pattern ************************************
+type coercion is the process of converting one data type to another 
+automatically or implicitly. This typically happens when values of 
+different types are compared or operated on.
+
+🔄 Types of Coercion
+There are two types:
+1. Implicit Coercion – done automatically by JavaScript.
+2. Explicit Coercion – done manually by you using functions like 
+Number(), String(), Boolean(), etc.
+
+********************************Design Pattern in JS*******************************
+Design patterns in JavaScript are like reusable solutions to common problems in 
+code architecture. They help write cleaner, more scalable, and maintainable 
+applications. Here are the most common JavaScript design patterns 👇
+
+Module Pattern:
+->Encapsulates related functions and variables to avoid polluting the global scope.
+->Good for: Encapsulation, privacy, separation of concerns.
+
+****************************Synchronous vs Asynchronous*******************************
+Synchronous code in JavaScript is executed line by line, blocking further execution 
+until the current operation is complete.
+
+Asynchronous code allows operations to run in the background, enabling the program 
+to continue executing other tasks without waiting for the operation to finish.
+
+JavaScript is synchronous by default, meaning it executes code line by line, 
+but it also supports asynchronous behavior through mechanisms like callbacks, 
+promises, and async/await for handling tasks that take time 
+(e.g., API requests, timers) without blocking the main thread.
+
+****************************undefined vs null vs NaN***********************************
+undefined: Variable declared but not assigned a value
+null: null in JavaScript is a primitive value that represents the 
+intentional absence of any object value. It’s explicitly assigned by 
+a developer to indicate "no value" or "empty".
+It's often used to reset or clear a variable.
+
+NaN: NaN stands for "Not-a-Number" — it's a special value in JavaScript 
+that represents the result of an invalid or undefined numerical operation.
+
+*****************************Pure functions*******************************************
+A pure function in JavaScript is a function whose output depends 
+solely on its input arguments and produces no side effects. 
+This means that for the same input, a pure function will always 
+return the same output, and it will not modify any external state or variables.
+ 
+ Pure function: 
+ 
+ function add(a, b) {
+  return a + b;
+}
+
+Impure function: 
+
+let x = 5;
+
+function impureAdd(a) {
+  x += a;
+  return x;
+}
+
+***************************************************************************
+Optional chaining (?.) is a feature in JavaScript that lets you safely access 
+nested properties of an object without causing an error if something is 
+undefined or null.
+
+The nullish coalescing operator (??) in JavaScript lets you provide a default 
+value only when the left-hand side is null or undefined.
+
+*****************************************************************************
+How does garbage collection work in JavaScript:
+->Garbage Collection in JavaScript is automatic.
+->It frees up memory by removing data that’s no longer used or accessible 
+in your program.
+
+How it works (behind the scenes):
+JavaScript uses a strategy called "Mark and Sweep":
+
+Mark: It starts from “roots” (like global variables, active functions, 
+closures, etc.) and marks everything that is still accessible.
+
+Sweep: It deletes everything else from memory that wasn't marked — meaning, 
+it’s no longer reachable.
+
+ex:
+let user = {
+  name: "Suman"
+};
+
+user = null; // The original object is no longer referenced
+
+// 👉 JS sees it’s unreachable and deletes it from memory
+
+->When is something garbage collected?
+1. No variable or object is referencing it
+2. It's not accessible from any active code
+
+Use WeakMap and WeakSet when you want automatic garbage collection 
+for keys (no memory leaks!).
+
+
+
+
+
+
+
+
+
+
+
+

@@ -464,5 +464,26 @@
       // }
       // console.log(longestSubstring("abcabcbb"));
     </script>
+    <script>
+      //valid parenthesis
+      const validParenthesis = (s) => {
+        let obj = {
+            "(": ")",
+            "[": "]",
+            "{": "}",
+          },
+          res = [];
+        for (let ch of s) {
+          if (obj[ch]) {
+            res.push(obj[ch]);
+          } else {
+            let close = res.pop();
+            if (close !== ch) return false;
+          }
+        }
+        return !res.length;
+      };
+      console.log(validParenthesis("[{()[]}()]"));
+    </script>
   </body>
 </html>
