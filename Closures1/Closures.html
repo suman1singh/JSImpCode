@@ -2,7 +2,7 @@
 <html>
   <body>
     <h2>Closures concept in Javascript</h2>
-    <script>
+    <!-- <script>
       //A closure is created when a function "remembers" variables from
       //the outer scope, even after that outer function has finished
       //executing.
@@ -31,36 +31,41 @@
       counter(); // Output: 3
 
       //Different way: keep it handy
-      // console.log("Different way");
-      // var sum1 = function (a, b, c) {
-      //   return {
-      //     getSumTwo: function () {
-      //       return a + b;
-      //     },
-      //     getSumThree: function () {
-      //       return a + b + c;
-      //     },
-      //   };
-      // };
-      // var store1 = sum1(3, 4, 5); //calling
-      // console.log(store1.getSumTwo());
-      // console.log(store1.getSumThree());
+      console.log("Different way");
+      var sum1 = function (a, b, c) {
+        return {
+          getSumTwo: function () {
+            return a + b;
+          },
+          getSumThree: function () {
+            return a + b + c;
+          },
+        };
+      };
+      var store1 = sum1(3, 4, 5); //calling
+      console.log(store1.getSumTwo());
+      console.log(store1.getSumThree());
 
-      // var store2=sum1(7,8,9);
-      // console.log(store2.getSumTwo())
-      // console.log(store2.getSumThree())
+      var store2=sum1(7,8,9);
+      console.log(store2.getSumTwo())
+      console.log(store2.getSumThree())
 
       //Another example
-      // function greet() {
-      //   let name = "John";
-      //   function displayName() {
-      //     return "Hi" + " " + name;
-      //   }
-      //   return displayName;
-      // }
-      // const g1 = greet();
-      // console.log(g1());
-      // console.log(greet()())
-    </script>
+      function greet() {
+        let name = "John";
+        function displayName() {
+          return "Hi" + " " + name;
+        }
+        return displayName;
+      }
+      const g1 = greet();
+      console.log(g1());
+      console.log(greet()())
+      //When closure will use:
+      //1. Data Privacy / Encapsulation:
+      //You can use closures to create private variables.
+      //2. when we need to run a function only once, and cache the result.
+      //3. To maintain state/variables across calls.
+    </script> -->
   </body>
 </html>
