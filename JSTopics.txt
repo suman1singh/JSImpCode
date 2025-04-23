@@ -211,6 +211,25 @@ Strict mode helps you:
 2. Avoid common JavaScript mistakes
 3. Make debugging easier
 
+------------------------------------------------------------------------------------------------------------------
+Q. What is a Polyfill?
+-->A polyfill is a piece of code (usually JavaScript) that adds support for features that aren't built-in to older browsers or environments.
+-->A polyfill is JavaScript code that adds missing features to older browsers so your app can use new JavaScript stuff without breaking.
+-->🧠 Why Do We Need Polyfills?
+-->Web developers want to use the latest and greatest features (like Promise, fetch, or Array.prototype.includes) — 
+but not all browsers support them
+
+Let’s say you're using Array.prototype.includes() — supported in modern browsers but not in older ones.
+
+You can include this polyfill:
+
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function(searchElement, fromIndex) {
+    return this.indexOf(searchElement, fromIndex) !== -1;
+  };
+}
+Boom 💥 — now older browsers can behave like the newer ones.
+
 
 
 
